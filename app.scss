@@ -1,0 +1,133 @@
+* {
+  background: transparent;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin small() {
+  @media (min-width: 400px) {
+    @content
+  }
+}
+
+@keyframes bg {
+  0% { background: #2e2e2c; }
+  100% {  background: #f3df49; }
+}
+
+
+@keyframes form {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes logo {
+  0% {
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  -webkit-animation: bg .7s 1s backwards;
+  -o-animation: bg .7s 1s backwards;
+  animation: bg .7s 1s backwards;
+  background: #f3df49;
+  border: 8px solid #2e2e2c;
+  color: #2e2e2c;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.Logo {
+  $size: 200px;
+
+  -webkit-animation: logo 1s 2s backwards;
+  -o-animation: logo 1s 2s backwards;
+  animation: logo 1s 2s backwards;
+  background: url(img/logo.svg);
+  color: transparent;
+  display: inline-block;
+  font: 0/0 a;
+  height: $size;
+  overflow: hidden;
+  margin: -68px 0 0 -10px;
+  text-shadow: none;
+  width: $size;
+}
+
+.Form {
+  &-title,
+  &-input,
+  &-submit {
+    display: inline-block;
+    clear: both;
+    width: 227px;
+    text-align: center;
+    -webkit-animation: form .8s 2.5s backwards;
+    -o-animation: form .8s 2.5s backwards;
+    animation: form .8s 2.5s backwards;
+
+    &::before {
+      content: ' ';
+      display: block;
+    }
+  }
+
+  &-title {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 12px 0;
+  }
+
+  &-input {
+    -webkit-animation-delay: 3.25s;
+    -moz-animation-delay: 3.25s;
+    -o-animation-delay: 3.25s;
+    animation-delay: 3.25s;
+    color: #fff;
+    background: #2e2e2e;
+    padding: 10px;
+  }
+
+  &-submit {
+    -webkit-animation-delay: 3.6s;
+    -moz-animation-delay: 3.6s;
+    -o-animation-delay: 3.6s;
+    animation-delay: 3.6s;
+    border: 2px solid #2e2e2e;
+    margin-top: 8px;
+    padding: 8px;
+  }
+}
+
+.Center {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+  &-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
