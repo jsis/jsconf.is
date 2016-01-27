@@ -7,6 +7,9 @@ gulp.task('server', ['watch'], function() {
     files: config.target + '/**/*',
     server: {
       baseDir: config.target
-    }
+    },
+    logPrefix: '-server-',
+    notify: false,
+    open: false
   });
 });
