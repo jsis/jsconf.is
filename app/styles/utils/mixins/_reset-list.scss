@@ -1,0 +1,10 @@
+
+@mixin reset-list() {
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside;
+}
+
+%reset-list {
+  @include reset-list();
+}

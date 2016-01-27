@@ -1,45 +1,5 @@
-@import "vendor/normalize";
 
-$size: 300px;
-
-* {
-  background: transparent;
-  border: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-@keyframes bg {
-  0% { background: #2e2e2c; }
-  100% {  background: #f3df49; }
-}
-
-
-@keyframes form {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes logo {
-  0% { transform: translateY(100px); }
-  100% { transform: translateY(0); }
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  animation: bg .7s 1s backwards;
-  background: #f3df49;
-  border: 8px solid #2e2e2c;
-  color: #2e2e2c;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  text-align: center;
-}
+$form-size: 300px;
 
 .Logo {
   animation: logo 1s 2s backwards;
@@ -47,11 +7,11 @@ body {
   color: transparent;
   display: inline-block;
   font: 0/0 a;
-  height: $size;
+  height: $form-size;
   overflow: hidden;
   margin: -68px 0 0 -10px;
   text-shadow: none;
-  width: $size;
+  width: $form-size;
 }
 
 .Form {
@@ -62,7 +22,7 @@ body {
     clear: both;
     display: inline-block;
     text-align: center;
-    width: $size;
+    width: $form-size;
 
     &:before {
       content: ' ';
@@ -79,7 +39,7 @@ body {
   &-input {
     animation-delay: 3.25s;
     color: white;
-    background: #2e2e2e;
+    background: $dark-gray;
     padding: 10px;
     font-size: 18px;
 
@@ -90,7 +50,7 @@ body {
 
   &-submit {
     animation-delay: 3.6s;
-    border: 2px solid #2e2e2e;
+    border: 2px solid $dark-gray;
     margin-top: 8px;
     padding: 8px;
     font-size: 18px;

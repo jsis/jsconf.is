@@ -7,7 +7,7 @@ var plumber = require('gulp-plumber');
 var errorHandler = require('../utils/error-handler');
 
 gulp.task('styles', function() {
-  return gulp.src(config.source + '/styles/*.scss')
+  return gulp.src([config.source + '/styles/*.scss', '!' + config.source + '/styles/_*.scss'])
     .pipe(plumber({errorHandler: errorHandler}))
     .pipe(sass({
       outputStyle: 'compressed'

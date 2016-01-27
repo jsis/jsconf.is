@@ -1,0 +1,9 @@
+
+@mixin columns($width: (20rem - ($spacing*2)), $count: 0, $gap: $spacing, $rule-color: $color-border, $rule-style: solid, $rule-width: 0px) {
+  column-width: $width;
+  column-count: $count;
+  column-gap: $gap;
+  column-rule-color: $rule-color;
+  column-rule-style: $rule-style;
+  column-rule-width: $rule-width;
+}
