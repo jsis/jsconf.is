@@ -6,13 +6,15 @@ Install dependencies:
 npm i
 ```
 
-Development: 
+Development:
 
 ```sh
 gulp server
+# or
+npm run dev
 ```
 
-Deploy: 
+Deploy:
 
 ```sh
 gulp build --prod && gulp deploy

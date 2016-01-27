@@ -39,8 +39,12 @@
     "normalize.css": "^3.0.2",
     "rimraf": "^2.2.8",
     "run-sequence": "^1.0.2",
+    "supervisor": "^0.9.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/supervisor -w gulpfile.js,gulp -e node,js,json -x gulp server"
   }
 }
