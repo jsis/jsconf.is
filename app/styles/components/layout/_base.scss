@@ -1,23 +1,9 @@
 
-* {
-  background: transparent;
-  border: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+main {
+  @include clearfix;
+  min-height: 100vh;
+
+  background: $color-jsconf-yellow;
 }
 
-html,
-body {
-  height: 100%;
-}
-
-body {
-  animation: bg .7s 1s backwards;
-  background: $body-background;
-  border: 8px solid $dark-gray;
-  color: $body-font-color;
-  font-family: $body-font-family;
-  font-size: 18px;
-  text-align: center;
-}
+@import "footer";

@@ -8,7 +8,9 @@
 @import "foundation/foundation";
 
 @include foundation-global-styles;
+@include foundation-flex-grid;
 
 @import
   "components/layout/base",
+  "components/page/base",
   "components/form/base";

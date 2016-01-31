@@ -1,0 +1,13 @@
+
+.Page {
+  display: block;
+  min-height: 50vh;
+
+  svg {
+    width: 150px;
+  }
+
+  &-content {
+    display: none;
+  }
+}
