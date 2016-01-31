@@ -27,7 +27,10 @@ gulp.task('watch', ['build'], function() {
     gulp.start('copy');
   });
 
-  watch(config.source + '/templates/**/*.jade', function() {
+  watch([
+    config.source + '/templates/**/*.jade',
+    config.source + '/images/**/*.svg'
+  ], function() {
     gulp.start('templates');
   });
 
