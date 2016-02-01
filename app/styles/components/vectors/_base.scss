@@ -1,8 +1,16 @@
 
 .Svg {
-  vertical-align: middle;
-
   display: inline-block;
-  width: 100%;
   height: auto;
+  fill: currentColor;
+  vertical-align: middle;
+  width: 150px;
+
+  &--call {
+    width: 130px;
+  }
+
+  &--logo {
+    width: 200px;
+  }
 }
