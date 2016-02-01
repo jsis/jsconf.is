@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var config = require('../config');
+var historyApiFallback = require('connect-history-api-fallback')
 
 gulp.task('server', ['watch'], function() {
   browserSync.init({
@@ -10,6 +11,7 @@ gulp.task('server', ['watch'], function() {
     },
     logPrefix: '-server-',
     notify: false,
-    open: false
+    open: false,
+    middleware: [historyApiFallback()]
   });
 });
