@@ -61,8 +61,6 @@ $color-jsconf-purple: #B3008B;
 // JSCONF fonts
 $font-roboto: 'Roboto';
 
-$form-size: 300px;
-
 // 1. Global
 // ---------
 
@@ -90,8 +88,8 @@ $body-antialiased: true;
 
 $global-margin: rem-calc(20);
 $global-padding: rem-calc(20);
-$global-weight-normal: 400;
-$global-weight-medium: 500;
+$global-weight-normal: 300;
+$global-weight-medium: 400;
 $global-weight-bold: 700;
 $global-radius: 0;
 $global-text-direction: ltr;
@@ -137,11 +135,11 @@ $header-sizes: (
     'h6': 16,
   ),
   medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
+    'h1': 24,
+    'h2': 20,
+    'h3': 19,
+    'h4': 18,
+    'h5': 17,
     'h6': 16,
   ),
 );
@@ -163,7 +161,7 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 
-$anchor-color: $primary-color;
+$anchor-color: $color-jsconf-purple;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;

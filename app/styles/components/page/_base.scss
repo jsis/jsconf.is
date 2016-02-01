@@ -8,7 +8,7 @@
   display: block;
   min-height: 50vh;
   position: relative;
-  
+
   &--inverse {
     background: $color-gray-75;
     color: $color-jsconf-yellow;
@@ -47,8 +47,9 @@
     transition: opacity $time, transform $time, visibility $time 0s;
     visibility: hidden;
     width: 100%;
+    margin: $global-margin 0;
   }
-  
+
   &:hover &-title {
     opacity: 1;
     transform: translateY(-$distance);

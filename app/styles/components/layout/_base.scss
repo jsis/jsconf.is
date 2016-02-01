@@ -4,6 +4,10 @@ main {
   min-height: 100vh;
 
   background: $color-jsconf-yellow;
+
+  > .row {
+    max-width: none;
+  }
 }
 
 @import "footer";

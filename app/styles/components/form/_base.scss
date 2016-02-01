@@ -1,28 +1,11 @@
 
-$form-size: 300px;
-
-.Logo {
-  animation: logo 1s 2s backwards;
-  background: url(/images/logo.svg);
-  color: transparent;
-  display: inline-block;
-  font: 0/0 a;
-  height: $form-size;
-  overflow: hidden;
-  margin: -68px 0 0 -10px;
-  text-shadow: none;
-  width: $form-size;
-}
-
 .Form {
-  &-title,
   &-input,
   &-submit {
-    animation: form .8s 2.5s backwards;
     clear: both;
     display: inline-block;
     text-align: center;
-    width: $form-size;
+    width: 100%;
 
     &:before {
       content: ' ';
@@ -30,18 +13,12 @@ $form-size: 300px;
     }
   }
 
-  &-title {
-    font-size: 18px;
-    font-weight: 900;
-    margin: 12px 0;
-  }
-
   &-input {
-    animation-delay: 3.25s;
     color: white;
     background: $dark-gray;
     padding: 10px;
     font-size: 18px;
+    border: none;
 
     &:focus {
       outline: none;
@@ -49,12 +26,13 @@ $form-size: 300px;
   }
 
   &-submit {
-    animation-delay: 3.6s;
-    border: 2px solid $dark-gray;
-    margin-top: 8px;
+    border: none;
     padding: 8px;
     font-size: 18px;
     cursor: pointer;
+
+    color: $white;
+    background: $color-jsconf-purple;
   }
 }
 
