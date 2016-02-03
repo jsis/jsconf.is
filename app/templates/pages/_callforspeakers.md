@@ -1,5 +1,7 @@
 # Call for Speakers
 
+> JSConf Iceland: Let's meet in the middle.
+
 We are inviting the JavaScript community to submit talks for the upcoming JSConf Iceland (Thursday and Friday, August 25th and 26th, Reykjavik). This Call for Presentation **closes on August 31st**.
 
 If you think you have something great to talk about, tell us all about it and we consider your entry. If you know someone who has something great to talk about, nominate them.
@@ -88,7 +90,10 @@ We do this for the benefit of the larger JavaScript community and those who canâ
 
 Finally, since you retain full ownership of your slides and recording, weâ€™d like to ask you to make your materials and recording available under a creative commons (we default to no commercial reuse) or other open source license.
 
-## Submit Your Talk
+## Submit The Talk
 
 Fill out our talk proposal form:
-[https://bit.ly/jsconfeu-2015-cfp](https://bit.ly/jsconfeu-2015-cfp)
+[https://svef.typeform.com/to/Cx4uRO](https://svef.typeform.com/to/Cx4uRO)
+
+Or suggest a speaker:
+[https://svef.typeform.com/to/I1Wv9R](https://svef.typeform.com/to/I1Wv9R)
