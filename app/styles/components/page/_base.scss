@@ -1,56 +1,40 @@
+@import "_open";
 
 .Page {
   $distance: 20px;
   $time: 250ms;
+  $pages: (about, tickets, speakers, venue);
 
-  background: $color-jsconf-yellow;
+  background: #fff;
   color: $color-gray-75;
   display: block;
-  min-height: 50vh;
-  position: relative;
+  height: 50vh;
+  width: 50%;
 
-  &--inverse {
+  &s {
+    display: flex;
+    flex: 0 1 50%;
+    flex-wrap: wrap;
+  }
+
+  &--inverse &-header {
     background: $color-gray-75;
     color: $color-jsconf-yellow;
   }
 
   &-header {
     align-items: center;
-    cursor: pointer;
+    background: $color-jsconf-yellow;
     display: flex;
-    height: 100%;
+    height: 50vh;
+    cursor: pointer;
     justify-content: center;
     position: absolute;
-    text-align: center;
-    width: 100%;
+    width: 50%;
   }
 
   &-content {
     display: none;
-  }
-
-  html[section='about'] &--about {
-    .Page-content {
-      display: block;
-    }
-  }
-
-  html[section='tickets'] &--tickets {
-    .Page-content {
-      display: block;
-    }
-  }
-
-  html[section='speakers'] &--speakers {
-    .Page-content {
-      display: block;
-    }
-  }
-
-  html[section='venue'] &--venue {
-    .Page-content {
-      display: block;
-    }
   }
 
   &-icon {
@@ -64,14 +48,15 @@
 
   &-title {
     left: 0;
+    margin: $global-margin 0;
     opacity: 0;
     position: absolute;
+    text-align: center;
     transform: scale(.8);
     transform-origin: 50% 100%;
     transition: opacity $time, transform $time, visibility $time 0s;
     visibility: hidden;
     width: 100%;
-    margin: $global-margin 0;
   }
 
   &:hover &-title {
@@ -79,5 +64,17 @@
     transform: translateY(-$distance);
     transition-delay: 0s;
     visibility: visible;
+  }
+
+  @each $page in $pages {
+    @at-root  {
+      html[section="#{$page}"] body {
+        overflow: hidden;
+      }
+    }
+
+    html[section="#{$page}"] &--#{$page} {
+      @extend %open-page;
+    }
   }
 }

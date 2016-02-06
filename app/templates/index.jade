@@ -1,12 +1,12 @@
 extends shared/_layout
 
 block main
-  .row.collapse
-    section.Page.Page--about.columns.small-6
+  .Pages
+    section.Page.Page--about
       include pages/_about
-    section.Page.Page--tickets.Page--inverse.columns.small-6
+    section.Page.Page--tickets.Page--inverse
       include pages/_tickets
-    section.Page.Page--speakers.Page--inverse.columns.small-6
+    section.Page.Page--speakers.Page--inverse
       include pages/_speakers
-    section.Page.Page--venue.columns.small-6
+    section.Page.Page--venue
       include pages/_venue
