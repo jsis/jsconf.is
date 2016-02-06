@@ -13,15 +13,27 @@ class Page {
       icon: root.querySelector('.Page-icon'),
       title: root.querySelector('.Page-title'),
       content: root.querySelector('.Page-content'),
+      close: root.querySelector('.Page-close'),
     };
 
     this.isExpanded_ = false;
     this.path_ = this.elements_.header.getAttribute('route');
     this.parts_ = Object.keys(this.elements_);
+
     this.elements_.header.addEventListener('click', this.onExpand, true);
+    this.elements_.close.addEventListener('click', this.onCollapse, true);
   }
 
-  expand() {
+  collapse() {
+    if (!this.isExpanded_) {
+      return;
+    }
+
+    this.elements_.root.classList.remove('is-open');
+    this.isExpanded_ = false;
+  }
+
+  expand(noAnim) {
     if (this.isExpanded_) {
       return;
     }
@@ -30,6 +42,10 @@ class Page {
     this.collapsedProps_ = this.props;
 
     this.elements_.root.classList.add('is-open');
+    this.isExpanded_ = true;
+
+    if (noAnim) return;
+
     this.expandedProps_ = this.props;
     this.transformTo(this.diff);
     this.forceLayout();
@@ -37,7 +53,6 @@ class Page {
     this.elements_.root.classList.add('Page--animate');
     this.transformToZero();
 
-    this.isExpanded_ = true;
 
     this.elements_.wrap.addEventListener('transitionend', this.onExpandTransitionEnd_);
     this.elements_.wrap.addEventListener('webkittransitionend', this.onExpandTransitionEnd_);
@@ -120,6 +135,11 @@ class Page {
   onExpand = () => {
     router.navigate(this.path_);
     this.expand();
+  };
+
+  onCollapse = () => {
+    router.navigate('index');
+    this.collapse();
   };
 
   onExpandTransitionEnd_ = () => {
