@@ -38,12 +38,22 @@ class Page {
     this.transformToZero();
 
     this.isExpanded_ = true;
+
+    this.elements_.wrap.addEventListener('transitionend', this.onExpandTransitionEnd_);
+    this.elements_.wrap.addEventListener('webkittransitionend', this.onExpandTransitionEnd_);
   }
 
   transformTo(destination) {
     const currentPosition = this.elements_.root.getBoundingClientRect();
     const leftDifference = currentPosition.left - this.startPosition_.left;
     const topDifference = currentPosition.top - this.startPosition_.top;
+
+    for (const part of this.parts_) {
+      if (part === 'root' || part === 'wrap' || part === 'header') continue;
+      const { left, top } = destination[part];
+      Page.transform(this.elements_[part], `translate(${left + leftDifference}px, ${top + topDifference}px)`);
+    }
+
     const { bottom, left, right, top } = this.collapsedProps_.root;
 
     const clipLeft = left + leftDifference;
@@ -51,29 +61,13 @@ class Page {
     const clipTop = top + topDifference;
     const clipBottom = bottom + topDifference;
 
-    for (const part of this.parts_) {
-      if (part === 'root' || part === 'wrap' || part === 'header') continue;
-      const element = this.elements_[part];
-      const rect = destination[part];
-
-      rect.top += topDifference;
-      rect.left += leftDifference;
-
-      const transform = `translate(${rect.left}px, ${rect.top}px)`;// scale(${rect.scaleX}, ${rect.scaleY})`;
-      element.style.webkitTransform = transform;
-      element.style.transform = transform;
-    }
-
     this.elements_.wrap.style.clip = `rect(${clipTop}px, ${clipRight}px, ${clipBottom}px, ${clipLeft}px)`;
   }
 
   transformToZero() {
     for (const part of this.parts_) {
       if (part === 'root') continue;
-      const element = this.elements_[part];
-      const transform = `translate(0, 0)`;
-      element.style.webkitTransform = transform;
-      element.style.transform = transform;
+      Page.transform(this.elements_[part], 'translate(0, 0)');
     }
 
     const { bottom, left, right, top } = this.expandedProps_.wrap;
@@ -81,8 +75,7 @@ class Page {
   }
 
   forceLayout() {
-    const offset = this.elements_.wrap.offsetTop;
-    return offset;
+    return this.elements_.wrap.offsetTop;
   }
 
   get diff() {
@@ -128,6 +121,23 @@ class Page {
     router.navigate(this.path_);
     this.expand();
   };
+
+  onExpandTransitionEnd_ = () => {
+    this.elements_.root.classList.remove('Page--animate');
+
+    for (const part of this.parts_) {
+      Page.transform(this.elements_[part], '');
+    }
+
+    this.elements_.wrap.style.clip = '';
+  };
+
+  static transform(element, value) {
+    /* eslint-disable no-param-reassign */
+    element.style.webkitTransform = value;
+    element.style.transform = value;
+    /* eslint-enable no-param-reassign */
+  }
 }
 
 export default Page;
