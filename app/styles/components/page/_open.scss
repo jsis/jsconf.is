@@ -20,6 +20,9 @@
   }
 
   .Page-content {
+    overflow-y: auto;
+    height: calc(100vh - 128px);
+
     backface-visibility: hidden;
     padding-top: $global-margin * 2;
   }

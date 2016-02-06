@@ -49,7 +49,6 @@ class Router {
 
   setState(key, value) {
     this.state[key] = value;
-    this.html.setAttribute(key, value);
   }
 
   navigate(newPath) {

@@ -55,7 +55,7 @@
       width: 50vw;
     }
   }
-  
+
   &-headerData {
   }
 
@@ -121,20 +121,18 @@
     }
   }
 
-  @each $page in $pages {
-    @at-root  {
-      html[section="#{$page}"] body {
-        overflow: hidden;
-      }
+  @at-root  {
+    .no-scroll {
+      overflow: hidden;
     }
-
-    html[section="#{$page}"] &--#{$page}.is-open {
-      @extend %open-page;
-    }
+  }
+  &.is-open {
+    @extend %open-page;
   }
 
   /* Modifiers */
-  &--inverse &-wrap {
+  &:nth-child(2) &-wrap,
+  &:nth-child(3) &-wrap {
     background: $color-gray-75;
     color: $color-jsconf-yellow;
   }

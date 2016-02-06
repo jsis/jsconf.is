@@ -17,11 +17,19 @@ class Page {
     };
 
     this.isExpanded_ = false;
-    this.path_ = this.elements_.header.getAttribute('route');
+    this.path_ = this.elements_.root.getAttribute('js-route');
     this.parts_ = Object.keys(this.elements_);
 
     this.elements_.header.addEventListener('click', this.onExpand, true);
     this.elements_.close.addEventListener('click', this.onCollapse, true);
+
+    if (this.isCurrentPage()) {
+      this.expand(true);
+    }
+  }
+
+  isCurrentPage() {
+    return router.state.path === this.path_;
   }
 
   collapse() {
@@ -37,6 +45,8 @@ class Page {
     if (this.isExpanded_) {
       return;
     }
+
+    document.body.classList.add('no-scroll');
 
     this.startPosition_ = this.elements_.root.getBoundingClientRect();
     this.collapsedProps_ = this.props;
@@ -140,6 +150,7 @@ class Page {
   onCollapse = () => {
     router.navigate('index');
     this.collapse();
+    document.body.classList.remove('no-scroll');
   };
 
   onExpandTransitionEnd_ = () => {
