@@ -1,8 +1,7 @@
+import Page from './modules/page';
 
-import router from './modules/router';
+const pages = [...document.querySelectorAll('.Page')];
 
-const routes = [...document.querySelectorAll('[route]')];
-
-routes.forEach((route) => {
-  route.addEventListener('click', () => router.navigate(route.getAttribute('route')), true);
-});
+for (const page of pages) {
+  page.page = new Page(page);
+}

@@ -1,24 +1,32 @@
 %open-page {
-  height: 100%;
-  left: 0;
-  overflow-y: auto;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
+  backface-visibility: hidden;
+
+  .Page-wrap {
+    backface-visibility: hidden;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
 
   .Page-header {
+    backface-visibility: hidden;
     cursor: default;
     height: 128px;
     justify-content: flex-start;
-    margin-bottom: $global-margin * 2;
-    position: static;
     width: 100%;
   }
 
+  .Page-content {
+    backface-visibility: hidden;
+    padding-top: $global-margin * 2;
+  }
+
   .Page-headerData {
-    align-items: center;
-    display: flex;
+    //align-items: center;
+    //display: flex;
     width: 100%;
   }
 
@@ -27,24 +35,17 @@
   }
 
   .Page-icon {
-    margin: 0 $global-margin;
+    backface-visibility: hidden;
     transform: none;
-    width: 130px;
+    transition: none;
   }
 
   .Page-title {
-    font-size: 32px;
-    font-weight: bold;
+    backface-visibility: hidden;
     opacity: 1;
-    margin: 0;
     position: static;
-    text-align: left;
     transform: none;
+    transition: none;
     visibility: visible;
-    width: auto;
-  }
-
-  .Page-content {
-    display: block;
   }
 }
