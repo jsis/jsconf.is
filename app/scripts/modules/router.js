@@ -1,5 +1,4 @@
 import analytics from './analytics';
-import _ from 'lodash';
 
 class Router {
   constructor() {
@@ -62,6 +61,6 @@ class Router {
     this.pushState();
     this.processPath(newPath);
   }
-};
+}
 
 export default new Router();
