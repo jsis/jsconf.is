@@ -8,6 +8,7 @@
   z-index: 1;
 
   .Page-header {
+    cursor: default;
     height: 128px;
     justify-content: flex-start;
     margin-bottom: $global-margin * 2;
@@ -18,6 +19,11 @@
   .Page-headerData {
     align-items: center;
     display: flex;
+    width: 100%;
+  }
+
+  .Page-close {
+    display: inline-block;
   }
 
   .Page-icon {
