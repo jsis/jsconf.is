@@ -21,8 +21,7 @@ class Router {
   }
 
   processPath(path) {
-    path = path || this.state.path;
-    let section = path.split('/')[1];
+    let section = (path || this.state.path).split('/')[1];
 
     section = section === 'index.html' ? 'index' : section;
     section = section || 'index';
@@ -32,23 +31,20 @@ class Router {
     this.replaceState();
   }
 
-  pushState(state, title, path) {
-    state = state || this.state.state;
-    title = title || this.state.title;
-    path = path || this.state.path;
+  pushState() {
+    const state = this.state.state;
+    const title = this.state.title;
+    const path = this.state.path;
     window.history.pushState(state, title, path);
 
     analytics('send', 'pageview', {
       page: analytics.cleanUrl(path),
-      title: title,
+      title,
     });
   }
 
-  replaceState(state, title, path) {
-    state = state || this.state.state;
-    title = title || this.state.title;
-    path = path || this.state.path;
-    window.history.replaceState(state, title, path);
+  replaceState() {
+    window.history.replaceState(this.state.state, this.state.title, this.state.path);
   }
 
   setState(key, value) {
