@@ -140,6 +140,9 @@ class Page {
 
     this.elements.wrap.style.clip = '';
     document.body.classList.add(Page.classes.noScroll);
+
+    this.elements.wrap.removeEventListener('transitionend', this.onExpandTransitionEnd_);
+    this.elements.wrap.removeEventListener('webkittransitionend', this.onExpandTransitionEnd_);
   };
 
   static style(element, transform, opacity) {
