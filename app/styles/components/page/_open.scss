@@ -1,19 +1,13 @@
-%open-page {
-  backface-visibility: hidden;
-
+%is-open {
   .Page-wrap {
-    backface-visibility: hidden;
     height: 100vh;
-    left: 0;
     position: fixed;
-    top: 0;
-    width: 100%;
     z-index: 1;
   }
 
   .Page-header {
-    backface-visibility: hidden;
     cursor: default;
+    display: flex;
     height: 128px;
     justify-content: flex-start;
     width: 100%;
@@ -23,29 +17,28 @@
     backface-visibility: hidden;
     height: calc(100vh - 128px);
     overflow-y: auto;
+    opacity: 1;
     padding-top: $global-margin * 2;
   }
 
   .Page-headerData {
-    align-items: center;
-    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     width: 100%;
   }
 
   .Page-close {
-    display: inline-block;
+    visibility: visible;
   }
 
   .Page-icon {
-    backface-visibility: hidden;
     transform: none;
     transition: none;
+    max-width: 100px;
   }
 
   .Page-title {
-    backface-visibility: hidden;
     opacity: 1;
-    position: static;
     transform: none;
     transition: none;
     visibility: visible;

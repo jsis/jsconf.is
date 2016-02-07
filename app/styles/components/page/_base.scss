@@ -1,3 +1,4 @@
+@import "_animate";
 @import "_open";
 
 .Page {
@@ -27,7 +28,10 @@
     background: $color-jsconf-yellow;
     color: $color-gray-75;
     overflow: hidden;
+    left: 0;
     position: relative;
+    top: 0;
+    width: 100%;
   }
 
   &s {
@@ -42,8 +46,6 @@
   }
 
   &-header {
-    align-items: center;
-    display: flex;
     height: 25vh;
     cursor: pointer;
     padding: 0;
@@ -51,35 +53,42 @@
 
     @include breakpoint(medium) {
       height: 50vh;
-      justify-content: center;
-      padding: 0;
-      width: 50vw;
     }
   }
 
   &-headerData {
+    align-items: center;
+    height: 100%;
+    display: flex;
+
+    @include breakpoint(medium) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &-content {
     background: #fff;
     color: $color-gray-75;
+    opacity: 0;
   }
 
   &-close {
-    display: none;
-    margin-left: auto;
-    margin-right: $global-margin;
+    position: absolute;
+    right: $global-margin;
+    top: 55px;
+    visibility: hidden;
   }
 
   &-icon {
     display: inline-block;
+    margin: $global-margin;
+    width: 60px;
     transform-origin: 50% 100%;
     transition: transform $time;
-    margin-right: $global-margin;
-    width: 60px;
 
     @include breakpoint(medium) {
-      margin: 0;
+      transform: translateY(19px);
       width: 150px;
     }
 
@@ -91,20 +100,17 @@
   &-title {
     display: inline-block;
     left: 0;
-    vertical-align: middle;
     margin: 0;
     transform-origin: 50% 100%;
     transition: opacity $time, transform $time, visibility $time 0s;
+    vertical-align: middle;
 
     @include breakpoint(medium) {
       display: block;
       opacity: 0;
-      margin-top: $global-margin;
-      position: absolute;
       text-align: center;
       transform: scale(.8);
       visibility: hidden;
-      width: 50vw;
     }
   }
 
@@ -129,7 +135,11 @@
   }
 
   &.is-open {
-    @extend %open-page;
+    @extend %is-open;
+  }
+
+  &.is-animating {
+    @extend %is-animating;
   }
 
   /* Modifiers */
@@ -137,10 +147,5 @@
   &:nth-child(3) &-wrap {
     background: $color-gray-75;
     color: $color-jsconf-yellow;
-  }
-
-  &--animate * {
-    transition: transform, clip !important;
-    transition-duration: 400ms !important;
   }
 }

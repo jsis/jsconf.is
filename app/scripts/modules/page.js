@@ -24,8 +24,8 @@ class Page {
       return;
     }
 
-    document.body.classList.remove('no-scroll');
-    this.elements.root.classList.remove('is-open');
+    document.body.classList.remove(Page.classes.noScroll);
+    this.elements.root.classList.remove(Page.classes.isOpen);
     this.isExpanded_ = false;
   }
 
@@ -34,23 +34,23 @@ class Page {
       return;
     }
 
-    document.body.classList.add('no-scroll');
-
     this.startPosition_ = this.elements.root.getBoundingClientRect();
     this.collapsedProps_ = this.props;
 
-    this.elements.root.classList.add('is-open');
+    this.elements.root.classList.add(Page.classes.isOpen);
     this.isExpanded_ = true;
 
-    if (noAnim) return;
+    if (noAnim) {
+      document.body.classList.add(Page.classes.noScroll);
+      return;
+    }
 
     this.expandedProps_ = this.props;
     this.transformTo(this.diff);
     this.forceLayout();
 
-    this.elements.root.classList.add('Page--animate');
+    this.elements.root.classList.add(Page.classes.isAnimating);
     this.transformToZero();
-
 
     this.elements.wrap.addEventListener('transitionend', this.onExpandTransitionEnd_);
     this.elements.wrap.addEventListener('webkittransitionend', this.onExpandTransitionEnd_);
@@ -63,8 +63,9 @@ class Page {
 
     for (const part of this.parts_) {
       if (part === 'root' || part === 'wrap' || part === 'header') continue;
-      const { left, top } = destination[part];
-      Page.transform(this.elements[part], `translate(${left + leftDifference}px, ${top + topDifference}px)`);
+      const { left, top, scaleX, scaleY, opacity } = destination[part];
+      const translate = `translate(${left + leftDifference}px, ${top + topDifference}px)`;
+      Page.style(this.elements[part], `${translate} scale(${scaleX}, ${scaleY})`, opacity);
     }
 
     const { bottom, left, right, top } = this.collapsedProps_.root;
@@ -80,7 +81,7 @@ class Page {
   transformToZero() {
     for (const part of this.parts_) {
       if (part === 'root') continue;
-      Page.transform(this.elements[part], 'translate(0, 0)');
+      Page.style(this.elements[part], 'translate(0, 0) scale(1)', this.expandedProps_[part].opacity);
     }
 
     const { bottom, left, right, top } = this.expandedProps_.wrap;
@@ -131,21 +132,29 @@ class Page {
   }
 
   onExpandTransitionEnd_ = () => {
-    this.elements.root.classList.remove('Page--animate');
+    this.elements.root.classList.remove(Page.classes.isAnimating);
 
     for (const part of this.parts_) {
-      Page.transform(this.elements[part], '');
+      Page.style(this.elements[part], '', '');
     }
 
     this.elements.wrap.style.clip = '';
+    document.body.classList.add(Page.classes.noScroll);
   };
 
-  static transform(element, value) {
+  static style(element, transform, opacity) {
     /* eslint-disable no-param-reassign */
-    element.style.webkitTransform = value;
-    element.style.transform = value;
+    element.style.webkitTransform = transform;
+    element.style.transform = transform;
+    element.style.opacity = opacity;
     /* eslint-enable no-param-reassign */
   }
+
+  static classes = {
+    isAnimating: 'is-animating',
+    isOpen: 'is-open',
+    noScroll: 'no-scroll',
+  };
 }
 
 export default Page;
