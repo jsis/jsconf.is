@@ -8,6 +8,7 @@
   display: block;
   height: 25vh;
   position: relative;
+  overflow: hidden;
 
   &:nth-child(3) {
     order: 1;
