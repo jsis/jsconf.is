@@ -110,11 +110,11 @@
 
   /* State */
   @include breakpoint(medium) {
-    &:hover &-icon {
+    &:not(.is-open):hover &-icon {
       transform: translateY(-$distance);
     }
 
-    &:hover &-title {
+    &:not(.is-open):hover &-title {
       opacity: 1;
       transform: translateY(-$distance);
       transition-delay: 0s;
@@ -127,6 +127,7 @@
       overflow: hidden;
     }
   }
+
   &.is-open {
     @extend %open-page;
   }

@@ -1,4 +1,5 @@
 import analytics from './analytics';
+import Page from './page';
 
 class Router {
   constructor() {
@@ -7,11 +8,16 @@ class Router {
       title: document.title,
       state: window.history.state || null,
       path: window.location.pathname || '',
-      navigating: false,
+      firstLoad: true,
       last: '',
     };
 
-    this.setState('section', '');
+    this.pages = [...document.querySelectorAll('.Page')].map(element => {
+      const page = new Page(element);
+      page.elements.header.addEventListener('click', this.onRoute(page.path), true);
+      page.elements.close.addEventListener('click', this.onRoute('/'), true);
+      return page;
+    });
 
     this.processPath();
 
@@ -27,8 +33,15 @@ class Router {
     section = section || 'index';
 
     this.state.path = section === 'index' ? '/' : `/${section}`;
-    this.setState('section', section);
     this.replaceState();
+
+    if (this.state.page) this.state.page.collapse();
+
+    this.state.page = this.pages.filter(page => page.path === this.state.path)[0];
+
+    if (this.state.page) this.state.page.expand(this.state.firstLoad);
+
+    this.state.firstLoad = false;
   }
 
   pushState() {
@@ -47,15 +60,13 @@ class Router {
     window.history.replaceState(this.state.state, this.state.title, this.state.path);
   }
 
-  setState(key, value) {
-    this.state[key] = value;
-  }
-
   navigate(newPath) {
     this.state.path = newPath;
     this.pushState();
     this.processPath(newPath);
   }
+
+  onRoute = (path) => () => path !== this.state.path && this.navigate(path);
 }
 
 export default new Router();

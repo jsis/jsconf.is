@@ -1,12 +1,10 @@
-import router from './router';
-
 class Page {
   /**
    * Construct a new Page
    * @param {HTMLElement} root
    */
   constructor(root) {
-    this.elements_ = {
+    this.elements = {
       root,
       wrap: root.querySelector('.Page-wrap'),
       header: root.querySelector('.Page-header'),
@@ -17,19 +15,8 @@ class Page {
     };
 
     this.isExpanded_ = false;
-    this.path_ = this.elements_.root.getAttribute('js-route');
-    this.parts_ = Object.keys(this.elements_);
-
-    this.elements_.header.addEventListener('click', this.onExpand, true);
-    this.elements_.close.addEventListener('click', this.onCollapse, true);
-
-    if (this.isCurrentPage()) {
-      this.expand(true);
-    }
-  }
-
-  isCurrentPage() {
-    return router.state.path === this.path_;
+    this.path = this.elements.root.getAttribute('js-route');
+    this.parts_ = Object.keys(this.elements);
   }
 
   collapse() {
@@ -37,7 +24,8 @@ class Page {
       return;
     }
 
-    this.elements_.root.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+    this.elements.root.classList.remove('is-open');
     this.isExpanded_ = false;
   }
 
@@ -48,10 +36,10 @@ class Page {
 
     document.body.classList.add('no-scroll');
 
-    this.startPosition_ = this.elements_.root.getBoundingClientRect();
+    this.startPosition_ = this.elements.root.getBoundingClientRect();
     this.collapsedProps_ = this.props;
 
-    this.elements_.root.classList.add('is-open');
+    this.elements.root.classList.add('is-open');
     this.isExpanded_ = true;
 
     if (noAnim) return;
@@ -60,23 +48,23 @@ class Page {
     this.transformTo(this.diff);
     this.forceLayout();
 
-    this.elements_.root.classList.add('Page--animate');
+    this.elements.root.classList.add('Page--animate');
     this.transformToZero();
 
 
-    this.elements_.wrap.addEventListener('transitionend', this.onExpandTransitionEnd_);
-    this.elements_.wrap.addEventListener('webkittransitionend', this.onExpandTransitionEnd_);
+    this.elements.wrap.addEventListener('transitionend', this.onExpandTransitionEnd_);
+    this.elements.wrap.addEventListener('webkittransitionend', this.onExpandTransitionEnd_);
   }
 
   transformTo(destination) {
-    const currentPosition = this.elements_.root.getBoundingClientRect();
+    const currentPosition = this.elements.root.getBoundingClientRect();
     const leftDifference = currentPosition.left - this.startPosition_.left;
     const topDifference = currentPosition.top - this.startPosition_.top;
 
     for (const part of this.parts_) {
       if (part === 'root' || part === 'wrap' || part === 'header') continue;
       const { left, top } = destination[part];
-      Page.transform(this.elements_[part], `translate(${left + leftDifference}px, ${top + topDifference}px)`);
+      Page.transform(this.elements[part], `translate(${left + leftDifference}px, ${top + topDifference}px)`);
     }
 
     const { bottom, left, right, top } = this.collapsedProps_.root;
@@ -86,21 +74,21 @@ class Page {
     const clipTop = top + topDifference;
     const clipBottom = bottom + topDifference;
 
-    this.elements_.wrap.style.clip = `rect(${clipTop}px, ${clipRight}px, ${clipBottom}px, ${clipLeft}px)`;
+    this.elements.wrap.style.clip = `rect(${clipTop}px, ${clipRight}px, ${clipBottom}px, ${clipLeft}px)`;
   }
 
   transformToZero() {
     for (const part of this.parts_) {
       if (part === 'root') continue;
-      Page.transform(this.elements_[part], 'translate(0, 0)');
+      Page.transform(this.elements[part], 'translate(0, 0)');
     }
 
     const { bottom, left, right, top } = this.expandedProps_.wrap;
-    this.elements_.wrap.style.clip = `rect(${top}px, ${right}px, ${bottom}px, ${left}px)`;
+    this.elements.wrap.style.clip = `rect(${top}px, ${right}px, ${bottom}px, ${left}px)`;
   }
 
   forceLayout() {
-    return this.elements_.wrap.offsetTop;
+    return this.elements.wrap.offsetTop;
   }
 
   get diff() {
@@ -125,7 +113,7 @@ class Page {
     const props_ = {};
 
     for (const part of this.parts_) {
-      const element = this.elements_[part];
+      const element = this.elements[part];
       const { bottom, height, left, right, top, width } = element.getBoundingClientRect();
 
       props_[part] = {
@@ -142,25 +130,14 @@ class Page {
     return props_;
   }
 
-  onExpand = () => {
-    router.navigate(this.path_);
-    this.expand();
-  };
-
-  onCollapse = () => {
-    router.navigate('index');
-    this.collapse();
-    document.body.classList.remove('no-scroll');
-  };
-
   onExpandTransitionEnd_ = () => {
-    this.elements_.root.classList.remove('Page--animate');
+    this.elements.root.classList.remove('Page--animate');
 
     for (const part of this.parts_) {
-      Page.transform(this.elements_[part], '');
+      Page.transform(this.elements[part], '');
     }
 
-    this.elements_.wrap.style.clip = '';
+    this.elements.wrap.style.clip = '';
   };
 
   static transform(element, value) {
