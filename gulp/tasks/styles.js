@@ -10,6 +10,7 @@ gulp.task('styles', function() {
   return gulp.src([config.source + '/styles/*.scss', '!' + config.source + '/styles/_*.scss'])
     .pipe(plumber({errorHandler: errorHandler}))
     .pipe(sass({
+      includePaths: [config.source + '/styles', 'node_modules'],
       outputStyle: 'compressed'
     }))
     .pipe(autoprefixer({

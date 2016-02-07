@@ -1,0 +1,50 @@
+%open-page {
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .Page-header {
+    cursor: default;
+    height: 128px;
+    justify-content: flex-start;
+    margin-bottom: $global-margin * 2;
+    position: static;
+    width: 100%;
+  }
+
+  .Page-headerData {
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+
+  .Page-close {
+    display: inline-block;
+  }
+
+  .Page-icon {
+    margin: 0 $global-margin;
+    transform: none;
+    width: 130px;
+  }
+
+  .Page-title {
+    font-size: 32px;
+    font-weight: bold;
+    opacity: 1;
+    margin: 0;
+    position: static;
+    text-align: left;
+    transform: none;
+    visibility: visible;
+    width: auto;
+  }
+
+  .Page-content {
+    display: block;
+  }
+}

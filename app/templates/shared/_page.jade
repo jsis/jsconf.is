@@ -7,6 +7,8 @@ header.Page-header(route=path)
       block icon
     h1.Page-title
       block title
+    button.Page-close(route='index') Close
 
 article.Page-content
-  block content
+  .row: .column.small-12
+    block content
