@@ -1,5 +1,3 @@
-# Call for Speakers
-
 > JSConf Iceland: Let's meet in the middle.
 
 We are inviting the JavaScript community to submit talks for the upcoming JSConf Iceland (Thursday and Friday, August 25th and 26th, Reykjavik). This Call for Presentation **closes on August 31st**.
