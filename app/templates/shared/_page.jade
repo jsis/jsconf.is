@@ -1,12 +1,15 @@
 block vars
   - var path = '/';
 
-header.Page-header(route=path)
-  .Page-headerData
-    .Page-icon
-      block icon
-    h1.Page-title
-      block title
+section.Page(js-route=path): .Page-wrap
+  header.Page-header
+    .Page-headerData
+      .Page-icon
+        block icon
+      h1.Page-title
+        block title
+      button.Page-close(js-route='index') Close
 
-article.Page-content
-  block content
+  article.Page-content
+    .row: .column.small-12
+      block content
