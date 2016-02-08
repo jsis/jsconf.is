@@ -1,5 +1,5 @@
 import analytics from './analytics';
-import _ from 'lodash';
+import Page from './page';
 
 class Router {
   constructor() {
@@ -8,11 +8,15 @@ class Router {
       title: document.title,
       state: window.history.state || null,
       path: window.location.pathname || '',
-      navigating: false,
       last: '',
     };
 
-    this.setState('section', '');
+    this.pages = [...document.querySelectorAll('.Page')].map(element => {
+      const page = new Page(element);
+      page.elements.header.addEventListener('click', this.onRoute(page.path), true);
+      page.elements.close.addEventListener('click', this.onRoute('/'), true);
+      return page;
+    });
 
     this.processPath();
 
@@ -22,39 +26,37 @@ class Router {
   }
 
   processPath(path) {
-    path = path || this.state.path;
-    let section = path.split('/')[1];
+    let section = (path || this.state.path).split('/')[1];
 
     section = section === 'index.html' ? 'index' : section;
     section = section || 'index';
 
     this.state.path = section === 'index' ? '/' : `/${section}`;
-    this.setState('section', section);
     this.replaceState();
+
+    if (this.state.page) this.state.page.collapse();
+
+    this.state.page = this.pages.filter(page => page.path === this.state.path)[0];
+
+    if (this.state.page) this.state.page.expand();
+
+    this.state.firstLoad = false;
   }
 
-  pushState(state, title, path) {
-    state = state || this.state.state;
-    title = title || this.state.title;
-    path = path || this.state.path;
+  pushState() {
+    const state = this.state.state;
+    const title = this.state.title;
+    const path = this.state.path;
     window.history.pushState(state, title, path);
 
     analytics('send', 'pageview', {
       page: analytics.cleanUrl(path),
-      title: title,
+      title,
     });
   }
 
-  replaceState(state, title, path) {
-    state = state || this.state.state;
-    title = title || this.state.title;
-    path = path || this.state.path;
-    window.history.replaceState(state, title, path);
-  }
-
-  setState(key, value) {
-    this.state[key] = value;
-    this.html.setAttribute(key, value);
+  replaceState() {
+    window.history.replaceState(this.state.state, this.state.title, this.state.path);
   }
 
   navigate(newPath) {
@@ -62,6 +64,8 @@ class Router {
     this.pushState();
     this.processPath(newPath);
   }
-};
+
+  onRoute = (path) => () => path !== this.state.path && this.navigate(path);
+}
 
 export default new Router();

@@ -13,7 +13,9 @@ gulp.task('scripts', ['lint'], function() {
       entries: ['./' + config.source + '/scripts/main.js'],
       debug: config.debug
     })
-    .transform(babelify.configure({stage: 0}))
+    .transform(babelify.configure({
+      presets: ['es2015', 'stage-0']
+    }))
     .bundle()
     .on('error', errorHandler)
     .pipe(source('main.js'))
