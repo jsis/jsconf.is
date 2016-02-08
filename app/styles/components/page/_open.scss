@@ -1,6 +1,8 @@
 %is-open {
   .Page-wrap {
     height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     position: fixed;
     z-index: 1;
   }
@@ -14,15 +16,15 @@
   }
 
   .Page-content {
-    height: calc(100vh - 128px);
-    overflow-y: auto;
     opacity: 1;
-    padding-top: $global-margin * 2;
+    padding: $global-margin 0;
   }
 
   .Page-headerData {
+    align-items: center;
     flex-direction: row;
     justify-content: flex-start;
+    position: relative;
     width: 100%;
   }
 
@@ -32,7 +34,16 @@
     right: $global-margin;
   }
 
-  .Page-icon > .Svg {
-    max-width: 100px;
+  .Page-icon {
+    opacity: .08;
+    margin-left: -$global-margin;
+  }
+
+  .Page-title {
+    font-weight: 900;
+    left: 0;
+    margin: -14px $global-margin 0;
+    position: absolute;
+    top: 50%;
   }
 }
