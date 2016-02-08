@@ -8,7 +8,6 @@ class Router {
       title: document.title,
       state: window.history.state || null,
       path: window.location.pathname || '',
-      firstLoad: true,
       last: '',
     };
 
@@ -39,7 +38,7 @@ class Router {
 
     this.state.page = this.pages.filter(page => page.path === this.state.path)[0];
 
-    if (this.state.page) this.state.page.expand(this.state.firstLoad);
+    if (this.state.page) this.state.page.expand();
 
     this.state.firstLoad = false;
   }

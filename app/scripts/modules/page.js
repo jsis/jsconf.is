@@ -15,6 +15,7 @@ class Page {
     };
 
     this.isExpanded_ = false;
+
     this.path = this.elements.root.getAttribute('js-route');
     this.parts_ = Object.keys(this.elements);
   }
@@ -24,29 +25,29 @@ class Page {
       return;
     }
 
-    document.body.classList.remove(Page.classes.noScroll);
-    this.elements.root.classList.remove(Page.classes.isOpen);
     this.isExpanded_ = false;
+    this.elements.wrap.style.clip = `rect(0, ${window.innerWidth}px, ${window.innerHeight}px, 0)`;
+    this.elements.root.classList.add(Page.classes.isAnimating);
+    this.forceLayout();
+    this.transformTo(this.diff(this.currentProps_, this.targetProps_));
+
+    this.elements.wrap.addEventListener('transitionend', this.onCollapseTransitionEnd_);
+    this.elements.wrap.addEventListener('webkittransitionend', this.onCollapseTransitionEnd_);
   }
 
-  expand(noAnim) {
+  expand() {
     if (this.isExpanded_) {
       return;
     }
 
     this.startPosition_ = this.elements.root.getBoundingClientRect();
-    this.collapsedProps_ = this.props;
+    this.currentProps_ = this.props;
 
     this.elements.root.classList.add(Page.classes.isOpen);
     this.isExpanded_ = true;
 
-    if (noAnim) {
-      document.body.classList.add(Page.classes.noScroll);
-      return;
-    }
-
-    this.expandedProps_ = this.props;
-    this.transformTo(this.diff);
+    this.targetProps_ = this.props;
+    this.transformTo(this.diff(this.currentProps_, this.targetProps_));
     this.forceLayout();
 
     this.elements.root.classList.add(Page.classes.isAnimating);
@@ -68,7 +69,7 @@ class Page {
       Page.style(this.elements[part], `${translate} scale(${scaleX}, ${scaleY})`, opacity);
     }
 
-    const { bottom, left, right, top } = this.collapsedProps_.root;
+    const { bottom, left, right, top } = this.currentProps_.root;
 
     const clipLeft = left + leftDifference;
     const clipRight = right + leftDifference;
@@ -81,10 +82,10 @@ class Page {
   transformToZero() {
     for (const part of this.parts_) {
       if (part === 'root') continue;
-      Page.style(this.elements[part], 'translate(0, 0) scale(1)', this.expandedProps_[part].opacity);
+      Page.style(this.elements[part], 'translate(0, 0) scale(1)', this.targetProps_[part].opacity);
     }
 
-    const { bottom, left, right, top } = this.expandedProps_.wrap;
+    const { bottom, left, right, top } = this.targetProps_.wrap;
     this.elements.wrap.style.clip = `rect(${top}px, ${right}px, ${bottom}px, ${left}px)`;
   }
 
@@ -92,18 +93,18 @@ class Page {
     return this.elements.wrap.offsetTop;
   }
 
-  get diff() {
+  diff(current, target) {
     const diff_ = {};
 
     for (const part of this.parts_) {
       diff_[part] = {
-        height: this.collapsedProps_[part].height - this.expandedProps_[part].height,
-        left: this.collapsedProps_[part].left - this.expandedProps_[part].left,
-        opacity: 1 - (this.expandedProps_[part].opacity - this.collapsedProps_[part].opacity),
-        top: this.collapsedProps_[part].top - this.expandedProps_[part].top,
-        width: this.collapsedProps_[part].width - this.expandedProps_[part].width,
-        scaleX: this.collapsedProps_[part].width / this.expandedProps_[part].width,
-        scaleY: this.collapsedProps_[part].height / this.expandedProps_[part].height,
+        height: current[part].height - target[part].height,
+        left: current[part].left - target[part].left,
+        opacity: 1 - (target[part].opacity - current[part].opacity),
+        top: current[part].top - target[part].top,
+        width: current[part].width - target[part].width,
+        scaleX: current[part].width / target[part].width,
+        scaleY: current[part].height / target[part].height,
       };
     }
 
@@ -143,6 +144,21 @@ class Page {
 
     this.elements.wrap.removeEventListener('transitionend', this.onExpandTransitionEnd_);
     this.elements.wrap.removeEventListener('webkittransitionend', this.onExpandTransitionEnd_);
+  };
+
+  onCollapseTransitionEnd_ = () => {
+    this.elements.root.classList.remove(Page.classes.isAnimating);
+    this.elements.root.classList.remove(Page.classes.isOpen);
+
+    for (const part of this.parts_) {
+      Page.style(this.elements[part], '', '');
+    }
+
+    this.elements.wrap.style.clip = '';
+    document.body.classList.remove(Page.classes.noScroll);
+
+    this.elements.wrap.removeEventListener('transitionend', this.onCollapseTransitionEnd_);
+    this.elements.wrap.removeEventListener('webkittransitionend', this.onCollapseTransitionEnd_);
   };
 
   static style(element, transform, opacity) {

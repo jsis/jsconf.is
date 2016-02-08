@@ -4,7 +4,6 @@
 .Page {
   $distance: 20px;
   $time: 250ms;
-  $pages: (about, tickets, speakers, venue);
 
   display: block;
   height: 25vh;
@@ -75,25 +74,21 @@
 
   &-close {
     position: absolute;
-    right: $global-margin;
+    left: 100%;
     top: 55px;
-    visibility: hidden;
+    opacity: 0;
   }
 
   &-icon {
     display: inline-block;
-    margin: $global-margin;
-    width: 60px;
-    transform-origin: 50% 100%;
-    transition: transform $time;
-
-    @include breakpoint(medium) {
-      transform: translateY(19px);
-      width: 150px;
-    }
+    padding: $global-margin;
 
     > .Svg {
-      width: 100%;
+      max-width: 70px;
+
+      @include breakpoint(medium) {
+        max-width: none;
+      }
     }
   }
 
@@ -101,33 +96,17 @@
     display: inline-block;
     left: 0;
     margin: 0;
-    transform-origin: 50% 100%;
-    transition: opacity $time, transform $time, visibility $time 0s;
+    white-space: nowrap;
     vertical-align: middle;
 
     @include breakpoint(medium) {
       display: block;
-      opacity: 0;
+      margin-top: 12px;
       text-align: center;
-      transform: scale(.8);
-      visibility: hidden;
     }
   }
 
   /* State */
-  @include breakpoint(medium) {
-    &:not(.is-open):hover &-icon {
-      transform: translateY(-$distance);
-    }
-
-    &:not(.is-open):hover &-title {
-      opacity: 1;
-      transform: translateY(-$distance);
-      transition-delay: 0s;
-      visibility: visible;
-    }
-  }
-
   @at-root  {
     .no-scroll {
       overflow: hidden;

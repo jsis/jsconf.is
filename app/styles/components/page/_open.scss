@@ -14,7 +14,6 @@
   }
 
   .Page-content {
-    backface-visibility: hidden;
     height: calc(100vh - 128px);
     overflow-y: auto;
     opacity: 1;
@@ -28,19 +27,12 @@
   }
 
   .Page-close {
-    visibility: visible;
-  }
-
-  .Page-icon {
-    transform: none;
-    transition: none;
-    max-width: 100px;
-  }
-
-  .Page-title {
+    left: auto;
     opacity: 1;
-    transform: none;
-    transition: none;
-    visibility: visible;
+    right: $global-margin;
+  }
+
+  .Page-icon > .Svg {
+    max-width: 100px;
   }
 }
