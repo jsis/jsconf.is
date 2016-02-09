@@ -44,6 +44,8 @@ class Page {
     this.currentProps_ = this.props;
 
     this.elements.root.classList.add(Page.classes.isOpen);
+    document.body.classList.add(Page.classes.noScroll);
+
     this.isExpanded_ = true;
 
     this.targetProps_ = this.props;
@@ -140,7 +142,6 @@ class Page {
     }
 
     this.elements.wrap.style.clip = '';
-    document.body.classList.add(Page.classes.noScroll);
 
     this.elements.wrap.removeEventListener('transitionend', this.onExpandTransitionEnd_);
     this.elements.wrap.removeEventListener('webkittransitionend', this.onExpandTransitionEnd_);
