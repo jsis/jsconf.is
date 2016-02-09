@@ -104,6 +104,34 @@
     left: 100%;
     top: 55px;
     opacity: 0;
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 0;
+
+    &:before,
+    &:after {
+      content: '';
+
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+
+      margin: auto;
+      display: block;
+      width: 30px;
+      height: 3px;
+
+      background: $color-gray-75;
+
+      border-radius: 100%;
+
+      opacity: 0;
+      transform: translate3d(0,0,0) rotate(0deg);
+      transform-origin: center center;
+
+      transition: transform 750ms, opacity 500ms;
+    }
   }
 
   &-icon {
@@ -156,6 +184,11 @@
 
     a::before {
       background: $color-jsconf-purple;
+    }
+    .Page-close {
+      &:before, &:after {
+        background-color: $white;
+      }
     }
   }
 }

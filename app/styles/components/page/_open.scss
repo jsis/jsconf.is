@@ -31,7 +31,20 @@
   .Page-close {
     left: auto;
     opacity: 1;
-    right: $global-margin;
+    right: $global-margin*2;
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+
+    &:before {
+      transform: translate3d(0,0,0) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate3d(0,0,0) rotate(-45deg);
+    }
   }
 
   .Page-icon {
