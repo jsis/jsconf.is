@@ -38,8 +38,10 @@
       position: relative;
       white-space: nowrap;
 
+      transition: color 250ms;
+
       &::before {
-        background: $white;
+        background: $color-jsconf-purple;
         bottom: 0;
         content: '';
         height: 100%;
@@ -52,8 +54,12 @@
         z-index: -1;
       }
 
-      &:hover::before {
-        transform: none;
+      &:hover {
+        color: $white;
+
+        &::before {
+          transform: none;
+        }
       }
     }
   }
@@ -185,9 +191,14 @@
     a::before {
       background: $color-jsconf-purple;
     }
+
+    .Page-icon,
+    .Page-title {
+      color: $color-jsconf-yellow;
+    }
     .Page-close {
       &:before, &:after {
-        background-color: $white;
+        background-color: $color-jsconf-yellow;
       }
     }
   }
