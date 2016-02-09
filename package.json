@@ -38,6 +38,7 @@
     "gulp-watch": "^4.1.1",
     "jade": "^1.11.0",
     "jshint-stylish": "^1.0.1",
+    "jstransformer-markdown-it": "^0.2.2",
     "lodash": "^4.1.0",
     "lodash.assign": "^3.1.0",
     "rimraf": "^2.2.8",
