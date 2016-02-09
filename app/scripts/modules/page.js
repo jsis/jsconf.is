@@ -26,10 +26,12 @@ class Page {
     }
 
     this.isExpanded_ = false;
+    this.elements.close.blur();
     this.elements.wrap.style.clip = `rect(0, ${window.innerWidth}px, ${window.innerHeight}px, 0)`;
     this.elements.root.classList.add(Page.classes.isAnimating);
     this.forceLayout();
     this.transformTo(this.diff(this.currentProps_, this.targetProps_));
+
 
     this.elements.wrap.addEventListener('transitionend', this.onCollapseTransitionEnd_);
     this.elements.wrap.addEventListener('webkittransitionend', this.onCollapseTransitionEnd_);
@@ -44,6 +46,8 @@ class Page {
     this.currentProps_ = this.props;
 
     this.elements.root.classList.add(Page.classes.isOpen);
+    document.body.classList.add(Page.classes.noScroll);
+
     this.isExpanded_ = true;
 
     this.targetProps_ = this.props;
@@ -140,7 +144,6 @@ class Page {
     }
 
     this.elements.wrap.style.clip = '';
-    document.body.classList.add(Page.classes.noScroll);
 
     this.elements.wrap.removeEventListener('transitionend', this.onExpandTransitionEnd_);
     this.elements.wrap.removeEventListener('webkittransitionend', this.onExpandTransitionEnd_);

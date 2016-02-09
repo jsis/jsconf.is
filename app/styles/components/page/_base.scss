@@ -31,6 +31,37 @@
     position: relative;
     top: 0;
     width: 100%;
+
+    a {
+      color: inherit;
+      display: inline-block;
+      position: relative;
+      white-space: nowrap;
+
+      transition: color 250ms;
+
+      &::before {
+        background: $color-jsconf-purple;
+        bottom: 0;
+        content: '';
+        height: 100%;
+        left: -2px;
+        position: absolute;
+        right: -2px;
+        transform: scaleY(5/33);
+        transform-origin: 50% 100%;
+        transition: transform 250ms;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: $white;
+
+        &::before {
+          transform: none;
+        }
+      }
+    }
   }
 
   &s {
@@ -79,6 +110,34 @@
     left: 100%;
     top: 55px;
     opacity: 0;
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 0;
+
+    &:before,
+    &:after {
+      content: '';
+
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+
+      margin: auto;
+      display: block;
+      width: 30px;
+      height: 3px;
+
+      background: $color-gray-75;
+
+      border-radius: 100%;
+
+      opacity: 0;
+      transform: translate3d(0,0,0) rotate(0deg);
+      transform-origin: center center;
+
+      transition: transform 750ms, opacity 500ms;
+    }
   }
 
   &-icon {
@@ -128,5 +187,19 @@
   &:nth-child(3) &-wrap {
     background: $color-gray-75;
     color: $white;
+
+    a::before {
+      background: $color-jsconf-purple;
+    }
+
+    .Page-icon,
+    .Page-title {
+      color: $color-jsconf-yellow;
+    }
+    .Page-close {
+      &:before, &:after {
+        background-color: $color-jsconf-yellow;
+      }
+    }
   }
 }

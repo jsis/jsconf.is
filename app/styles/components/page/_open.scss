@@ -1,6 +1,6 @@
 %is-open {
   .Page-wrap {
-    height: 100vh;
+    height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     position: fixed;
@@ -31,7 +31,20 @@
   .Page-close {
     left: auto;
     opacity: 1;
-    right: $global-margin;
+    right: $global-margin*2;
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+
+    &:before {
+      transform: translate3d(0,0,0) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate3d(0,0,0) rotate(-45deg);
+    }
   }
 
   .Page-icon {
@@ -42,7 +55,7 @@
   .Page-title {
     font-weight: 900;
     left: 0;
-    margin: -14px $global-margin 0;
+    margin: -0.5em $global-margin 0;
     position: absolute;
     top: 50%;
   }
