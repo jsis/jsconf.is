@@ -26,10 +26,12 @@ class Page {
     }
 
     this.isExpanded_ = false;
+    this.elements.close.blur();
     this.elements.wrap.style.clip = `rect(0, ${window.innerWidth}px, ${window.innerHeight}px, 0)`;
     this.elements.root.classList.add(Page.classes.isAnimating);
     this.forceLayout();
     this.transformTo(this.diff(this.currentProps_, this.targetProps_));
+
 
     this.elements.wrap.addEventListener('transitionend', this.onCollapseTransitionEnd_);
     this.elements.wrap.addEventListener('webkittransitionend', this.onCollapseTransitionEnd_);
