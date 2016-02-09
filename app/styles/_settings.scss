@@ -64,7 +64,7 @@ $font-roboto: 'Roboto';
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 130%;
 $global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 
@@ -181,9 +181,9 @@ $defnlist-margin-bottom: $global-margin;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
 
-$blockquote-color: $dark-gray;
+$blockquote-color: inherit;
 $blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 1px solid $medium-gray;
+$blockquote-border: 1px solid currentColor;
 
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;

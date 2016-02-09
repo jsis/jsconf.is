@@ -67,9 +67,11 @@
   }
 
   &-content {
-    background: #fff;
-    color: $color-gray-75;
+    display: inline-block;
     opacity: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
   }
 
   &-close {
@@ -81,7 +83,7 @@
 
   &-icon {
     display: inline-block;
-    padding: $global-margin;
+    margin: 0 $global-margin;
 
     > .Svg {
       max-width: 70px;
@@ -125,6 +127,6 @@
   &:nth-child(2) &-wrap,
   &:nth-child(3) &-wrap {
     background: $color-gray-75;
-    color: $color-jsconf-yellow;
+    color: $white;
   }
 }
