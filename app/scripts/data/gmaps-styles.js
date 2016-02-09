@@ -227,7 +227,7 @@ export default [
         color: '#f3df49',
       },
       {
-        lightness: 17,
+        lightness: 0,
       },
     ],
   },
