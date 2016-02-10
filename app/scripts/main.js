@@ -17,10 +17,18 @@ window.initMap = () => {
     styles,
   });
 
+  const info = new google.maps.InfoWindow({
+    content: `<h3 class="class="firstHeading">Harpa</h3><div id="bodyContent">Austurbakki 2, 101 Reykjavík, Iceland</div>`
+  });
+
   const marker = new window.google.maps.Marker({
     position: venueLocation,
     title: 'Harp',
     map,
+  });
+
+  marker.addListener('click', () => {
+    info.open(map, marker);
   });
 
   window.addEventListener('resize', () => {
