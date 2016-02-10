@@ -6,7 +6,7 @@ Reykjavik is a vibrant city filled with warm, hospitable people. It has a small-
 
 ![Reykjavik](/images/reykjavik.jpg)
 
-Iceland is a great place to experience gorgeous, incredibly varied, untouched nature. Drive just 30 minutes outside Reykjavik and you'll enter a whole different world, full of wonders including The Blue Lagoon, Geysir and Þingvellir. Driving further you´ll find huge waterfalls, "alien" landscape, active volcanoes, glaciers and much more. Iceland's unique color palette and landscapes can't be found anywhere else in the world.
+Iceland is a great place to experience gorgeous, incredibly varied, untouched nature. Drive just 30 minutes outside Reykjavik and you'll enter a whole different world, full of wonders including The Blue Lagoon, Geysir and Þingvellir. Driving further you'll find huge waterfalls, "alien" landscape, active volcanoes, glaciers and much more. Iceland's unique color palette and landscapes can't be found anywhere else in the world.
 
 # The Venue
 
