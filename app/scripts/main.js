@@ -23,5 +23,9 @@ window.initMap = () => {
     map,
   });
 
+  window.addEventListener('resize', () => {
+    map.setCenter(venueLocation);
+  });
+
   return { map, marker };
 };
