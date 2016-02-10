@@ -1,7 +1,6 @@
 const scrollbarWidth = (() => {
   // Create the measurement node
-  const scrollDiv = document.createElement("div");
-  scrollDiv.className = "scrollbar-measure";
+  const scrollDiv = document.createElement('div');
   scrollDiv.style.position = 'absolute';
   scrollDiv.style.top = '-9999px';
   scrollDiv.style.overflow = 'scroll';
@@ -10,15 +9,15 @@ const scrollbarWidth = (() => {
   document.body.appendChild(scrollDiv);
 
   // Get the scrollbar width
-  const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+  const width = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 
-  // Delete the DIV 
+  // Delete the DIV
   document.body.removeChild(scrollDiv);
 
-  return scrollbarWidth;
-})()
+  return width;
+})();
 
-const css = document.createElement("style");
-css.type = "text/css";
+const css = document.createElement('style');
+css.type = 'text/css';
 css.innerHTML = `.no-scroll { margin-right: ${scrollbarWidth}px; }`;
 document.body.appendChild(css);

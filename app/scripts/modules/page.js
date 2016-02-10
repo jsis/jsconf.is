@@ -75,7 +75,9 @@ class Page {
   }
 
   setTransform(oldProps, newProps, isExpanding) {
-    const destination = isExpanding ? this.diff(oldProps, newProps) : this.diff(newProps, oldProps)
+    const destination = isExpanding
+      ? this.diff(oldProps, newProps)
+      : this.diff(newProps, oldProps);
     const leftDifference = newProps.root.left - oldProps.root.left;
     const topDifference = newProps.root.top - oldProps.root.top;
 
