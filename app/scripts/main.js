@@ -8,6 +8,7 @@ window.initMap = () => {
   const map = new window.google.maps.Map(document.querySelector('.google-maps'), {
     center: venueLocation,
     zoom: 14,
+    disableDefaultUI: true,
     styles,
   });
 
