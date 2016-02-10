@@ -1,0 +1,140 @@
+.tito-ticket-list {
+  display: table;
+  list-style-type: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+  width: 100%
+}
+
+.tito-ticket {
+  display: table-row
+}
+
+.tito-ticket-name .label.label-default {
+  color: #333;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 5px;
+  padding: 2px 5px;
+  position: relative;
+  top: -1px;
+  text-transform: uppercase
+}
+
+.tito-ticket-name-wrapper .tito-tickets-remaining {
+  font-size: 10px;
+  padding: 2px 5px;
+  position: relative;
+  top: -3px;
+  margin-left: 10px;
+  white-space: nowrap
+}
+
+.tito-ticket-description {
+  margin-top: 0.2rem;
+  font-size: 0.7rem
+}
+
+.tito-ticket-price-quantity-wrapper,
+.tito-ticket-status,
+.tito-ticket-status-sold-out {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle
+}
+
+.tito-ticket-price,
+.tito-ticket-quantity {
+  display: inline-block
+}
+
+.tito-ticket-quantity-field {
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #333;
+  display: inline-block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 1.42857143;
+  margin: 5px 0;
+  padding: 6px 12px;
+  text-align: center;
+  transition: border 300ms;
+  width: 45px;
+
+  &:focus {
+    outline: none;
+    border-color: $color-jsconf-purple;
+  }
+}
+
+.tito-ticket-price span {
+  display: block
+}
+
+.tito-ticket-vat {
+  float: right;
+  font-size: 10px;
+  padding-bottom: 5px
+}
+
+.btn.btn-default,
+.tito-ticket-status span {
+  background: #ccc;
+  color: #333;
+  display: inline-block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 1.42857143;
+  margin: 5px 0;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  width: 100px
+}
+
+.btn.btn-default.btn-waitlist {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  width: 200px
+}
+
+.btn.btn-default.btn-waitlist:hover {
+  border: 1px solid #333
+}
+
+.tito-submit-wrapper {
+  text-align: right
+}
+
+.tito-submit {
+  @include button();
+}
+
+.tito-submit:hover {
+  border-color: #333
+}
+
+.tito-ticket.tito-locked-ticket > div {
+  padding: 10px 0
+}
+
+.tito-ticket.tito-locked-ticket label,.tito-ticket.tito-locked-ticket span {
+  opacity: .5
+}
+
+.locked-tickets-message p {
+  font-size: 14px;
+  line-height: 1.3;
+  opacity: .5
+}
+
+.tito-badge-link {
+  font-size: 12px;
+  display: inline-block;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  width: 100%
+}
