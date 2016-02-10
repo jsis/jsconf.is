@@ -38,7 +38,7 @@ There are about a million reasons why *you* don’t consider yourself a speaker.
 * We can review and give advice on your slide deck. If you're not feeling creative, just use our [Keynote or PowerPoint](https://github.com/jsconf/presentation-templates/downloads) templates.
 * If you need practice giving talks, get in touch. We can hook you up with local groups so you can practice in front of a friendly crowd.
 
-Get in touch: [contact@jsconf.is](mailto:contact@jsconf.is) (just don’t use this to submit a proposal).
+Get in touch: [team@jsconf.is](mailto:team@jsconf.is) (just don’t use this to submit a proposal).
 
 If you need more encouragement, check out our great friend Tiffany's site [We Are All Awesome](http://weareallaweso.me/) that aims to convince you to speak at a conference.
 

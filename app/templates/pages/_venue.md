@@ -8,7 +8,7 @@ Iceland is a great place to experience gorgeous, incredibly varied, untouched na
 
 # The Venue
 
-Harpa is one of Reykjavik's greatest and most distinguished landmarks. Opened 2011, this grand-scale, award-winning piece of architecture has some of the best conference facilities in Northern Europe.
+**Harpa** is one of Reykjavik's greatest and most distinguished landmarks. Opened 2011, this grand-scale, award-winning piece of architecture has some of the best conference facilities in Northern Europe.
 
 The location is also great. Harpa is in the heart of the city and features stunning views of the surrounding mountains and the North Atlantic Ocean. Most of the best hotels, restaurants and pubs in Reykjavik are within walking distance.
 
