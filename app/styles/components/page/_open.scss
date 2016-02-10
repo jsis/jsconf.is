@@ -17,6 +17,7 @@
 
   .Page-content {
     opacity: 1;
+    visibility: visible;
     padding: $global-margin 0;
   }
 
@@ -31,6 +32,7 @@
   .Page-close {
     left: auto;
     opacity: 1;
+    visibility: visible;
     right: $global-margin*2;
 
     &:before,
