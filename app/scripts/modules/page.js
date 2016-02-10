@@ -20,51 +20,64 @@ class Page {
     this.parts_ = Object.keys(this.elements);
   }
 
-  collapse() {
-    if (!this.isExpanded_) {
+  collapse(instant) {
+    this.transition(false, instant);
+  }
+
+  expand(instant) {
+    this.transition(true, instant);
+  }
+
+  transition(isExpanding, instant) {
+    if (isExpanding === this.isExpanded_) return;
+    this.isExpanded_ = isExpanding;
+
+    if (instant) {
+      this.toggle_(isExpanding);
       return;
     }
 
-    this.isExpanded_ = false;
-    this.elements.close.blur();
-    this.elements.wrap.style.clip = `rect(0, ${window.innerWidth}px, ${window.innerHeight}px, 0)`;
-    this.elements.root.classList.add(Page.classes.isAnimating);
-    this.forceLayout();
-    this.transformTo(this.diff(this.currentProps_, this.targetProps_));
+    const oldProps = this.props;
 
+    this.toggle_(isExpanding);
 
-    this.elements.wrap.addEventListener('transitionend', this.onCollapseTransitionEnd_);
-    this.elements.wrap.addEventListener('webkittransitionend', this.onCollapseTransitionEnd_);
-  }
+    const newProps = this.props;
 
-  expand() {
-    if (this.isExpanded_) {
-      return;
+    // When collapsing, restore expanded state for clip to work.
+    if (isExpanding) {
+      this.setTransform(oldProps, newProps, isExpanding);
+    } else {
+      this.toggle_(!isExpanding);
     }
-
-    this.startPosition_ = this.elements.root.getBoundingClientRect();
-    this.currentProps_ = this.props;
-
-    this.elements.root.classList.add(Page.classes.isOpen);
-    document.body.classList.add(Page.classes.noScroll);
-
-    this.isExpanded_ = true;
-
-    this.targetProps_ = this.props;
-    this.transformTo(this.diff(this.currentProps_, this.targetProps_));
+    this.setClip(isExpanding ? oldProps.root : oldProps.wrap);
     this.forceLayout();
 
     this.elements.root.classList.add(Page.classes.isAnimating);
-    this.transformToZero();
+    if (isExpanding) {
+      this.resetTransform();
+    } else {
+      this.setTransform(oldProps, newProps, isExpanding);
+    }
+    this.setClip(isExpanding ? newProps.wrap : oldProps.root);
 
-    this.elements.wrap.addEventListener('transitionend', this.onExpandTransitionEnd_);
-    this.elements.wrap.addEventListener('webkittransitionend', this.onExpandTransitionEnd_);
+    this.elements.wrap.addEventListener('transitionend', this.onTransitionEnd_);
+    this.elements.wrap.addEventListener('webkittransitionend', this.onTransitionEnd_);
   }
 
-  transformTo(destination) {
-    const currentPosition = this.elements.root.getBoundingClientRect();
-    const leftDifference = currentPosition.left - this.startPosition_.left;
-    const topDifference = currentPosition.top - this.startPosition_.top;
+  toggle_(expanded) {
+    this.elements.root.classList.toggle(Page.classes.isOpen, expanded);
+    document.body.classList.toggle(Page.classes.noScroll, expanded);
+  }
+
+  setClip(props) {
+    const { bottom, left, right, top } = props;
+    this.elements.wrap.style.clip = `rect(${top}px, ${right}px, ${bottom}px, ${left}px)`;
+  }
+
+  setTransform(oldProps, newProps, isExpanding) {
+    const destination = isExpanding ? this.diff(oldProps, newProps) : this.diff(newProps, oldProps)
+    const leftDifference = newProps.root.left - oldProps.root.left;
+    const topDifference = newProps.root.top - oldProps.root.top;
 
     for (const part of this.parts_) {
       if (part === 'root' || part === 'wrap' || part === 'header') continue;
@@ -72,26 +85,28 @@ class Page {
       const translate = `translate(${left + leftDifference}px, ${top + topDifference}px)`;
       Page.style(this.elements[part], `${translate} scale(${scaleX}, ${scaleY})`, opacity);
     }
-
-    const { bottom, left, right, top } = this.currentProps_.root;
-
-    const clipLeft = left + leftDifference;
-    const clipRight = right + leftDifference;
-    const clipTop = top + topDifference;
-    const clipBottom = bottom + topDifference;
-
-    this.elements.wrap.style.clip = `rect(${clipTop}px, ${clipRight}px, ${clipBottom}px, ${clipLeft}px)`;
   }
 
-  transformToZero() {
+  resetTransform() {
     for (const part of this.parts_) {
       if (part === 'root') continue;
-      Page.style(this.elements[part], 'translate(0, 0) scale(1)', this.targetProps_[part].opacity);
+      Page.style(this.elements[part], '', '');
+    }
+  }
+
+  onTransitionEnd_ = () => {
+    const { root, wrap } = this.elements;
+    root.classList.remove(Page.classes.isAnimating);
+
+    wrap.style.clip = '';
+    if (!this.isExpanded_) {
+      this.resetTransform();
+      this.toggle_(false);
     }
 
-    const { bottom, left, right, top } = this.targetProps_.wrap;
-    this.elements.wrap.style.clip = `rect(${top}px, ${right}px, ${bottom}px, ${left}px)`;
-  }
+    wrap.removeEventListener('transitionend', this.onExpandTransitionEnd_);
+    wrap.removeEventListener('webkittransitionend', this.onExpandTransitionEnd_);
+  };
 
   forceLayout() {
     return this.elements.wrap.offsetTop;
@@ -135,34 +150,6 @@ class Page {
 
     return props_;
   }
-
-  onExpandTransitionEnd_ = () => {
-    this.elements.root.classList.remove(Page.classes.isAnimating);
-
-    for (const part of this.parts_) {
-      Page.style(this.elements[part], '', '');
-    }
-
-    this.elements.wrap.style.clip = '';
-
-    this.elements.wrap.removeEventListener('transitionend', this.onExpandTransitionEnd_);
-    this.elements.wrap.removeEventListener('webkittransitionend', this.onExpandTransitionEnd_);
-  };
-
-  onCollapseTransitionEnd_ = () => {
-    this.elements.root.classList.remove(Page.classes.isAnimating);
-    this.elements.root.classList.remove(Page.classes.isOpen);
-
-    for (const part of this.parts_) {
-      Page.style(this.elements[part], '', '');
-    }
-
-    this.elements.wrap.style.clip = '';
-    document.body.classList.remove(Page.classes.noScroll);
-
-    this.elements.wrap.removeEventListener('transitionend', this.onCollapseTransitionEnd_);
-    this.elements.wrap.removeEventListener('webkittransitionend', this.onCollapseTransitionEnd_);
-  };
 
   static style(element, transform, opacity) {
     /* eslint-disable no-param-reassign */
