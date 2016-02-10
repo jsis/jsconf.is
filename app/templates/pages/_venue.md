@@ -4,6 +4,8 @@ Come and be inspired.
 
 Reykjavik is a vibrant city filled with warm, hospitable people. It has a small-scale urban center that is easy to navigate. The hassle-free city center is clean, safe and packed with restaurants, shopping, culture and vibrant nightlife. Enjoy meeting the friendly locals, who speak English as their second language (and often other Scandinavian and European languages).
 
+![Reykjavik](/images/reykjavik.jpg)
+
 Iceland is a great place to experience gorgeous, incredibly varied, untouched nature. Drive just 30 minutes outside Reykjavik and you'll enter a whole different world, full of wonders including The Blue Lagoon, Geysir and Þingvellir. Driving further you´ll find huge waterfalls, "alien" landscape, active volcanoes, glaciers and much more. Iceland's unique color palette and landscapes can't be found anywhere else in the world.
 
 # The Venue
