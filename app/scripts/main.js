@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import './modules/router';
 import styles from './data/gmaps-styles';
 
