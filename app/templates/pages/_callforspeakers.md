@@ -2,8 +2,10 @@ We are inviting the JavaScript community to submit talks for JSConf Iceland. Cal
 
 If you think you have something great to talk about, tell us all about it. If you know someone who has something great to talk about, nominate them.
 
-[Submit a proposal](https://svef.typeform.com/to/Cx4uRO)
-[Suggest a speaker](https://svef.typeform.com/to/I1Wv9R)
+<div class="text-center">
+  <a class="button" href="https://svef.typeform.com/to/Cx4uRO">Submit a proposal</a>
+  <a class="button" href="https://svef.typeform.com/to/I1Wv9R">Suggest a speaker</a>
+</div>
 
 # Topics
 
