@@ -28,7 +28,7 @@ gulp.task('watch', ['build'], function() {
   });
 
   watch([
-    config.source + '/templates/**/*.jade',
+    config.source + '/templates/**/*.{jade,md}',
     config.source + '/images/**/*.svg'
   ], function() {
     gulp.start('templates');

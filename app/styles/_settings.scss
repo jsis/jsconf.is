@@ -89,7 +89,7 @@ $body-antialiased: true;
 $global-margin: rem-calc(20);
 $global-padding: rem-calc(20);
 $global-weight-normal: 300;
-$global-weight-medium: 400;
+$global-weight-medium: 300;
 $global-weight-bold: 700;
 $global-radius: 0;
 $global-text-direction: ltr;
@@ -127,7 +127,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
+    'h1': 26,
     'h2': 20,
     'h3': 19,
     'h4': 18,
@@ -135,7 +135,7 @@ $header-sizes: (
     'h6': 16,
   ),
   medium: (
-    'h1': 24,
+    'h1': 34,
     'h2': 20,
     'h3': 19,
     'h4': 18,
@@ -145,7 +145,7 @@ $header-sizes: (
 );
 $header-color: inherit;
 $header-lineheight: 1.2;
-$header-margin-bottom: $global-margin;
+$header-margin-bottom: $global-margin / 2;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 50%;
 $header-small-font-color: inherit;
@@ -265,7 +265,7 @@ $breadcrumbs-item-slash: true;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: $color-jsconf-purple;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: #fff;
 $button-color-alt: #000;

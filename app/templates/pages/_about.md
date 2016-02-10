@@ -4,9 +4,9 @@ That's a Thursday and Friday. Just after your vacation, right before you get too
 
 Expect two awesome tracks over two days with over 30 talks in total.
 
-The Hekla track is a curated set of speakers that have [submitted proposals](/callforspeakers) and made it through the selection process.
+**The Hekla track** is a curated set of speakers that have [submitted proposals](/callforspeakers) and made it through the selection process.
 
-The Geysir track features people like you! In a unique format pioneered by JSConf US, anyone can register to speak in a first-come, first-speak format. These talks cover a huge range and are some of the most exciting talks at JSConf.
+**The Geysir track** features people like you! In a unique format pioneered by JSConf US, anyone can register to speak in a first-come, first-speak format. These talks cover a huge range and are some of the most exciting talks at JSConf.
 
 But that's only the start. JSConf is all about the community - connecting with people between talks, hacking in the lounge, communal dining, partying and crawling pubs together. For those that extend their stay we'll have community trips on Saturday 27th to experience the wonders of Iceland.
 

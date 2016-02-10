@@ -54,6 +54,10 @@
         z-index: -1;
       }
 
+      &.button::before {
+        content: none;
+      }
+
       &:hover {
         color: $white;
 
