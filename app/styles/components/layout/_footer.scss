@@ -9,3 +9,27 @@ footer {
 .FooterLinks {
   display: inline-block;
 }
+
+.SocialLinks {
+  float: right;
+}
+
+.SocialLinks-link {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  height: rem-calc(20);
+  margin-left: $global-padding / 2;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: rem-calc(20);
+}
+
+.SocialLinks-twitter {
+  background-image: url(/images/twitter.svg);
+}
+
+.SocialLinks-github {
+  background-image: url(/images/github.svg);
+}
