@@ -116,9 +116,13 @@
       margin-left: 0;
       margin-right: 0;
 
+      img,
+      > a {
+        width: 100%;
+      }
+
       a {
         color: $color-jsconf-purple;
-        max-width: 100%;
       }
 
       a:hover {
