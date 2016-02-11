@@ -19,7 +19,8 @@
   .Page-content {
     opacity: 1;
     visibility: visible;
-    padding: calc(130px + #{$global-margin * 2}) 0 $global-margin;
+    margin-top: calc(130px + #{$global-margin});
+    padding: $global-margin 0;
   }
 
   .Page-headerData {
@@ -85,5 +86,12 @@
     @include breakpoint(medium) {
       font-size: rem-calc(34);
     }
+  }
+
+  // Silly iOS hides sections after transition for some reason.
+  .Page-header,
+  .Page-content,
+  > footer {
+    transform: translateZ(0);
   }
 }
