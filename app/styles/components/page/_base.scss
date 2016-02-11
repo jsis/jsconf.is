@@ -31,6 +31,7 @@
     position: relative;
     top: 0;
     width: 100%;
+    z-index: 0;
   }
 
   &s {
@@ -70,7 +71,6 @@
     box-sizing: border-box;
     visibility: hidden;
     opacity: 0;
-    position: relative;
     width: 100vw;
     min-height: 100vh;
 
@@ -189,6 +189,7 @@
   &-icon {
     display: inline-block;
     margin: 0 $global-margin;
+    z-index: -1;
 
     > .Svg {
       max-width: 70px;
