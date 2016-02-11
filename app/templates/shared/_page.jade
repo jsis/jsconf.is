@@ -1,9 +1,15 @@
 block vars
+  - var siteTitle = true;
   - var path = '/';
 
 section.Page(js-route=path): .Page-wrap
   header.Page-header
     .Page-headerData
+      if siteTitle
+        .Page-siteTitle
+          | JSConf Iceland
+          br
+          small August 25#[sup th] &mdash; 26#[sup th]
       .Page-icon
         block icon
       h1.Page-title

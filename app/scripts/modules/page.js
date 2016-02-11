@@ -10,6 +10,7 @@ class Page {
       header: root.querySelector('.Page-header'),
       icon: root.querySelector('.Page-icon'),
       title: root.querySelector('.Page-title'),
+      siteTitle: root.querySelector('.Page-siteTitle'),
       content: root.querySelector('.Page-content'),
       close: root.querySelector('.Page-close'),
     };
@@ -17,7 +18,7 @@ class Page {
     this.isExpanded_ = false;
 
     this.path = this.elements.root.getAttribute('js-route');
-    this.parts_ = Object.keys(this.elements);
+    this.parts_ = Object.keys(this.elements).filter(k => this.elements[k]);
   }
 
   collapse(instant) {

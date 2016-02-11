@@ -30,6 +30,12 @@
     width: 100%;
   }
 
+  .Page-siteTitle {
+    right: auto;
+    left: $global-margin * 2;
+    opacity: 1;
+  }
+
   .Page-close {
     left: auto;
     opacity: 1;
