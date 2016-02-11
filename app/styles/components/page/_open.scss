@@ -70,15 +70,19 @@
   }
 
   .Page-icon {
+    left: 15vw;
+    margin-left: -$global-margin;
+    height: 60vh;
     opacity: .03;
     position: absolute;
     top: 20vh;
-    left: 15vw;
-    margin-left: -$global-margin;
+    width: 70vw;
+    text-align: center;
 
     > .Svg {
-      width: 70vw;
-      max-width: none;
+      height: 100%;
+      width: auto;
+      max-width:100%;
     }
   }
 
