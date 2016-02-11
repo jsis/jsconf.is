@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import 'hammer-timejs';
 import './modules/router';
 import './modules/no-scroll';
 import styles from './data/gmaps-styles';

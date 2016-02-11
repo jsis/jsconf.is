@@ -2,7 +2,7 @@ block vars
   - var siteTitle = true;
   - var path = '/';
 
-section.Page(js-route=path): .Page-wrap
+section.Page(js-route=path, style='touch-action: manipulation'): .Page-wrap
   header.Page-header
     .Page-headerData
       if siteTitle
@@ -14,7 +14,7 @@ section.Page(js-route=path): .Page-wrap
         block icon
       h1.Page-title
         block title
-      button.Page-close(js-route='index') Close
+      button.Page-close(js-route='index', style='touch-action: manipulation') Close
 
   article.Page-content
     .row.align-center: .column.large-8.medium-10.small-12: block content

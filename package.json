@@ -51,5 +51,8 @@
   },
   "scripts": {
     "dev": "./node_modules/.bin/supervisor -w gulpfile.js,gulp -e node,js,json -x gulp server"
+  },
+  "dependencies": {
+    "hammer-timejs": "^1.0.0"
   }
 }
