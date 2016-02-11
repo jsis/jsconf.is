@@ -3,8 +3,8 @@ We are inviting the JavaScript community to submit talks for JSConf Iceland. Cal
 If you think you have something great to talk about, tell us all about it. If you know someone who has something great to talk about, nominate them.
 
 <div class="text-center">
-  <a class="button" target="_blank" href="https://svef.typeform.com/to/Cx4uRO">Submit a proposal</a>
-  <a class="button" target="_blank" href="https://svef.typeform.com/to/I1Wv9R">Suggest a speaker</a>
+  <a class="button" target="_blank" href="https://jsconfis.typeform.com/to/Cx4uRO">Submit a proposal</a>
+  <a class="button" target="_blank" href="https://jsconfis.typeform.com/to/I1Wv9R">Suggest a speaker</a>
 </div>
 
 ## Topics
@@ -60,4 +60,4 @@ Finally, since you retain full ownership of your slides and recording, we’d li
 
 ## Submit The Talk
 
-Fill out our <a target="_blank" href="https://svef.typeform.com/to/Cx4uRO">talk proposal form</a>.
+Fill out our <a target="_blank" href="https://jsconfis.typeform.com/to/Cx4uRO">talk proposal form</a>.
