@@ -95,7 +95,8 @@
         z-index: -1;
       }
 
-      &.button::before {
+      &.button::before,
+      a.no-bg::before {
         content: none;
       }
 
@@ -105,6 +106,26 @@
         &::before {
           transform: none;
         }
+      }
+    }
+
+    figure {
+      font-size: .7em;
+      text-align: right;
+      margin-left: 0;
+      margin-right: 0;
+
+      a {
+        color: $color-jsconf-purple;
+      }
+
+      a:hover {
+        color: $color-jsconf-purple;
+        text-decoration: underline;
+      }
+
+      a::before {
+        content: none;
       }
     }
   }
