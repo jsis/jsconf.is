@@ -3,8 +3,8 @@ We are inviting the JavaScript community to submit talks for JSConf Iceland. Cal
 If you think you have something great to talk about, tell us all about it. If you know someone who has something great to talk about, nominate them.
 
 <div class="text-center">
-  <a class="button" href="https://svef.typeform.com/to/Cx4uRO">Submit a proposal</a>
-  <a class="button" href="https://svef.typeform.com/to/I1Wv9R">Suggest a speaker</a>
+  <a class="button" target="_blank" href="https://svef.typeform.com/to/Cx4uRO">Submit a proposal</a>
+  <a class="button" target="_blank" href="https://svef.typeform.com/to/I1Wv9R">Suggest a speaker</a>
 </div>
 
 ## Topics
@@ -35,12 +35,12 @@ Not everybody is a natural talent on stage. Not everybody can produce kick-ass s
 There are about a million reasons why *you* don’t consider yourself a speaker. **We are here to prove you wrong**. We are here to help you to develop or hone the skills you need to deliver a great presentation.
 
 * We can connect you with experienced speakers to help prepare your submission.
-* We can review and give advice on your slide deck. If you're not feeling creative, just use our [Keynote or PowerPoint](https://github.com/jsconf/presentation-templates/downloads) templates.
+* We can review and give advice on your slide deck. If you're not feeling creative, just use our <a target='_blank' href="https://github.com/jsconf/presentation-templates/downloads">Keynote or PowerPoint</a> templates.
 * If you need practice giving talks, get in touch. We can hook you up with local groups so you can practice in front of a friendly crowd.
 
 Get in touch: [team@jsconf.is](mailto:team@jsconf.is) (just don’t use this to submit a proposal).
 
-If you need more encouragement, check out our great friend Tiffany's site [We Are All Awesome](http://weareallaweso.me/) that aims to convince you to speak at a conference.
+If you need more encouragement, check out our great friend Tiffany's site <a target='_blank' href="http://weareallaweso.me/">[We Are All Awesome]</a> that aims to convince you to speak at a conference.
 
 ## Guidelines
 
@@ -60,5 +60,4 @@ Finally, since you retain full ownership of your slides and recording, we’d li
 
 ## Submit The Talk
 
-Fill out our talk proposal form:
-[https://svef.typeform.com/to/Cx4uRO](https://svef.typeform.com/to/Cx4uRO)
+Fill out our <a target="_blank" href="https://svef.typeform.com/to/Cx4uRO">talk proposal form</a>.
