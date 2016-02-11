@@ -24,12 +24,12 @@ window.initMap = () => {
   });
 
   const pinColor = 'B3008B';
-  const pinImage = new window.google.maps.MarkerImage(`http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|${pinColor}`,
+  const pinImage = new window.google.maps.MarkerImage('/images/pin.png',
     new window.google.maps.Size(21, 34),
     new window.google.maps.Point(0, 0),
     new window.google.maps.Point(10, 34),
   );
-  const pinShadow = new window.google.maps.MarkerImage('http://chart.apis.google.com/chart?chst=d_map_pin_shadow',
+  const pinShadow = new window.google.maps.MarkerImage('/images/pin-shadow.png',
     new window.google.maps.Size(40, 37),
     new window.google.maps.Point(0, 0),
     new window.google.maps.Point(12, 35),
