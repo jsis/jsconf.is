@@ -118,11 +118,15 @@ class Page {
     const diff_ = {};
 
     for (const part of this.parts_) {
+      const currentCenterX = current[part].left + current[part].width * .5;
+      const currentCenterY = current[part].top + current[part].height * .5;
+      const targetCenterX = target[part].left + target[part].width * .5;
+      const targetCenterY = target[part].top + target[part].height * .5;
       diff_[part] = {
         height: current[part].height - target[part].height,
-        left: current[part].left - target[part].left,
+        left: currentCenterX - targetCenterX,
         opacity: 1 - (target[part].opacity - current[part].opacity),
-        top: current[part].top - target[part].top,
+        top: currentCenterY - targetCenterY,
         width: current[part].width - target[part].width,
         scaleX: current[part].width / target[part].width,
         scaleY: current[part].height / target[part].height,
