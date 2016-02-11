@@ -146,12 +146,12 @@ class Page {
 
       props_[part] = {
         bottom,
-        height: Math.min(height, window.innerHeight),
+        height: height,
         left,
         opacity: parseFloat(window.getComputedStyle(element).opacity),
         right,
         top,
-        width: Math.min(width, window.innerWidth),
+        width: width,
       };
     }
 
