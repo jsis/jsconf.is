@@ -8,3 +8,6 @@ window.initMap = () => new window.google.maps.Map(document.querySelector('.googl
   zoom: 13,
   styles,
 });
+
+const html = document.documentElement;
+html.className = html.className.replace(/\bis-loading\b/, '');
