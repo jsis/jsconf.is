@@ -20,6 +20,16 @@
   "components/google-maps/base",
   "tito";
 
+html {
+  @include breakpoint(medium) {
+  	font-size: 115%;
+  }
+
+  @include breakpoint(large) {
+  	font-size: 130%;
+  }
+}
+
 strong {
   color: $color-jsconf-purple;
   font-weight: 400;

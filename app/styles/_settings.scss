@@ -64,7 +64,7 @@ $font-roboto: 'Roboto';
 // 1. Global
 // ---------
 
-$global-font-size: 130%;
+$global-font-size: 100%;
 $global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 
@@ -127,16 +127,8 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 26,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
-    'h6': 16,
-  ),
-  medium: (
-    'h1': 40,
-    'h2': 30,
+    'h1': 34,
+    'h2': 22,
     'h3': 19,
     'h4': 18,
     'h5': 17,

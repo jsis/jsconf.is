@@ -25,22 +25,34 @@
   .Page-headerData {
     align-items: flex-end;
     flex-direction: row;
-    justify-content: center;
+    padding: 0 $global-margin;
     position: relative;
     width: 100%;
+
+    @include breakpoint(medium) {
+      justify-content: center;
+    }
   }
 
   .Page-siteTitle {
     right: auto;
-    left: $global-margin * 2;
+    left: $global-margin;
     opacity: 1;
+
+    @include breakpoint(medium) {
+      left: $global-margin * 2;
+    }
   }
 
   .Page-close {
     left: auto;
     opacity: 1;
     visibility: visible;
-    right: $global-margin*2;
+    right: $global-margin;
+
+    @include breakpoint(medium) {
+      right: $global-margin * 2;
+    }
 
     &:before,
     &:after {
@@ -65,6 +77,7 @@
 
     > .Svg {
       width: 70vw;
+      max-width: none;
     }
   }
 
