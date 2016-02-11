@@ -23,7 +23,15 @@ class Router {
     window.onpopstate = () => {
       this.processPath(window.location.pathname);
     };
+
+    document.body.addEventListener('keyup', this.onKeypress);
   }
+
+  onKeypress = (event) => {
+    if (event.which === 27 && this.state.page) {
+      this.navigate('/');
+    }
+  };
 
   processPath(path, instant) {
     let section = (path || this.state.path).split('/')[1];

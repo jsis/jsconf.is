@@ -20,4 +20,4 @@ const scrollbarWidth = (() => {
 const css = document.createElement('style');
 css.type = 'text/css';
 css.innerHTML = `.no-scroll { margin-right: ${scrollbarWidth}px; }`;
-document.body.appendChild(css);
+document.head.appendChild(css);
