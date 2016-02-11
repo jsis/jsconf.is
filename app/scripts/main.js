@@ -23,10 +23,23 @@ window.initMap = () => {
     content: `<h3 class="class="firstHeading">Harpa</h3><div id="bodyContent">Austurbakki 2, 101 Reykjavík, Iceland</div>`
   });
 
+  var pinColor = "B3008B";
+  var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+    new google.maps.Size(21, 34),
+    new google.maps.Point(0,0),
+    new google.maps.Point(10, 34)
+  );
+  var pinShadow = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
+    new google.maps.Size(40, 37),
+    new google.maps.Point(0, 0),
+    new google.maps.Point(12, 35)
+  );
   const marker = new window.google.maps.Marker({
     position: venueLocation,
     title: 'Harp',
     map,
+    icon: pinImage,
+    shadow: pinShadow
   });
 
   marker.addListener('click', () => {
