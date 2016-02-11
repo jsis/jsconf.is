@@ -207,6 +207,7 @@
 
     @include breakpoint(medium) {
       display: block;
+      font-size: rem-calc(24);
       margin-top: 12px;
       text-align: center;
     }

@@ -82,5 +82,8 @@
   }
 
   .Page-title {
+    @include breakpoint(medium) {
+      font-size: rem-calc(34);
+    }
   }
 }
