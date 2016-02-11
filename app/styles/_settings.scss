@@ -64,7 +64,7 @@ $font-roboto: 'Roboto';
 // 1. Global
 // ---------
 
-$global-font-size: 130%;
+$global-font-size: 100%;
 $global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 
@@ -81,7 +81,7 @@ $dark-gray: $color-gray-75;
 $black: $black;
 $white: $white;
 
-$body-background: $white;
+$body-background: $color-jsconf-yellow;
 $body-font-color: $dark-gray;
 $body-font-family: $font-roboto, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -89,7 +89,7 @@ $body-antialiased: true;
 $global-margin: rem-calc(20);
 $global-padding: rem-calc(20);
 $global-weight-normal: 300;
-$global-weight-medium: 300;
+$global-weight-medium: 400;
 $global-weight-bold: 700;
 $global-radius: 0;
 $global-text-direction: ltr;
@@ -122,21 +122,13 @@ $block-grid-max: 8;
 // ------------------
 
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-medium;
+$header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 26,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
-    'h6': 16,
-  ),
-  medium: (
     'h1': 34,
-    'h2': 20,
+    'h2': 22,
     'h3': 19,
     'h4': 18,
     'h5': 17,

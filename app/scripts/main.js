@@ -1,5 +1,7 @@
 import 'babel-polyfill';
+import 'hammer-timejs';
 import './modules/router';
+import './modules/no-scroll';
 import styles from './data/gmaps-styles';
 
 window.initMap = () => {
@@ -37,3 +39,7 @@ window.initMap = () => {
 
   return { map, marker };
 };
+
+// Finished loading
+const html = document.documentElement;
+html.className = html.className.replace(/\bis-loading\b/, '');

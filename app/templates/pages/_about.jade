@@ -1,7 +1,8 @@
 extends ../shared/_page
 
-block vars
-  - var path = '/about';
+block append vars
+  - path = '/about';
+  - siteTitle = false;
 
 block icon
   include ../../images/logo-clipped.svg
@@ -9,7 +10,7 @@ block icon
 block title
   | JSConf Iceland
   br
-  small August 25#[sup th] &mdash; 26#[sup th]
+  small August 25#[sup th] &mdash; 26#[sup th] 2016
 
 block content
-  include:markdown-it _about.md
+  include:markdown-it(html) _about.md

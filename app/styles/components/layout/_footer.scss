@@ -1,6 +1,11 @@
 
 footer {
-  padding: $global-padding*2 0;
+  padding: $global-padding 0;
   background: $color-gray-10;
+  font-size: .8em;
   color: $dark-gray;
+}
+
+.FooterLinks {
+  display: inline-block;
 }

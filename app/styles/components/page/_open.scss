@@ -10,7 +10,8 @@
   .Page-header {
     cursor: default;
     display: flex;
-    height: 128px;
+    height: 130px;
+    margin-bottom: $global-margin;
     justify-content: flex-start;
     width: 100%;
   }
@@ -22,18 +23,36 @@
   }
 
   .Page-headerData {
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
-    justify-content: flex-start;
+    padding: 0 $global-margin;
     position: relative;
     width: 100%;
+
+    @include breakpoint(medium) {
+      justify-content: center;
+    }
+  }
+
+  .Page-siteTitle {
+    right: auto;
+    left: $global-margin;
+    opacity: 1;
+
+    @include breakpoint(medium) {
+      left: $global-margin * 2;
+    }
   }
 
   .Page-close {
     left: auto;
     opacity: 1;
     visibility: visible;
-    right: $global-margin*2;
+    right: $global-margin;
+
+    @include breakpoint(medium) {
+      right: $global-margin * 2;
+    }
 
     &:before,
     &:after {
@@ -50,14 +69,21 @@
   }
 
   .Page-icon {
-    opacity: .08;
+    opacity: .03;
+    position: absolute;
+    top: 20vh;
+    left: 15vw;
     margin-left: -$global-margin;
+
+    > .Svg {
+      width: 70vw;
+      max-width: none;
+    }
   }
 
   .Page-title {
-    left: 0;
-    margin: -0.5em $global-margin 0;
-    position: absolute;
-    top: 50%;
+    @include breakpoint(medium) {
+      font-size: rem-calc(34);
+    }
   }
 }

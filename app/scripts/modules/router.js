@@ -18,14 +18,14 @@ class Router {
       return page;
     });
 
-    this.processPath();
+    this.processPath(null, true);
 
     window.onpopstate = () => {
       this.processPath(window.location.pathname);
     };
   }
 
-  processPath(path) {
+  processPath(path, instant) {
     let section = (path || this.state.path).split('/')[1];
 
     section = section === 'index.html' ? 'index' : section;
@@ -34,11 +34,11 @@ class Router {
     this.state.path = section === 'index' ? '/' : `/${section}`;
     this.replaceState();
 
-    if (this.state.page) this.state.page.collapse();
+    if (this.state.page) this.state.page.collapse(instant);
 
     this.state.page = this.pages.filter(page => page.path === this.state.path)[0];
 
-    if (this.state.page) this.state.page.expand();
+    if (this.state.page) this.state.page.expand(instant);
 
     this.state.firstLoad = false;
   }
