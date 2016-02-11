@@ -23,7 +23,6 @@ window.initMap = () => {
     content: `<h3 class="class="firstHeading">Harpa</h3><div id="bodyContent">Austurbakki 2, 101 Reykjavík, Iceland</div>`,
   });
 
-  const pinColor = 'B3008B';
   const pinImage = new window.google.maps.MarkerImage('/images/pin.png',
     new window.google.maps.Size(21, 34),
     new window.google.maps.Point(0, 0),
