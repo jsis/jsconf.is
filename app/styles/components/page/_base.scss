@@ -67,11 +67,12 @@
   }
 
   &-content {
+    box-sizing: border-box;
     visibility: hidden;
     opacity: 0;
     position: relative;
     width: 100vw;
-    z-index: 1;
+    min-height: 100vh;
 
     a {
       color: inherit;
