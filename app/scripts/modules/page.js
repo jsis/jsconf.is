@@ -86,7 +86,14 @@ class Page {
       if (part === 'root' || part === 'wrap' || part === 'header') continue;
       const { left, top, scaleX, scaleY, opacity } = destination[part];
       const translate = `translate(${left + leftDifference}px, ${top + topDifference}px)`;
-      Page.style(this.elements[part], `${translate} scale(${scaleX}, ${scaleY})`, opacity);
+      let scale = `scale(${scaleX}, ${scaleY})`;
+
+      if (part === 'icon') {
+        const maxScale = Math.max(scaleX, scaleY);
+        scale = `scale(${maxScale}, ${maxScale})`;
+      }
+
+      Page.style(this.elements[part], `${translate} ${scale}`, opacity);
     }
   }
 
