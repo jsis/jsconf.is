@@ -26,7 +26,7 @@ If you get selected as a speaker, here’s what you get:
 
 If you want to bring a significant other, or bring your kid(s) and need child-care to be sorted out for the time of the conference, please get in touch. We are here to make this easy for you!
 
-If your employer can cover your travel and hotel, we are happy to list them as an company sponsor. The money we save will be used to make the conference more awesome.
+If your employer can cover your travel and hotel, we are happy to list them as a company sponsor. The money we save will be used to make the conference more awesome.
 
 ## We Can Help
 
