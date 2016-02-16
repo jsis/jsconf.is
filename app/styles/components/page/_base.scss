@@ -67,6 +67,10 @@
     }
   }
 
+  &-footer {
+    visibility: hidden;
+  }
+
   &-content {
     box-sizing: border-box;
     visibility: hidden;
