@@ -1,11 +1,14 @@
 
 main {
   @include clearfix;
-  min-height: 100vh;
   opacity: 1;
   transition: opacity .3s;
 
   background: $color-jsconf-yellow;
+
+  @include breakpoint(small) {
+    min-height: calc(100vh - 242px);
+  }
 
   > .row {
     max-width: none;
@@ -16,4 +19,6 @@ main {
   }
 }
 
+@import "header";
+@import "excert";
 @import "footer";
