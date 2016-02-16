@@ -1,8 +1,19 @@
 extends shared/_layout
 
+block header
+  include ../images/logo-clipped.svg
+
+  h1
+    | JSConf Iceland
+    small August 25#[sup th] &mdash; 26#[sup th] 2016
+
 block main
   .Pages
-    include pages/_about
     include pages/_tickets
     include pages/_speakers
     include pages/_venue
+
+  .Excert
+    .row.align-center
+      .column.large-8
+        include:markdown-it(html) ./pages/_about.md

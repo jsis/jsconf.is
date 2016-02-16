@@ -2,11 +2,13 @@
 @import "_open";
 
 .Page {
+  $number-of-pages: 3;
   $distance: 20px;
+  $height: 240px;
   $time: 250ms;
 
   display: block;
-  height: 25vh;
+  height: $height / 2;
   position: relative;
   overflow: hidden;
 
@@ -14,9 +16,9 @@
     order: 1;
   }
 
-  @include breakpoint(medium) {
-    height: 50vh;
-    width: 50%;
+  @include breakpoint(large) {
+    height: $height;
+    flex: 1;
 
     &:nth-child(3) {
       order: 0;
@@ -24,8 +26,8 @@
   }
 
   &-wrap {
-    background: $color-jsconf-yellow;
-    color: $color-gray-75;
+    background: $color-gray-75;
+    color: $white;
     overflow: hidden;
     left: 0;
     position: relative;
@@ -40,19 +42,21 @@
     flex-wrap: wrap;
     flex-direction: column;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       flex-direction: row;
+      flex-wrap: nowrap;
     }
   }
 
   &-header {
-    height: 25vh;
+    color: $color-jsconf-yellow;
     cursor: pointer;
+    height: $height / 2;
     padding: 0;
     width: 100%;
 
-    @include breakpoint(medium) {
-      height: 50vh;
+    @include breakpoint(large) {
+      height: $height;
     }
   }
 
@@ -61,7 +65,7 @@
     height: 100%;
     display: flex;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       flex-direction: column;
       justify-content: center;
     }
@@ -146,7 +150,7 @@
     top: $global-margin;
     white-space: nowrap;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       top: $global-margin * 2;
     }
   }
@@ -163,13 +167,14 @@
 
     font-size: 0;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       top: $global-margin * 2;
     }
 
     &:before,
     &:after {
       content: '';
+      background-color: $color-jsconf-yellow;
 
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -178,8 +183,6 @@
       display: block;
       width: 30px;
       height: 3px;
-
-      background: $color-gray-75;
 
       border-radius: 100%;
 
@@ -199,7 +202,7 @@
     > .Svg {
       max-width: 70px;
 
-      @include breakpoint(medium) {
+      @include breakpoint(large) {
         max-width: none;
       }
     }
@@ -212,7 +215,7 @@
     white-space: nowrap;
     vertical-align: middle;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       display: block;
       font-size: rem-calc(24);
       margin-top: 12px;
@@ -233,25 +236,5 @@
 
   &.is-animating {
     @extend %is-animating;
-  }
-
-  /* Modifiers */
-  &:nth-child(2) &-wrap,
-  &:nth-child(3) &-wrap {
-    background: $color-gray-75;
-    color: $white;
-
-    a::before {
-      background: $color-jsconf-purple;
-    }
-
-    .Page-header {
-      color: $color-jsconf-yellow;
-    }
-    .Page-close {
-      &:before, &:after {
-        background-color: $color-jsconf-yellow;
-      }
-    }
   }
 }
