@@ -193,10 +193,10 @@
     z-index: -1;
 
     > .Svg {
-      max-width: 70px;
-
-      @include breakpoint(medium) {
-        max-width: none;
+      @include breakpoint(medium down) {
+        height: auto;
+        padding: 0;
+        width: 70px;
       }
     }
   }
