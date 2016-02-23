@@ -16,10 +16,15 @@
     width: 100%;
   }
 
+  .Page-footer {
+    visibility: visible;
+  }
+
   .Page-content {
     opacity: 1;
     visibility: visible;
-    padding: calc(130px + #{$global-margin * 2}) 0 $global-margin;
+    margin-top: calc(130px + #{$global-margin});
+    padding: $global-margin 0;
   }
 
   .Page-headerData {
@@ -69,15 +74,19 @@
   }
 
   .Page-icon {
+    left: 15vw;
+    margin-left: -$global-margin;
+    height: 60vh;
     opacity: .03;
     position: absolute;
     top: 20vh;
-    left: 15vw;
-    margin-left: -$global-margin;
+    width: 70vw;
+    text-align: center;
 
     > .Svg {
-      width: 70vw;
-      height: auto;
+      height: 100%;
+      width: auto;
+      max-width: 100%;
     }
   }
 
@@ -85,5 +94,12 @@
     @include breakpoint(medium) {
       font-size: rem-calc(34);
     }
+  }
+
+  // Silly iOS hides sections after transition for some reason.
+  .Page-header,
+  .Page-content,
+  > footer {
+    transform: translateZ(0);
   }
 }

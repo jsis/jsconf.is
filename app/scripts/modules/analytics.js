@@ -1,6 +1,5 @@
-
 window.GoogleAnalyticsObject = 'ga';
-window.ga = () => {
+window.ga = function ga_() {
   (window.ga.q = window.ga.q || []).push(arguments);
 };
 window.ga.l = 1 * new Date();
@@ -8,51 +7,50 @@ window.ga.l = 1 * new Date();
 window.ga('create', 'UA-71097907-1', 'auto');
 window.ga('send', 'pageview');
 
-function analytics() {
+const analytics = function analytics_() {
   window.ga.apply(this, arguments);
-}
+};
 
-analytics.logTime = function logtime(category, id) {
+analytics.logTime = function logTime_(category, id) {
   if (window.hasOwnProperty('performance') && category !== undefined && id !== undefined) {
     this('send', 'timing', category, id, window.performance.now());
   }
 };
 
-analytics.logException = function logException(desc, fatal) {
+analytics.logException = function logException_(desc, fatal) {
   if (desc === undefined) { return; }
   this('send', 'exception', desc, !!fatal);
 };
 
 let flag = false;
-
-analytics.logFirst = function logFirst(type) {
+analytics.logFirst = function logFirst_(type) {
   if (flag) { return; }
   flag = true;
   analytics.logTime('First Interaction', type || 'unknown');
 };
 
-analytics.cleanUrl = function cleanUrl(url) {
-  let divider;
-  let clean = url;
-
-  if (!clean) {
+analytics.cleanUrl = function cleanUrl_(dirtyUrl) {
+  if (!dirtyUrl) {
     return window.location.pathname.toString().toLowerCase();
   }
 
-  if (clean.indexOf('localhost') > -1 || clean.indexOf('.is') > -1) {
-    divider = clean.indexOf('localhost') > -1 ? 'localhost:3000' : '.is';
-    clean = clean.split(divider);
-    clean = clean[1] || clean[0];
+  let url = dirtyUrl;
+
+  if (url.indexOf('localhost') > -1 || url.indexOf('.is') > -1) {
+    url = url.split(url.indexOf('localhost') > -1 ? 'localhost:3000' : '.is');
+    url = url[1] || url[0];
   }
-  if (clean.indexOf('#') > -1) {
-    clean = clean.split('#');
-    clean = clean[0];
+
+  if (url.indexOf('#') > -1) {
+    url = url.split('#');
+    url = url[0];
   }
-  if (clean.indexOf('?') > -1) {
-    clean = clean.split('?');
-    clean = clean[0];
+
+  if (url.indexOf('?') > -1) {
+    url = url.split('?');
+    url = url[0];
   }
-  return clean.toString().toLowerCase();
+  return url.toString().toLowerCase();
 };
 
 export default analytics;

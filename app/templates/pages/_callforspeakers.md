@@ -1,4 +1,4 @@
-We are inviting the JavaScript community to submit talks for JSConf Iceland. Call for Presentation **closes April 30th**.
+We are inviting the JavaScript community to submit talks for JSConf Iceland. Call for Presentation **closes March 31st**.
 
 If you think you have something great to talk about, tell us all about it. If you know someone who has something great to talk about, nominate them.
 
@@ -26,7 +26,7 @@ If you get selected as a speaker, here’s what you get:
 
 If you want to bring a significant other, or bring your kid(s) and need child-care to be sorted out for the time of the conference, please get in touch. We are here to make this easy for you!
 
-If your employer can cover your travel and hotel, we are happy to list them as an company sponsor. The money we save will be used to make the conference more awesome.
+If your employer can cover your travel and hotel, we are happy to list them as a company sponsor. The money we save will be used to make the conference more awesome.
 
 ## We Can Help
 
@@ -44,7 +44,7 @@ If you need more encouragement, check out our great friend Tiffany's site <a tar
 
 ## Guidelines
 
-Submit your proposal by **Apr 30th 2016, 23:59:59 GMT**. No excuses. All talks should be **in English**.
+Submit your proposal by **March 31st 2016, 23:59:59 GMT**. No excuses. All talks should be **in English**.
 
 **Talks will be 30 minutes.** There is no Q&A. We will be on a tight schedule and will end talks that overrun. We strongly encourage you to time your presentation in advance.
 

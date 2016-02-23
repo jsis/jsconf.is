@@ -11,15 +11,27 @@
   overflow: hidden;
 
   &:nth-child(3) {
-    order: 1;
+    // order: 3;
+  }
+  &:nth-child(4) {
+    // order: 4;
   }
 
-  @include breakpoint(medium) {
-    height: 50vh;
-    width: 50%;
+  @include breakpoint(mid) {
+    @include breakpoint(landscape) {
+      height: 50vh;
+      width: percentage(1/3);
+    }
+    @include breakpoint(portrait) {
+      height: (100/3) * 1vh;
+      width: 50%;
+    }
 
     &:nth-child(3) {
-      order: 0;
+      // order: 4;
+    }
+    &:nth-child(4) {
+      // order: 3;
     }
   }
 
@@ -40,7 +52,7 @@
     flex-wrap: wrap;
     flex-direction: column;
 
-    @include breakpoint(medium) {
+    @include breakpoint(mid) {
       flex-direction: row;
     }
   }
@@ -65,6 +77,10 @@
       flex-direction: column;
       justify-content: center;
     }
+  }
+
+  &-footer {
+    visibility: hidden;
   }
 
   &-content {
@@ -116,9 +132,13 @@
       margin-left: 0;
       margin-right: 0;
 
+      img,
+      > a {
+        width: 100%;
+      }
+
       a {
         color: $color-jsconf-purple;
-        max-width: 100%;
       }
 
       a:hover {
@@ -232,8 +252,7 @@
   }
 
   /* Modifiers */
-  &:nth-child(2) &-wrap,
-  &:nth-child(3) &-wrap {
+  &:nth-child(2n+2) &-wrap {
     background: $color-gray-75;
     color: $white;
 
