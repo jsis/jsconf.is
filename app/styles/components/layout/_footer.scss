@@ -1,13 +1,20 @@
 
-footer {
+.Footer {
+  background: $color-gray-75;
   padding: $global-padding 0;
-  background: $color-gray-10;
+  color: #fff;
   font-size: .8em;
-  color: $dark-gray;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .FooterLinks {
   display: inline-block;
+}
+
+.FooterLinks-link {
+  color: #fff;
+  opacity: .75;
+  transition: opacity .3s;
 }
 
 .SocialLinks {
@@ -21,9 +28,17 @@ footer {
   display: inline-block;
   height: rem-calc(20);
   margin-left: $global-padding / 2;
+  opacity: .75;
   overflow: hidden;
   text-indent: -9999px;
+  transition: opacity .3s;
   width: rem-calc(20);
+}
+
+.FooterLinks-link:hover,
+.SocialLinks-link:hover {
+  color: #fff;
+  opacity: 1;
 }
 
 .SocialLinks-twitter {
@@ -32,4 +47,30 @@ footer {
 
 .SocialLinks-github {
   background-image: url(/images/github.svg);
+}
+
+.SponsorFooter {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0)), repeating-linear-gradient(45deg, #443815, #443815 35px, #222220 35px, #222220 70px);
+  background-size: 1px 5px, auto auto;
+  background-repeat: repeat-x, repeat;
+  color: #fff;
+  padding: $global-padding * 2 0;
+}
+
+.SponsorBox {
+  background: #fff;
+  display: inline-block;
+  margin-bottom: $global-padding;
+  padding-top: 100%;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+}
+
+.SponsorBox-image {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 80%;
 }
