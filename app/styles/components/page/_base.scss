@@ -91,7 +91,9 @@
   }
 
   &:hover &-headerData {
-    transform: scale(1.1);
+    @include breakpoint(medium) {
+      transform: scale(1.1);
+    }
   }
 
   &.is-open &-headerData {
@@ -226,7 +228,6 @@
   &-blurb {
     background: $color-jsconf-purple;
     color: #fff;
-    font-size: .8em;
     left: 0;
     padding: 2px;
     position: absolute;
@@ -235,6 +236,10 @@
     top: 100%;
     transition: opacity .3s, transform .3s;
     z-index: 2;
+
+    @include breakpoint(medium) {
+      font-size: .8em;
+    }
   }
 
   &:hover &-blurb {
