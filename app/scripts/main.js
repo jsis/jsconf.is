@@ -6,6 +6,7 @@ import styles from './data/gmaps-styles';
 
 window.initMap = () => {
   const venueLocation = { lat: 64.1503366, lng: -21.9348961 };
+  const marinaLocation = { lat: 64.150949, lng: -21.945676 };
 
   const map = new window.google.maps.Map(document.querySelector('.google-maps'), {
     center: venueLocation,
@@ -19,10 +20,6 @@ window.initMap = () => {
     styles,
   });
 
-  const info = new window.google.maps.InfoWindow({
-    content: `<h3 class="class="firstHeading">Harpa</h3><div id="bodyContent">Austurbakki 2, 101 Reykjavík, Iceland</div>`,
-  });
-
   const pinImage = new window.google.maps.MarkerImage('/images/pin.png',
     new window.google.maps.Size(21, 34),
     new window.google.maps.Point(0, 0),
@@ -33,23 +30,40 @@ window.initMap = () => {
     new window.google.maps.Point(0, 0),
     new window.google.maps.Point(12, 35),
   );
-  const marker = new window.google.maps.Marker({
+
+  const venueInfo = new window.google.maps.InfoWindow({
+    content: `<h3 class="class="firstHeading">Harpa</h3><div id="bodyContent">Austurbakki 2, 101 Reykjavík, Iceland</div>`,
+  });
+  const venueMarker = new window.google.maps.Marker({
     position: venueLocation,
-    title: 'Harp',
+    title: 'Harpa',
     map,
     icon: pinImage,
     shadow: pinShadow,
   });
+  venueMarker.addListener('click', () => {
+    venueInfo.open(map, venueMarker);
+  });
 
-  marker.addListener('click', () => {
-    info.open(map, marker);
+  const marinaInfo = new window.google.maps.InfoWindow({
+    content: `<h3 class="class="firstHeading">Hotel Reykjavik Marina</h3><div id="bodyContent">Mýrargata 2, 101 Reykjavík, Iceland</div>`,
+  });
+  const marinaMarker = new window.google.maps.Marker({
+    position: marinaLocation,
+    title: 'Icelandair Hotel Reykjavik Marina',
+    map,
+    icon: pinImage,
+    shadow: pinShadow,
+  });
+  marinaMarker.addListener('click', () => {
+    marinaInfo.open(map, marinaMarker);
   });
 
   window.addEventListener('resize', () => {
     map.setCenter(venueLocation);
   });
 
-  return { map, marker };
+  return { map, venueMarker };
 };
 
 // Finished loading
