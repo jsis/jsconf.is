@@ -82,11 +82,20 @@
     align-items: center;
     height: 100%;
     display: flex;
+    transition: transform .3s;
 
     @include breakpoint(medium) {
       flex-direction: column;
       justify-content: center;
     }
+  }
+
+  &:hover &-headerData {
+    transform: scale(1.1);
+  }
+
+  &.is-open &-headerData {
+    transform: none;
   }
 
   &-footer {
@@ -212,6 +221,24 @@
       margin-top: 12px;
       text-align: center;
     }
+  }
+
+  &-blurb {
+    background: $color-jsconf-purple;
+    color: #fff;
+    font-size: .8em;
+    left: 0;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 100%;
+    transition: opacity .3s, transform .3s;
+    z-index: 2;
+  }
+
+  &:hover &-blurb {
+    transform: translate(0, -100%);
   }
 
   /* State */

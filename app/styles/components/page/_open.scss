@@ -96,6 +96,11 @@
     }
   }
 
+  .Page-blurb {
+    opacity: 0;
+    transform: none;
+  }
+
   // Silly iOS hides sections after transition for some reason.
   .Page-header,
   .Page-content,
