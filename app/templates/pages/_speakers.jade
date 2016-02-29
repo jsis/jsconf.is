@@ -5,7 +5,7 @@ block append vars
   - blurb = 'First 3 speakers announced'
 
 block icon
-  include ../../images/call.svg
+  include ../../images/podium.svg
 
 block title
   | Speakers
@@ -45,5 +45,5 @@ block content
           br
           p.Speaker-desc!=speaker.description
 
-  .Page-title Call for Proposals
-  include:markdown-it(html=true) _callforspeakers.md
+  p.text-center
+    | Are you interested in giving a talk? Check out our #[a(href='/cfp') call for proposals].
