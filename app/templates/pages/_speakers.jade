@@ -35,12 +35,13 @@ block content
         img.Speaker-photo(src="images/speakers/" + speaker.twitter + ".jpg" alt=speaker.name)
         .Speaker-details
           h2.Speaker-name= speaker.name
-          a.Speaker-link(href="https://twitter.com/" + speaker.twitter target="_blank")
-            span.Speaker-icon.fa.fa-twitter
-          a.Speaker-link(href="https://github.com/" + speaker.twitter target="_blank")
-            span.Speaker-icon.fa.fa-github
-          a.Speaker-link(href=speaker.website target="_blank")
-            span.Speaker-icon.fa.fa-globe
+          .Speaker-links
+            a.Speaker-link(href="https://twitter.com/" + speaker.twitter target="_blank")
+              span.Speaker-icon.fa.fa-twitter
+            a.Speaker-link(href="https://github.com/" + speaker.twitter target="_blank")
+              span.Speaker-icon.fa.fa-github
+            a.Speaker-link(href=speaker.website target="_blank")
+              span.Speaker-icon.fa.fa-globe
           br
           p.Speaker-desc!=speaker.description
 
