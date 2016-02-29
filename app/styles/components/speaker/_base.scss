@@ -1,0 +1,55 @@
+.Speaker {
+  justify-content: flex-end;
+  display: flex;
+  margin-bottom: 50px;
+
+  &-name {
+    color: $color-jsconf-yellow;
+    display: inline;
+    margin-right: 0.3em;
+  }
+
+  &-photo {
+    border-radius: 50%;
+    height: 200px;
+    margin-right: 50px;
+    width: 200px;
+  }
+
+  &:nth-child(2n) &-photo {
+    margin-left: 50px;
+    margin-right: 0;
+    order: 1;
+  }
+
+  &-company {
+    margin-bottom: 0.5em;
+  }
+
+  &-details {
+    padding: 10px;
+    text-align: left;
+    width: 50%;
+  }
+
+  &-desc {
+    line-height: 1.4em;
+  }
+
+  &-link {
+    font-size: 1.2em;
+    margin-left: 0.4em;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &-icon {
+    transition: color 400ms;
+
+    .Speaker-link:hover & {
+      color: $color-jsconf-yellow;
+    }
+  }
+}
