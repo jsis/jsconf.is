@@ -2,12 +2,48 @@ extends ../shared/_page
 
 block append vars
   - path = '/speakers';
+  - blurb = 'First 3 speakers announced'
 
 block icon
-  include ../../images/call.svg
+  include ../../images/podium.svg
 
 block title
   | Speakers
 
 block content
-  include:markdown-it(html=true) _callforspeakers.md
+  -
+    speakers = [{
+      name: 'Raquel Vélez',
+      twitter: 'rockbot',
+      website: 'https://rckbt.me/',
+      description: 'Senior Software Developer at npm, Inc. She studied Mechanical Engineering at Caltech and worked as a roboticist for 8 years.'
+    }, {
+      name: 'Lin Clark',
+      twitter: 'linclark',
+      website: 'http://lin-clark.com/',
+      description: 'Senior Engineer on Firefox developer tools. She is a code cartoonist; she stuffs her head full of coding minutiae and then turns it into <a href="https://twitter.com/codecartoons" target="_blank">@codecartoons</a>.'
+    }, {
+      name: 'Jan Lehnardt',
+      twitter: 'janl',
+      website: 'http://writing.jan.io/',
+      description: 'Co-curator for JSConf EU, the project lead of Apache CouchDB and co-inventor of Hoodie. He lives in Berlin and likes to change the world.'
+    }, ]
+
+  .SpeakerList
+    each speaker in speakers
+      .Speaker
+        img.Speaker-photo(src="images/speakers/" + speaker.twitter + ".jpg" alt=speaker.name)
+        .Speaker-details
+          h2.Speaker-name= speaker.name
+          .Speaker-links
+            a.Speaker-link(href="https://twitter.com/" + speaker.twitter target="_blank")
+              span.Speaker-icon.fa.fa-twitter
+            a.Speaker-link(href="https://github.com/" + speaker.twitter target="_blank")
+              span.Speaker-icon.fa.fa-github
+            a.Speaker-link(href=speaker.website target="_blank")
+              span.Speaker-icon.fa.fa-globe
+          br
+          p.Speaker-desc!=speaker.description
+
+  p.text-center
+    | Are you interested in giving a talk? Check out our #[a(href='/cfp') call for proposals].

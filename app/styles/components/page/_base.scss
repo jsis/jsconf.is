@@ -6,21 +6,20 @@
   $time: 250ms;
 
   display: block;
-  height: 25vh;
+  height: 24vh;
+  min-height: 115px;
   position: relative;
   overflow: hidden;
 
-  &:nth-child(3) {
-    order: 1;
+  @include breakpoint(medium) {
+    height: (100vh / 3);
+    min-height: 0;
+    width: 50%;
   }
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     height: 50vh;
-    width: 50%;
-
-    &:nth-child(3) {
-      order: 0;
-    }
+    width: (100% / 3);
   }
 
   &-wrap {
@@ -41,17 +40,26 @@
     flex-direction: column;
 
     @include breakpoint(medium) {
+      height: 100vh;
+    }
+
+    @include breakpoint(large) {
       flex-direction: row;
     }
   }
 
   &-header {
-    height: 25vh;
+    height: 24vh;
     cursor: pointer;
+    min-height: 115px;
     padding: 0;
     width: 100%;
 
     @include breakpoint(medium) {
+      height: (100vh/3);
+    }
+
+    @include breakpoint(large) {
       height: 50vh;
     }
   }
@@ -60,11 +68,22 @@
     align-items: center;
     height: 100%;
     display: flex;
+    transition: transform .3s;
 
     @include breakpoint(medium) {
       flex-direction: column;
       justify-content: center;
     }
+  }
+
+  &:hover &-headerData {
+    @include breakpoint(medium) {
+      transform: scale(1.1);
+    }
+  }
+
+  &.is-open &-headerData {
+    transform: none;
   }
 
   &-footer {
@@ -79,39 +98,7 @@
     min-height: 100vh;
 
     a {
-      color: inherit;
-      display: inline-block;
-      position: relative;
-      white-space: nowrap;
-
-      transition: color 250ms;
-
-      &::before {
-        background: $color-jsconf-purple;
-        bottom: 0;
-        content: '';
-        height: 100%;
-        left: -2px;
-        position: absolute;
-        right: -2px;
-        transform: scaleY(5/33);
-        transform-origin: 50% 100%;
-        transition: transform 250ms;
-        z-index: -1;
-      }
-
-      &.button::before,
-      a.no-bg::before {
-        content: none;
-      }
-
-      &:hover {
-        color: $white;
-
-        &::before {
-          transform: none;
-        }
-      }
+      @extend .BgLink;
     }
 
     figure {
@@ -200,28 +187,45 @@
     margin: 0 $global-margin;
     z-index: -1;
 
-    > .Svg {
-      max-width: 70px;
+    @media (max-width: (map_get($breakpoints, large) - 1)) {
+      width: 70px;
 
-      @include breakpoint(medium) {
-        max-width: none;
+      > .Svg {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
       }
     }
   }
 
   &-title {
     display: inline-block;
+    font-size: rem-calc(20);
     left: 0;
     margin: 0;
     white-space: nowrap;
     vertical-align: middle;
 
     @include breakpoint(medium) {
-      display: block;
-      font-size: rem-calc(24);
-      margin-top: 12px;
-      text-align: center;
+      margin-top: 1rem;
     }
+  }
+
+  &-blurb {
+    background: $color-jsconf-purple;
+    color: #fff;
+    left: 0;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 100%;
+    transition: opacity .3s, transform .3s;
+    z-index: 2;
+  }
+
+  &:hover &-blurb {
+    transform: translate(0, -100%);
   }
 
   /* State */
@@ -240,8 +244,7 @@
   }
 
   /* Modifiers */
-  &:nth-child(2) &-wrap,
-  &:nth-child(3) &-wrap {
+  &:nth-child(2n+2) &-wrap {
     background: $color-gray-75;
     color: $white;
 

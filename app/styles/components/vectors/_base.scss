@@ -1,16 +1,11 @@
-
 .Svg {
+  box-sizing: border-box;
   display: inline-block;
-  height: auto;
+  height: 130px;
   fill: currentColor;
   vertical-align: middle;
-  width: 150px;
 
-  &--call {
-    width: 130px;
-  }
-
-  &--logo {
-    width: 200px;
+  &--ticket {
+    height: 110px;
   }
 }

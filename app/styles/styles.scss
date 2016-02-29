@@ -14,11 +14,13 @@
 
 @import
   "components/layout/base",
+  "components/schedule/base",
   "components/page/base",
   "components/vectors/base",
   "components/form/base",
+  "components/speaker/base",
   "components/google-maps/base",
-  "tito";
+  "components/tito/base";
 
 html {
   @include breakpoint(medium) {
