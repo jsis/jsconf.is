@@ -1,0 +1,13 @@
+extends ../shared/_page
+
+block append vars
+  - path = '/cfp';
+
+block icon
+  include ../../images/call.svg
+
+block title
+  | Call Por Proposals
+
+block content
+  include:markdown-it(html=true) _callforspeakers.md
