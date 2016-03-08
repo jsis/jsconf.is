@@ -55,7 +55,7 @@
   }
 
   &-links {
-    justify-content: space-around;
+    justify-content: center;
     display: inline-flex;
     margin-bottom: 0.2em;
     width: 4.5em;
@@ -63,6 +63,7 @@
 
   &-link {
     font-size: 1.2em;
+    margin: 0 5px;
 
     // No underline
     &::before {
