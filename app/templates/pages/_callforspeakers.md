@@ -1,11 +1,5 @@
-We are inviting the JavaScript community to submit talks for JSConf Iceland. Call for Presentation **closes March 31st**.
+We are inviting the JavaScript community to submit talks for JSConf Iceland. Call for Presentation **is now closed**.
 
-If you think you have something great to talk about, tell us all about it. If you know someone who has something great to talk about, nominate them.
-
-<div class="text-center">
-  <a class="button" target="_blank" href="https://jsconfis.typeform.com/to/Cx4uRO">Submit a proposal</a>
-  <a class="button" target="_blank" href="https://jsconfis.typeform.com/to/I1Wv9R">Suggest a speaker</a>
-</div>
 
 ## Topics
 
@@ -57,7 +51,3 @@ Submit your proposal by **March 31st 2016, 23:59:59 GMT**. No excuses. All talks
 All talks will be recorded and published on the internet for free. We do this for the benefit of those who can’t make it to the conference. If you are in any way uncomfortable, let us know and we will work things out.
 
 Finally, since you retain full ownership of your slides and recording, we’d like to ask you to make your materials and recording available under a creative commons (we default to no commercial reuse) or other open source license.
-
-## Submit The Talk
-
-Fill out our <a target="_blank" href="https://jsconfis.typeform.com/to/Cx4uRO">talk proposal form</a>.
