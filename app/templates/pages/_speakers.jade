@@ -10,7 +10,7 @@ block icon
 block title
   | Speakers
 
-block content
+block expanded
   -
     speakers = [{
       name: 'Raquel Vélez',
@@ -52,10 +52,11 @@ block content
 
   .SpeakerList
     each speaker in speakers
-      .Speaker
-        img.Speaker-photo(src="images/speakers/" + speaker.twitter + ".jpg" alt=speaker.name)
+      .Speaker(style="background-image: url(images/speakers/" + speaker.twitter + ".jpg)" alt=speaker.name)
+        .Speaker-info
+          h3.Speaker-name= speaker.name
+          h4.Speaker-company Foo bar Inc
         .Speaker-details
-          h2.Speaker-name= speaker.name
           .Speaker-links
             if speaker.twitter
               a.Speaker-link(href="https://twitter.com/" + speaker.twitter target="_blank")
@@ -68,6 +69,6 @@ block content
                 span.Speaker-icon.fa.fa-globe
           br
           p.Speaker-desc!=speaker.description
-
+block content
   p.text-center
-    | We're currently going over all the proposals we got, more speakers will be announced soon.
+    | More speakers will be announced soon.
