@@ -1,5 +1,6 @@
 .Speaker {
   background: no-repeat center center / cover;
+  cursor: pointer;
   padding-bottom: 100%;
   position: relative;
   overflow: hidden;
@@ -75,15 +76,6 @@
   &-company {
     font-size: .7em;
     margin: .5em 0 0;
-  }
-
-  &-photo {
-    height: auto;
-    width: 100%;
-  }
-
-  &-details {
-    display: none;
   }
 }
 

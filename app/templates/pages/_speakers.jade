@@ -56,25 +56,12 @@ block expanded
       description: 'Co-founder, writer, speaker, author and editor-in-chief of Smashing Magazine. Based in Germany, loving beautiful content and solving complex UX, front-end and performance problems.'
     }, ]
 
-  .SpeakerList
+  .SpeakerList(data-speakers)
     each speaker in speakers
-      .Speaker(style="background-image: url(images/speakers/" + speaker.twitter + ".jpg)" alt=speaker.name)
+      .Speaker(style="background-image: url(images/speakers/" + speaker.twitter + ".jpg)" alt=speaker.name data-speaker=speaker)
         .Speaker-info
           h3.Speaker-name= speaker.name
           h4.Speaker-company= speaker.company
-        .Speaker-details
-          .Speaker-links
-            if speaker.twitter
-              a.Speaker-link(href="https://twitter.com/" + speaker.twitter target="_blank")
-                span.Speaker-icon.fa.fa-twitter
-            if speaker.github
-              a.Speaker-link(href="https://github.com/" + speaker.github target="_blank")
-                span.Speaker-icon.fa.fa-github
-            if speaker.website
-              a.Speaker-link(href=speaker.website target="_blank")
-                span.Speaker-icon.fa.fa-globe
-          br
-          p.Speaker-desc!=speaker.description
 block content
   p.text-center
     | More speakers will be announced soon.

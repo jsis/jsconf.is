@@ -12,6 +12,12 @@ html.is-loading
     block footer
       include _footer
 
+    .Modal(data-modal aria-hidden='true')
+      button.Modal-close(data-modal-close style='touch-action: manipulation') Close
+      .Modal-body
+        .Modal-sidebar(data-modal-sidebar)
+        .Modal-content(data-modal-content)
+
     block javascript
       script(src='/scripts/main.js')
       script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDAmbgyT0jcVjZD75YdJ5w3UsN3AU0nsW8&callback=initMap')

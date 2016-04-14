@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import 'hammer-timejs';
 import './modules/router';
 import './modules/no-scroll';
+import Modal from './modules/modal';
 import styles from './data/gmaps-styles';
 
 window.initMap = () => {
@@ -69,3 +70,17 @@ window.initMap = () => {
 // Finished loading
 const html = document.documentElement;
 html.className = html.className.replace(/\bis-loading\b/, '');
+
+// Initiate Speaker Modal
+const speakerModal = new Modal(document.body.querySelector(Modal.selectors.base));
+const speakers = document.body.querySelector('[data-speakers]');
+
+speakers.addEventListener('click', event => {
+  const speaker = event.target;
+
+  if (!speaker || !speaker.matches('[data-speaker]')) {
+    return;
+  }
+
+  speakerModal.open({ content: JSON.parse(speaker.getAttribute('data-speaker')) });
+});
