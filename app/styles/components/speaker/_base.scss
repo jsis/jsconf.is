@@ -6,7 +6,7 @@
   width: 100%;
 
   &::after {
-    background: rgba(#000, .5);
+    background: linear-gradient(45deg, rgba($color-jsconf-purple, .5), rgba($color-jsconf-yellow, .4));
     content: '';
     height: 100%;
     left: 0;
