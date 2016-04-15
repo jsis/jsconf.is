@@ -42,8 +42,8 @@ class Router {
     this.navigate(nextPath);
   }
 
-  processPath(path, instant) {
-    const segments = (path || this.state.path).split('/');
+  processPath(nextPath, instant) {
+    const segments = (nextPath || this.state.path).split('/');
 
     // Remove leading slash.
     segments.shift();
@@ -70,16 +70,27 @@ class Router {
       this.hasSpeaker = false;
     }
 
+    // Get current page instance.
+    const page = segments[0] !== '' && this.pages.find(({ path }) => `/${segments[0]}`.startsWith(path));
+
+    // 404: Page not found. Goto index.
+    if (!page && segments.length) {
+      segments.pop();
+    }
+
     // Set current path
     this.state.path = `/${segments.join('/')}`;
     this.replaceState();
 
-    // Handle page routes
-    if (this.state.page) this.state.page.collapse(instant);
+    // Handle page route
+    if (this.state.page) {
+      this.state.page.collapse(instant);
+    }
 
-    this.state.page = this.pages.filter(page => this.state.path.includes(page.path))[0];
-
-    if (this.state.page) this.state.page.expand(instant);
+    if (page) {
+      this.state.page = page;
+      this.state.page.expand(instant);
+    }
 
     this.state.firstLoad = false;
   }

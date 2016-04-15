@@ -70,7 +70,7 @@ window.initMap = () => {
 const html = document.documentElement;
 html.className = html.className.replace(/\bis-loading\b/, '');
 
-// Initiate Speaker Modal
+// Initiate Speaker
 const speakers = document.body.querySelector('[data-speakers]');
 
 speakers.addEventListener('click', event => {
