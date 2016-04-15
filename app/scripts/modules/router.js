@@ -31,9 +31,16 @@ class Router {
 
   onKeypress = (event) => {
     if (event.which === 27 && this.state.page) {
-      this.navigate('/');
+      this.back();
     }
   };
+
+  back() {
+    let nextPath = this.state.path.split('/');
+    nextPath.pop();
+    nextPath = nextPath.length ? nextPath.join('/') : '/';
+    this.navigate(nextPath);
+  }
 
   processPath(path, instant) {
     const segments = (path || this.state.path).split('/');
@@ -48,6 +55,7 @@ class Router {
       segments[segments.length - 1] = 'index';
     }
 
+    // Handle speaker routes
     if (segments.length > 1 && segments[0] === 'speakers') {
       const index = speakerData.findIndex(speaker => speaker.twitter === segments[1]);
 
@@ -66,6 +74,7 @@ class Router {
     this.state.path = `/${segments.join('/')}`;
     this.replaceState();
 
+    // Handle page routes
     if (this.state.page) this.state.page.collapse(instant);
 
     this.state.page = this.pages.filter(page => this.state.path.includes(page.path))[0];
