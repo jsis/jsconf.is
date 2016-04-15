@@ -1,3 +1,6 @@
+import router from './router';
+import speakers from '../data/speakers';
+
 class Modal {
   constructor(element) {
     this.element = element;
@@ -12,21 +15,44 @@ class Modal {
     this.close();
   };
 
+  onKeyUp = ({ keyCode }) => {
+    if (!this.isOpen) return;
+    let index = this.index;
+
+    switch (keyCode) {
+      case 37: // Left arrow
+        index = Math.max(0, index - 1);
+        break;
+      case 39: // Right arrow
+        index = Math.min(speakers.length - 1, index + 1);
+        break;
+      default:
+        return;
+    }
+
+    router.navigate(`/speakers/${speakers[index].twitter}`);
+  };
+
   initEvents() {
-    // window.addEventListener('keyup', this.onKeyUp);
+    window.addEventListener('keyup', this.onKeyUp);
     this.closeBtn.addEventListener('click', this.onClose);
   }
 
   open(speaker, index) {
-    this.data = speaker;
-    this.index = index;
+    if (this.index !== index) {
+      this.data = speaker;
+      this.index = index;
+    }
+
     this.element.setAttribute('aria-hidden', 'false');
     document.body.classList.add(Modal.classes.noScroll);
+    this.isOpen = true;
   }
 
   close() {
     this.element.setAttribute('aria-hidden', 'true');
     document.body.classList.remove(Modal.classes.noScroll);
+    this.isOpen = false;
   }
 
   set data(speaker) {
