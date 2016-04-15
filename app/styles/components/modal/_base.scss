@@ -8,7 +8,6 @@
   left: 0;
   opacity: 0;
   position: fixed;
-  padding: 15px;
   top: 0;
   transition: opacity $t, visibility 0s $t;
   visibility: hidden;
@@ -18,13 +17,16 @@
   &-body {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    height: 100%;
+    overflow-y: auto;
+    padding: $global-margin;
   }
 
   &-sidebar {
     opacity: 0;
     transform: translateY(-100px);
     transition: opacity $t, transform $t;
+    width: 100px;
   }
 
   &-content {
@@ -34,7 +36,7 @@
   }
 
   &-sidebar > img {
-    border: 8px solid #fff;
+    border-radius: 50%;
     margin-bottom: 24px;
   }
 
@@ -65,11 +67,11 @@
     }
 
     &:before {
-      transform: translate3d(0,0,0) rotate(45deg);
+      transform: translate3d(0, 0, 0) rotate(45deg);
     }
 
     &:after {
-      transform: translate3d(0,0,0) rotate(-45deg);
+      transform: translate3d(0, 0, 0) rotate(-45deg);
     }
   }
 
@@ -77,16 +79,17 @@
     align-items: center;
 
     &-body {
-      align-items: center;
       flex-direction: row;
+      padding: $global-margin * 2;
     }
 
     &-content {
       flex: 1;
     }
 
-    &-content > :last-child {
-      margin: 0;
+    &-close {
+      right: $global-margin * 2;
+      top: $global-margin * 2;
     }
 
     &-sidebar {

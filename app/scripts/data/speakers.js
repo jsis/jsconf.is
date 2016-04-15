@@ -40,6 +40,7 @@ const speakers = [{
   website: 'https://www.smashingmagazine.com',
   company: 'Smashing Magazine',
   description: 'Co-founder, writer, speaker, author and editor-in-chief of Smashing Magazine. Based in Germany, loving beautiful content and solving complex UX, front-end and performance problems.',
+  title: 'Reactive Animations with CSS Variables',
 }];
 
 module.exports = speakers;

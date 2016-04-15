@@ -40,8 +40,8 @@ class Modal {
 
   open(speaker, index) {
     if (this.index !== index) {
-      this.data = speaker;
       this.index = index;
+      this.data = speaker;
     }
 
     this.element.setAttribute('aria-hidden', 'false');
@@ -60,7 +60,8 @@ class Modal {
 
     this.content.innerHTML = [
       `<h2>${speaker.name}</h2>`,
-      `<h4>${speaker.company}</h4>`,
+      `<p><a href="${speaker.website}">${speaker.company}</a></p>`,
+      `<h4>${speaker.title || 'TBA'}</h4>`,
       `<p>${speaker.description}</p>`,
     ].join('');
   }
