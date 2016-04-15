@@ -1,11 +1,15 @@
 import router from './router';
 import speakers from '../data/speakers';
 
+const speakerUrl = index => `/speakers/${speakers[index].twitter}`;
+
 class Modal {
   constructor(element) {
     this.element = element;
     this.sidebar = element.querySelector(Modal.selectors.sidebar);
     this.content = element.querySelector(Modal.selectors.content);
+    this.prevBtn = element.querySelector(Modal.selectors.prev);
+    this.nextBtn = element.querySelector(Modal.selectors.next);
     this.closeBtn = element.querySelector(Modal.selectors.close);
 
     this.initEvents();
@@ -17,25 +21,36 @@ class Modal {
 
   onKeyUp = ({ keyCode }) => {
     if (!this.isOpen) return;
-    let index = this.index;
 
     switch (keyCode) {
       case 37: // Left arrow
-        index = Math.max(0, index - 1);
+        this.prev();
         break;
       case 39: // Right arrow
-        index = Math.min(speakers.length - 1, index + 1);
+        this.next();
         break;
       default:
         return;
     }
-
-    router.navigate(`/speakers/${speakers[index].twitter}`);
   };
+
+  onNext = () => this.next();
+
+  onPrev = () => this.prev();
+
+  next() {
+    router.navigate(speakerUrl(this.nextIndex));
+  }
+
+  prev() {
+    router.navigate(speakerUrl(this.previousIndex));
+  }
 
   initEvents() {
     window.addEventListener('keyup', this.onKeyUp);
     this.closeBtn.addEventListener('click', this.onClose);
+    this.nextBtn.addEventListener('click', this.onNext);
+    this.prevBtn.addEventListener('click', this.onPrev);
   }
 
   open(speaker, index) {
@@ -62,8 +77,16 @@ class Modal {
       `<h2>${speaker.name}</h2>`,
       `<p><a href="${speaker.website}">${speaker.company}</a></p>`,
       `<h4>${speaker.title || 'TBA'}</h4>`,
-      `<p>${speaker.description}</p>`,
+      `${speaker.description}`,
     ].join('');
+
+    this.previousIndex = this.index - 1;
+
+    if (this.previousIndex < 0) {
+      this.previousIndex = speakers.length - 1;
+    }
+
+    this.nextIndex = (this.previousIndex + 2) % speakers.length;
   }
 }
 
@@ -74,6 +97,8 @@ Modal.classes = {
 Modal.selectors = {
   base: '[data-modal]',
   sidebar: '[data-modal-sidebar]',
+  prev: '[data-modal-prev]',
+  next: '[data-modal-next]',
   content: '[data-modal-content]',
   close: '[data-modal-close]',
 };

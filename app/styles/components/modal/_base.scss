@@ -35,9 +35,56 @@
     transition: opacity $t, transform $t;
   }
 
+  &-content > :last-child {
+    margin-bottom: 120px;
+  }
+
+  &-content::after {
+    background: linear-gradient(rgba($color-jsconf-yellow, 0), $color-jsconf-yellow);
+    bottom: 0;
+    content: '';
+    height: 240px;
+    left: 0;
+    position: fixed;
+    pointer-events: none;
+    right: 0;
+  }
+
   &-sidebar > img {
     border-radius: 50%;
     margin-bottom: 24px;
+  }
+
+  &-footer {
+    bottom: 20px;
+    left: 50%;
+    margin-left: (-176px / 2);
+    position: fixed;
+  }
+
+  &-btn {
+    display: inline-block;
+    outline: none;
+    opacity: 0;
+    padding: 0;
+    transform: translateY(200px);
+    transition: opacity 250ms, transform 500ms $t;
+  }
+
+  &-next,
+  &-prev {
+    border-right: 3px solid $color-jsconf-purple;
+    border-top: 3px solid $color-jsconf-purple;
+    display: inline-block;
+    height: 44px;
+    margin: 22px;
+    transform: rotate(45deg);
+    width: 44px;
+
+  }
+
+  &-prev {
+    transform: rotate(-135deg);
   }
 
   &-close {
@@ -106,6 +153,20 @@
     opacity: 1;
     transition-delay: 0s;
     visibility: visible;
+
+    .Modal-btn {
+      opacity: .5;
+      transform: none;
+      transition: opacity 250ms, transform 250ms;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:active {
+        transform: scale(1.2);
+      }
+    }
 
     .Modal-sidebar {
       opacity: 1;
