@@ -75,7 +75,9 @@ class Modal {
 
     this.content.innerHTML = [
       `<h2>${speaker.name}</h2>`,
-      `<p><a href="${speaker.website}">${speaker.company}</a></p>`,
+      speaker.companyWebsite
+        ? `<p><a href="${speaker.website}">${speaker.company}</a></p>`
+        : `<p>${speaker.company}</p>`,
       `<h4>${speaker.title || 'TBA'}</h4>`,
       `${speaker.description}`,
     ].join('');
