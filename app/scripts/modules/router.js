@@ -1,5 +1,7 @@
 import analytics from './analytics';
 import Page from './page';
+import speakerData from '../data/speakers';
+import modal from './modal';
 
 class Router {
   constructor() {
@@ -34,17 +36,39 @@ class Router {
   };
 
   processPath(path, instant) {
-    let section = (path || this.state.path).split('/')[1];
+    const segments = (path || this.state.path).split('/');
 
-    section = section === 'index.html' ? 'index' : section;
-    section = section || 'index';
+    // Remove leading slash.
+    segments.shift();
 
-    this.state.path = section === 'index' ? '/' : `/${section}`;
+    // Default to index
+    if (segments.length === 0) {
+      segments.push('');
+    } else if (segments[segments.length - 1] === 'index.html') {
+      segments[segments.length - 1] = 'index';
+    }
+
+    if (segments.length > 1 && segments[0] === 'speakers') {
+      const index = speakerData.findIndex(speaker => speaker.twitter === segments[1]);
+
+      if (index > -1) {
+        this.hasSpeaker = true;
+        modal.open(speakerData[index], index);
+      } else {
+        segments.pop();
+      }
+    } else if (this.hasSpeaker) {
+      modal.close();
+      this.hasSpeaker = false;
+    }
+
+    // Set current path
+    this.state.path = `/${segments.join('/')}`;
     this.replaceState();
 
     if (this.state.page) this.state.page.collapse(instant);
 
-    this.state.page = this.pages.filter(page => page.path === this.state.path)[0];
+    this.state.page = this.pages.filter(page => this.state.path.includes(page.path))[0];
 
     if (this.state.page) this.state.page.expand(instant);
 

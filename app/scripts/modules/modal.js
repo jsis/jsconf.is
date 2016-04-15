@@ -17,8 +17,9 @@ class Modal {
     this.closeBtn.addEventListener('click', this.onClose);
   }
 
-  open(data) {
-    this.data = data;
+  open(speaker, index) {
+    this.data = speaker;
+    this.index = index;
     this.element.setAttribute('aria-hidden', 'false');
     document.body.classList.add(Modal.classes.noScroll);
   }
@@ -28,10 +29,8 @@ class Modal {
     document.body.classList.remove(Modal.classes.noScroll);
   }
 
-  set data(data) {
-    const speaker = data.content;
-
-    this.sidebar.innerHTML = `<img src="images/speakers/${speaker.twitter}.jpg" />`;
+  set data(speaker) {
+    this.sidebar.innerHTML = `<img src="/images/speakers/${speaker.twitter}.jpg" />`;
 
     this.content.innerHTML = [
       `<h2>${speaker.name}</h2>`,
@@ -52,4 +51,4 @@ Modal.selectors = {
   close: '[data-modal-close]',
 };
 
-export default Modal;
+export default new Modal(document.body.querySelector(Modal.selectors.base));
