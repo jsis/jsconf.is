@@ -13,10 +13,10 @@ block title
 block expanded
   .SpeakerList(data-speakers)
     each speaker in speakers
-      .Speaker(style="background-image: url(/images/speakers/" + speaker.twitter + ".jpg)" alt=speaker.name data-speaker=speaker.twitter)
+      .Speaker(style="background-image: url(/images/speakers/" + speaker.slug + ".jpg)" alt=speaker.name data-speaker=speaker.slug)
         .Speaker-info
           h3.Speaker-name= speaker.name
-          h4.Speaker-company= speaker.company
+          h4.Speaker-company!= speaker.company || '&nbsp;'
 block content
   p.text-center
     | More speakers will be announced soon.

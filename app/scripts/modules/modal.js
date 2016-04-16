@@ -1,7 +1,7 @@
 import router from './router';
 import speakers from '../data/speakers';
 
-const speakerUrl = index => `/speakers/${speakers[index].twitter}`;
+const speakerUrl = index => `/speakers/${speakers[index].slug}`;
 
 class Modal {
   constructor(element) {
@@ -71,12 +71,12 @@ class Modal {
   }
 
   set data(speaker) {
-    this.sidebar.innerHTML = `<img src="/images/speakers/${speaker.twitter}.jpg" />`;
+    this.sidebar.innerHTML = `<img src="/images/speakers/${speaker.slug}.jpg" />`;
 
     this.content.innerHTML = [
       `<h2>${speaker.name}</h2>`,
       speaker.companyWebsite
-        ? `<p><a href="${speaker.website}">${speaker.company}</a></p>`
+        ? `<p><a href="${speaker.companyWebsite}" target="_blank">${speaker.company}</a></p>`
         : `<p>${speaker.company}</p>`,
       `<h4>${speaker.title || 'TBA'}</h4>`,
       `${speaker.description}`,

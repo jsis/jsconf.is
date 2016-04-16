@@ -57,7 +57,7 @@ class Router {
 
     // Handle speaker routes
     if (segments.length > 1 && segments[0] === 'speakers') {
-      const index = speakerData.findIndex(speaker => speaker.twitter === segments[1]);
+      const index = speakerData.findIndex(speaker => speaker.slug === segments[1]);
 
       if (index > -1) {
         this.hasSpeaker = true;
