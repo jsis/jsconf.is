@@ -1,5 +1,7 @@
 import analytics from './analytics';
 import Page from './page';
+import speakerData from '../data/speakers';
+import modal from './modal';
 
 class Router {
   constructor() {
@@ -29,24 +31,66 @@ class Router {
 
   onKeypress = (event) => {
     if (event.which === 27 && this.state.page) {
-      this.navigate('/');
+      this.back();
     }
   };
 
-  processPath(path, instant) {
-    let section = (path || this.state.path).split('/')[1];
+  back() {
+    let nextPath = this.state.path.split('/');
+    nextPath.pop();
+    nextPath = nextPath.length ? nextPath.join('/') : '/';
+    this.navigate(nextPath);
+  }
 
-    section = section === 'index.html' ? 'index' : section;
-    section = section || 'index';
+  processPath(nextPath, instant) {
+    const segments = (nextPath || this.state.path).split('/');
 
-    this.state.path = section === 'index' ? '/' : `/${section}`;
+    // Remove leading slash.
+    segments.shift();
+
+    // Default to index
+    if (segments.length === 0) {
+      segments.push('');
+    } else if (segments[segments.length - 1] === 'index.html') {
+      segments[segments.length - 1] = 'index';
+    }
+
+    // Handle speaker routes
+    if (segments.length > 1 && segments[0] === 'speakers') {
+      const index = speakerData.findIndex(speaker => speaker.slug === segments[1]);
+
+      if (index > -1) {
+        this.hasSpeaker = true;
+        modal.open(speakerData[index], index);
+      } else {
+        segments.pop();
+      }
+    } else if (this.hasSpeaker) {
+      modal.close();
+      this.hasSpeaker = false;
+    }
+
+    // Get current page instance.
+    const page = segments[0] !== '' && this.pages.find(({ path }) => `/${segments[0]}`.startsWith(path));
+
+    // 404: Page not found. Goto index.
+    if (!page && segments.length) {
+      segments.pop();
+    }
+
+    // Set current path
+    this.state.path = `/${segments.join('/')}`;
     this.replaceState();
 
-    if (this.state.page) this.state.page.collapse(instant);
+    // Handle page route
+    if (this.state.page) {
+      this.state.page.collapse(instant);
+    }
 
-    this.state.page = this.pages.filter(page => page.path === this.state.path)[0];
-
-    if (this.state.page) this.state.page.expand(instant);
+    if (page) {
+      this.state.page = page;
+      this.state.page.expand(instant);
+    }
 
     this.state.firstLoad = false;
   }
