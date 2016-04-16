@@ -37,14 +37,14 @@
   }
 
   &-content > :last-child {
-    margin-bottom: 120px;
+    margin-bottom: 200px;
   }
 
   &-content::after {
-    background: linear-gradient(rgba($color-jsconf-yellow, 0), $color-jsconf-yellow);
+    background: linear-gradient(rgba($color-jsconf-yellow, 0), rgba($color-jsconf-yellow, .8) 40%, $color-jsconf-yellow);
     bottom: 0;
     content: '';
-    height: 240px;
+    height: 200px;
     left: 0;
     position: fixed;
     pointer-events: none;
@@ -57,7 +57,7 @@
   }
 
   &-footer {
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     margin-left: (-176px / 2);
     position: fixed;
@@ -70,6 +70,7 @@
     padding: 0;
     transform: translateY(200px);
     transition: opacity 250ms, transform 500ms $t;
+    vertical-align: top;
   }
 
   &-next,
