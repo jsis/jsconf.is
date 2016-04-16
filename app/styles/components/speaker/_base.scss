@@ -22,6 +22,21 @@
     width: (100% / 3);
   }
 
+  @include breakpoint(1200px) {
+    padding-bottom: (100% / 4);
+    width: (100% / 4);
+  }
+
+  @include breakpoint(1600px) {
+    padding-bottom: (100% / 5);
+    width: (100% / 5);
+  }
+
+  @include breakpoint(2000px) {
+    padding-bottom: (100% / 6);
+    width: (100% / 6);
+  }
+
   &:hover &-info::before {
     transform: translateZ(0);
     transition: transform 250ms 100ms;
