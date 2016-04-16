@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import 'hammer-timejs';
-import './modules/router';
 import './modules/no-scroll';
+import router from './modules/router';
 import styles from './data/gmaps-styles';
 
 window.initMap = () => {
@@ -69,3 +69,17 @@ window.initMap = () => {
 // Finished loading
 const html = document.documentElement;
 html.className = html.className.replace(/\bis-loading\b/, '');
+
+// Initiate Speaker
+const speakers = document.body.querySelector('[data-speakers]');
+
+speakers.addEventListener('click', event => {
+  const target = event.target;
+
+  if (!target || !target.matches('[data-speaker]')) {
+    return;
+  }
+
+  const nick = target.getAttribute('data-speaker');
+  router.navigate(`/speakers/${nick}`);
+});
