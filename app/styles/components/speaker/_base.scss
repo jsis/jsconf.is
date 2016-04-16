@@ -1,7 +1,7 @@
 .Speaker {
   background: no-repeat center center / cover;
   cursor: pointer;
-  padding-bottom: 100%;
+  min-height: 100vw;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -18,22 +18,22 @@
   }
 
   @include breakpoint(medium) {
-    padding-bottom: (100% / 3);
+    min-height: (100vw / 3);
     width: (100% / 3);
   }
 
   @include breakpoint(1200px) {
-    padding-bottom: (100% / 4);
+    min-height: (100vw / 4);
     width: (100% / 4);
   }
 
   @include breakpoint(1600px) {
-    padding-bottom: (100% / 5);
+    min-height: (100vw / 5);
     width: (100% / 5);
   }
 
   @include breakpoint(2000px) {
-    padding-bottom: (100% / 6);
+    min-height: (100vw / 6);
     width: (100% / 6);
   }
 
