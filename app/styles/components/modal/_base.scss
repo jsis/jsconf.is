@@ -2,9 +2,7 @@
   $t: 300ms;
 
   background: $color-jsconf-yellow;
-  display: flex;
   height: 100%;
-  justify-content: center;
   left: 0;
   opacity: 0;
   overflow-y: auto;
@@ -16,9 +14,6 @@
   z-index: 2;
 
   &-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
     max-width: 1280px;
     padding: $global-margin;
   }
@@ -40,10 +35,9 @@
     margin-bottom: 200px;
   }
 
-  &-content::after {
+  &-gradient {
     background: linear-gradient(rgba($color-jsconf-yellow, 0), rgba($color-jsconf-yellow, .8) 40%, $color-jsconf-yellow);
     bottom: 0;
-    content: '';
     height: 200px;
     left: 0;
     position: fixed;
@@ -128,12 +122,15 @@
     align-items: center;
 
     &-body {
-      flex-direction: row;
       padding: $global-margin * 2;
+    }
+    
+    &-sidebar {
+      float: left;
     }
 
     &-content {
-      flex: 1;
+      overflow: hidden;
     }
 
     &-close {
