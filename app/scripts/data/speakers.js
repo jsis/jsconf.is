@@ -15,7 +15,8 @@ const speakers = [{
   website: 'http://lin-clark.com/',
   companyWebsite: 'https://www.mozilla.org',
   company: 'Mozilla',
-  description: '<p>Senior Engineer on Firefox developer tools. She is a code cartoonist; she stuffs her head full of coding minutiae and then turns it into <a href="https://twitter.com/codecartoons" target="_blank">@codecartoons</a>.</p>',
+  title: 'A cartoon guide to performance in React',
+  description: '<p>Everyone talks about how performant React is... but why? What makes  people talk about how speedy React is? In this talk, you\'ll learn <strong>why</strong> people talk about React being fast, and what you can do to make it faster.</p>',
 }, {
   name: 'Jan Lehnardt',
   slug: 'jan-lehnardt',
@@ -267,6 +268,9 @@ const speakers = [{
   company: 'Mozilla',
   title: 'The New Mobile Web: Service Worker, Push, and App Manifests',
   description: `<p>Compared to native apps, mobile websites have historically been at a disadvantage: no installation, no push notifications, and they only work when you're online. This year, that changed. Browser vendors have worked together to implement open standards that address each of these shortcomings. This session examines how the Service Worker, Push, and App Manifest specifications fill the gap between web and native.</p>`,
-}];
+}]
+
+// Sort them by name
+speakers.sort((speakerA, speakerB) => speakerA.name.localeCompare(speakerB.name));
 
 module.exports = speakers;
