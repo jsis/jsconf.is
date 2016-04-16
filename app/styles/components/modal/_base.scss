@@ -5,7 +5,8 @@
   height: 100%;
   left: 0;
   opacity: 0;
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   position: fixed;
   top: 0;
   transition: opacity $t, visibility 0s $t;
