@@ -13,7 +13,7 @@ block title
 block expanded
   .SpeakerList(data-speakers)
     each speaker in speakers
-      .Speaker(style="background-image: url(/images/speakers/" + speaker.slug + ".jpg)" alt=speaker.name data-speaker=speaker.slug)
+      .Speaker(style="background-image: url(/images/speakers/" + speaker.slug + ".jpg); touch-action: manipulation;" alt=speaker.name data-speaker=speaker.slug)
         .Speaker-info
           h3.Speaker-name= speaker.name
           h4.Speaker-company!= speaker.company || '&nbsp;'
