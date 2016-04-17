@@ -54,21 +54,3 @@
   color: #fff;
   padding: $global-padding * 2 0;
 }
-
-.SponsorBox {
-  background: #fff;
-  display: inline-block;
-  margin-bottom: $global-padding;
-  padding-top: 100%;
-  position: relative;
-  vertical-align: top;
-  width: 100%;
-}
-
-.SponsorBox-image {
-  position: absolute;
-  left: 10%;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 80%;
-}
