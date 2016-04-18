@@ -2,7 +2,7 @@ extends ../shared/_page
 
 block append vars
   - path = '/tickets';
-  - blurb = 'Final sale April 18<sup>th</sup>'
+  - blurb = 'Workshops & final sale April 18<sup>th</sup>'
 
 block icon
   include ../../images/ticket.svg
@@ -30,6 +30,17 @@ block content
     
     .text-center
       a.button.large(href="https://ti.to/jsconf-is/2016") Buy tickets
+
+    h4 Workshops (65,000 ISK, ~$515 USD)
+    p Two full day workshops will be held by our friends at <a href="http://svef.is" target="_blank" title="The Icelandic Web Industry Association">SVEF</a> on August 24#[sup th] with speakers from JSConf. Only #[strong 45 seats] are available for each workshop, and tickets will be available on April 20#[sup th], 15:00 UTC. #[strong Note that both workshops are held on the same day].
+    ul
+      li #[strong Using ES6 & React] with&nbsp;
+        a(href="/speakers/brian-holt") #[strong Brian Holt]
+      li #[strong Smart Responsive Design Patterns: Front-End & Performance] with&nbsp;
+        a(href="/speakers/vitaly-friedman") #[strong Vitaly Friedman]
+
+    .text-center
+      a.button.large(href="https://ti.to/jsconf-is/2016-workshops") Buy workshop tickets
 
     h2 Why are you selling all the tickets so early?
     p Iceland is an especially popular tourist destination in the summer. We want to give attendees the chance to make their travel arrangements as far in advance as possible to get the most choices and the best prices.
