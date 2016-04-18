@@ -23,5 +23,5 @@ deploy:
   acl: public-read
   cache_control: "no-cache"
   on:
-    branch: beta
+    branch: dev
     repo: jsis/jsconf.is
