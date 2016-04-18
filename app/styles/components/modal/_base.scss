@@ -179,6 +179,12 @@
       opacity: 1;
       transform: none;
       transition: opacity $t $t / 2, transform $t $t / 2;
+
+      .workshop hr {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $color-gray-75;
+      }
     }
   }
 }
