@@ -1,0 +1,63 @@
+$sponsors-gutter: 20px;
+
+.Sponsors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: -$sponsors-gutter;
+  }
+
+  &-box {
+    background: #fff;
+    display: inline-block;
+    margin-bottom: $global-padding;
+    position: relative;
+    vertical-align: top;
+    flex-shrink: 0;
+
+    @include breakpoint(medium) {
+      margin-right: $sponsors-gutter;
+    }
+  }
+
+  &--silver &-box {
+    height: 200px;
+    width: 200px;
+
+    @include breakpoint(medium) {
+      height: 130px;
+      width: 130px;
+    }
+  }
+
+  &--bronze &-box {
+    height: 150px;
+    width: 150px;
+
+    @include breakpoint(medium) {
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    &--no-border {
+      padding: 0;
+    }
+  }
+
+  &-image {
+    width: 100%;
+  }
+}
