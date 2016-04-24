@@ -3,9 +3,16 @@ import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import { prefixLink } from 'gatsby-helpers'
 import InlineSVG from 'svg-inline-react'
+import classNames from 'classnames'
 
-const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children }) =>
-  <section className="Page is-open">
+const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children, inverse, expanded }) =>
+  <section
+    className={classNames({
+      Page: true,
+      'is-open': true,
+      'Page--inverse': inverse,
+    })}
+  >
     <Helmet
       title={metaTitle || title}
       meta={[
@@ -40,11 +47,13 @@ const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children }) =>
       </header>
 
       <article className="Page-content">
-        <div className="row align-center">
-          <div className="column large-8 medium-10 small-12">
-            {children}
+        {expanded ? children : (
+          <div className="row align-center">
+            <div className="column large-8 medium-10 small-12">
+              {children}
+            </div>
           </div>
-        </div>
+        )}
       </article>
 
       <div className="Page-footer">
@@ -63,6 +72,8 @@ BoxPage.propTypes = {
     React.PropTypes.node,
   ]),
   showHeader: React.PropTypes.bool,
+  inverse: React.PropTypes.bool,
+  expanded: React.PropTypes.bool,
   blurb: React.PropTypes.string,
   metaTitle: React.PropTypes.string,
   children: React.PropTypes.node,
