@@ -6,6 +6,11 @@
   overflow: hidden;
   width: 100%;
 
+  // Temporary disable link border
+  &::before {
+    content: none !important;
+  }
+
   &::after {
     background: linear-gradient(45deg, rgba($color-jsconf-purple, .5), rgba($color-jsconf-yellow, .4));
     content: '';
