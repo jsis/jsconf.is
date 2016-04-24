@@ -44,6 +44,8 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1"
   }

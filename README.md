@@ -1,4 +1,19 @@
-# gatsby-starter-default
-The default Gatsby starter
+# jsconf.is [![Build Status](https://travis-ci.org/jsis/jsconf.is.svg?branch=master)](https://travis-ci.org/jsis/jsconf.is)
 
-Install this starter (assuming Gatsby is installed) by running from your CLI: gatsby new gatsby-example-site
+Install dependencies:
+
+```sh
+npm i
+```
+
+Development:
+
+```sh
+npm run dev
+```
+
+Deploy:
+
+```sh
+npm run build
+```
