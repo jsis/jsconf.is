@@ -25,7 +25,7 @@ const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children }) =>
           )}
           {icon && (
             <div className="Page-icon">
-              <InlineSVG src={require(`svg-inline!../images/${icon}.svg`)} />
+              <InlineSVG src={icon} />
             </div>
           )}
           <h1 className="Page-title">{title}</h1>

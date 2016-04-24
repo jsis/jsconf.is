@@ -190,7 +190,7 @@
     @media (max-width: (map_get($breakpoints, large) - 1)) {
       width: 70px;
 
-      > .Svg {
+      .Svg {
         height: 100%;
         width: auto;
         max-width: 100%;

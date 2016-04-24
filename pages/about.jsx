@@ -1,6 +1,7 @@
 import React from 'react'
 import BoxPage from '../components/box-page'
 import content from './_about.md'
+import icon from '!svg-inline!../images/logo-clipped.svg'
 
 const title = (
   <div>
@@ -10,6 +11,6 @@ const title = (
 )
 
 export default () =>
-  <BoxPage icon="logo-clipped" showHeader={false} title={title} metaTitle="About">
+  <BoxPage icon={icon} showHeader={false} title={title} metaTitle="About">
     <div dangerouslySetInnerHTML={{ __html: content.body }} />
   </BoxPage>
