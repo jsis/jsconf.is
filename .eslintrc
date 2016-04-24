@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "extends": "eslint-config-airbnb",
   "rules": {
     "indent": [2, 2, {"SwitchCase": 1}],
@@ -14,5 +15,8 @@
   },
   "globals": {
     "__PREFIX_LINKS__": true,
+  },
+  "settings": {
+    "import/resolver": "webpack",
   },
 }
