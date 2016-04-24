@@ -1,0 +1,11 @@
+.Svg {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 130px;
+  fill: currentColor;
+  vertical-align: middle;
+
+  &--ticket {
+    height: 110px;
+  }
+}

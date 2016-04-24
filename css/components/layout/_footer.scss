@@ -1,0 +1,56 @@
+
+.Footer {
+  background: $color-gray-75;
+  padding: $global-padding 0;
+  color: #fff;
+  font-size: .8em;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.FooterLinks {
+  display: inline-block;
+}
+
+.FooterLinks-link {
+  color: #fff;
+  opacity: .75;
+  transition: opacity .3s;
+}
+
+.SocialLinks {
+  float: right;
+}
+
+.SocialLinks-link {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  height: rem-calc(20);
+  margin-left: $global-padding / 2;
+  opacity: .75;
+  overflow: hidden;
+  text-indent: -9999px;
+  transition: opacity .3s;
+  width: rem-calc(20);
+}
+
+.FooterLinks-link:hover,
+.SocialLinks-link:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.SocialLinks-twitter {
+  background-image: url(/images/twitter.svg);
+}
+
+.SocialLinks-github {
+  background-image: url(/images/github.svg);
+}
+
+.SponsorFooter {
+  background: #444;
+  color: #fff;
+  padding: $global-padding * 2 0;
+}

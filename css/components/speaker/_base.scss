@@ -1,0 +1,101 @@
+.Speaker {
+  background: no-repeat center center / cover;
+  cursor: pointer;
+  min-height: 100vw;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  &::after {
+    background: linear-gradient(45deg, rgba($color-jsconf-purple, .5), rgba($color-jsconf-yellow, .4));
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 500ms;
+    width: 100%;
+  }
+
+  @include breakpoint(medium) {
+    min-height: (100vw / 3);
+    width: (100% / 3);
+  }
+
+  @include breakpoint(1200px) {
+    min-height: (100vw / 4);
+    width: (100% / 4);
+  }
+
+  @include breakpoint(1600px) {
+    min-height: (100vw / 5);
+    width: (100% / 5);
+  }
+
+  @include breakpoint(2000px) {
+    min-height: (100vw / 6);
+    width: (100% / 6);
+  }
+
+  &:hover &-info::before {
+    transform: translateZ(0);
+    transition: transform 250ms 100ms;
+  }
+
+  &:hover &-info::after {
+    transform: skewY(2deg) translate3d(0, -7px, 0);
+    transition: transform 300ms 100ms;
+  }
+
+  &:hover::after {
+    opacity: 0;
+  }
+
+  &-info {
+    bottom: 0;
+    left: 0;
+    padding: .8em;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+  &-info::after,
+  &-info::before {
+    background: $color-jsconf-purple;
+    content: '';
+    transform: translate3d(0, 100%, 0);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform 300ms;
+    width: 100%;
+  }
+
+  &-info::after {
+    opacity: .8;
+  }
+
+  &-name,
+  &-company {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-name {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  &-company {
+    font-size: .7em;
+    margin: .5em 0 0;
+  }
+}
+
+.SpeakerList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

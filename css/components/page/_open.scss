@@ -1,0 +1,110 @@
+%is-open {
+  .Page-wrap {
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .Page-header {
+    cursor: default;
+    display: flex;
+    height: 130px;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+  }
+
+  .Page-footer {
+    visibility: visible;
+  }
+
+  .Page-content {
+    opacity: 1;
+    visibility: visible;
+    margin-top: calc(130px + #{$global-margin});
+    padding: $global-margin 0;
+  }
+
+  .Page-headerData {
+    align-items: flex-end;
+    flex-direction: row;
+    padding: 0 $global-margin;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      justify-content: center;
+    }
+  }
+
+  .Page-siteTitle {
+    right: auto;
+    left: $global-margin;
+    opacity: 1;
+
+    @include breakpoint(medium) {
+      left: $global-margin * 2;
+    }
+  }
+
+  .Page-close {
+    left: auto;
+    opacity: 1;
+    visibility: visible;
+    right: $global-margin;
+
+    @include breakpoint(medium) {
+      right: $global-margin * 2;
+    }
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+
+    &:before {
+      transform: translate3d(0,0,0) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate3d(0,0,0) rotate(-45deg);
+    }
+  }
+
+  .Page-icon {
+    left: 15vw;
+    margin-left: -$global-margin;
+    height: 60vh;
+    opacity: .03;
+    position: absolute;
+    top: 20vh;
+    width: 70vw;
+    text-align: center;
+
+    > .Svg {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .Page-title {
+    @include breakpoint(medium) {
+      font-size: rem-calc(34);
+    }
+  }
+
+  .Page-blurb {
+    opacity: 0;
+    transform: none;
+  }
+
+  // Silly iOS hides sections after transition for some reason.
+  .Page-header,
+  .Page-content,
+  > footer {
+    transform: translateZ(0);
+  }
+}

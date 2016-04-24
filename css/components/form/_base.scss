@@ -1,0 +1,50 @@
+
+.Form {
+  &-input,
+  &-submit {
+    clear: both;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+
+    &:before {
+      content: ' ';
+      display: block;
+    }
+  }
+
+  &-input {
+    color: white;
+    background: $dark-gray;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-submit {
+    border: none;
+    padding: 8px;
+    font-size: 18px;
+    cursor: pointer;
+
+    color: $white;
+    background: $color-jsconf-purple;
+  }
+}
+
+.Center {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+  &-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@import "bg-link";
