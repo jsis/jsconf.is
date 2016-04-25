@@ -3,7 +3,7 @@ import BoxPage from '../components/box-page'
 import icon from '!svg-inline!../images/ticket.svg'
 
 export default () =>
-  <BoxPage icon={icon} title="Tickets">
+  <BoxPage icon={icon} title="Tickets" inverse>
     <p>
       Your ticket includes access to all talks, meals and parties for
       the days of the conference. If you have any special requirements,
