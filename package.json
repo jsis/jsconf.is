@@ -50,6 +50,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "start": "npm run dev",
     "dev": "gatsby develop",
     "build": "gatsby build",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
