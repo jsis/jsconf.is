@@ -13,6 +13,10 @@ module.exports = class Template extends React.Component {
     children: React.PropTypes.any,
   };
 
+  componentDidMount () {
+    document.documentElement.classList.remove('is-loading')
+  }
+
   render () {
     return (
       <div>
