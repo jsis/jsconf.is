@@ -5,12 +5,11 @@ import { prefixLink } from 'gatsby-helpers'
 import { TypographyStyle } from 'utils/typography'
 
 
-module.exports = React.createClass({
-  propTypes () {
-    return {
-      title: React.PropTypes.string,
-    }
-  },
+export default class extends React.Component {
+  static propTypes = {
+    title: React.PropTypes.string,
+  }
+
   render () {
     const head = Helmet.rewind()
 
@@ -20,7 +19,7 @@ module.exports = React.createClass({
     }
 
     return (
-      <html lang="en">
+      <html lang="en" className="is-loading">
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -39,8 +38,10 @@ module.exports = React.createClass({
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           <script src={prefixLink('/bundle.js')} />
+          <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDAmbgyT0jcVjZD75YdJ5w3UsN3AU0nsW8&callback=initMap' />
+          <script src='//www.google-analytics.com/analytics.js' />
         </body>
       </html>
     )
-  },
-})
+  }
+}

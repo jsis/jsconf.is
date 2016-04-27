@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from 'react-responsive-grid'
 import Helmet from 'react-helmet'
 import config from '../config.toml'
+import Footer from '../components/footer'
 import '../css/styles.scss'
 import { rhythm } from '../utils/typography'
 
@@ -41,6 +42,7 @@ module.exports = class Template extends React.Component {
         >
           {this.props.children}
         </Container>
+        <Footer />
       </div>
     )
   }

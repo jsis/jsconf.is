@@ -1,2 +1,30 @@
 siteTitle="JSConf Iceland: August 25th — 26th 2016"
 siteDescription="A two day JavaScript conference in Reykjavik, Iceland."
+
+[[sponsors]]
+name = "Aranja"
+website = "https://aranja.com"
+level = "silver"
+image = "aranja.svg"
+imagePadding = false
+
+[[sponsors]]
+name = "Mozilla"
+website = "https://www.mozilla.org"
+level = "silver"
+image = "mozilla.svg"
+imagePadding = true
+
+[[sponsors]]
+name = "Tempo"
+website = "http://tempo.io"
+level = "silver"
+image = "tempo.svg"
+imagePadding = true
+
+[[sponsors]]
+name = "VIEW SOURCE"
+website = "https://viewsourceconf.org/"
+level = "bronze"
+image = "viewsourceconf.jpg"
+imagePadding = false
