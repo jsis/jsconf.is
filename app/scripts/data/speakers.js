@@ -156,7 +156,7 @@ const speakers = [{
   github: 'a0viedo',
   website: '',
   companyWebsite: 'https://github.com/js-squad',
-  company: 'JSSquad',
+  company: 'nearForm',
   title: 'Demystifying (JavaScript) engines',
   description: `<p>How a JavaScript engine works? What are its basic components? How to measure its performance? What is JIT compilation? Stigmatization: is JavaScript fast enough? are some of the questions I think we currently fail to answer in a, somewhat, short and direct way.</p>`,
 }, {
