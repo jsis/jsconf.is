@@ -4,8 +4,9 @@ import Helmet from 'react-helmet'
 import { prefixLink } from 'gatsby-helpers'
 import InlineSVG from 'svg-inline-react'
 import classNames from 'classnames'
+import Footer from './footer'
 
-const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children, inverse, expanded }) =>
+const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children, inverse, expanded }) => (
   <section
     className={classNames({
       Page: true,
@@ -57,6 +58,7 @@ const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children, inverse,
       </article>
 
       <div className="Page-footer">
+        <Footer />
       </div>
     </div>
     {blurb
@@ -64,6 +66,7 @@ const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children, inverse,
       : null
     }
   </section>
+)
 
 BoxPage.propTypes = {
   icon: React.PropTypes.string,

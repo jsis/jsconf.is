@@ -5,7 +5,7 @@ import { config } from '../config'
 const { sponsors } = config
 
 const SponsorBox = ({ website, name, image, imagePadding }) => (
-  <a key={name} href={website} className="Sponsors-box" target="_blank">
+  <a href={website} className="Sponsors-box" target="_blank">
     <div className={classNames('Sponsors-inner', !imagePadding && 'Sponsors-inner--no-border')}>
       <img
         src={require(`../images/sponsors/${image}`)}
@@ -26,10 +26,10 @@ export default () => (
             The great companies below are supporting us in 2016 – Thank&nbsp;you!
           </p>
           <div className="Sponsors Sponsors--silver">
-            {filter(sponsors, ['level', 'silver']).map(sponsor => <SponsorBox {...sponsor} />)}
+            {filter(sponsors, ['level', 'silver']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
           </div>
           <div className="Sponsors Sponsors--bronze">
-            {filter(sponsors, ['level', 'bronze']).map(sponsor => <SponsorBox {...sponsor} />)}
+            {filter(sponsors, ['level', 'bronze']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
           </div>
           <p className="text-center">
             We are currently offering sponsorship opportunities for JSConf Iceland.{' '}
