@@ -8,9 +8,57 @@ const { siteTitle, siteDescription } = config
 module.exports = class Template extends React.Component {
   static propTypes = {
     children: React.PropTypes.any,
+    route: React.PropTypes.object,
+    location: React.PropTypes.object,
   }
 
-  render() {
+  static contextTypes = {
+    router: React.PropTypes.object,
+  }
+
+  componentDidMount () {
+    window.addEventListener('keyup', this.onKeyUp)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('keyup', this.onKeyUp)
+  }
+
+  onKeyUp = ({ keyCode }) => {
+    this.setCurrentSpeakerIndex()
+    if (this.speakerIndex === -1) return
+    const { router } = this.context
+    const nexRoute = this.getNextRoute(keyCode)
+    if (nexRoute) router.push(nexRoute.path)
+  }
+
+  getNextRoute (keyCode) {
+    switch (keyCode) {
+      case 37:
+        return this.prevSpeaker()
+      case 39:
+        return this.nextSpeaker()
+      default:
+        return null
+    }
+  }
+
+  setCurrentSpeakerIndex () {
+    const { location, route } = this.props
+    this.speakerIndex = route.childRoutes.findIndex(page => page.path === location.pathname)
+  }
+
+  nextSpeaker () {
+    const { route } = this.props
+    return route.childRoutes[this.speakerIndex + 1]
+  }
+
+  prevSpeaker () {
+    const { route } = this.props
+    return route.childRoutes[this.speakerIndex - 1]
+  }
+
+  render () {
     return (
       <div>
         <Helmet
