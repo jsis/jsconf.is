@@ -38,7 +38,6 @@ export default class extends React.Component {
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           <script src={prefixLink('/bundle.js')} />
-          <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDAmbgyT0jcVjZD75YdJ5w3UsN3AU0nsW8&callback=initMap' />
           <script src='//www.google-analytics.com/analytics.js' />
         </body>
       </html>
