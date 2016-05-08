@@ -1,12 +1,7 @@
 import React from 'react'
-import { Container } from 'react-responsive-grid'
-import { Link } from 'react-router'
-import { prefixLink } from 'gatsby-helpers'
-import Headroom from 'react-headroom'
 import Helmet from 'react-helmet'
 import config from '../../config'
 import '../../css/styles.scss'
-import { rhythm } from 'utils/typography'
 
 const { siteTitle, siteDescription } = config
 
@@ -35,15 +30,7 @@ module.exports = class Template extends React.Component {
             { name: 'twitter:image', content: 'https://2016.jsconf.is/images/og.png' },
           ]}
         />
-        <Container
-          style={{
-            maxWidth: 960,
-            padding: `${rhythm(1)} ${rhythm(1/2)}`,
-            paddingTop: 0,
-          }}
-        >
-          {this.props.children}
-        </Container>
+        {this.props.children}
       </div>
     )
   }
