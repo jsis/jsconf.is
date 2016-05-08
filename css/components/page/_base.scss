@@ -211,6 +211,19 @@
     }
   }
 
+  &-subtitle {
+    margin-top: -50px;
+    text-align: center;
+
+    a:before {
+      display: none;
+    }
+
+    a:hover {
+      color: currentColor !important;
+    }
+  }
+
   &-blurb {
     background: $color-jsconf-purple;
     color: #fff;

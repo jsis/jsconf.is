@@ -6,7 +6,17 @@ import InlineSVG from 'svg-inline-react'
 import classNames from 'classnames'
 import Footer from './footer'
 
-const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children, inverse, expanded }) => (
+const BoxPage = ({
+  icon,
+  title,
+  subtitle,
+  showHeader,
+  blurb,
+  metaTitle,
+  children,
+  inverse,
+  expanded,
+}) => (
   <section
     className={classNames({
       Page: true,
@@ -48,6 +58,7 @@ const BoxPage = ({ icon, title, showHeader, blurb, metaTitle, children, inverse,
       </header>
 
       <article className="Page-content">
+        {subtitle && <p className="Page-subtitle">{subtitle}</p>}
         {expanded ? children : (
           <div className="row align-center">
             <div className="column large-8 medium-10 small-12">
@@ -80,6 +91,7 @@ BoxPage.propTypes = {
   blurb: React.PropTypes.string,
   metaTitle: React.PropTypes.string,
   children: React.PropTypes.node,
+  subtitle: React.PropTypes.string,
 }
 
 export default BoxPage

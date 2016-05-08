@@ -1,0 +1,38 @@
+@import "../../css/_settings";
+
+.Profile {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.ProfileImage {
+  border: 3px solid #444;
+  border-radius: 50%;
+  display: block;
+  height: 225px;
+  margin: 0;
+  position: relative;
+  width: 225px;
+  z-index: 1;
+}
+
+.ProfileLinks {
+  background: #444;
+  border-radius: 4px;
+  color: $color-jsconf-yellow;
+  font-weight: 500;
+  font-family: monospace;
+  margin-left: -114px;
+  padding: 24px 40px 24px 140px;
+
+  a:before {
+    display: none;
+  }
+}
+
+.ProfileLink {
+  margin: 0;
+}
+
