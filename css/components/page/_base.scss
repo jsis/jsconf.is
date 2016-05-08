@@ -212,8 +212,14 @@
   }
 
   &-subtitle {
-    margin-top: -50px;
-    text-align: center;
+    margin-top: -32px;
+    margin-left: $global-margin;
+
+    @media (min-width: 480px) {
+      margin-left: 0;
+      margin-top: -50px;
+      text-align: center;
+    }
 
     a:before {
       display: none;

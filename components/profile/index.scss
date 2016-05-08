@@ -1,31 +1,36 @@
 @import "../../css/_settings";
 
 .Profile {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 48px;
+  display: block;
+  margin-bottom: 12px;
+  text-align: center;
+
+  @media (min-width: 480px) {
+    margin-bottom: 48px;
+  }
 }
 
 .ProfileImage {
   border: 3px solid #444;
   border-radius: 50%;
-  display: block;
-  height: 225px;
+  display: inline-block;
+  height: auto;
   margin: 0;
   position: relative;
-  width: 225px;
+  max-width: 100%;
   z-index: 1;
+
+  @media (min-width: 480px) {
+    height: 225px;
+    width: 225px;
+  }
 }
 
 .ProfileLinks {
-  background: #444;
-  border-radius: 4px;
-  color: $color-jsconf-yellow;
   font-weight: 500;
   font-family: monospace;
-  margin-left: -114px;
-  padding: 24px 40px 24px 140px;
+  padding-top: 12px;
+  text-align: center;
 
   a:before {
     display: none;
