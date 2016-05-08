@@ -34,12 +34,9 @@ module.exports = class Template extends React.Component {
 
   getNextRoute (keyCode) {
     switch (keyCode) {
-      case 37:
-        return this.prevSpeaker()
-      case 39:
-        return this.nextSpeaker()
-      default:
-        return null
+      case 37: return this.prevSpeaker()
+      case 39: return this.nextSpeaker()
+      default: return null
     }
   }
 

@@ -9,6 +9,7 @@ function generateHeader (speaker) {
     `title: "${speaker.name}"`,
     `talk: "${speaker.title}"`,
     `path: "/speakers/${speaker.slug}"`,
+    'type: "speaker"',
   ]
   let key
 
