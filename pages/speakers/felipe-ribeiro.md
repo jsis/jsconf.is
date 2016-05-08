@@ -2,6 +2,7 @@
 title: "Felipe Ribeiro"
 talk: "JavaScript @ Spotify"
 path: "/speakers/felipe-ribeiro"
+type: "speaker"
 slug: "felipe-ribeiro"
 twitter: "felipernb"
 github: "felipernb"

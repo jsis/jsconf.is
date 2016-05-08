@@ -2,6 +2,7 @@
 title: "Dan Callahan"
 talk: "The New Mobile Web: Service Worker, Push, and App Manifests"
 path: "/speakers/dan-callahan"
+type: "speaker"
 slug: "dan-callahan"
 twitter: "callahad"
 github: "callahad"

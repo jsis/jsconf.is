@@ -2,6 +2,7 @@
 title: "Tilde Ann Thurium"
 talk: "Pivoting to React, at scale"
 path: "/speakers/tilde-ann-thurium"
+type: "speaker"
 slug: "tilde-ann-thurium"
 twitter: "annthurium"
 github: "annthurium"

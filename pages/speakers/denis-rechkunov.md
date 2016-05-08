@@ -2,6 +2,7 @@
 title: "Denis Rechkunov"
 talk: "Progressive Rendering – how to make your app render sooner"
 path: "/speakers/denis-rechkunov"
+type: "speaker"
 slug: "denis-rechkunov"
 twitter: "pragmadash"
 github: "pragmadash"

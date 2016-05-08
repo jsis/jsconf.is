@@ -2,6 +2,7 @@
 title: "Tsubomi Imamura"
 talk: "Breaking the monolith with Node and Docker at Netflix"
 path: "/speakers/tsubomi-imamura"
+type: "speaker"
 slug: "tsubomi-imamura"
 github: "leitsubomi"
 companyWebsite: "https://www.netflix.com"

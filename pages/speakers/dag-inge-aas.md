@@ -2,6 +2,7 @@
 title: "Dag-Inge Aas"
 talk: "User experience is everything"
 path: "/speakers/dag-inge-aas"
+type: "speaker"
 slug: "dag-inge-aas"
 twitter: "daginge"
 github: "dagingaa"

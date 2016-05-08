@@ -2,6 +2,7 @@
 title: "Mihai Cîrlănaru"
 talk: "Speech Recognition on the Web"
 path: "/speakers/mihai-cirlanaru"
+type: "speaker"
 slug: "mihai-cirlanaru"
 twitter: "mcirlanaru"
 github: "mihai"

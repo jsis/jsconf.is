@@ -2,6 +2,7 @@
 title: "David Luecke"
 talk: "Meet MySam - An open AI experiment"
 path: "/speakers/david-luecke"
+type: "speaker"
 slug: "david-luecke"
 twitter: "daffl"
 github: "daffl"

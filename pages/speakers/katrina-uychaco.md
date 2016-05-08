@@ -2,6 +2,7 @@
 title: "Katrina Uychaco"
 talk: "Spinning up an Electron App - Desktop Apps in JavaScript"
 path: "/speakers/katrina-uychaco"
+type: "speaker"
 slug: "katrina-uychaco"
 twitter: "kuychaco"
 github: "kuychaco"

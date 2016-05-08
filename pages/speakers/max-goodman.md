@@ -2,6 +2,7 @@
 title: "Max Goodman"
 talk: "Bicycle.js"
 path: "/speakers/max-goodman"
+type: "speaker"
 slug: "max-goodman"
 twitter: "chromakode"
 github: "chromakode"

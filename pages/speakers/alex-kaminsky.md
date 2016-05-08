@@ -2,6 +2,7 @@
 title: "Alex Kaminsky"
 talk: "The First Engineer's Dilemma"
 path: "/speakers/alex-kaminsky"
+type: "speaker"
 slug: "alex-kaminsky"
 twitter: "alexkaminsky"
 github: "believeinalex"

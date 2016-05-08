@@ -2,6 +2,7 @@
 title: "Jenna Zeigen"
 talk: "On How Your Brain is Conspiring Against You Making Good Software"
 path: "/speakers/jenna-zeigen"
+type: "speaker"
 slug: "jenna-zeigen"
 twitter: "zeigenvector"
 github: "jennazee"

@@ -2,6 +2,7 @@
 title: "Nick Doiron"
 talk: "If One Laptop per Child were started today, how JavaScript-y would it be?"
 path: "/speakers/nick-doiron"
+type: "speaker"
 slug: "nick-doiron"
 twitter: "mapmeld"
 github: "mapmeld"

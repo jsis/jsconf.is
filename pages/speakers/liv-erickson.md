@@ -2,6 +2,7 @@
 title: "Liv Erickson"
 talk: "Why you should care about the VR Web - and how to build it!"
 path: "/speakers/liv-erickson"
+type: "speaker"
 slug: "liv-erickson"
 twitter: "misslivirose"
 github: "misslivirose"

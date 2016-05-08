@@ -2,6 +2,7 @@
 title: "Mariko Kosaka"
 talk: "Making a Robot Eye with JavaScript - or Magic of Computer Vision Unraveled"
 path: "/speakers/mariko-kosaka"
+type: "speaker"
 slug: "mariko-kosaka"
 twitter: "kosamari"
 github: "kosamari"

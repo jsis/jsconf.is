@@ -2,6 +2,7 @@
 title: "Amy Cheng"
 talk: "Recreate Masterpieces of Modern Art with JavaScript!"
 path: "/speakers/amy-cheng"
+type: "speaker"
 slug: "amy-cheng"
 twitter: "am3thyst"
 github: "amycheng"

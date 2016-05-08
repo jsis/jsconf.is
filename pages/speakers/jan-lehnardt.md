@@ -2,6 +2,7 @@
 title: "Jan Lehnardt"
 talk: "undefined"
 path: "/speakers/jan-lehnardt"
+type: "speaker"
 slug: "jan-lehnardt"
 twitter: "janl"
 github: "janl"

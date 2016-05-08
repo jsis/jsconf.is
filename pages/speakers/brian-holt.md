@@ -2,6 +2,7 @@
 title: "Brian Holt"
 talk: "What React/Angular/Ember Devs Can Learn From Elm"
 path: "/speakers/brian-holt"
+type: "speaker"
 slug: "brian-holt"
 twitter: "holtbt"
 github: "btholt"

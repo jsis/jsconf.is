@@ -2,6 +2,7 @@
 title: "Raquel Vélez"
 talk: "undefined"
 path: "/speakers/raquel-velez"
+type: "speaker"
 slug: "raquel-velez"
 twitter: "rockbot"
 github: "rockbot"

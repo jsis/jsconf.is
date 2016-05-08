@@ -2,6 +2,7 @@
 title: "Justin Falcone"
 talk: "Why is a Guinea Pig Like a Microservice?"
 path: "/speakers/justin-falcone"
+type: "speaker"
 slug: "justin-falcone"
 twitter: "modernserf"
 github: "modernserf"

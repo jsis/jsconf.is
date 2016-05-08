@@ -2,6 +2,7 @@
 title: "Azat Mardan"
 talk: "You Don't Know Node.js"
 path: "/speakers/azat-mardan"
+type: "speaker"
 slug: "azat-mardan"
 twitter: "azat_co"
 github: "azat-co"

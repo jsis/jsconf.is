@@ -2,6 +2,7 @@
 title: "Vitaly Friedman"
 talk: "Reactive Animations with CSS Variables"
 path: "/speakers/vitaly-friedman"
+type: "speaker"
 slug: "vitaly-friedman"
 twitter: "smashingmag"
 companyWebsite: "https://www.smashingmagazine.com"

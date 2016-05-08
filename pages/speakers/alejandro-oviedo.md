@@ -2,6 +2,7 @@
 title: "Alejandro Oviedo"
 talk: "Demystifying (JavaScript) engines"
 path: "/speakers/alejandro-oviedo"
+type: "speaker"
 slug: "alejandro-oviedo"
 twitter: "a0viedo"
 github: "a0viedo"

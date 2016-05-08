@@ -2,6 +2,7 @@
 title: "David Khourshid"
 talk: "Reactive Animations with CSS Variables"
 path: "/speakers/david-khourshid"
+type: "speaker"
 slug: "david-khourshid"
 twitter: "davidkpiano"
 github: "davidkpiano"

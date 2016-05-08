@@ -2,6 +2,7 @@
 title: "Lin Clark"
 talk: "A cartoon guide to performance in React"
 path: "/speakers/lin-clark"
+type: "speaker"
 slug: "lin-clark"
 twitter: "linclark"
 github: "linclark"

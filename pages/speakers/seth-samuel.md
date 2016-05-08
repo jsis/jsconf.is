@@ -2,6 +2,7 @@
 title: "Seth Samuel"
 talk: "Arbitrary Computation on the GPU Using WebGL"
 path: "/speakers/seth-samuel"
+type: "speaker"
 slug: "seth-samuel"
 twitter: "sethfsamuel"
 github: "sethfsamuel"
