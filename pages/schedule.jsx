@@ -21,7 +21,7 @@ export default () =>
       <dt className="Agenda-term">20:00 - 23:00</dt>
       <dd className="Agenda-description">Welcome reception and badge pick-up</dd>
     </dl>
-    
+
     <h2>Thursday August 25, 2016</h2>
     <dl className="Agenda">
       <dt className="Agenda-term">08:00 - 09:30</dt>
@@ -37,7 +37,7 @@ export default () =>
       <dt className="Agenda-term">19:00 - 23:00</dt>
       <dd className="Agenda-description">Party</dd>
     </dl>
-    
+
     <h2>Friday August 26, 2016</h2>
     <dl className="Agenda">
       <dt className="Agenda-term">09:00 - 10:00</dt>
