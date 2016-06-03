@@ -37,15 +37,7 @@ module.exports = class Template extends React.Component {
             { name: 'twitter:image', content: 'https://2016.jsconf.is/images/og.png' },
           ]}
         />
-        <Container
-          style={{
-            maxWidth: 960,
-            padding: `${rhythm(1)} ${rhythm(1/2)}`,
-            paddingTop: 0,
-          }}
-        >
           {this.props.children}
-        </Container>
         <Footer />
       </div>
     )

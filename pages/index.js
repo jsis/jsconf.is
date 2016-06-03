@@ -1,35 +1,53 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Card, { CardContainer } from '../components/card'
 import { prefixLink } from 'gatsby-helpers'
+
+const cards = [
+  {
+    icon: 'logo-clipped',
+    link: prefixLink('/about/'),
+    title: (
+      <span>
+        JSConf Iceland
+        <small>August 25<sup>th</sup> — 26<sup>th</sup> 2016</small>
+      </span>
+    ),
+  },
+  {
+    icon: 'ticket',
+    link: prefixLink('/tickets/'),
+    title: 'Tickets',
+  },
+  {
+    icon: 'schedule',
+    link: prefixLink('/schedule/'),
+    title: 'Schedule',
+  },
+  {
+    icon: 'podium',
+    link: prefixLink('/speakers/'),
+    title: 'Speakers',
+  },
+  {
+    icon: 'tonkvisl',
+    link: prefixLink('/venue/'),
+    title: 'Venue',
+  },
+  {
+    icon: 'call',
+    link: prefixLink('/cfp/'),
+    title: 'Call For Proposal',
+  },
+]
 
 export default class Home extends React.Component {
   render () {
     return (
-      <div>
-        <h1>
-          JSConf Iceland 2016
-        </h1>
-        <ul>
-          <li>
-            <Link to={prefixLink('/about/')}>About</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/tickets/')}>Tickets</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/schedule/')}>Schedule</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/speakers/')}>Speakers</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/venue/')}>Venue</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/cfp/')}>Call For Proposal</Link>
-          </li>
-        </ul>
-      </div>
+      <CardContainer>
+        {cards.map(card => (
+          <Card key={card.title} {...card} />
+        ))}
+      </CardContainer>
     )
   }
 }
