@@ -34,9 +34,13 @@ const speakers = [{
   website: '',
   companyWebsite: 'https://www.netflix.com',
   company: 'Netflix',
-  title: 'What React/Angular/Ember Devs Can Learn From Elm',
-  description: `<p>Elm has slowly entering the front-end conscious the past year and it is for good reason: Elm is an <em>excellent
-</em> language and framework for the front end. However most can't introduce a new language to our stack and must continue working within the constraints of our current apps. Fret not! Despite not being able to switch languages we can adopt some of the techniques and ideals that make Elm such a wonderful development experience.</p>
+  title: 'React: Learn Once Write Anywhere',
+  description: `<p>React has set the front end development world on fire. It seems nearly over night that React became the darling of JavaScripts developers everywhere and before you knew it, sites like Netflix, reddit, Khan Academy, Airbnb, and more were rewriting entire front ends to harness that power.</p>
+  <p>The React inferno isn’t contained to just the DOM though; other communities have taken notice and are beginning to harness the power of the one-way data flow that React enforces. In this talk we’ll give you a brief overview of why React is so ®evolutionary for user interface development and some other communities that have taken hold of it as well. We’ll talk about seeing React everywhere from the DOM to the terminal, native mobile, game consoles, three dimensional environments, and even virtual reality.</p>
+
+  <h4>Details</h4>
+  <p>The talk is done through the media that it talks about. We’ll start in the terminal, using react-blessed to generate the slides. We move to the DOM to talk about React in the browser. We then (through broadcasting iOS via Quicktime) will talk about React Native via an iPhone. As we move to React in embedded environments, we’ll run a PS4 through a Mac to show React run on a TV. We’ll go back to the browser to talk about react-three and show the slides written using react-three.</p>
+  <p>Finally, to melt everyone’s mind, we’ll use aframe-react and WebVR to display the slides through an Oculus and show how React can be used in conjunction with WebVR. Very fun and compelling talk!</p>
 <div class="workshop">
   <hr>
   <h4><a href="/tickets">WORKSHOP</a></h4>
