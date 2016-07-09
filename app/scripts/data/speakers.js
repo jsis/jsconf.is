@@ -27,6 +27,15 @@ const speakers = [{
   company: 'Neighbourhoodie Software',
   description: '<p>Co-curator for JSConf EU, the project lead of Apache CouchDB and co-inventor of Hoodie. He lives in Berlin and likes to change the world.</p>',
 }, {
+  name: 'Myles Borins',
+  slug: 'myles-borins',
+  twitter: '',
+  github: '',
+  website: '',
+  companyWebsite: '',
+  company: '',
+  description: '',
+}, {
   name: 'Brian Holt',
   slug: 'brian-holt',
   twitter: 'holtbt',
