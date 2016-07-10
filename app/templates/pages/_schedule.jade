@@ -2,7 +2,7 @@ extends ../shared/_page
 
 block append vars
   - path = '/schedule';
-  - blurb = 'Workshops announced!'
+  - blurb = 'Track schedules!'
 
 block icon
   include ../../images/schedule.svg
@@ -21,10 +21,13 @@ mixin unified(slot)
       p.Schedule-title!= slot.title
 mixin normal(slot)
   td
-    a.u-base-link(href=slot.link)
-      span.Schedule-title= slot.title || 'TBA'
-      if slot.name
-        .Schedule-name= slot.name
+    if slot.link
+      a.u-base-link(href=slot.link)
+        span.Schedule-title= slot.title || 'TBA'
+        if slot.name
+          .Schedule-name= slot.name
+    else
+      p.Schedule-title!= slot.title
 mixin timeSlot(slot)
   tr
     td.Schedule-time= slot.time
@@ -42,6 +45,10 @@ block content
   each day in schedule
     h2= day.date
     table.Schedule.hover.scroll
+      colgroup
+        col
+        col(style="width:50%")
+        col(style="width:50%")
       if !day.noTracks
         thead: tr
           th
@@ -50,9 +57,6 @@ block content
       tbody
         each slot in day.slots
           +timeSlot(slot)
-
-  p During conference hours, we'll do our best to accomodate your partner and kids.
-    | Child-care is provided at the venue, as well as day trips to see the local sights.
 
   //-
     h2 Thursday August 25, 2016
