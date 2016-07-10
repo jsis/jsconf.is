@@ -17,7 +17,7 @@ const days = [
       {
         time: '20:00 23:00',
         unified: {
-          title: 'Welcome reception and badge pick-up',
+          title: 'Welcome reception and badge pick-up at <a class="u-base-link" href="http://bryggjanbrugghus.is/?lang=en" target="_blank">Bryggjan Brugghús</a>',
         },
       },
     ],
@@ -100,7 +100,7 @@ const days = [
       {
         time: '19:00 23:00',
         unified: {
-          title: 'Party!',
+          title: 'Hacker party in Harpa!',
         },
       },
     ],
@@ -117,22 +117,22 @@ const days = [
       {
         time: '09:45 10:15',
         trackA: 'nick-doiron',
-        trackB: { title: 'Awesome community talk: TBA.' },
+        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
         time: '10:30 11:00',
         trackA: 'raquel-velez',
-        trackB: { title: 'Awesome community talk: TBA.' },
+        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
         time: '11:15 11:45',
         trackA: 'felipe-ribeiro',
-        trackB: { title: 'Awesome community talk: TBA.' },
+        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
         time: '12:00 11:30',
         trackA: 'mariko-kosaka',
-        trackB: { title: 'Awesome community talk: TBA.' },
+        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
         time: '12:30 13:30',
@@ -143,17 +143,17 @@ const days = [
       {
         time: '13:30 14:00',
         trackA: 'denis-rechkunov',
-        trackB: { title: 'Awesome community talk: TBA.' },
+        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
         time: '14:15 14:45',
         trackA: 'david-luecke',
-        trackB: { title: 'Awesome community talk: TBA.' },
+        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
         time: '15:00 15:30',
         trackA: 'katrina-uychaco',
-        trackB: { title: 'Awesome community talk: TBA.' },
+        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
         time: '15:30 16:00',
@@ -178,7 +178,7 @@ const days = [
       {
         time: '19:00 23:00',
         unified: {
-          title: 'Closing Party!',
+          title: 'Viking party in "Gamla bíó"',
         },
       },
     ],
@@ -188,9 +188,15 @@ const days = [
     noTracks: true,
     slots: [
       {
-        time: '10:00',
+        time: '10:00 17:00',
         unified: {
-          title: 'Experience Iceland with friends and family',
+          title: 'Experience Iceland! Four special JSConf trips to choose from. - <a class="u-base-link" href="http://jsconf.whatson.is">Buy tickets</a>',
+        },
+      },
+      {
+        time: '18:00 22:00',
+        unified: {
+          title: 'Blue Lagoon Farewell Dinner - <a class="u-base-link" href="https://ti.to/jsconf-is/2016">RSVP</a></a>',
         },
       },
     ],
