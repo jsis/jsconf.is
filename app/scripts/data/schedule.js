@@ -130,7 +130,7 @@ const days = [
         trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
       {
-        time: '12:00 11:30',
+        time: '12:00 12:30',
         trackA: 'mariko-kosaka',
         trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
       },
