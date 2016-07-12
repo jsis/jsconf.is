@@ -14,7 +14,7 @@
     left: -2px;
     position: absolute;
     right: -2px;
-    transform: scaleY(5/33);
+    transform: scaleY(calc(5 / 33));
     transform-origin: 50% 100%;
     transition: transform 250ms;
     z-index: -1;

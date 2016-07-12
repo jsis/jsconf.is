@@ -3,7 +3,7 @@
 
 const speakers = require('./speakers');
 
-const days = [
+const conferenceDays = [
   {
     date: 'Wednesday August 24, 2016',
     noTracks: true,
@@ -196,7 +196,76 @@ const days = [
       {
         time: '18:00 22:00',
         unified: {
-          title: 'Blue Lagoon Farewell Dinner - <a class="u-base-link" href="https://ti.to/jsconf-is/2016">RSVP</a></a>',
+          title: 'Blue Lagoon Farewell Dinner - <a class="u-base-link" href="https://ti.to/jsconf-is/2016">RSVP</a>',
+        },
+      },
+    ],
+  },
+];
+
+const soDays = [
+  {
+    date: 'Thursday August 25, 2016',
+    noTracks: true,
+    slots: [
+      {
+        time: '09:00 09:30',
+        unified: {
+          title: 'Grab your bus, meal and pool tickets at Harpa.'
+        },
+      },
+      {
+        time: '09:30 12:00',
+        unified: {
+          title: 'Tour the city.'
+        },
+      },
+      {
+        time: '12:00 13:00',
+        unified: {
+          title: 'Grab some lunch.',
+        },
+      },
+      {
+        time: '13:00 15:00',
+        unified: {
+          title: 'Tour the city.',
+        },
+      },
+      {
+        time: '15:00 17:00',
+        unified: {
+          title: 'Take a dip in <a class="u-base-link" href="http://icelandictimes.com/laugardalslaug-the-most-popular-swimming-pool-in-reykjavik/">Laugardalslaug swimming pool</a>.',
+        },
+      },
+      {
+        time: '17:00 17:30',
+        unified: {
+          title: 'Arrive back to Harpa.',
+        },
+      },
+    ],
+  },
+  {
+    date: 'Friday August 26, 2016',
+    noTracks: true,
+    slots: [
+      {
+        time: '08:45 09:00',
+        unified: {
+          title: 'Please arrive early, bus leaves at 09:00.'
+        },
+      },
+      {
+        time: '09:00 17:00',
+        unified: {
+          title: 'The Golden Circle day trip. See Geysir, Gullfoss and Þingvellir.'
+        },
+      },
+      {
+        time: '17:00 17:30',
+        unified: {
+          title: 'Arrive back to Harpa.'
         },
       },
     ],
@@ -230,8 +299,13 @@ function speakerToSlot(slot) {
   return timeSlot;
 }
 
-module.exports = days.map(day_ => {
-  const day = day_;
-  day.slots = day.slots.map(speakerToSlot);
-  return day;
-});
+function mapDays(days) {
+  return days.map(day_ => {
+    const day = day_;
+    day.slots = day.slots.map(speakerToSlot);
+    return day;
+  })
+}
+
+exports.conference = mapDays(conferenceDays)
+exports.so = mapDays(soDays)

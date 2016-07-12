@@ -38,45 +38,51 @@ mixin timeSlot(slot)
         +normal(slot.trackA)
       if slot.trackB
         +normal(slot.trackB)
+        
+mixin dayTable(day)
+  table.Schedule.hover.scroll
+    colgroup
+      col
+      col(style="width:50%")
+      col(style="width:50%")
+    if !day.noTracks
+      thead: tr
+        th
+        th Hekla
+        th Katla
+    tbody
+      each slot in day.slots
+        +timeSlot(slot)
 
 block content
   p #[strong Note:] This schedule is tentative and will change without notice leading up to the event.
   
-  each day in schedule
+  each day in schedule.conference
     h2= day.date
-    table.Schedule.hover.scroll
-      colgroup
-        col
-        col(style="width:50%")
-        col(style="width:50%")
-      if !day.noTracks
-        thead: tr
-          th
-          th Hekla
-          th Katla
-      tbody
-        each slot in day.slots
-          +timeSlot(slot)
+    +dayTable(day)
 
-  //-
-    h2 Thursday August 25, 2016
+  h1 Significant Other Track
 
-    dl.Agenda
-      dt.Agenda-term 08:00 - 09:30
-      dd.Agenda-description Breakfast in Harpa
-      dt.Agenda-term 10:00 - 17:00
-      dd.Agenda-description Day tour - to be announced
-      dt.Agenda-term 12:00
-      dd.Agenda-description Lunch
+  p JSConf Iceland is the perfect place to bring the family.
+  p.
+    As a significant other, you can enjoy special activities during conference hours as well as join attendees for
+    dinner and evening events. While most of the cost is covered by our awesome sponsors, you need to
+    <a href="https://ti.to/jsconf-is/2016/" target="_blank">buy tickets</a> for each of the events you will be
+    participating in.
+  
+  h2= schedule.so[0].date
+  p Explore Reykjavik using the "Hop on, Hop off" bus, with the opportunity to hop on and off at conveniently located bus stops around the city.
+  p The trip includes a 24 hour bus ticket, a meal ticket and entrance to Reykjavik's largest geothermal swimming pool. You can go on your own or in a group with one of the organizers.
+  +dayTable(schedule.so[0])
+  
+  h2= schedule.so[1].date
+  p The Golden Circle tour takes in three popular attractions all within 100km of the capital: Þingvellir, Geysir and Gullfoss.
+  p This is a great way to see tectonic rifts, gushing geysers and one of Iceland's most famous waterfalls all in one day.
+  +dayTable(schedule.so[1])
 
-    h2 Friday August 26, 2016
+  h2 Significant other meal ticket
 
-    dl.Agenda
-      dt.Agenda-term 08:00 - 09:30
-      dd.Agenda-description Breakfast in Harpa
-      dt.Agenda-term 10:00 - 14:00
-      dd.Agenda-description Visit Reykjavik Park and Zoo
-      dt.Agenda-term 12:00
-      dd.Agenda-description BBQ
-      dt.Agenda-term 14:00 - 17:00
-      dd.Agenda-description Relax in one of the public swimming pools Iceland is known for
+  p.
+    In addition to the above, significant others can join attendees for breakfast and the three awesome evening
+    parties by purchasing <a href="https://ti.to/jsconf-is/2016/" target="_blank">a meal ticket</a>. It also allows them
+    to RSVP to the Blue Lagoon farewell dinner.
