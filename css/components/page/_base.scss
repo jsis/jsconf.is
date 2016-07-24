@@ -1,4 +1,27 @@
+@import "_animate";
+@import "_open";
+
 .Page {
+  $distance: 20px;
+  $time: 250ms;
+
+  display: block;
+  height: 24vh;
+  min-height: 115px;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint(medium) {
+    height: (100vh / 3);
+    min-height: 0;
+    width: 50%;
+  }
+
+  @include breakpoint(large) {
+    height: 50vh;
+    width: (100% / 3);
+  }
+
   &-wrap {
     background: $color-jsconf-yellow;
     color: $color-gray-75;
@@ -10,37 +33,69 @@
     z-index: 0;
   }
 
-  &-header {
-    min-height: 115px;
-    padding: 0;
+  &s {
     display: flex;
-    height: 130px;
-    justify-content: flex-start;
-    position: absolute;
-    width: 100%;
+    flex: 0 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include breakpoint(medium) {
+      height: 100vh;
+    }
+
+    @include breakpoint(large) {
+      flex-direction: row;
+    }
   }
 
-  &-headerData {
-    align-items: flex-end;
-    flex-direction: row;
-    display: flex;
-    height: 100%;
-    padding: 0 $global-margin;
-    position: relative;
-    transition: transform .3s;
+  &-header {
+    height: 24vh;
+    cursor: pointer;
+    min-height: 115px;
+    padding: 0;
     width: 100%;
 
     @include breakpoint(medium) {
+      height: (100vh/3);
+    }
+
+    @include breakpoint(large) {
+      height: 50vh;
+    }
+  }
+
+  &-headerData {
+    align-items: center;
+    height: 100%;
+    display: flex;
+    transition: transform .3s;
+
+    @include breakpoint(medium) {
+      flex-direction: column;
       justify-content: center;
     }
   }
 
+  &:hover &-headerData {
+    @include breakpoint(medium) {
+      transform: scale(1.1);
+    }
+  }
+
+  &.is-open &-headerData {
+    transform: none;
+  }
+
+  &-footer {
+    visibility: hidden;
+  }
+
   &-content {
     box-sizing: border-box;
-    margin-top: calc(130px + #{$global-margin});
-    min-height: 100vh;
-    padding: $global-margin 0;
+    visibility: hidden;
+    opacity: 0;
     width: 100vw;
+    min-height: 100vh;
 
     a {
       @extend .BgLink;
@@ -74,23 +129,26 @@
 
   &-siteTitle {
     font-size: rem-calc(18);
-    left: $global-margin;
+    right: 100%;
     line-height: 1em;
     margin-top: -2px;
+    opacity: 0;
     position: absolute;
     top: $global-margin;
     white-space: nowrap;
 
     @include breakpoint(medium) {
-      left: $global-margin * 2;
       top: $global-margin * 2;
     }
   }
 
   &-close {
+    visibility: hidden;
     position: absolute;
-    right: $global-margin;
+    left: 100%;
     top: $global-margin;
+    opacity: 0;
+
     width: 30px;
     height: 30px;
 
@@ -98,7 +156,6 @@
 
     @include breakpoint(medium) {
       top: $global-margin * 2;
-      right: $global-margin * 2;
     }
 
     &:before,
@@ -117,31 +174,18 @@
 
       border-radius: 100%;
 
+      opacity: 0;
       transform: translate3d(0,0,0) rotate(0deg);
       transform-origin: center center;
 
-      transition: transform 750ms;
-    }
-
-    &:before {
-      transform: translate3d(0,0,0) rotate(45deg);
-    }
-
-    &:after {
-      transform: translate3d(0,0,0) rotate(-45deg);
+      transition: transform 750ms, opacity 500ms;
     }
   }
 
   &-icon {
     display: inline-block;
-    left: 15vw;
-    margin: 0 $global-margin 0 (-$global-margin);
-    height: 60vh;
-    opacity: .03;
-    position: absolute;
-    top: 20vh;
-    width: 70vw;
-    text-align: center;
+    margin: 0 $global-margin;
+    z-index: -1;
 
     @media (max-width: (map_get($breakpoints, large) - 1)) {
       width: 70px;
@@ -154,14 +198,6 @@
     }
   }
 
-  .Page-icon {
-    .Svg {
-      height: 100%;
-      width: auto;
-      max-width: 100%;
-    }
-  }
-
   &-title {
     display: inline-block;
     font-size: rem-calc(20);
@@ -171,7 +207,6 @@
     vertical-align: middle;
 
     @include breakpoint(medium) {
-      font-size: rem-calc(34);
       margin-top: 1rem;
     }
   }
@@ -195,11 +230,36 @@
     }
   }
 
+  &-blurb {
+    background: $color-jsconf-purple;
+    color: #fff;
+    left: 0;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 100%;
+    transition: opacity .3s, transform .3s;
+    z-index: 2;
+  }
+
+  &:hover &-blurb {
+    transform: translate(0, -100%);
+  }
+
   /* State */
   @at-root  {
     .no-scroll {
       overflow: hidden;
     }
+  }
+
+  &.is-open {
+    @extend %is-open;
+  }
+
+  &.is-animating {
+    @extend %is-animating;
   }
 
   /* Modifiers */

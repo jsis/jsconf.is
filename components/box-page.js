@@ -42,11 +42,11 @@ const BoxPage = ({
             </div>
           )}
           {icon && (
-            <div className="Page-icon" data-part="icon">
+            <div className="Page-icon">
               <InlineSVG src={icon} />
             </div>
           )}
-          <h1 className="Page-title" data-part="title">{title}</h1>
+          <h1 className="Page-title">{title}</h1>
           <Link
             to={prefixLink('/')}
             className="Page-close"
@@ -72,6 +72,10 @@ const BoxPage = ({
         <Footer />
       </div>
     </div>
+    {blurb
+      ? <div className="Page-blurb">{blurb}</div>
+      : null
+    }
   </section>
 )
 

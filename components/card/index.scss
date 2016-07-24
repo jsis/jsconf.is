@@ -61,42 +61,17 @@
   }
 }
 
-.CardBlurb {
-  background: $color-jsconf-purple;
-  color: #fff;
-  left: 0;
-  padding: 2px;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 100%;
-  transition: opacity .3s, transform .3s;
-  z-index: 2;
-}
-
-// When leaving.
-.CardBlurb {
-  opacity: 0;
-  transform: none;
-}
-
 
 @include breakpoint(medium) {
   .Card:focus .CardContent,
   .Card:hover .CardContent {
     transform: translateZ(0) scale(1.1);
   }
-
-  .Card:focus .CardBlurb,
-  .Card:hover .CardBlurb {
-    transform: translate(0, -100%);
-  }
 }
 
 
 .CardTitle {
   display: inline-block;
-  line-height: 1.2;
   left: 0;
   right: 0;
   top: 100%;
@@ -111,10 +86,6 @@
   small {
     display: block;
   }
-}
-
-.CardTitle-inner {
-  display: inline-block;
 }
 
 .CardIcon {

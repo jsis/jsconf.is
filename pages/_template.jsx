@@ -3,7 +3,6 @@ import { Container } from 'react-responsive-grid'
 import Helmet from 'react-helmet'
 import config from '../config.toml'
 import Footer from '../components/footer'
-import PageTransitionGroup from '../components/page-transition-group'
 import '../css/styles.scss'
 import { rhythm } from '../utils/typography'
 
@@ -19,7 +18,6 @@ module.exports = class Template extends React.Component {
   }
 
   render () {
-    const { location } = this.props
     return (
       <div>
         <Helmet
@@ -39,12 +37,8 @@ module.exports = class Template extends React.Component {
             { name: 'twitter:image', content: 'https://2016.jsconf.is/images/og.png' },
           ]}
         />
-        <PageTransitionGroup route={location.pathname}>
-          <div key={location.pathname}>
-            {this.props.children}
-            <Footer />
-          </div>
-        </PageTransitionGroup>
+          {this.props.children}
+        <Footer />
       </div>
     )
   }
