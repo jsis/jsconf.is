@@ -320,8 +320,8 @@ const speakers = [{
 }, {
   name: 'Denis Rechkunov',
   slug: 'denis-rechkunov',
-  twitter: 'pragmadash',
-  github: 'pragmadash',
+  twitter: 'pragmader',
+  github: 'pragmader',
   website: 'http://catberry.org',
   companyWebsite: 'https://www.amazon.com',
   company: 'Amazon',
