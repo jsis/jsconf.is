@@ -9,12 +9,6 @@ const conferenceDays = [
     noTracks: true,
     slots: [
       {
-        time: '09:00 17:00',
-        unified: {
-          title: 'Full day workshops with <a class="u-base-link" href="/speakers/brian-holt">Brian Holt</a> &amp; <a class="u-base-link" href="/speakers/vitaly-friedman">Vitaly Friedman</a> - <a class="u-base-link" href="https://ti.to/svef/2016-workshops" target="_blank">Buy workshop tickets</a>',
-        },
-      },
-      {
         time: '20:00 23:00',
         unified: {
           title: 'Welcome reception and badge pick-up at <a class="u-base-link" href="http://bryggjanbrugghus.is/?lang=en" target="_blank">Bryggjan Brugghús</a>',
