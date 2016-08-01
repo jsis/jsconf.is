@@ -111,22 +111,22 @@ const conferenceDays = [
       {
         time: '09:45 10:15',
         trackA: 'nick-doiron',
-        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
+        trackB: 'heiko-behrens',
       },
       {
         time: '10:30 11:00',
         trackA: 'raquel-velez',
-        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
+        trackB: 'johannes-ewald',
       },
       {
         time: '11:15 11:45',
         trackA: 'felipe-ribeiro',
-        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
+        trackB: 'visnu-pitiyanuvath',
       },
       {
         time: '12:00 12:30',
         trackA: 'mariko-kosaka',
-        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
+        trackB: 'tryggvi-gylfason',
       },
       {
         time: '12:30 13:30',
@@ -137,17 +137,17 @@ const conferenceDays = [
       {
         time: '13:30 14:00',
         trackA: 'denis-rechkunov',
-        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
+        trackB: 'swastik-pareek',
       },
       {
         time: '14:15 14:45',
         trackA: 'david-luecke',
-        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
+        trackB: 'malte-ubl',
       },
       {
         time: '15:00 15:30',
         trackA: 'katrina-uychaco',
-        trackB: { title: 'Open slot - <a class="u-base-link" href="https://ti.to/jsconf-is/jsconf-iceland-2016-guest-talks">Grab it!</a>' },
+        trackB: { title: 'TBA' },
       },
       {
         time: '15:30 16:00',
@@ -205,13 +205,13 @@ const soDays = [
       {
         time: '09:00 09:30',
         unified: {
-          title: 'Grab your bus, meal and pool tickets at Harpa.'
+          title: 'Grab your bus, meal and pool tickets at Harpa.',
         },
       },
       {
         time: '09:30 12:00',
         unified: {
-          title: 'Tour the city.'
+          title: 'Tour the city.',
         },
       },
       {
@@ -247,19 +247,19 @@ const soDays = [
       {
         time: '08:45 09:00',
         unified: {
-          title: 'Please arrive early, bus leaves at 09:00.'
+          title: 'Please arrive early, bus leaves at 09:00.',
         },
       },
       {
         time: '09:00 17:00',
         unified: {
-          title: 'The Golden Circle day trip. See Geysir, Gullfoss and Þingvellir.'
+          title: 'The Golden Circle day trip. See Geysir, Gullfoss and Þingvellir.',
         },
       },
       {
         time: '17:00 17:30',
         unified: {
-          title: 'Arrive back to Harpa.'
+          title: 'Arrive back to Harpa.',
         },
       },
     ],
@@ -298,8 +298,8 @@ function mapDays(days) {
     const day = day_;
     day.slots = day.slots.map(speakerToSlot);
     return day;
-  })
+  });
 }
 
-exports.conference = mapDays(conferenceDays)
-exports.so = mapDays(soDays)
+exports.conference = mapDays(conferenceDays);
+exports.so = mapDays(soDays);

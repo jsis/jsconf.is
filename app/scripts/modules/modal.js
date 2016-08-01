@@ -77,7 +77,7 @@ class Modal {
       `<h2>${speaker.name}</h2>`,
       speaker.companyWebsite
         ? `<p><a href="${speaker.companyWebsite}" target="_blank">${speaker.company}</a></p>`
-        : `<p>${speaker.company}</p>`,
+        : `<p>${speaker.company || ''}</p>`,
       `<h4>${speaker.title || 'TBA'}</h4>`,
       `${speaker.description}`,
     ].join('');
