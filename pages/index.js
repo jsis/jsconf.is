@@ -6,12 +6,7 @@ const cards = [
   {
     icon: 'logo-clipped',
     link: prefixLink('/about/'),
-    title: (
-      <span>
-        JSConf Iceland
-        <small>August 25<sup>th</sup> — 26<sup>th</sup> 2016</small>
-      </span>
-    ),
+    title: 'About',
   },
   {
     icon: 'ticket',
@@ -43,11 +38,25 @@ const cards = [
 export default class Home extends React.Component {
   render () {
     return (
-      <CardContainer>
-        {cards.map(card => (
-          <Card key={card.title} {...card} />
-        ))}
-      </CardContainer>
+      <div className="row align-center large-unstack">
+        <div className="column large-order-1 large-text-right large-expand">
+          <hr className="u-separator" />
+          <h2 className="u-title">JSConf Iceland</h2>
+          <h2>August 25th — 26th 2016</h2>
+          <hr className="u-separator" />
+        </div>
+        <div className="column">
+          <h3 className="u-shoutout">Feel free to explore</h3>
+          <CardContainer>
+            {cards.map(card => (
+              <Card key={card.title} {...card} />
+            ))}
+            <div className="Card"></div>
+            <div className="Card"></div>
+            <div className="Card"></div>
+          </CardContainer>
+        </div>
+      </div>
     )
   }
 }

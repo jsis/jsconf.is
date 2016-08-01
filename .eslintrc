@@ -10,13 +10,15 @@
     "space-before-function-paren": [2, "always"],
     "no-else-return": [0],
     "space-infix-ops": [0],
+    "global-require": [0],
+    "max-len": [0],
     "react/prefer-es6-class": [0],
-    "react/prefer-stateless-function": [0],
+    "react/prefer-stateless-function": [0]
   },
   "globals": {
-    "__PREFIX_LINKS__": true,
+    "__PREFIX_LINKS__": true
   },
   "settings": {
-    "import/resolver": "webpack",
-  },
+    "import/resolver": "webpack"
+  }
 }

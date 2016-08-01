@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router'
 
 const CardContainer = ({ children }) => (
   <div className="CardContainer">{children}</div>

@@ -1,105 +1,62 @@
 @import "../../css/settings";
-@import "../../css/utils/utils";
 
-.CardContainer {
-  display: flex;
-  flex: 0 1;
-  flex-wrap: wrap;
-  flex-direction: column;
-
-  @include breakpoint(medium) {
-    height: 100vh;
-  }
-
-  @include breakpoint(large) {
-    flex-direction: row;
-  }
-}
+$color-jsconf-orange: #f2cb13;
+$card-size: 230px;
+$card-margin: 5px;
 
 .Card {
-  align-items: center;
-  display: flex;
-  font-size: 24px;
-  height: 135px;
-  min-height: 115px;
-  overflow: hidden;
-  padding: 25px;
+  background: $color-jsconf-orange;
+  color: #000;
+  display: block;
+  float: left;
+  height: 160px;
+  margin: 0 $card-margin $card-margin 0;
+  text-align: center;
+  vertical-align: top;
+  width: calc(50% - 5px);
 
-  &:nth-child(odd) {
-    background: $color-jsconf-yellow;
-    color: $color-gray-75;
-  }
+  @media (min-width: 768px) {
+    height: $card-size;
+    width: $card-size;
 
-  &:nth-child(even) {
-    background: $color-gray-75;
-    color: $color-jsconf-yellow;
-  }
+    &:nth-child(odd) {
+      clear: both;
+    }
 
-  @include breakpoint(medium) {
-    height: calc(100% / 3);
-    justify-content: center;
-    min-height: 0;
-    padding: 0;
-    width: 50%;
-  }
+    &:nth-child(8) {
+      clear: both;
+      margin-left: -($card-size + $card-margin);
+    }
 
-  @include breakpoint(large) {
-    font-size: 32px;
-    height: 50%;
-    width: calc(100% / 3);
-  }
-}
+    &:nth-child(9) {
+      clear: none;
+    }
 
-.CardContent {
-  position: relative;
-  width: 100%;
-
-  @include breakpoint(medium) {
-    transition: transform 300ms;
-    transform: translateZ(0);
-    text-align: center;
+    &:nth-child(3) {
+      margin-left: $card-size + $card-margin;
+    }
   }
 }
 
+.Card--interactive {
+  cursor: pointer;
+  transition: color 300ms, background 300ms;
 
-@include breakpoint(medium) {
-  .Card:focus .CardContent,
-  .Card:hover .CardContent {
-    transform: translateZ(0) scale(1.1);
-  }
-}
-
-
-.CardTitle {
-  display: inline-block;
-  left: 0;
-  right: 0;
-  top: 100%;
-  vertical-align: middle;
-
-  @include breakpoint(medium) {
-    display: block;
-    margin-top: 16px;
-    white-space: nowrap;
-  }
-
-  small {
-    display: block;
+  &:hover {
+    background: #2e2e2c;
+    color: $color-jsconf-orange;
   }
 }
 
 .CardIcon {
   display: inline-block;
+  margin-top: 32px;
 
-  @media (max-width: (map_get($breakpoints, medium) - 1)) {
-    margin-right: 25px;
-    vertical-align: middle;
-    width: 70px;
-
-    .Svg {
-      height: 100%;
-      width: auto;
-      max-width: 100%;
-    }
+  .Svg {
+    max-width: 124px;
   }
+}
+
+.CardTitle {
+  display: block;
 }
