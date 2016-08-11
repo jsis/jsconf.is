@@ -25,6 +25,7 @@ const speakers = [{
   website: 'http://writing.jan.io/',
   companyWebsite: 'https://neighbourhood.ie/',
   company: 'Neighbourhoodie Software',
+  title: 'The state of the JavaScript Community',
   description: '<p>Co-curator for JSConf EU, the project lead of Apache CouchDB and co-inventor of Hoodie. He lives in Berlin and likes to change the world.</p>',
 }, {
   name: 'Myles Borins',
