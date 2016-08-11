@@ -6,7 +6,8 @@ const speakers = [{
   website: 'https://rckbt.me/',
   companyWebsite: 'https://www.npmjs.com/',
   company: 'npm',
-  description: '<p>Senior Software Developer at npm, Inc. She studied Mechanical Engineering at Caltech and worked as a roboticist for 8 years.</p>',
+  title: 'The npm website: a tale of wonder and woe (and wombats!)',
+  description: '<p>Since its creation in 2010, the npm website has gone on quite an adventure. Oh, the stories it could tell! From its humble beginnings as a pioneer node application without a single line of client-side JavaScript to its current state as a full-fledged web application with front-end and backend frameworks, this site has seen it all. Learn from our successes as well as our mistakes as I take you on a journey of lessons learned over the past 2.5 years (and counting)!</p>',
 }, {
   name: 'Lin Clark',
   slug: 'lin-clark',
