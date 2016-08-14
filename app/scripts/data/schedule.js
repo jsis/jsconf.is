@@ -94,7 +94,7 @@ const conferenceDays = [
       {
         time: '19:00 23:00',
         unified: {
-          title: 'Hacker party in Harpa!',
+          title: 'Hacker party in Harpa by Mozilla!',
         },
       },
     ],
@@ -172,7 +172,7 @@ const conferenceDays = [
       {
         time: '19:00 23:00',
         unified: {
-          title: 'Viking party in "Gamla bíó"',
+          title: 'Viking party in "Gamla bíó" by Bloomberg',
         },
       },
     ],
