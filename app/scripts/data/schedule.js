@@ -45,7 +45,7 @@ const conferenceDays = [
         trackB: 'alex-kaminsky',
       },
       {
-        time: '12:30 13:30',
+        time: '12:00 12:30',
         trackA: 'david-khourshid',
         trackB: 'brian-holt',
       },
