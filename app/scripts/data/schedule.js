@@ -184,7 +184,7 @@ const conferenceDays = [
       {
         time: '10:00 17:00',
         unified: {
-          title: 'Experience Iceland! Four special JSConf trips to choose from. - <a class="u-base-link" href="http://jsconf.whatson.is">Buy tickets</a>',
+          title: 'Experience Iceland by Highcharts! Four special JSConf trips to choose from. - <a class="u-base-link" href="http://jsconf.whatson.is">Buy tickets</a>',
         },
       },
       {
