@@ -147,7 +147,7 @@ const conferenceDays = [
       {
         time: '15:00 15:30',
         trackA: 'katrina-uychaco',
-        trackB: { title: 'TBA' },
+        trackB: 'berglind-osk',
       },
       {
         time: '15:30 16:00',

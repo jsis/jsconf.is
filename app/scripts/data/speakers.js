@@ -409,6 +409,16 @@ const speakers = [{
   company: 'AMP Project',
   title: '#notalljavascript',
   description: '<p>Modern websites are often composed out of megabytes of JavaScript – not all of which we wrote ourselves: Ads, social plugins, tweets, instagrams, video players and other things get assembled together and more often than not don’t play all too well with each other. When we started the AMP project we quickly realized we’d have to support this type of third party JS. In this talk we’ll do a deep dive into how we manage to maintain page performance and decent user experience nonetheless. Bring your wetsuit, because we’ll dive deep into some of the more rarely explored corners of the JavaScript language.</p>',
+}, {
+  name: 'Berglind Ósk Bergsdóttir',
+  slug: 'berglind-osk',
+  twitter: 'berglind0sk',
+  github: 'berglind',
+  website: 'https://about.me/berglind0sk',
+  companyWebsite: 'http://kolibri.is',
+  company: 'Kolibri',
+  title: 'Feeling like a fake - the Impostor Syndrome',
+  description: `<p>Have you ever felt like a fraud and the whole world is going to find out that you're really not as competent as other people think? Do you feel like your success is because of luck or timing but not your own skills? Then you are not alone! This concept is well known and is called the Impostor Syndrome. It's not limited to software development but it's very common in our field.</p><p>Most people have experienced this at some point in their lives but don't talk about since they think they're alone. In this talk I'm gonna tell my story of suffering from the Impostor Syndrome and share my advice on how to overcome it.</p>`,
 }];
 
 // Sort them by name
