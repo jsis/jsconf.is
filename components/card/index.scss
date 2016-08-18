@@ -36,6 +36,14 @@ $card-margin: 5px;
       margin-left: $card-size + $card-margin;
     }
   }
+
+  @media (min-width: 1100px) {
+    &:nth-child(4) {
+      position: absolute;
+      top: $card-size + $card-margin;
+      right: $card-margin * -2;
+    }
+  }
 }
 
 .Card--interactive {
@@ -46,6 +54,10 @@ $card-margin: 5px;
     background: #2e2e2c;
     color: $color-jsconf-orange;
   }
+}
+
+.CardContainer {
+  position: relative;
 }
 
 .CardIcon {
