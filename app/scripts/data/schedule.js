@@ -58,7 +58,7 @@ const conferenceDays = [
       {
         time: '13:30 14:00',
         trackA: 'max-goodman',
-        trackB: 'tilde-ann-thurium',
+        trackB: 'katrina-uychaco',
       },
       {
         time: '14:15 14:45',
@@ -146,7 +146,7 @@ const conferenceDays = [
       },
       {
         time: '15:00 15:30',
-        trackA: 'katrina-uychaco',
+        trackA: 'tilde-ann-thurium',
         trackB: 'berglind-osk',
       },
       {
