@@ -20,24 +20,30 @@ const conferenceDays = [
     date: 'Thursday August 25, 2016',
     slots: [
       {
-        time: '08:00 09:30',
+        time: '08:00 09:00',
         unified: {
           title: 'Breakfast and badge pick-up',
         },
       },
       {
-        time: '09:30 10:00',
+        time: '09:00 09:45',
         unified: {
           title: 'Opening JSConf Iceland 2016',
         },
       },
       {
-        time: '10:00 10:30',
+        time: '09:45 10:15',
         unified: 'myles-borins',
       },
       {
-        time: '10:30 11:00',
+        time: '10:15 10:45',
         unified: 'liv-erickson',
+      },
+      {
+        time: '10:45 11:15',
+        unified: {
+          title: 'Break',
+        },
       },
       {
         time: '11:15 11:45',
