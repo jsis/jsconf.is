@@ -112,10 +112,10 @@ const speakers = [{
   website: '',
   companyWebsite: 'https://www.smashingmagazine.com',
   company: 'Smashing Magazine',
-  title: 'Reactive Animations with CSS Variables',
-  description: `<p>With HTTP/2, Service Workers, Responsive Images, Flexbox, SVG and Font Loading API now available in browsers, we all are still trying to figure out just the right strategy for designing and buildings responsive websites just in time. We want to use all of these technologies, but how can we use them efficiently, and how do we achieve it within a reasonable amount of time?</p>
+  title: 'Dirty little front-end tricks',
+  description: `<p>Do you love the &lt;object&gt; tag, too? How do you feel about responsive image maps? Have you ever tried to work around complex tables, nasty carousels, endless country selectors and complex user interfaces? Well, let’s bring it on!</p>
 
-  <p>In this talk, Vitaly Friedman, editor-in-chief of Smashing Magazine, will be looking into a strategy for crafting fast, resilient and flexible responsive design systems by utilizing all of those wonderful shiny web technologies we have available today. We'll also talk about dealing with legacy browsers and will cover a few dirty little techniques that might ensure that your responsive websites will stay relevant, flexible and accessible in the years to come.</p>
+  <p>In this talk, Vitaly Friedman, editor-in-chief of Smashing Magazine, will present dirty practical techniques and clever ideas developed in actual real-life projects, and use many examples to illustrate how we can solve problems smarter and faster. Please take the techniques with a grain of salt. Beware: you will not be able to unlearn what you’ll learn in the session!</p>
 
   <div class="workshop">
     <hr>
