@@ -372,6 +372,7 @@ const speakers = [{
   slug: 'johannes-ewald',
   twitter: 'jhnnns',
   github: 'jhnns',
+  company: 'Peerigon',
   title: 'The future of frontend tooling',
   description: '<p>Our frontend toolstack has become quite complex over the past few years. In order to overcome typical problems when building large websites, we\'ve built a variety of tools with shiny names like Grunt, Gulp or Webpack. However, things are about to change. With new technologies like HTTP2, ES2015 and Web Components around the corner, we need to ask ourselves: are the best practices from today still valid in the future? What kind of tools will we be using in the next few years? Will we need them at all? In my talk, I am going to show you how these new technologies will change the way we work.</p>',
 }, {
