@@ -7,7 +7,8 @@ $card-margin: 5px;
 .Card {
   background: $color-jsconf-orange;
   color: #000;
-  display: block;
+  display: flex;
+  flex-direction: column;
   float: left;
   height: 160px;
   margin: 0 $card-margin $card-margin 0;
@@ -16,8 +17,9 @@ $card-margin: 5px;
   width: calc(50% - 5px);
 
   @media (min-width: 768px) {
-    height: $card-size;
-    width: $card-size;
+    padding-top: 33.333333%;
+    position: relative;
+    width: 33.333333%;
 
     &:nth-child(odd) {
       clear: both;
@@ -62,7 +64,6 @@ $card-margin: 5px;
 
 .CardIcon {
   display: inline-block;
-  margin-top: 32px;
 
   .Svg {
     max-width: 124px;
@@ -71,4 +72,5 @@ $card-margin: 5px;
 
 .CardTitle {
   display: block;
+  font-size: 1.5vw;
 }

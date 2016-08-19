@@ -39,13 +39,13 @@ export default class Home extends React.Component {
   render () {
     return (
       <div className="row align-center large-unstack">
-        <div className="column large-order-1 large-text-right large-expand">
+        <div className="column large-4 large-order-1 large-text-right">
           <hr className="u-separator" />
           <h2 className="u-title">JSConf Iceland</h2>
           <h2>August 25th — 26th 2016</h2>
           <hr className="u-separator" />
         </div>
-        <div className="column">
+        <div className="large-6 column">
           <h3 className="u-shoutout">Feel free to explore</h3>
           <CardContainer>
             {cards.map(card => (
