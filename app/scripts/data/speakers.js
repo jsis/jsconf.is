@@ -392,15 +392,6 @@ const speakers = [{
   title: 'This will flow your mind',
   description: '<p>This talk is about flow, a static type-checker for JavaScript which is developed and maintained by Facebook. We have been using flow extensively at QuizUp for half a year now and it\'s been a great success in a big JS codebase. In this talk I will try to answer the following questions to the best of my ability: - What are the benefits of using a static type-checker? - What are the limitations of static type-checking? - How can I get started?</p>',
 }, {
-  name: 'Swastik Pareek',
-  slug: 'swastik-pareek',
-  twitter: 'swastik1608',
-  github: 'swastikpareek',
-  companyWebsite: 'http://qed42.com',
-  company: 'QED42',
-  title: 'Polymer - Future of web designing',
-  description: '<p>Basic to deep talk about polymer and webcomponents - How it enchance Critical Path Rendering. Some Hands on Demos showing off power of polymer.</p>',
-}, {
   name: 'Malte Ubl',
   slug: 'malte-ubl',
   twitter: 'cramforce',
