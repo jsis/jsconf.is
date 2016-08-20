@@ -35,11 +35,20 @@ $card-margin: 5px;
 
 .Card--interactive .Card-body {
   cursor: pointer;
-  transition: color 300ms, background 300ms;
+  transition: color 300ms, background 300ms, box-shadow 300ms, z-index 300ms 300ms;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
   &:hover {
     background: #2e2e2c;
     color: $color-jsconf-orange;
+    transition-delay: 0ms;
+    z-index: 4;
+  }
+
+  @include breakpoint(large) {
+    &:hover {
+      box-shadow: 0 50px 20px rgba(0, 0, 0, 0.3);
+    }
   }
 }
 
