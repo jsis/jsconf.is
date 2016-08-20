@@ -1,0 +1,25 @@
+@import "../../css/_settings";
+
+.Events-tabs {
+  margin-bottom: 32px;
+}
+
+.Events-tab {
+  font-size: 18px;
+  margin-right: 24px;
+  outline: none;
+  opacity: .5;
+  text-transform: uppercase;
+  transition: opacity 300ms;
+
+  &.is-active {
+    border-bottom: 1px solid black;
+    opacity: 1;
+  }
+}
+
+.Events ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

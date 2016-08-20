@@ -1,0 +1,60 @@
+@import "../../css/_settings";
+
+$SlotBorder: 1px solid rgba(black, .2);
+
+.Slot {
+  border-bottom: $SlotBorder;
+  align-items: flex-start;
+  display: flex;
+
+  :first-child > & {
+    border-top: $SlotBorder;
+  }
+}
+
+.Slot-time {
+  box-sizing: content-box;
+  border: $SlotBorder;
+  border-top: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-right: 40px;
+  width: 35px;
+  padding: 10px;
+}
+
+.Slot-tracks {
+  display: block;
+  width: 100%;
+}
+
+.Slot-track {
+  border-bottom: $SlotBorder;
+  display: block;
+  transition: background-image 300ms;
+  padding: 32px 32px 32px 0;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:not(.Slot-track--gray):hover {
+    background-image: linear-gradient(to left, rgba(black, .066), rgba(black, 0));
+    cursor: pointer;
+  }
+  
+  &--gray {
+    opacity: .3;
+  }
+}
+
+.Slot-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.Slot-meta p {
+  font-size: 18px;
+  margin: 0;
+}
