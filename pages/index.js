@@ -12,16 +12,25 @@ const updates = [
 ]
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      panelHidden: true,
+    }
+  }
+
   heroWaypoint = ({ currentPosition }) => {
     const beyondHero = currentPosition === Waypoint.above
     if (this.props.onToggleMenu) {
       this.props.onToggleMenu(beyondHero)
+      this.setState({ panelHidden: !beyondHero })
     }
   }
 
   render () {
     return (
       <div>
+        <Waypoint onPositionChange={this.heroWaypoint} topOffset={-400} />
         <div className="row align-center large-unstack">
           <div className="column large-4 large-order-1 large-text-right">
             <hr className="u-separator" />
@@ -53,10 +62,9 @@ export default class Home extends React.Component {
             </CardContainer>
           </div>
         </div>
-        <Waypoint onPositionChange={this.heroWaypoint} />
         <div className="row align-center">
           <div className="large-10 column u-offsetParent">
-            <Panel>
+            <Panel hidden={this.state.panelHidden}>
               <p>JSConf is coming to Iceland August 25th — 26th.</p>
               <p>That's a Thursday and Friday. Just after your vacation, right before you get too busy with work. Perfect for catching up on awesome talks and with friends from the JavaScript community.</p>
               <p>Expect two awesome tracks over two days with over 30 talks in total</p>

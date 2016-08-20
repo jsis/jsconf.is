@@ -37,7 +37,13 @@
   .Panel {
     position: relative;
     margin: -26% 0 -250px;
+    transition: opacity 400ms, transform 400ms;
     z-index: 1;
+  }
+  
+  .Panel--invisible {
+    opacity: 0;
+    transform: translateY(100px);
   }
 }
 
