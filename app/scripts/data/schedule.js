@@ -143,9 +143,7 @@ const conferenceDays = [
       {
         time: '13:30 14:00',
         trackA: 'denis-rechkunov',
-        trackB: {
-          title: 'TBA',
-        },
+        trackB: 'david-blurton',
       },
       {
         time: '14:15 14:45',
