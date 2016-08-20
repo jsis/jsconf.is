@@ -5,6 +5,7 @@
 
 @import "settings";
 
+
 @import "~foundation-sites/scss/foundation";
 
 @include foundation-global-styles;
@@ -13,6 +14,8 @@
 @include foundation-flex-grid;
 @include foundation-visibility-classes;
 @include foundation-button;
+@include foundation-top-bar;
+@include foundation-menu;
 
 @import
   "components/layout/base",
@@ -23,7 +26,8 @@
   "components/speaker/base",
   "components/modal/base",
   "components/google-maps/base",
-  "components/tito/base";
+  "components/tito/base",
+  "top-bar";
 
 html {
   @include breakpoint(medium) {

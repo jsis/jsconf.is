@@ -1,23 +1,45 @@
 import React from 'react'
 import { Container } from 'react-responsive-grid'
 import Helmet from 'react-helmet'
+import classnames from 'classnames'
 import config from '../config.toml'
 import Footer from '../components/footer'
 import '../css/styles.scss'
 import { rhythm } from '../utils/typography'
+import { Link } from 'react-router'
+import { prefixLink } from 'gatsby-helpers'
 
 const { siteTitle, siteDescription } = config
 
 module.exports = class Template extends React.Component {
   static propTypes = {
     children: React.PropTypes.any,
-  };
+  }
+
+  state = {
+    pageShowMenu: false,
+  }
 
   componentDidMount () {
     document.documentElement.classList.remove('is-loading')
   }
 
+  onPageToggleMenu = (show) => {
+    this.setState({
+      pageShowMenu: show,
+    })
+  }
+
   render () {
+    const { location } = this.props
+    const { pageShowMenu } = this.state
+    const isHome = location.pathname === '/'
+    const topBarClasses = classnames({
+      'top-bar': true,
+      'top-bar-subPage': !isHome,
+      'top-bar-explicitShow': pageShowMenu,
+    })
+
     return (
       <div>
         <Helmet
@@ -37,7 +59,20 @@ module.exports = class Template extends React.Component {
             { name: 'twitter:image', content: 'https://2016.jsconf.is/images/og.png' },
           ]}
         />
-          {this.props.children}
+          <div className={topBarClasses}>
+            <Link to={prefixLink('/')} className="top-bar-title"><span className="show-for-sr">JSConf Iceland</span></Link>
+            <div>
+              <div className="top-bar-right">
+                <ul className="menu">
+                  <li><Link to={prefixLink('/about/')}>About</Link></li>
+                  <li><Link to={prefixLink('/speakers/')}>Speakers</Link></li>
+                  <li><Link to={prefixLink('/venue/')}>Venue</Link></li>
+                  <li><Link to={prefixLink('/schedule/')}>Schedule</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {React.cloneElement(this.props.children, { onToggleMenu: this.onPageToggleMenu })}
         <Footer />
       </div>
     )

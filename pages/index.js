@@ -2,6 +2,7 @@ import React from 'react'
 import Card, { CardContainer } from '../components/card'
 import UpdateSection from '../components/update-section'
 import { prefixLink } from 'gatsby-helpers'
+import Waypoint from 'react-waypoint'
 
 const updates = [
   'Check out the final(ish) schedule, including guest talks.',
@@ -43,6 +44,13 @@ const cards = [
 ]
 
 export default class Home extends React.Component {
+  heroWaypoint = ({ currentPosition }) => {
+    const beyondHero = currentPosition === Waypoint.above
+    if (this.props.onToggleMenu) {
+      this.props.onToggleMenu(beyondHero)
+    }
+  }
+
   render () {
     return (
       <div>
@@ -77,6 +85,7 @@ export default class Home extends React.Component {
             </CardContainer>
           </div>
         </div>
+        <Waypoint onPositionChange={this.heroWaypoint} />
         <div className="row align-right show-for-large">
           <div className="large-6 column">
             <Card blank />
