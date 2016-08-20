@@ -6,7 +6,8 @@ const speakers = [{
   website: 'https://rckbt.me/',
   companyWebsite: 'https://www.npmjs.com/',
   company: 'npm',
-  description: '<p>Senior Software Developer at npm, Inc. She studied Mechanical Engineering at Caltech and worked as a roboticist for 8 years.</p>',
+  title: 'The npm website: a tale of wonder and woe (and wombats!)',
+  description: '<p>Since its creation in 2010, the npm website has gone on quite an adventure. Oh, the stories it could tell! From its humble beginnings as a pioneer node application without a single line of client-side JavaScript to its current state as a full-fledged web application with front-end and backend frameworks, this site has seen it all. Learn from our successes as well as our mistakes as I take you on a journey of lessons learned over the past 2.5 years (and counting)!</p>',
 }, {
   name: 'Lin Clark',
   slug: 'lin-clark',
@@ -25,7 +26,22 @@ const speakers = [{
   website: 'http://writing.jan.io/',
   companyWebsite: 'https://neighbourhood.ie/',
   company: 'Neighbourhoodie Software',
+  title: 'The state of the JavaScript Community',
   description: '<p>Co-curator for JSConf EU, the project lead of Apache CouchDB and co-inventor of Hoodie. He lives in Berlin and likes to change the world.</p>',
+}, {
+  name: 'Myles Borins',
+  slug: 'myles-borins',
+  twitter: 'TheAlphaNerd',
+  github: 'TheAlphaNerd',
+  website: '',
+  companyWebsite: '',
+  company: '',
+  title: 'On left-pad and empathy: understanding human connection',
+  description: `
+  <p>Empathy can be a pivotal factor in the success of yourself and your projects. If you don't care about the people using your product, why are you making it? If you don't care about your co-workers who will have to use your code, why do you work with them? If you don't care about yourself, why are you doing this as a career?</p>
+  <p>Some people may ask "why empathy?”. Let’s examine this concept, find ways to be more empathetic in our actions, and discuss the pragmatism of empathy.</p>
+  <p>This talk will explore various ways in which developers can be more empathetic to the community, their co-workers, and themselves. The talk will also explore larger ways we as an industry can work together to improve empathy. We will then use these tools to examine the “left-pad” situation to find empathy for all those involved.</p>
+  `,
 }, {
   name: 'Brian Holt',
   slug: 'brian-holt',
@@ -34,9 +50,13 @@ const speakers = [{
   website: '',
   companyWebsite: 'https://www.netflix.com',
   company: 'Netflix',
-  title: 'What React/Angular/Ember Devs Can Learn From Elm',
-  description: `<p>Elm has slowly entering the front-end conscious the past year and it is for good reason: Elm is an <em>excellent
-</em> language and framework for the front end. However most can't introduce a new language to our stack and must continue working within the constraints of our current apps. Fret not! Despite not being able to switch languages we can adopt some of the techniques and ideals that make Elm such a wonderful development experience.</p>
+  title: 'React: Learn Once Write Anywhere',
+  description: `<p>React has set the front end development world on fire. It seems nearly over night that React became the darling of JavaScripts developers everywhere and before you knew it, sites like Netflix, reddit, Khan Academy, Airbnb, and more were rewriting entire front ends to harness that power.</p>
+  <p>The React inferno isn’t contained to just the DOM though; other communities have taken notice and are beginning to harness the power of the one-way data flow that React enforces. In this talk we’ll give you a brief overview of why React is so ®evolutionary for user interface development and some other communities that have taken hold of it as well. We’ll talk about seeing React everywhere from the DOM to the terminal, native mobile, game consoles, three dimensional environments, and even virtual reality.</p>
+
+  <h4>Details</h4>
+  <p>The talk is done through the media that it talks about. We’ll start in the terminal, using react-blessed to generate the slides. We move to the DOM to talk about React in the browser. We then (through broadcasting iOS via Quicktime) will talk about React Native via an iPhone. As we move to React in embedded environments, we’ll run a PS4 through a Mac to show React run on a TV. We’ll go back to the browser to talk about react-three and show the slides written using react-three.</p>
+  <p>Finally, to melt everyone’s mind, we’ll use aframe-react and WebVR to display the slides through an Oculus and show how React can be used in conjunction with WebVR. Very fun and compelling talk!</p>
 <div class="workshop">
   <hr>
   <h4><a href="/tickets">WORKSHOP</a></h4>
@@ -92,10 +112,10 @@ const speakers = [{
   website: '',
   companyWebsite: 'https://www.smashingmagazine.com',
   company: 'Smashing Magazine',
-  title: 'Reactive Animations with CSS Variables',
-  description: `<p>With HTTP/2, Service Workers, Responsive Images, Flexbox, SVG and Font Loading API now available in browsers, we all are still trying to figure out just the right strategy for designing and buildings responsive websites just in time. We want to use all of these technologies, but how can we use them efficiently, and how do we achieve it within a reasonable amount of time?</p>
+  title: 'Dirty little front-end tricks',
+  description: `<p>Do you love the &lt;object&gt; tag, too? How do you feel about responsive image maps? Have you ever tried to work around complex tables, nasty carousels, endless country selectors and complex user interfaces? Well, let’s bring it on!</p>
 
-  <p>In this talk, Vitaly Friedman, editor-in-chief of Smashing Magazine, will be looking into a strategy for crafting fast, resilient and flexible responsive design systems by utilizing all of those wonderful shiny web technologies we have available today. We'll also talk about dealing with legacy browsers and will cover a few dirty little techniques that might ensure that your responsive websites will stay relevant, flexible and accessible in the years to come.</p>
+  <p>In this talk, Vitaly Friedman, editor-in-chief of Smashing Magazine, will present dirty practical techniques and clever ideas developed in actual real-life projects, and use many examples to illustrate how we can solve problems smarter and faster. Please take the techniques with a grain of salt. Beware: you will not be able to unlearn what you’ll learn in the session!</p>
 
   <div class="workshop">
     <hr>
@@ -156,7 +176,7 @@ const speakers = [{
   github: 'a0viedo',
   website: '',
   companyWebsite: 'https://github.com/js-squad',
-  company: 'JSSquad',
+  company: 'nearForm',
   title: 'Demystifying (JavaScript) engines',
   description: `<p>How a JavaScript engine works? What are its basic components? How to measure its performance? What is JIT compilation? Stigmatization: is JavaScript fast enough? are some of the questions I think we currently fail to answer in a, somewhat, short and direct way.</p>`,
 }, {
@@ -186,8 +206,8 @@ const speakers = [{
   twitter: 'am3thyst',
   github: 'amycheng',
   website: 'http://amycheng.info',
-  companyWebsite: 'https://www.brooklynmuseum.org/',
-  company: 'Brooklyn Museum',
+  companyWebsite: 'http://nymag.com/',
+  company: 'New York Media',
   title: 'Recreate Masterpieces of Modern Art with JavaScript!',
   description: `<p>JavaScript is not just for web apps! This talk looks at JavaScript as an artistic and visual programming language and serves as a primer on generative art. The audience will learn how to recreate one of Damien Hirst’s Spot paintings and one of Piet Mondrian’s Composition paintings in the browser. JavaScript is commonly used to manage interactivity, data, and application states. However, we will use masterpieces of modern art to illustrate JavaScript’s potential to manipulate visual space, color and shape.</p>`,
 }, {
@@ -217,8 +237,8 @@ const speakers = [{
   twitter: 'mapmeld',
   github: 'mapmeld',
   website: 'http://mapmeld.com',
-  companyWebsite: 'http://asiafoundation.org/',
-  company: 'The Asia Foundation',
+  companyWebsite: 'http://www.unicefstories.org/',
+  company: 'UNICEF Innovation',
   title: 'If One Laptop per Child were started today, how JavaScript-y would it be?',
   description: `<p>In 2005, it looked like the future of global education might be a custom laptop and OS for $100. Today you could use that money to buy two Android tablets and access eBooks, courses, and programming tutorials on the web. An OLPC hacker reflects on teaching computing in Uganda, Uruguay, and our new JavaScript world.</p>`,
 }, {
@@ -307,8 +327,8 @@ const speakers = [{
 }, {
   name: 'Denis Rechkunov',
   slug: 'denis-rechkunov',
-  twitter: 'pragmadash',
-  github: 'pragmadash',
+  twitter: 'pragmader',
+  github: 'pragmader',
   website: 'http://catberry.org',
   companyWebsite: 'https://www.amazon.com',
   company: 'Amazon',
@@ -322,8 +342,8 @@ const speakers = [{
   twitter: 'sethfsamuel',
   github: 'sethfsamuel',
   website: '',
-  companyWebsite: 'http://www.originate.com',
-  company: 'Originate',
+  companyWebsite: 'https://www.airtime.com/',
+  company: 'Airtime',
   title: 'Arbitrary Computation on the GPU Using WebGL',
   description: `<p>WebGL is already widely in use for 3D graphics and image processing but could be used for much more. We'll learn how to pass arbitrary data to the GPU for parallel processing, how to get that processed data back into Javascript, and all the reasons this doesn't work even when it should.</p>`,
 }, {
@@ -336,9 +356,64 @@ const speakers = [{
   company: 'Mozilla',
   title: 'The New Mobile Web: Service Worker, Push, and App Manifests',
   description: `<p>Compared to native apps, mobile websites have historically been at a disadvantage: no installation, no push notifications, and they only work when you're online. This year, that changed. Browser vendors have worked together to implement open standards that address each of these shortcomings. This session examines how the Service Worker, Push, and App Manifest specifications fill the gap between web and native.</p>`,
-}]
+}, {
+// Guest talks
+  name: 'Heiko Behrens',
+  slug: 'heiko-behrens',
+  twitter: 'hbehrens',
+  github: 'hbehrens',
+  website: 'http://heikobehrens.net',
+  companyWebsite: 'https://www.pebble.com/',
+  company: 'Pebble',
+  title: 'JavaScript on tiny, wearable hardware',
+  description: '<p>The Apple Macintosh was released 32 years ago and had 128KB of RAM. We managed to let you drawing to the screen using Canvas APIs, using npm packages, and much more by writing fully ECMAScript 5.1 compliant code with half of that memory. In this talk, I’d like to present our learnings from porting the JerryScript engine to the Pebble smartwatch to empower JS lovers to develop for wearable consumer electronics. From engine internals over embedded hacks to JavaScript inception where we cross-compile the JS engine itself to JS using Emscripten to produce JS bytecode inside any JS environment: Expect some craziness.</p>',
+}, {
+  name: 'Johannes Ewald',
+  slug: 'johannes-ewald',
+  twitter: 'jhnnns',
+  github: 'jhnns',
+  company: 'Peerigon',
+  title: 'The future of frontend tooling',
+  description: '<p>Our frontend toolstack has become quite complex over the past few years. In order to overcome typical problems when building large websites, we\'ve built a variety of tools with shiny names like Grunt, Gulp or Webpack. However, things are about to change. With new technologies like HTTP2, ES2015 and Web Components around the corner, we need to ask ourselves: are the best practices from today still valid in the future? What kind of tools will we be using in the next few years? Will we need them at all? In my talk, I am going to show you how these new technologies will change the way we work.</p>',
+}, {
+  name: 'Visnu Pitiyanuvath',
+  slug: 'visnu-pitiyanuvath',
+  twitter: 'visnup',
+  github: 'visnup',
+  title: 'HSL: The RGB You\'ve Been Waiting For',
+  description: '<p>RGB is a color space designed for CRTs. It\'s not designed for people brains. HSL is designed for people and loves you. I\'ve got some highly interactive slides to teach people what HSL is and make it intuitive. <a href="http://visnup.github.io/hsl">http://visnup.github.io/hsl</a></p>',
+}, {
+  name: 'Tryggvi Gylfason',
+  slug: 'tryggvi-gylfason',
+  twitter: 'tryggvigy',
+  github: 'tryggvigy',
+  companyWebsite: 'https://quizup.com',
+  company: 'QuizUp',
+  title: 'This will flow your mind',
+  description: '<p>This talk is about flow, a static type-checker for JavaScript which is developed and maintained by Facebook. We have been using flow extensively at QuizUp for half a year now and it\'s been a great success in a big JS codebase. In this talk I will try to answer the following questions to the best of my ability: - What are the benefits of using a static type-checker? - What are the limitations of static type-checking? - How can I get started?</p>',
+}, {
+  name: 'Malte Ubl',
+  slug: 'malte-ubl',
+  twitter: 'cramforce',
+  github: 'cramforce',
+  website: 'http://nonblocking.io',
+  companyWebsite: 'https://www.ampproject.org/',
+  company: 'AMP Project',
+  title: '#notalljavascript',
+  description: '<p>Modern websites are often composed out of megabytes of JavaScript – not all of which we wrote ourselves: Ads, social plugins, tweets, instagrams, video players and other things get assembled together and more often than not don’t play all too well with each other. When we started the AMP project we quickly realized we’d have to support this type of third party JS. In this talk we’ll do a deep dive into how we manage to maintain page performance and decent user experience nonetheless. Bring your wetsuit, because we’ll dive deep into some of the more rarely explored corners of the JavaScript language.</p>',
+}, {
+  name: 'Berglind Ósk Bergsdóttir',
+  slug: 'berglind-osk',
+  twitter: 'berglind0sk',
+  github: 'berglind',
+  website: 'https://about.me/berglind0sk',
+  companyWebsite: 'http://kolibri.is',
+  company: 'Kolibri',
+  title: 'Feeling like a fake - the Impostor Syndrome',
+  description: `<p>Have you ever felt like a fraud and the whole world is going to find out that you're really not as competent as other people think? Do you feel like your success is because of luck or timing but not your own skills? Then you are not alone! This concept is well known and is called the Impostor Syndrome. It's not limited to software development but it's very common in our field.</p><p>Most people have experienced this at some point in their lives but don't talk about since they think they're alone. In this talk I'm gonna tell my story of suffering from the Impostor Syndrome and share my advice on how to overcome it.</p>`,
+}];
 
 // Sort them by name
 speakers.sort((speakerA, speakerB) => speakerA.name.localeCompare(speakerB.name))
 
-module.exports = speakers
+export default speakers

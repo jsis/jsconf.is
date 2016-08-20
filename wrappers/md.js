@@ -14,7 +14,6 @@ class Md extends React.Component {
 
   render () {
     const post = this.props.route.page.data
-    console.log(post)
     const base = (
       <div className="markdown">
         <h1>{post.title}</h1>

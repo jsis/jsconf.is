@@ -25,6 +25,9 @@ export default () => (
           <p>
             The great companies below are supporting us in 2016 – Thank&nbsp;you!
           </p>
+          <div className="Sponsors Sponsors--platinum">
+            {filter(sponsors, ['level', 'platinum']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
+          </div>
           <div className="Sponsors Sponsors--silver">
             {filter(sponsors, ['level', 'silver']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
           </div>

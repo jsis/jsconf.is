@@ -66,7 +66,7 @@ BoxPage.propTypes = {
   blurb: React.PropTypes.string,
   metaTitle: React.PropTypes.string,
   children: React.PropTypes.node,
-  subtitle: React.PropTypes.string,
+  subtitle: React.PropTypes.node,
 }
 
 export default BoxPage

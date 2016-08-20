@@ -30,7 +30,7 @@
     margin-top: calc(130px + #{$global-margin});
     padding: $global-margin 0;
 
-    a {
+    a:not(.u-base-link) {
       @extend .BgLink;
     }
 

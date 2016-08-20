@@ -5,7 +5,6 @@ import classnames from 'classnames'
 import config from '../config.toml'
 import Footer from '../components/footer'
 import '../css/styles.scss'
-import { rhythm } from '../utils/typography'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 

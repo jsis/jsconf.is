@@ -1,0 +1,91 @@
+mixin unified(slot)
+  td(colspan="2")
+    if slot.link
+      a.u-base-link(href=slot.link)
+        span.Schedule-title= slot.title || 'TBA'
+        if slot.name
+          .Schedule-name= slot.name
+    else
+      p.Schedule-title!= slot.title
+mixin normal(slot)
+  td
+    if slot.link
+      a.u-base-link(href=slot.link)
+        span.Schedule-title= slot.title || 'TBA'
+        if slot.name
+          .Schedule-name= slot.name
+    else
+      p.Schedule-title!= slot.title
+mixin timeSlot(slot)
+  tr
+    td.Schedule-time= slot.time
+    if slot.unified
+      +unified(slot.unified)
+    else
+      if slot.trackA
+        +normal(slot.trackA)
+      if slot.trackB
+        +normal(slot.trackB)
+        
+mixin dayTable(day)
+  table.Schedule.hover.scroll
+    colgroup
+      col
+      col(style="width:50%")
+      col(style="width:50%")
+    if !day.noTracks
+      thead: tr
+        th
+        th Hekla
+        th Katla
+    tbody
+      each slot in day.slots
+        +timeSlot(slot)
+
+p #[strong Note:] This schedule is tentative and will change without notice leading up to the event.
+
+each day in schedule.conference
+  h2= day.date
+  +dayTable(day)
+
+h1 Community events
+h2 Thursday August 11 - <a href="https://www.facebook.com/events/517473555116628/" target="_blank">JSConf Community Meetup</a> (free)
+p The community is hosting a big meetup before the main JSConf event. Expect over 150 people in a great atmosphere with plenty of great talks and beverages (food and drinks!). If you arrive super early for the conference, this is the perfect event for you!
+
+h2 Thursday August 18 - Beer.js at <a href="http://www.lofthostel.is/" target="_blank">Loft hostel</a> at 7pm (free)
+p Beer.js is a free + public hangout for JavaScript enthusiasts that happens in Reykjavik. No presentations, RSVPs or any formal schedule. Just show up and talk, learn.
+
+h2 Saturday August 20 - <a href="http://culturenight.is/" target="_blank">Culture night</a> (free)
+p Not really a JS community event, but don't miss this national event celebrating culture in all shapes. Starts with a public marathon in the morning and caps with a grand concert and fireworks in the night. In between there are public art exhibits, concerts and shows everywhere you go.
+
+h2 Wednesday August 24 - Workshops
+p Full day workshops with <a target="_blank" href="http://www.svef.is/vidburdir/jsconf-es6-react/">Brian Holt</a> &amp; <a target="_blank" href="http://www.svef.is/vidburdir/jsconf-ux-design-patterns/">Vitaly Friedman</a> will be held by our friends at SVEF on the day before the conference. Only 45 seats are available for each workshop.
+
+h2 Monday August 29 - Progressive Web Apps, PWA Full Day Workshop presented by Mozilla (free)
+p Everything you ever wanted to know about the technologies behind progressive webapps but you were afraid to ask. The workshop is a full-day, hands-on event facilitated by István Szmozsánszky (<a href="https://twitter.com/slsoftworks" target="_blank">Flaki</a>) and Andrzej Mazur (<a href="https://twitter.com/end3r" target="_blank">end3r</a>), Mozilla Tech Speakers, so be sure to bring your laptop and prepare for some serious hack'n'learn!
+
+h1 Significant Other Track
+
+p JSConf Iceland is the perfect place to bring the family.
+p.
+  As a significant other, you can enjoy special activities during conference hours as well as join attendees for
+  dinner and evening events. While most of the cost is covered by our awesome sponsors, you need to
+  <a href="https://ti.to/jsconf-is/2016/" target="_blank">buy tickets</a> for each of the events you will be
+  participating in.
+
+h2= schedule.so[0].date
+p Explore Reykjavik using the "Hop on, Hop off" bus, with the opportunity to hop on and off at conveniently located bus stops around the city.
+p The trip includes a 24 hour bus ticket, a meal ticket and entrance to Reykjavik's largest geothermal swimming pool. You can go on your own or in a group with one of the organizers.
++dayTable(schedule.so[0])
+
+h2= schedule.so[1].date
+p The Golden Circle tour takes in three popular attractions all within 100km of the capital: Þingvellir, Geysir and Gullfoss.
+p This is a great way to see tectonic rifts, gushing geysers and one of Iceland's most famous waterfalls all in one day.
++dayTable(schedule.so[1])
+
+h2 Significant other meal ticket
+
+p.
+  In addition to the above, significant others can join attendees for breakfast and the three awesome evening
+  parties by purchasing <a href="https://ti.to/jsconf-is/2016/" target="_blank">a meal ticket</a>. It also allows them
+  to RSVP to the Blue Lagoon farewell dinner.

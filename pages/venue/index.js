@@ -1,7 +1,7 @@
 import React from 'react'
-import BoxPage from '../components/box-page'
-import content from './_cfp.md'
-import icon from '!svg-inline!../images/tonkvisl.svg'
+import BoxPage from '../../components/box-page'
+import content from './_venue.md'
+import icon from '!svg-inline!../../images/tonkvisl.svg'
 
 const title = 'Venue'
 

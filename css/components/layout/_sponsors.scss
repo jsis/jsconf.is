@@ -25,6 +25,16 @@ $sponsors-gutter: 20px;
     }
   }
 
+  &--platinum &-box {
+    height: 150px;
+    width: 250px;
+
+    @include breakpoint(medium) {
+      height: 175px;
+      width: calc(49% - $sponsors-gutter);
+    }
+  }
+
   &--silver &-box {
     height: 200px;
     width: 200px;
@@ -59,6 +69,5 @@ $sponsors-gutter: 20px;
 
   &-image {
     width: 100%;
-    margin: 0;
   }
 }

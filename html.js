@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import { prefixLink } from 'gatsby-helpers'
-import { TypographyStyle } from 'utils/typography'
 
 
 export default class extends React.Component {
@@ -32,7 +31,7 @@ export default class extends React.Component {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           <link rel="shortcut icon" href={this.props.favicon} />
-          <TypographyStyle />
+
           {cssLink}
         </head>
         <body>

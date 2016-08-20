@@ -2,10 +2,38 @@ siteTitle="JSConf Iceland: August 25th — 26th 2016"
 siteDescription="A two day JavaScript conference in Reykjavik, Iceland."
 
 [[sponsors]]
+name = "Advania"
+website = "https://advania.is"
+level = "platinum"
+image = "advania.png"
+imagePadding = true
+
+[[sponsors]]
+name = "AMP Project"
+website = "https://www.ampproject.org"
+level = "platinum"
+image = "google.png"
+imagePadding = true
+
+[[sponsors]]
 name = "Aranja"
 website = "https://aranja.com"
 level = "silver"
 image = "aranja.svg"
+imagePadding = false
+
+[[sponsors]]
+name = "Bloomberg"
+website = "https://bloomberg.com"
+level = "silver"
+image = "bloomberg.svg"
+imagePadding = true
+
+[[sponsors]]
+name = "Landsbankinn"
+website = "https://www.landsbankinn.is"
+level = "silver"
+image = "landsbankinn.jpg"
 imagePadding = false
 
 [[sponsors]]
@@ -27,4 +55,11 @@ name = "VIEW SOURCE"
 website = "https://viewsourceconf.org/"
 level = "bronze"
 image = "viewsourceconf.jpg"
+imagePadding = false
+
+[[sponsors]]
+name = "UENO."
+website = "https://ueno.co/"
+level = "bronze"
+image = "ueno.png"
 imagePadding = false
