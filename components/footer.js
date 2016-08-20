@@ -35,6 +35,9 @@ export default () => (
             {filter(sponsors, ['level', 'bronze']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
           </div>
           <p className="text-center">
+            Travel sponsors: DigitalOcean, Hudl, Spotify, appear.in, Capital One Financial Corporation, Amazon, Originate, Mozilla – Thank you!
+          </p>
+          <p className="text-center">
             We are currently offering sponsorship opportunities for JSConf Iceland.{' '}
             <a href="https://jsconfis.typeform.com/to/FN7Bla" className="BgLink">Contact us for details</a>.
           </p>
