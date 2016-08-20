@@ -1,13 +1,11 @@
 @import "../../css/_settings";
+@import "~foundation-sites/scss/util/util";
 
 .Panel {
   background: $color-gray-75;
   border: 2px solid $color-jsconf-yellow;
   box-shadow: 0 13px 10.8px 1.2px rgba(black, .3);
-  position: absolute;
-  top: -100px;
-  width: 100%;
-  z-index: 1;
+  margin-bottom: 20px;
 }
 
 .Panel-header {
@@ -31,7 +29,20 @@
   padding: 32px 24px;
 
   p {
+    line-height: 1.3;
+  }
+}
+
+@include breakpoint(large) {
+  .Panel {
+    position: relative;
+    margin: -26% 0 -250px;
+    z-index: 1;
+  }
+}
+
+@include breakpoint(xlarge) {
+  .Panel-body p {
     font-size: 1.8em;
-    line-height: 1.2;
   }
 }

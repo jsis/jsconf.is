@@ -1,16 +1,17 @@
 @import "../../css/_settings";
+@import "~foundation-sites/scss/util/util";
 
 .PanelButton {
   display: inline-block;
   position: relative;
-  margin: 1em 0 2em;
+  margin: 1em 0 1.5em;
 }
 
 .PanelButton-link {
   background: $color-gray-75;
   color: inherit;
-  font-size: inherit;
-  padding: 20px 28px;
+  font-size: 1em;
+  padding: 10px 14px;
   position: relative;
   z-index: 1;
 }
@@ -28,4 +29,10 @@
   right: -6px;
   width: 100%;
   height: 100%;
+}
+
+@include breakpoint(large) {
+  .PanelButton-link {
+    padding: 20px 28px;
+  }
 }
