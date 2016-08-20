@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  padding-top: 40px;
+  padding-top: 70px;
 }
 
 h4 {
@@ -75,4 +75,8 @@ strong {
 .u-separator {
   background: #000;
   height: 4px;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
