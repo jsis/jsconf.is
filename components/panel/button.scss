@@ -1,0 +1,31 @@
+@import "../../css/_settings";
+
+.PanelButton {
+  display: inline-block;
+  position: relative;
+  margin: 1em 0 2em;
+}
+
+.PanelButton-link {
+  background: $color-gray-75;
+  color: inherit;
+  font-size: inherit;
+  padding: 20px 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.PanelButton-link,
+.PanelButton-shadow {
+  border: 2px solid $color-jsconf-yellow;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.PanelButton-shadow {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 100%;
+  height: 100%;
+}

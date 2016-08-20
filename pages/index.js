@@ -1,6 +1,7 @@
 import React from 'react'
 import Card, { CardContainer } from '../components/card'
 import UpdateSection from '../components/update-section'
+import Panel, { PanelButton } from '../components/panel'
 import { prefixLink } from 'gatsby-helpers'
 import Waypoint from 'react-waypoint'
 
@@ -8,39 +9,6 @@ const updates = [
   'Check out the final(ish) schedule, including guest talks.',
   'Community trip registrations have closed',
   'Tickets sold out',
-]
-
-const cards = [
-  {
-    icon: 'logo-clipped',
-    link: prefixLink('/about/'),
-    title: 'About',
-  },
-  {
-    icon: 'ticket',
-    link: prefixLink('/tickets/'),
-    title: 'Tickets',
-  },
-  {
-    icon: 'schedule',
-    link: prefixLink('/schedule/'),
-    title: 'Schedule',
-  },
-  {
-    icon: 'podium',
-    link: prefixLink('/speakers/'),
-    title: 'Speakers',
-  },
-  {
-    icon: 'tonkvisl',
-    link: prefixLink('/venue/'),
-    title: 'Venue',
-  },
-  {
-    icon: 'call',
-    link: prefixLink('/cfp/'),
-    title: 'Call For Proposal',
-  },
 ]
 
 export default class Home extends React.Component {
@@ -86,6 +54,16 @@ export default class Home extends React.Component {
           </div>
         </div>
         <Waypoint onPositionChange={this.heroWaypoint} />
+        <div className="row align-center">
+          <div className="large-10 column u-offsetParent">
+            <Panel>
+              <p>JSConf is coming to Iceland August 25th — 26th.</p>
+              <p>That's a Thursday and Friday. Just after your vacation, right before you get too busy with work. Perfect for catching up on awesome talks and with friends from the JavaScript community.</p>
+              <p>Expect two awesome tracks over two days with over 30 talks in total</p>
+              <PanelButton href="#">Learn More</PanelButton>
+            </Panel>
+          </div>
+        </div>
         <div className="row align-right show-for-large">
           <div className="large-6 column">
             <Card blank />
