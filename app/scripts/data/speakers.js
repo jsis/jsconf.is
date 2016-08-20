@@ -260,7 +260,17 @@ const speakers = [{
   companyWebsite: 'https://www.counsyl.com/',
   company: 'Counsyl',
   title: 'Reactive Animations with CSS Variables',
-  description: `<p>CSS variables are here, and they're much more powerful than you think. In this presentation, we will explore the many possibilities with mixing RxJS with CSS variables, including how they can be used to bring your web projects to life with dynamic animations that react to user input. And yes, there will be plenty of demos.</p>`,
+  description: `<p>CSS variables are here, and they're much more powerful than you think. In this presentation, we will explore the many possibilities with mixing RxJS with CSS variables, including how they can be used to bring your web projects to life with dynamic animations that react to user input. And yes, there will be plenty of demos.</p>
+  <p>UI animations can be an incredible asset to the user experience, especially if they are meaningful and responsive to user input. Native mobile app developers know this all too well, so how can we incorporate similar animations to the web to create an appealing user experience?</p>
+  <p>With the help of RxJS and CSS Variables, we can! In this talk, you will learn about:</p>
+  <ul>
+    <li>What reactive animations are</li>
+    <li>How CSS Variables work</li>
+    <li>What Observables are and how they model reactive user input</li>
+    <li>How RxJS + CSS Variables can work together to create performant, reactive animations in your web apps</li>
+    <li>Recreating native mobile interactions for the web</li>
+    <li>Clever tricks and tips, and plenty of demos</li>
+  </ul>`,
 }, {
   name: 'Jenna Zeigen',
   slug: 'jenna-zeigen',
