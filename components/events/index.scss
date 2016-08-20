@@ -1,12 +1,34 @@
 @import "../../css/_settings";
+@import "~foundation-sites/scss/util/util";
+
+.Events {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Events-group {
+  padding: 0 15px;
+
+  @include breakpoint(large) {
+    padding: 0 0 0 15px;
+    transition: transform 400ms;
+    width: 60%;
+    
+    &.is-centered {
+      transform: translateX(100% / 3);
+    }
+  }
+}
 
 .Events-tabs {
+  flex-basis: 100%;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .Events-tab {
   font-size: 18px;
-  margin-right: 24px;
+  margin: 0 24px;
   outline: none;
   opacity: .5;
   text-transform: uppercase;

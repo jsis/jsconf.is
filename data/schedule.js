@@ -51,13 +51,13 @@ const conferenceDays = [
       },
       {
         time: '11:15 11:45',
-        trackA: 'lin-clark',
-        trackB: 'alex-kaminsky',
+        Hekla: 'lin-clark',
+        Katla: 'alex-kaminsky',
       },
       {
         time: '12:00 12:30',
-        trackA: 'david-khourshid',
-        trackB: 'brian-holt',
+        Hekla: 'david-khourshid',
+        Katla: 'brian-holt',
       },
       {
         time: '12:30 13:30',
@@ -68,18 +68,18 @@ const conferenceDays = [
       },
       {
         time: '13:30 14:00',
-        trackA: 'max-goodman',
-        trackB: 'katrina-uychaco',
+        Hekla: 'max-goodman',
+        Katla: 'katrina-uychaco',
       },
       {
         time: '14:15 14:45',
-        trackA: 'dan-callahan',
-        trackB: 'alejandro-oviedo',
+        Hekla: 'dan-callahan',
+        Katla: 'alejandro-oviedo',
       },
       {
         time: '15:00 15:30',
-        trackA: 'dag-inge-aas',
-        trackB: 'justin-falcone',
+        Hekla: 'dag-inge-aas',
+        Katla: 'justin-falcone',
       },
       {
         time: '15:30 16:00',
@@ -90,18 +90,18 @@ const conferenceDays = [
       },
       {
         time: '16:00 16:30',
-        trackA: 'amy-cheng',
-        trackB: 'tsubomi-imamura',
+        Hekla: 'amy-cheng',
+        Katla: 'tsubomi-imamura',
       },
       {
         time: '16:45 17:15',
-        trackA: 'vitaly-friedman',
-        trackB: 'azat-mardan',
+        Hekla: 'vitaly-friedman',
+        Katla: 'azat-mardan',
       },
       {
         time: '17:30 18:00',
-        trackA: 'seth-samuel',
-        trackB: 'mihai-cirlanaru',
+        Hekla: 'seth-samuel',
+        Katla: 'mihai-cirlanaru',
       },
       {
         time: '19:00 23:00',
@@ -124,23 +124,23 @@ const conferenceDays = [
       },
       {
         time: '09:45 10:15',
-        trackA: 'nick-doiron',
-        trackB: 'heiko-behrens',
+        Hekla: 'nick-doiron',
+        Katla: 'heiko-behrens',
       },
       {
         time: '10:30 11:00',
-        trackA: 'raquel-velez',
-        trackB: 'johannes-ewald',
+        Hekla: 'raquel-velez',
+        Katla: 'johannes-ewald',
       },
       {
         time: '11:15 11:45',
-        trackA: 'felipe-ribeiro',
-        trackB: 'visnu-pitiyanuvath',
+        Hekla: 'felipe-ribeiro',
+        Katla: 'visnu-pitiyanuvath',
       },
       {
         time: '12:00 12:30',
-        trackA: 'mariko-kosaka',
-        trackB: 'tryggvi-gylfason',
+        Hekla: 'mariko-kosaka',
+        Katla: 'tryggvi-gylfason',
       },
       {
         time: '12:30 13:30',
@@ -151,21 +151,21 @@ const conferenceDays = [
       },
       {
         time: '13:30 14:00',
-        trackA: 'denis-rechkunov',
-        trackB: {
+        Hekla: 'denis-rechkunov',
+        Katla: {
           grayed: true,
           title: 'TBA',
         },
       },
       {
         time: '14:15 14:45',
-        trackA: 'david-luecke',
-        trackB: 'malte-ubl',
+        Hekla: 'david-luecke',
+        Katla: 'malte-ubl',
       },
       {
         time: '15:00 15:30',
-        trackA: 'tilde-ann-thurium',
-        trackB: 'berglind-osk',
+        Hekla: 'tilde-ann-thurium',
+        Katla: 'berglind-osk',
       },
       {
         time: '15:30 16:00',
@@ -313,7 +313,7 @@ function trackFor (slug) {
 
 function speakerToSlot (slot) {
   const timeSlot = slot
-  const keys = Object.keys(slot).filter(x => ['unified', 'trackA', 'trackB'].includes(x))
+  const keys = Object.keys(slot).filter(x => ['unified', 'Hekla', 'Katla'].includes(x))
 
   timeSlot.tracks = keys.map(type => {
     if (typeof slot[type] === 'string') {

@@ -39,7 +39,7 @@ $SlotBorder: 1px solid rgba(black, .2);
     border-bottom: none;
   }
 
-  &:not(.Slot-track--gray):hover {
+  &:not(&--gray):hover {
     background-image: linear-gradient(to left, rgba(black, .066), rgba(black, 0));
     cursor: pointer;
   }

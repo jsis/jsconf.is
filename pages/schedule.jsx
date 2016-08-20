@@ -4,6 +4,6 @@ import * as schedule from '../data/schedule'
 import Events from '../components/events'
 
 export default () =>
-  <BoxPage title="Schedule">
+  <BoxPage title="Schedule" expanded>
     <Events days={schedule.conference.slice(1, 3)} />
   </BoxPage>
