@@ -1,11 +1,34 @@
 import React from 'react'
 import './details.scss'
 
-const Details = ({ title, description, track, isActive, time, name, slug, link, company, onClose }) => (
+const Details = ({
+  title,
+  description,
+  track,
+  isActive,
+  time,
+  name,
+  slug,
+  link,
+  company,
+  onClose,
+  onPrevious,
+  onNext,
+}) => (
   <div className={`Details${isActive ? ' is-active' : ''}`}>
     {! isActive ? null : (
       <div>
-        <button onClick={onClose}>CLOSE</button>
+        <div className="Details-controls">
+          <button className="Details-closeBtn" onClick={onClose}>
+            <i className="Details-close" />
+          </button>
+          <button onClick={onPrevious}>
+            <i className="Details-leftArrow" />
+          </button>
+          <button onClick={onNext}>
+            <i className="Details-rightArrow" />
+          </button>
+        </div>
         <h2 className="Details-title">{title}</h2>
         <div className="Details-meta">
           {track === 'unified' ? null : (
@@ -37,6 +60,8 @@ Details.propTypes = {
   track: React.PropTypes.string,
   isActive: React.PropTypes.bool,
   onClose: React.PropTypes.func,
+  onNext: React.PropTypes.func,
+  onPrevious: React.PropTypes.func,
 }
 
 export default Details

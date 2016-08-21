@@ -6,6 +6,8 @@ class Slot extends React.Component {
     time: React.PropTypes.string,
     tracks: React.PropTypes.array,
     active: React.PropTypes.object,
+    day: React.PropTypes.number,
+    index: React.PropTypes.number,
     onOpenTrackDetails: React.PropTypes.func,
   }
 
@@ -17,15 +19,15 @@ class Slot extends React.Component {
     )
   }
 
-  renderInterActiveSlot (slot, time) {
-    const { active, onOpenTrackDetails } = this.props
-    const isActive = active && active.title === slot.title
+  renderInterActiveSlot (slot, track) {
+    const { active, onOpenTrackDetails, day, index } = this.props
+    const isActive = active && active.day === day && active.slot === index && active.track === track
 
     return (
       <li
         key={slot.title}
         className={`Slot-track${isActive ? ' is-active' : ''}`}
-        onClick={onOpenTrackDetails({ ...slot, time: time.replace(' ', ' - ') })}
+        onClick={onOpenTrackDetails({ day, track, slot: index })}
       >
         <h4 className="Slot-title">{slot.title}</h4>
         <div className="Slot-meta">
@@ -42,10 +44,10 @@ class Slot extends React.Component {
     return (
       <div className="Slot">
         <div className="Slot-time">{time}</div>
-        <ul className="Slot-tracks">{tracks.map(slot => (
+        <ul className="Slot-tracks">{tracks.map((slot, track) => (
           slot.grayed
             ? this.renderBasicSlot(slot)
-            : this.renderInterActiveSlot(slot, time)
+            : this.renderInterActiveSlot(slot, track)
         ))}</ul>
       </div>
     )

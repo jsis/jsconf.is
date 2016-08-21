@@ -80,3 +80,64 @@
   text-align: left;
   margin-left: 24px;
 }
+
+.Details-controls {
+  display: flex;
+  margin: -10px -10px 000;
+
+  > button {
+    display: inline-block;
+    cursor: pointer;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    position: relative;
+  }
+}
+
+.Details-leftArrow,
+.Details-rightArrow,
+.Details-close {
+  &::before,
+  &::after {
+    content: '';
+    background: #bbb;
+    display: block;
+    height: 24px;
+    left: 50%;
+    margin: -12px 0 0 -1px;
+    position: absolute;
+    top: 50%;
+    transform-origin: 50% 50%;
+    width: 2px;
+  }
+}
+
+.Details-closeBtn {
+  margin-right: auto;
+}
+
+.Details-close {
+  &::before { transform: rotate(45deg); }
+  &::after { transform: rotate(-45deg); }
+}
+
+.Details-leftArrow,
+.Details-rightArrow {
+  &::before,
+  &::after {
+    height: 12px;
+    margin-top: -6px;
+  }
+}
+
+.Details-leftArrow {
+  &::before { transform: translatex(-4.25px) rotate(-45deg) translateY(50%); }
+  &::after { transform: translatex(-4.25px) rotate(45deg) translateY(-50%); }
+}
+
+.Details-rightArrow {
+  &::before { transform: translatex(4.25px) rotate(45deg) translateY(50%); }
+  &::after { transform: translatex(4.25px) rotate(-45deg) translateY(-50%); }
+}
+
