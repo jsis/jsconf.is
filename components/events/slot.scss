@@ -29,6 +29,8 @@ $SlotBorder: 1px solid rgba(black, .2);
 }
 
 .Slot-track {
+  $gradient: linear-gradient(to left, rgba(black, .066), rgba(black, 0));
+  
   border-bottom: $SlotBorder;
   display: block;
   transition: background-image 300ms;
@@ -40,8 +42,13 @@ $SlotBorder: 1px solid rgba(black, .2);
   }
 
   &:not(&--gray):hover {
-    background-image: linear-gradient(to left, rgba(black, .066), rgba(black, 0));
+    background-image: $gradient;
     cursor: pointer;
+  }
+  
+  &.is-active {
+    background-image: $gradient;
+    cursor: default !important;
   }
   
   &--gray {

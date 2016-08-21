@@ -2,13 +2,13 @@ import React from 'react'
 import Slot from './slot'
 import './event.scss'
 
-const Event = ({ date, active, slots, onOpenTrackDetails }) => (
-  <div className={`Event${active ? ' is-active' : ''}`}>
+const Event = ({ date, isActive, slots, active, onOpenTrackDetails }) => (
+  <div className={`Event${isActive ? ' is-active' : ''}`}>
     <h3 className="Event-date">{date}</h3>
     <ul>
       {slots.map(slot => (
         <li key={slot.time}>
-          <Slot {...slot} onOpenTrackDetails={onOpenTrackDetails} />
+          <Slot {...slot} active={active} onOpenTrackDetails={onOpenTrackDetails} />
         </li>
       ))}
     </ul>
@@ -18,7 +18,8 @@ const Event = ({ date, active, slots, onOpenTrackDetails }) => (
 Event.propTypes = {
   date: React.PropTypes.string,
   slots: React.PropTypes.array,
-  active: React.PropTypes.bool,
+  isActive: React.PropTypes.bool,
+  active: React.PropTypes.object,
   onOpenTrackDetails: React.PropTypes.func,
 }
 

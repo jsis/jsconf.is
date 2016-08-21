@@ -20,7 +20,10 @@ class Events extends React.Component {
   }
 
   onChangeDay = day => () => {
-    this.setState({ activeDate: day })
+    this.setState({
+      activeDetails: null,
+      activeDate: day,
+    })
   }
 
   onOpenTrackDetails = details => () => {
@@ -47,14 +50,15 @@ class Events extends React.Component {
           {days.map(day =>
             <Event
               key={day.date}
-              active={activeDate === day.date.split(/,?\s+/)[0]}
+              active={activeDetails}
+              isActive={activeDate === day.date.split(/,?\s+/)[0]}
               date={day.date}
               slots={day.slots}
               onOpenTrackDetails={this.onOpenTrackDetails}
             />
           )}
         </div>
-        <Details {...details} onClose={this.onOpenTrackDetails(null)} active={!!activeDetails} />
+        <Details {...details} onClose={this.onOpenTrackDetails(null)} isActive={!!activeDetails} />
       </div>
     )
   }

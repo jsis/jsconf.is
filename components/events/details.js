@@ -1,9 +1,9 @@
 import React from 'react'
 import './details.scss'
 
-const Details = ({ title, description, name, slug, link, track, active, onClose }) => (
-  <div className={`Details${active ? ' is-active' : ''}`}>
-    {! active ? null : (
+const Details = ({ title, description, track, isActive, name, slug, link, onClose }) => (
+  <div className={`Details${isActive ? ' is-active' : ''}`}>
+    {! isActive ? null : (
       <div>
         <button onClick={onClose}>CLOSE</button>
         <h2>{title}</h2>
@@ -23,7 +23,7 @@ Details.propTypes = {
   slug: React.PropTypes.string,
   link: React.PropTypes.string,
   track: React.PropTypes.string,
-  active: React.PropTypes.bool,
+  isActive: React.PropTypes.bool,
 }
 
 export default Details
