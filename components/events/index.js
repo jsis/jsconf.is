@@ -6,6 +6,7 @@ import './index.scss'
 class Events extends React.Component {
   static propTypes = {
     days: React.PropTypes.arrayOf(React.PropTypes.object),
+    other: React.PropTypes.string,
   }
 
   constructor (props) {
@@ -31,7 +32,7 @@ class Events extends React.Component {
   }
 
   render () {
-    const { days } = this.props
+    const { days, other } = this.props
     const { activeDate, activeDetails } = this.state
     const details = activeDetails || {}
 
@@ -45,6 +46,10 @@ class Events extends React.Component {
               <button key={date} onClick={this.onChangeDay(weekday)} className={classes}>{weekday}</button>
             )
           })}
+          <button
+            onClick={this.onChangeDay('Other')}
+            className={`Events-tab${activeDate === 'Other' ? ' is-active' : ''}`}
+          >Community / SO</button>
         </nav>
         <div className={`Events-group${!activeDetails ? ' is-centered' : ''}`}>
           {days.map(day =>
@@ -57,6 +62,10 @@ class Events extends React.Component {
               onOpenTrackDetails={this.onOpenTrackDetails}
             />
           )}
+          <div
+            className={`Event${activeDate === 'Other' ? ' is-active' : ''}`}
+            dangerouslySetInnerHTML={{ __html: other }}
+          />
         </div>
         <Details {...details} onClose={this.onOpenTrackDetails(null)} isActive={!!activeDetails} />
       </div>
