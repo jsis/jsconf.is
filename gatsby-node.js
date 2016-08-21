@@ -1,4 +1,10 @@
 exports.modifyWebpackConfig = function (config) {
+  config.merge({
+    output: {
+      publicPath: '/', 
+    },
+  })
+
   config.loader('jpg', {
     test: /\.jpg$/,
     loader: 'url?limit=10000',
