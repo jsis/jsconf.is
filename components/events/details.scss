@@ -86,10 +86,12 @@
   margin: -10px -10px 000;
 
   > button {
-    display: inline-block;
     cursor: pointer;
     height: 44px;
     width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     outline: none;
     position: relative;
   }

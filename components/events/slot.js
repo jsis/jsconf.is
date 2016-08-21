@@ -1,5 +1,6 @@
 import React from 'react'
 import './slot.scss'
+const hearts = `url(${require('../../images/hearts.png')})`
 
 class Slot extends React.Component {
   static propTypes = {
@@ -31,9 +32,16 @@ class Slot extends React.Component {
       >
         <h4 className="Slot-title">{slot.title}</h4>
         <div className="Slot-meta">
-          <p className="Slot-name">{slot.name}{slot.track === 'unified' ? null : (
-            <span><b> · </b>{slot.track}</span>
-          )}</p>
+          <p className="Slot-name">
+            {slot.name}{slot.track !== 'unified' && (
+              <span><b> · </b>{slot.track}</span>
+            )}{slot.saved && (
+              <span>
+                &nbsp;
+                <i className="Events-heart Events-heart--gray is-filled" style={{ backgroundImage: hearts }} />
+              </span>
+            )}
+            </p>
         </div>
       </li>
     )

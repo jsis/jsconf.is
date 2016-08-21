@@ -5,6 +5,8 @@ import { below } from 'react-waypoint'
 import './index.scss'
 
 class Events extends React.Component {
+  static localStorageKey = 'jsconf-is-2016-saved'
+
   static propTypes = {
     days: React.PropTypes.arrayOf(React.PropTypes.object),
     other: React.PropTypes.string,
@@ -20,6 +22,18 @@ class Events extends React.Component {
         ? 'Friday'
         : 'Thursday',
     }
+  }
+
+  componentWillMount () {
+    const days = [...this.props.days]
+    const keys = JSON.parse(window.localStorage.getItem(Events.localStorageKey)) || {}
+
+    Object.keys(keys).filter(x => keys[x]).forEach(key => {
+      const [day, slot, track] = key.split(',').map(x => ~~x)
+      days[day].slots[slot].tracks[track].saved = true
+    })
+
+    this.setState({ days, keys })
   }
 
   componentDidMount () {
@@ -68,11 +82,25 @@ class Events extends React.Component {
     this.navigate(1)
   }
 
+  onSave = () => {
+    const { activeDetails: { day, slot, track } } = this.state
+    const { keys, days } = this.state
+    const id = [day, slot, track].join()
+    const updatedDays = [...days]
+    const saved = ! keys[id]
+
+    keys[id] = saved
+    updatedDays[day].slots[slot].tracks[track].saved = saved
+
+    this.setState({ keys, days: updatedDays })
+    window.localStorage.setItem(Events.localStorageKey, JSON.stringify(keys))
+  }
+
   calculateNextTrack (direction, indicies) {
     const { activeDetails } = this.state
     const current = indicies || { ...activeDetails }
 
-    const { days } = this.props
+    const { days } = this.state
 
     const slots = days[current.day].slots
     const tracks = slots[current.slot].tracks
@@ -117,8 +145,12 @@ class Events extends React.Component {
   }
 
   render () {
-    const { days, other } = this.props
-    const { activeDate, activeDetails } = this.state
+    const { other } = this.props
+    const { days, activeDate, activeDetails } = this.state
+
+    if (!days) {
+      return null
+    }
 
     const hasDetails = !! activeDetails
     let detailsProps = {}
@@ -165,6 +197,7 @@ class Events extends React.Component {
           {...detailsProps}
           onNext={this.onNext}
           onPrevious={this.onPrevious}
+          onSave={this.onSave}
           onClose={this.onOpenTrackDetails(null)}
           isActive={hasDetails}
         />

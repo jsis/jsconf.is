@@ -20,6 +20,24 @@
   }
 }
 
+.Events-heart {
+  background: no-repeat left top;
+  background-size: 49px 21px;
+  height: 21px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 24.5px;
+
+  &--gray {
+    -webkit-filter: grayscale(20%);
+    filter: grayscale(20%);
+  }
+
+  &.is-filled {
+    background-position-x: -25px;
+  }
+}
+
 .Events-tabs {
   flex-basis: 100%;
   margin: -20px 0 20px;
