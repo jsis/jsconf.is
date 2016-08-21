@@ -12,12 +12,32 @@ class Events extends React.Component {
   constructor (props) {
     super(props)
     const now = new Date()
-    console.log(props)
     this.state = {
       activeDetails: null,
       activeDate: new Date('08/25/2016').setHours(0, 0, 0, 0) === now.setHours(0, 0, 0, 0)
         ? 'Friday'
         : 'Thursday',
+    }
+  }
+
+  componentDidMount () {
+    window.addEventListener('keyup', this.onKeyUp)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('keyup', this.onKeyUp)
+  }
+
+  onKeyUp = ({ keyCode }) => {
+    switch (keyCode) {
+      case 37:
+        this.onPrevious()
+        break
+      case 39:
+        this.onNext()
+        break
+      default:
+        break
     }
   }
 
