@@ -19,6 +19,7 @@
   transform: translateY(100%);
 
   @include breakpoint(large) {
+    box-shadow: none;
     bottom: 0;
     right: 0;
     left: 60%;

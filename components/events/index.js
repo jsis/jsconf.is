@@ -42,7 +42,7 @@ class Events extends React.Component {
             const weekday = date.split(/,?\s+/)[0]
             const classes = `Events-tab${activeDate === weekday ? ' is-active' : ''}`
             return (
-              <button onClick={this.onChangeDay(weekday)} className={classes}>{weekday}</button>
+              <button key={date} onClick={this.onChangeDay(weekday)} className={classes}>{weekday}</button>
             )
           })}
         </nav>

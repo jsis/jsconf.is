@@ -19,7 +19,7 @@ class Slot extends React.Component {
 
   renderInterActiveSlot (slot, time) {
     const { active, onOpenTrackDetails } = this.props
-    const isActive = active === slot
+    const isActive = active && active.title === slot.title
 
     return (
       <li
