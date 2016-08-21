@@ -17,7 +17,7 @@ class Slot extends React.Component {
     )
   }
 
-  renderInterActiveSlot (slot) {
+  renderInterActiveSlot (slot, time) {
     const { active, onOpenTrackDetails } = this.props
     const isActive = active === slot
 
@@ -25,7 +25,7 @@ class Slot extends React.Component {
       <li
         key={slot.title}
         className={`Slot-track${isActive ? ' is-active' : ''}`}
-        onClick={onOpenTrackDetails(slot)}
+        onClick={onOpenTrackDetails({ ...slot, time: time.replace(' ', ' - ') })}
       >
         <h4 className="Slot-title">{slot.title}</h4>
         <div className="Slot-meta">
@@ -45,7 +45,7 @@ class Slot extends React.Component {
         <ul className="Slot-tracks">{tracks.map(slot => (
           slot.grayed
             ? this.renderBasicSlot(slot)
-            : this.renderInterActiveSlot(slot)
+            : this.renderInterActiveSlot(slot, time)
         ))}</ul>
       </div>
     )
