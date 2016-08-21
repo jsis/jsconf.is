@@ -4,7 +4,7 @@ That's a Thursday and Friday. Just after your vacation, right before you get too
 
 Expect two awesome tracks over two days with over 30 talks in total.
 
-The **Hekla track** is a curated set of speakers that have [submitted proposals](/speakers) and made it through the selection process.
+The **Hekla track** is a curated set of speakers that have [submitted proposals](/speakers/) and made it through the selection process.
 
 The **Katla track** is 50% curated, 50% featuring people like *you*! In a unique format pioneered by JSConf US, anyone can register to speak in a first-come, first-speak format. These talks cover a huge range and are some of the most exciting talks at JSConf.
 
