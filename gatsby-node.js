@@ -1,7 +1,7 @@
 exports.modifyWebpackConfig = function (config) {
   config.merge({
     output: {
-      publicPath: '/', 
+      publicPath: '/',
     },
   })
 

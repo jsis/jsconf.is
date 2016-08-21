@@ -41,7 +41,7 @@ class Slot extends React.Component {
                 <i className="Events-heart Events-heart--gray is-filled" style={{ backgroundImage: hearts }} />
               </span>
             )}
-            </p>
+          </p>
         </div>
       </li>
     )
