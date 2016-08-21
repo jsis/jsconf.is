@@ -37,7 +37,7 @@ class Events extends React.Component {
 
     return (
       <div className="Events">
-        <nav className="Events-tabs">
+        <nav className={`Events-tabs${!activeDetails ? ' is-centered' : ''}`}>
           {days.map(({ date }) => {
             const weekday = date.split(/,?\s+/)[0]
             const classes = `Events-tab${activeDate === weekday ? ' is-active' : ''}`

@@ -24,6 +24,15 @@
   flex-basis: 100%;
   margin-bottom: 64px;
   text-align: center;
+
+  @include breakpoint(large) {
+    flex-basis: 60%;
+    transition: transform 400ms;
+
+    &.is-centered {
+      transform: translateX(100% / 3);
+    }
+  }
 }
 
 .Events-tab {
