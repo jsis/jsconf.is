@@ -26,7 +26,6 @@ const Details = ({
           <button className="Details-closeBtn" onClick={onClose}>
             <i className="Details-close" />
           </button>
-
           <button onClick={onPrevious}>
             <i className="Details-leftArrow" />
           </button>
@@ -45,7 +44,7 @@ const Details = ({
           {track === 'unified' ? null : (
             <span><span className="Details-track">{track}</span> / </span>
           )}
-          <span className="Details-time">{time}</span>
+          <span className="Details-time">{time.replace(' ', ' - ')}</span>
         </div>
         <div className="Details-description" dangerouslySetInnerHTML={{ __html: description }} />
         <figure className="Details-speaker">
