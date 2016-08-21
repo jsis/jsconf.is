@@ -313,7 +313,7 @@ function trackFor (slug) {
 
 function speakerToSlot (slot) {
   const timeSlot = slot
-  const keys = Object.keys(slot).filter(x => ['unified', 'Hekla', 'Katla'].includes(x))
+  const keys = Object.keys(slot).filter(x => ['unified', 'Hekla', 'Katla'].indexOf(x) !== -1)
 
   timeSlot.tracks = keys.map(type => {
     if (typeof slot[type] === 'string') {
