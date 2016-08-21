@@ -68,7 +68,7 @@ export default class Home extends React.Component {
               <p>JSConf is coming to Iceland August 25th — 26th.</p>
               <p>That's a Thursday and Friday. Just after your vacation, right before you get too busy with work. Perfect for catching up on awesome talks and with friends from the JavaScript community.</p>
               <p>Expect two awesome tracks over two days with over 30 talks in total</p>
-              <PanelButton href="#">Learn More</PanelButton>
+              <PanelButton href={prefixLink('/about/')}>Learn More</PanelButton>
             </Panel>
           </div>
         </div>

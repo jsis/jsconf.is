@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router'
 import './button.scss'
 
 const PanelButton = ({ href, children, ...rest }) => (
   <span className="PanelButton">
-    <a className="PanelButton-link" href={href} {...rest}>{children}</a>
+    <Link className="PanelButton-link" to={href} {...rest}>{children}</Link>
     <span className="PanelButton-shadow" />
   </span>
 )
