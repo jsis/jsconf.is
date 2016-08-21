@@ -47,9 +47,12 @@
 .Details-meta {
   border-bottom: 1px solid #ddd;
   font-weight: 400;
-  font-size: 20px;
   margin: 1em 0;
   padding-bottom: 1em;
+
+  @include breakpoint(large) {
+    font-size: 20px;
+  }
 }
 
 .Details-track {

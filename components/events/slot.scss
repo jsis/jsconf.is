@@ -1,4 +1,5 @@
 @import "../../css/_settings";
+@import "~foundation-sites/scss/util/util";
 
 $SlotBorder: 1px solid rgba(black, .2);
 
@@ -18,9 +19,14 @@ $SlotBorder: 1px solid rgba(black, .2);
   border-top: none;
   font-size: 14px;
   line-height: 16px;
-  margin-right: 40px;
+  margin-right: 15px;
+  margin-bottom: -1px;
   width: 35px;
   padding: 10px;
+
+  @include breakpoint(large) {
+    margin-right: 40px;
+  }
 }
 
 .Slot-tracks {
@@ -30,12 +36,16 @@ $SlotBorder: 1px solid rgba(black, .2);
 
 .Slot-track {
   $gradient: linear-gradient(to left, rgba(black, .066), rgba(black, 0));
-  
+
   border-bottom: $SlotBorder;
   display: block;
+  padding: 15px 15px 15px 0;
   transition: background-image 300ms;
-  padding: 32px 32px 32px 0;
   width: 100%;
+
+  @include breakpoint(large) {
+    padding: 32px 32px 32px 0;
+  }
 
   &:last-child {
     border-bottom: none;
@@ -52,16 +62,22 @@ $SlotBorder: 1px solid rgba(black, .2);
   }
   
   &--gray {
-    opacity: .3;
+    opacity: .6;
   }
 }
 
 .Slot-title {
-  font-size: 20px;
   margin: 0;
+
+  @include breakpoint(large) {
+    font-size: 20px;
+  }
 }
 
 .Slot-meta p {
-  font-size: 18px;
   margin: 0;
+
+  @include breakpoint(large) {
+    font-size: 18px;
+  }
 }
