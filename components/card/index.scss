@@ -83,4 +83,8 @@ $card-margin: 5px;
   @include breakpoint(large) {
     font-size: 1.7vw;
   }
+
+  @media (min-width: 1680px) {
+    font-size: 28.25px;
+  }
 }
