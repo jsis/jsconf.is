@@ -12,7 +12,7 @@ class Slot extends React.Component {
   renderBasicSlot (slot) {
     return (
       <li key={slot.title} className="Slot-track Slot-track--gray">
-        <h4 className="Slot-title">{slot.title}</h4>
+        <h4 className="Slot-title" dangerouslySetInnerHTML={{ __html: slot.title }} />
       </li>
     )
   }

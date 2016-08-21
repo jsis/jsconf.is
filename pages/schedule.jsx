@@ -5,5 +5,5 @@ import Events from '../components/events'
 
 export default () =>
   <BoxPage title="Schedule" expanded>
-    <Events days={schedule.conference.slice(1, 3)} />
+    <Events days={schedule.conference} />
   </BoxPage>

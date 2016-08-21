@@ -22,21 +22,23 @@
 
 .Events-tabs {
   flex-basis: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
   text-align: center;
 }
 
 .Events-tab {
+  display: inline-block;
   font-size: 18px;
-  margin: 0 14px;
+  font-weight: 500;
   outline: none;
-  opacity: .5;
+  padding: 12px 15px;
   text-transform: uppercase;
-  transition: opacity 300ms;
+  transition: background 250ms, color 250ms;
 
   &.is-active {
-    border-bottom: 1px solid black;
+    background: $color-jsconf-purple;
     opacity: 1;
+    color: $color-jsconf-yellow;
   }
 }
 
