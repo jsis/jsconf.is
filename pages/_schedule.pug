@@ -1,52 +1,21 @@
 mixin unified(slot)
   td(colspan="2")
-    if slot.link
-      a.u-base-link(href=slot.link)
-        span.Schedule-title= slot.title || 'TBA'
-        if slot.name
-          .Schedule-name= slot.name
-    else
-      p.Schedule-title!= slot.title
-mixin normal(slot)
-  td
-    if slot.link
-      a.u-base-link(href=slot.link)
-        span.Schedule-title= slot.title || 'TBA'
-        if slot.name
-          .Schedule-name= slot.name
-    else
-      p.Schedule-title!= slot.title
+    p.Schedule-title!= slot.title
+
 mixin timeSlot(slot)
   tr
     td.Schedule-time= slot.time
-    if slot.unified
-      +unified(slot.unified)
-    else
-      if slot.trackA
-        +normal(slot.trackA)
-      if slot.trackB
-        +normal(slot.trackB)
-        
+    +unified(slot.unified)
+
 mixin dayTable(day)
   table.Schedule.hover.scroll
     colgroup
       col
       col(style="width:50%")
       col(style="width:50%")
-    if !day.noTracks
-      thead: tr
-        th
-        th Hekla
-        th Katla
     tbody
       each slot in day.slots
         +timeSlot(slot)
-
-p #[strong Note:] This schedule is tentative and will change without notice leading up to the event.
-
-each day in schedule.conference
-  h2= day.date
-  +dayTable(day)
 
 h1 Community events
 h2 Thursday August 11 - <a href="https://www.facebook.com/events/517473555116628/" target="_blank">JSConf Community Meetup</a> (free)

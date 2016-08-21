@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'react-responsive-grid'
 import Helmet from 'react-helmet'
 import classnames from 'classnames'
 import config from '../config.toml'
@@ -13,6 +12,7 @@ const { siteTitle, siteDescription } = config
 module.exports = class Template extends React.Component {
   static propTypes = {
     children: React.PropTypes.any,
+    location: React.PropTypes.object,
   }
 
   state = {
@@ -58,20 +58,20 @@ module.exports = class Template extends React.Component {
             { name: 'twitter:image', content: 'https://2016.jsconf.is/images/og.png' },
           ]}
         />
-          <div className={topBarClasses}>
-            <Link to={prefixLink('/')} className="top-bar-title"><span className="show-for-sr">JSConf Iceland</span></Link>
-            <div>
-              <div className="top-bar-right">
-                <ul className="menu">
-                  <li><Link to={prefixLink('/about/')}>About</Link></li>
-                  <li><Link to={prefixLink('/speakers/')}>Speakers</Link></li>
-                  <li><Link to={prefixLink('/venue/')}>Venue</Link></li>
-                  <li><Link to={prefixLink('/schedule/')}>Schedule</Link></li>
-                </ul>
-              </div>
+        <div className={topBarClasses}>
+          <Link to={prefixLink('/')} className="top-bar-title"><span className="show-for-sr">JSConf Iceland</span></Link>
+          <div>
+            <div className="top-bar-right">
+              <ul className="menu">
+                <li><Link to={prefixLink('/about/')}>About</Link></li>
+                <li><Link to={prefixLink('/speakers/')}>Speakers</Link></li>
+                <li><Link to={prefixLink('/venue/')}>Venue</Link></li>
+                <li><Link to={prefixLink('/schedule/')}>Schedule</Link></li>
+              </ul>
             </div>
           </div>
-          {React.cloneElement(this.props.children, { onToggleMenu: this.onPageToggleMenu })}
+        </div>
+        {React.cloneElement(this.props.children, { onToggleMenu: this.onPageToggleMenu })}
         <Footer />
       </div>
     )

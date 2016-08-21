@@ -12,7 +12,11 @@ const updates = [
 ]
 
 export default class Home extends React.Component {
-  constructor(props) {
+  static propTypes = {
+    onToggleMenu: React.PropTypes.func,
+  }
+
+  constructor (props) {
     super(props)
     this.state = {
       panelHidden: true,

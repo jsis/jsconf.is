@@ -1,0 +1,63 @@
+@import "../../css/_settings";
+@import "~foundation-sites/scss/util/util";
+
+.Events {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Events-group {
+  padding: 0 15px;
+
+  @include breakpoint(large) {
+    padding: 0 0 0 15px;
+    transition: transform 400ms;
+    width: 60%;
+    
+    &.is-centered {
+      transform: translateX(100% / 3);
+    }
+  }
+}
+
+.Events-tabs {
+  flex-basis: 100%;
+  margin: -20px 0 20px;
+  text-align: center;
+
+  @include breakpoint(large) {
+    flex-basis: 60%;
+    margin-bottom: 64px;
+    transition: transform 400ms;
+
+    &.is-centered {
+      transform: translateX(100% / 3);
+    }
+  }
+}
+
+.Events-tab {
+  display: block;
+  font-weight: 500;
+  outline: none;
+  padding: 12px 15px;
+  text-transform: uppercase;
+  transition: background 250ms, color 250ms;
+
+  @include breakpoint(large) {
+    display: inline-block;
+    font-size: 18px;
+  }
+
+  &.is-active {
+    background: $color-jsconf-purple;
+    opacity: 1;
+    color: $color-jsconf-yellow;
+  }
+}
+
+.Events ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

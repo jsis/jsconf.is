@@ -7,6 +7,8 @@ import { prefixLink } from 'gatsby-helpers'
 export default class extends React.Component {
   static propTypes = {
     title: React.PropTypes.string,
+    favicon: React.PropTypes.string,
+    body: React.PropTypes.string,
   }
 
   render () {
@@ -37,7 +39,7 @@ export default class extends React.Component {
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           <script src={prefixLink('/bundle.js')} />
-          <script src='//www.google-analytics.com/analytics.js' />
+          <script src="//www.google-analytics.com/analytics.js" />
         </body>
       </html>
     )

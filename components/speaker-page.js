@@ -14,16 +14,16 @@ const SpeakerPage = ({
 }) => {
   // eslint-disable-next-line
   const profilePic = require(`../images/speakers/${slug}.jpg`)
-  const props = {
+  const boxPageProps = {
     title,
   }
 
   if (company) {
-    props.subtitle = companyWebsite ? <a href={companyWebsite}>{company}</a> : company
+    boxPageProps.subtitle = companyWebsite ? <a href={companyWebsite}>{company}</a> : company
   }
 
   return (
-    <BoxPage {...props}>
+    <BoxPage {...boxPageProps}>
       <Profile
         image={profilePic}
         name={title}
