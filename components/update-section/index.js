@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss'
 
-function UpdateSection({ updates }) {
+const UpdateSection = ({ updates }) => {
   if (updates.length === 0) {
     return null
   }
@@ -18,6 +18,10 @@ function UpdateSection({ updates }) {
       <hr className="u-separator" />
     </div>
   )
+}
+
+UpdateSection.propTypes = {
+  updates: React.PropTypes.array,
 }
 
 export default UpdateSection

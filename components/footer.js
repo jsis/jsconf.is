@@ -11,10 +11,18 @@ const SponsorBox = ({ website, name, image, imagePadding }) => (
         src={require(`../images/sponsors/${image}`)}
         alt={name}
         title={name}
-        className="Sponsors-image" />
+        className="Sponsors-image"
+      />
     </div>
   </a>
 )
+
+SponsorBox.propTypes = {
+  website: React.PropTypes.string,
+  name: React.PropTypes.string,
+  image: React.PropTypes.string,
+  imagePadding: React.PropTypes.bool,
+}
 
 export default () => (
   <div>
@@ -44,13 +52,13 @@ export default () => (
         </div>
       </div>
     </div>
-    
+
     <footer className="Footer">
       <div className="row">
         <div className="column">
           <div className="SocialLinks">
             <a href="https://github.com/jsis/jsconf.is" className="SocialLinks-link SocialLinks-github">Github</a>
-            <a href="https://twitter.com/jsconfis" className="SocialLinks-link SocialLinks-twitter">Twitter</a> 
+            <a href="https://twitter.com/jsconfis" className="SocialLinks-link SocialLinks-twitter">Twitter</a>
           </div>
           JSConf Iceland welcomes everyone and defends you from harassment.{' '}
           <div className="FooterLinks">

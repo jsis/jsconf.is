@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 
-export default ({ speaker }) => (
+const Speaker = ({ speaker }) => (
   <Link
     className="Speaker"
     style={{
@@ -16,3 +16,9 @@ export default ({ speaker }) => (
     </div>
   </Link>
 )
+
+Speaker.propTypes = {
+  speaker: React.PropTypes.object,
+}
+
+export default Speaker

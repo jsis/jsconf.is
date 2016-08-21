@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
 import Helmet from 'react-helmet'
-import { prefixLink } from 'gatsby-helpers'
 import InlineSVG from 'svg-inline-react'
 import classNames from 'classnames'
 
@@ -9,8 +7,6 @@ const BoxPage = ({
   icon,
   title,
   subtitle,
-  showHeader,
-  blurb,
   metaTitle,
   children,
   inverse,
@@ -60,10 +56,8 @@ BoxPage.propTypes = {
     React.PropTypes.string,
     React.PropTypes.node,
   ]),
-  showHeader: React.PropTypes.bool,
   inverse: React.PropTypes.bool,
   expanded: React.PropTypes.bool,
-  blurb: React.PropTypes.string,
   metaTitle: React.PropTypes.string,
   children: React.PropTypes.node,
   subtitle: React.PropTypes.node,

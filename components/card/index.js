@@ -6,15 +6,15 @@ import './index.scss'
 
 const Card = ({ link, title, icon, blank, onlyLarge, pushLeft }) => {
   const classes = classnames({
-    'Card': true,
+    Card: true,
     'Card--interactive': !!link,
     'Card-blank': blank,
     'Card-pushLeft': pushLeft,
     'show-for-large': onlyLarge,
   })
   const content = [
-    icon && <InlineSvg key="icon" className="CardIcon" src={require(`!svg-inline!../../images/${icon}.svg`)}/>,
-    <span key="title" className="CardTitle">{title}</span>
+    icon && <InlineSvg key="icon" className="CardIcon" src={require(`!svg-inline!../../images/${icon}.svg`)} />,
+    <span key="title" className="CardTitle">{title}</span>,
   ]
   let body = null
   if (icon) {
@@ -32,6 +32,9 @@ Card.propTypes = {
   link: React.PropTypes.string,
   title: React.PropTypes.string,
   icon: React.PropTypes.string,
+  blank: React.PropTypes.bool,
+  onlyLarge: React.PropTypes.bool,
+  pushLeft: React.PropTypes.bool,
 }
 
 export default Card

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-'use strict'
+'use strict' // eslint-disable-line
 
 const fs = require('fs')
 const speakers = require('../data/speakers')
