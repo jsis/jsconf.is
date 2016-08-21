@@ -5,15 +5,32 @@
   display: inline-block;
   position: relative;
   margin: 1em 0 1.5em;
+  
+  &:hover, &:focus {
+    .PanelButton-link {
+      background: $color-jsconf-yellow;
+      color: $color-gray-75;
+    }
+  }
+  
+  &:active &-link {
+    transform: translate(6px, 6px);
+  }
 }
 
 .PanelButton-link {
   background: $color-gray-75;
-  color: inherit;
   font-size: 1em;
   padding: 10px 14px;
   position: relative;
+  transition: background, color, transform;
+  transition-duration: 250ms;
   z-index: 1;
+
+  &,
+  &:visited {
+    color: inherit;
+  }
 }
 
 .PanelButton-link,
