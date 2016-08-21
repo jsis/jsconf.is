@@ -1,12 +1,14 @@
 import React from 'react'
 import Event from './event'
 import Details from './details'
+import { below } from 'react-waypoint'
 import './index.scss'
 
 class Events extends React.Component {
   static propTypes = {
     days: React.PropTypes.arrayOf(React.PropTypes.object),
     other: React.PropTypes.string,
+    footerPosition: React.PropTypes.string,
   }
 
   constructor (props) {
@@ -22,6 +24,12 @@ class Events extends React.Component {
 
   componentDidMount () {
     window.addEventListener('keyup', this.onKeyUp)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.footerPosition !== below && nextProps.footerPosition !== this.props.footerPosition) {
+      this.setState({ activeDetails: null })
+    }
   }
 
   componentWillUnmount () {
