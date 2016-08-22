@@ -21,14 +21,14 @@ const conferenceDays = [
     date: 'Thursday August 25, 2016',
     slots: [
       {
-        time: '08:00 09:00',
+        time: '08:00 09:15',
         unified: {
           grayed: true,
           title: 'Breakfast and badge pick-up',
         },
       },
       {
-        time: '09:00 09:45',
+        time: '09:15 09:45',
         unified: {
           grayed: true,
           title: 'Opening JSConf Iceland 2016',
@@ -152,10 +152,7 @@ const conferenceDays = [
       {
         time: '13:30 14:00',
         Hekla: 'denis-rechkunov',
-        Katla: {
-          grayed: true,
-          title: 'TBA',
-        },
+        Katla: 'david-blurton',
       },
       {
         time: '14:15 14:45',
@@ -203,14 +200,14 @@ const conferenceDays = [
     noTracks: true,
     slots: [
       {
-        time: '10:00 17:00',
+        time: '08:00 17:00',
         unified: {
           grayed: true,
           title: 'Experience Iceland by Highcharts! Four special JSConf trips to choose from. - <a class="u-base-link" href="http://jsconf.whatson.is">Buy tickets</a>',
         },
       },
       {
-        time: '18:00 22:00',
+        time: '17:00 22:00',
         unified: {
           grayed: true,
           title: 'Blue Lagoon Farewell Dinner - <a class="u-base-link" href="https://ti.to/jsconf-is/2016">RSVP</a>',
