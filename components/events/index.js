@@ -26,7 +26,10 @@ class Events extends React.Component {
 
   componentWillMount () {
     const days = [...this.props.days]
-    const keys = JSON.parse(window.localStorage.getItem(Events.localStorageKey)) || {}
+    let keys = {}
+    if (typeof window !== 'undefined') {
+      keys = JSON.parse(window.localStorage.getItem(Events.localStorageKey)) || {}
+    }
 
     Object.keys(keys).filter(x => keys[x]).forEach(key => {
       const [day, slot, track] = key.split(',').map(x => ~~x)
