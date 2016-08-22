@@ -32,17 +32,13 @@ class Events extends React.Component {
       keys = JSON.parse(window.localStorage.getItem(Events.localStorageKey)) || {}
     }
 
-    Object.keys(keys).forEach(slug => {
-      dayLoop: for (const day of days) {
-        for (const slot of day.slots)  {
-          const track = slot.tracks.find(x => x.slug === slug)
-          if (track) {
-            track.saved = keys[slug]
-            break dayLoop
-          }
-        }
+    Object.keys(keys).forEach(slug => days.some(day => day.slots.some(slot => {
+      const track = slot.tracks.find(x => x.slug === slug)
+      if (track) {
+        track.saved = keys[slug]
       }
-    })
+      return track
+    })))
 
     this.setState({ days, keys })
   }
@@ -97,7 +93,7 @@ class Events extends React.Component {
     const { activeDetails: { day, slot, track } } = this.state
     const { keys, days } = this.state
     const updatedDays = [...days]
-    const record = updatedDays[day].slots[slot].tracks[track];
+    const record = updatedDays[day].slots[slot].tracks[track]
 
     record.saved = ! record.saved
     keys[record.slug] = record.saved
