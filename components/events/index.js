@@ -5,7 +5,7 @@ import { below } from 'react-waypoint'
 import './index.scss'
 
 class Events extends React.Component {
-  static localStorageKey = 'jsconf-is-2016-saved'
+  static localStorageKey = 'jsconf-is-2016-schedule'
 
   static propTypes = {
     days: React.PropTypes.arrayOf(React.PropTypes.object),
@@ -27,13 +27,21 @@ class Events extends React.Component {
   componentWillMount () {
     const days = [...this.props.days]
     let keys = {}
+
     if (typeof window !== 'undefined') {
       keys = JSON.parse(window.localStorage.getItem(Events.localStorageKey)) || {}
     }
 
-    Object.keys(keys).filter(x => keys[x]).forEach(key => {
-      const [day, slot, track] = key.split(',').map(x => ~~x)
-      days[day].slots[slot].tracks[track].saved = true
+    Object.keys(keys).forEach(slug => {
+      dayLoop: for (const day of days) {
+        for (const slot of day.slots)  {
+          const track = slot.tracks.find(x => x.slug === slug)
+          if (track) {
+            track.saved = keys[slug]
+            break dayLoop
+          }
+        }
+      }
     })
 
     this.setState({ days, keys })
@@ -88,12 +96,11 @@ class Events extends React.Component {
   onSave = () => {
     const { activeDetails: { day, slot, track } } = this.state
     const { keys, days } = this.state
-    const id = [day, slot, track].join()
     const updatedDays = [...days]
-    const saved = ! keys[id]
+    const record = updatedDays[day].slots[slot].tracks[track];
 
-    keys[id] = saved
-    updatedDays[day].slots[slot].tracks[track].saved = saved
+    record.saved = ! record.saved
+    keys[record.slug] = record.saved
 
     this.setState({ keys, days: updatedDays })
     window.localStorage.setItem(Events.localStorageKey, JSON.stringify(keys))
