@@ -30,6 +30,20 @@ image = "bloomberg.svg"
 imagePadding = true
 
 [[sponsors]]
+name = "CCP"
+website = "https://ccpgames.com"
+level = "bronze"
+image = "ccp.png"
+imagePadding = true
+
+[[sponsors]]
+name = "Highcharts"
+website = "https://highcharts.com"
+level = "silver"
+image = "highcharts.png"
+imagePadding = true
+
+[[sponsors]]
 name = "Landsbankinn"
 website = "https://www.landsbankinn.is"
 level = "silver"
@@ -51,15 +65,22 @@ image = "tempo.svg"
 imagePadding = true
 
 [[sponsors]]
-name = "VIEW SOURCE"
-website = "https://viewsourceconf.org/"
-level = "bronze"
-image = "viewsourceconf.jpg"
-imagePadding = false
-
-[[sponsors]]
 name = "UENO."
 website = "https://ueno.co/"
 level = "bronze"
 image = "ueno.png"
+imagePadding = false
+
+[[sponsors]]
+name = "UPPERQUAD"
+website = "http://upperquad.com/"
+level = "silver"
+image = "upperquad.png"
+imagePadding = true
+
+[[sponsors]]
+name = "VIEW SOURCE"
+website = "https://viewsourceconf.org/"
+level = "bronze"
+image = "viewsourceconf.jpg"
 imagePadding = false
