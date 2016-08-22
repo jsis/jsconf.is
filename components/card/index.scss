@@ -36,6 +36,7 @@ $card-margin: 5px;
 .Card--interactive .Card-body {
   cursor: pointer;
   transition: color 300ms, background 300ms, box-shadow 300ms, z-index 300ms 300ms;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
   &:hover {
@@ -47,7 +48,7 @@ $card-margin: 5px;
 
   @include breakpoint(large) {
     &:hover {
-      box-shadow: 0 50px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     }
   }
 }
