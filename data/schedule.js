@@ -304,7 +304,7 @@ function trackFor (slug) {
     ...speaker,
     name: speaker.name,
     title: speaker.title,
-    link: `/speakers/${speaker.slug}`,
+    link: `/speakers/${speaker.slug}/`,
   }
 }
 

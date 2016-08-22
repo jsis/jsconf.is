@@ -8,7 +8,7 @@ const Speaker = ({ speaker }) => (
     style={{
       backgroundImage: `url(${require(`!file-loader!../images/speakers/${speaker.slug}.jpg`)})`,
     }}
-    to={prefixLink(`/speakers/${speaker.slug}`)}
+    to={prefixLink(`/speakers/${speaker.slug}/`)}
   >
     <div className="Speaker-info">
       <h4 className="Speaker-name">{speaker.name}</h4>

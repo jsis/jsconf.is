@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router'
+import { prefixLink } from 'gatsby-helpers'
 import './details.scss'
 
 const hearts = `url(${require('../../images/hearts.png')})`
@@ -50,7 +52,7 @@ const Details = ({
         <figure className="Details-speaker">
           <img className="Details-speakerImg" src={require(`../../images/speakers/${slug}.jpg`)} alt={name} />
           <figcaption className="Details-speakerInfo">
-            <a className="u-base-link" href={link}>{name}</a><br />
+            <Link className="u-base-link" to={prefixLink(link)}>{name}</Link><br />
             {company}
           </figcaption>
         </figure>
