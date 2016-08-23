@@ -401,7 +401,7 @@ const speakers = [{
   companyWebsite: 'https://quizup.com',
   company: 'QuizUp',
   title: 'This will flow your mind',
-  description: '<p>This talk is about flow, a static type-checker for JavaScript which is developed and maintained by Facebook. We have been using flow extensively at QuizUp for half a year now and it\'s been a great success in a big JS codebase. In this talk I will try to answer the following questions to the best of my ability: - What are the benefits of using a static type-checker? - What are the limitations of static type-checking? - How can I get started?</p>',
+  description: '<p>This talk is about flow, a static type-checker for JavaScript which is developed and maintained by Facebook. We have been using flow extensively at QuizUp for half a year now and it\'s been a great success in a big JS codebase. In this talk I will answer the following questions:</p><ul><li>What is it?</li><li>Why use it?</li><li>What can it do?</li><li>What can\'t it do?</li></ul><p>Lastly I will go over lessons learned and our experience with using flow.</p>',
 }, {
   name: 'Malte Ubl',
   slug: 'malte-ubl',
