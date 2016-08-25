@@ -8,7 +8,7 @@ export default () =>
       <ul>
         <li>
           <h4>American Bar</h4>
-          <p>Large beer 800 ISK<br/>Happy hour from 16:00 - 19:00</p>
+          <p>Large beer 800 ISK<br />Happy hour from 16:00 - 19:00</p>
         </li>
         <li>
           <h4>Hamborgarabúllan</h4>
@@ -16,7 +16,7 @@ export default () =>
         </li>
         <li>
           <h4>Loftið</h4>
-          <p>15% off<br/>Happy hour from 16:00 - 21:00
+          <p>15% off<br />Happy hour from 16:00 - 21:00
             has <em>Budweiser Budvar 500 ISK, Wine 700 ISK, House cocktails 1.500 ISK</em></p>
         </li>
         <li>
