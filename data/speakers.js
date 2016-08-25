@@ -190,7 +190,7 @@ const speakers = [{
   company: 'GitHub',
   title: 'Spinning up an Electron App - Desktop Apps in JavaScript',
   description: `<p>Building a compelling desktop app experience doesn’t have to be a major undertaking; Electron is a free and open source framework from GitHub that allows you to build desktop applications using the HTML, CSS, and JavaScript skills you already know.</p>
-<p>In this talk, we’ll look at how Electron works, explore some of its most useful APIs, and walk through how you can get started building your own cross-platform desktop apps with ease.</p>`,
+<p>In this talk, we’ll look at how Electron works, explore some of its most useful APIs, and be entertained by a dancing BB8 Sphero robot, who will be helping to demonstrate some of the fun and interesting things you can do with Electron. You'll leave the session knowing how you can get started building your own cross-platform desktop apps with ease.</p>`,
 }, {
   name: 'Justin Falcone',
   slug: 'justin-falcone',
