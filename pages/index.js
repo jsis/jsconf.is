@@ -6,6 +6,7 @@ import { prefixLink } from 'gatsby-helpers'
 import Waypoint from 'react-waypoint'
 
 const updates = [
+  <span>Attendees get <a href={prefixLink('discounts/')}>discounts</a> from some awesome places!</span>,
   'Check out the final(ish) schedule, including guest talks.',
   'Community trip registrations have closed',
   'Tickets sold out',
