@@ -12,7 +12,7 @@ const conferenceDays = [
         time: '20:00 23:00',
         unified: {
           grayed: true,
-          title: 'Welcome reception and badge pick-up at <a class="u-base-link" href="http://bryggjanbrugghus.is/?lang=en" target="_blank">Bryggjan Brugghús</a>',
+          title: 'Welcome reception and badge pick-up by UPPERQUAD! At <a class="u-base-link" href="http://bryggjanbrugghus.is/?lang=en" target="_blank">Bryggjan Brugghús</a>',
         },
       },
     ],
@@ -102,6 +102,13 @@ const conferenceDays = [
         time: '17:30 18:00',
         Hekla: 'seth-samuel',
         Katla: 'mihai-cirlanaru',
+      },
+      {
+        time: '18:00',
+        unified: {
+          grayed: true,
+          title: 'Special announcement in Katla',
+        },
       },
       {
         time: '19:00 23:00',
