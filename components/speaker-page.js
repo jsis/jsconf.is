@@ -47,6 +47,7 @@ SpeakerPage.propTypes = {
   twitter: React.PropTypes.string,
   github: React.PropTypes.string,
   website: React.PropTypes.string,
+  talk: React.PropTypes.node,
 }
 
 export default SpeakerPage
