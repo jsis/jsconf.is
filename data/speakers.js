@@ -430,8 +430,8 @@ const speakers = [{
   website: 'http://davidblurton.com/',
   companyWebsite: 'http://takumi.com/',
   company: 'Takumi',
-  title: 'Full stack JavaScript development with Docker',
-  description: 'TBA',
+  title: 'Full-stack JavaScript development with Docker',
+  description: '<p>Docker is great for wrapping up your application with its environment, but until recently it’s not been a great experience for development. The new release of docker for mac and windows changes all that.</p><p>I’ll show you how to take an existing application and get it running in a docker container, including live-reload. We’ll use docker-compose to link the rest of the application together, and set up a .dev domain for the full web experience.</p>',
 }]
 
 // Sort them by name
