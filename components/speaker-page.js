@@ -7,6 +7,7 @@ const SpeakerPage = ({
   company,
   companyWebsite,
   slug,
+  talk,
   body,
   twitter,
   github,
@@ -31,6 +32,7 @@ const SpeakerPage = ({
         website={website}
         github={github}
       />
+      <h2>{talk}</h2>
       <div dangerouslySetInnerHTML={{ __html: body }} />
     </BoxPage>
   )
