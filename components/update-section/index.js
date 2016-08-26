@@ -11,8 +11,8 @@ const UpdateSection = ({ updates }) => {
       <h3 className="u-shoutout UpdateShoutout">Updates</h3>
       <hr className="u-separator" />
       <ul>
-        {updates.map(update => (
-          <li key={update} className="Update">{update}</li>
+        {updates.map((update, i) => (
+          <li key={i} className="Update">{update}</li>
         ))}
       </ul>
       <hr className="u-separator" />

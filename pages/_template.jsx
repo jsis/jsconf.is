@@ -67,6 +67,7 @@ module.exports = class Template extends React.Component {
                 <li><Link to={prefixLink('/speakers/')}>Speakers</Link></li>
                 <li><Link to={prefixLink('/venue/')}>Venue</Link></li>
                 <li><Link to={prefixLink('/schedule/')}>Schedule</Link></li>
+                <li><Link to={prefixLink('/trips/')}>Trips</Link></li>
               </ul>
             </div>
           </div>
