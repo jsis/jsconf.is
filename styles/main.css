@@ -272,7 +272,7 @@ body {
 h2 {
     font-weight: 100;
     font-size: 1.2em;
-    margin: -1em 0 2em
+    margin: -1em 0 1em
 }
 
 h2 sup {
@@ -281,7 +281,6 @@ h2 sup {
 
 .Form {
     opacity: 0.9;
-    margin-bottom: -4em;
 }
 
 .Form-input,
