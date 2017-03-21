@@ -6,7 +6,7 @@ import icon from '!svg-inline!../images/logo-clipped.svg'
 const title = (
   <div>
     JSConf Iceland<br />
-    <small>August 25<sup>th</sup> &mdash; 26<sup>th</sup> 2016</small>
+    <small>March 1<sup>st</sup> &mdash; 2<sup>nd</sup> 2018</small>
   </div>
 )
 

@@ -18,7 +18,7 @@ class Events extends React.Component {
     const now = new Date()
     this.state = {
       activeDetails: null,
-      activeDate: new Date('08/26/2016').setHours(0, 0, 0, 0) === now.setHours(0, 0, 0, 0)
+      activeDate: new Date('03/01/2018').setHours(0, 0, 0, 0) === now.setHours(0, 0, 0, 0)
         ? 'Friday'
         : 'Thursday',
     }

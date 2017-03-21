@@ -6,8 +6,7 @@ import { prefixLink } from 'gatsby-helpers'
 import Waypoint from 'react-waypoint'
 
 const updates = [
-  <span><a href={prefixLink('trips/')}>Saturday trip</a> information including departure times.</span>,
-  <span>Attendees get <a href={prefixLink('discounts/')}>discounts</a> from some awesome places!</span>,
+  <span>Save the date March 1-2, 2018.</span>,
 ]
 
 export default class Home extends React.Component {
@@ -35,7 +34,7 @@ export default class Home extends React.Component {
           <div className="column large-4 large-order-1 large-text-right">
             <hr className="u-separator" />
             <h2 className="u-title">JSConf Iceland</h2>
-            <h2 className="u-subtitle">August 25<sup>th</sup> — 26<sup>th</sup> 2016</h2>
+            <h2 className="u-subtitle">March 1<sup>st</sup> — 2<sup>nd</sup> 2018</h2>
             <UpdateSection updates={updates} />
           </div>
           <div className="large-6 column">
@@ -66,8 +65,8 @@ export default class Home extends React.Component {
           <div className="large-10 column u-offsetParent">
             <Panel hidden={!this.state.panelVisible}>
               <Waypoint onPositionChange={this.panelWaypoint} bottomOffset="25%" />
-              <p>JSConf is coming to Iceland August 25th — 26th.</p>
-              <p>That's a Thursday and Friday. Just after your vacation, right before you get too busy with work. Perfect for catching up on awesome talks and with friends from the JavaScript community.</p>
+              <p>JSConf will be held in Iceland March 1st — 2nd.</p>
+              <p>That's a Thursday and Friday. Perfect for catching up on awesome talks and with friends from the JavaScript community.</p>
               <p>Expect two awesome tracks over two days with over 30 talks in total</p>
               <PanelButton href={prefixLink('/about/')}>Learn More</PanelButton>
             </Panel>

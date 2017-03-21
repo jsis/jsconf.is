@@ -22,8 +22,8 @@ const BoxPage = ({
     <Helmet
       title={metaTitle || title}
       meta={[
-        { property: 'og:title', content: `${metaTitle || title} - JSConf Iceland 2016` },
-        { name: 'twitter:title', content: `${metaTitle || title} - JSConf Iceland 2016` },
+        { property: 'og:title', content: `${metaTitle || title} - JSConf Iceland 2018` },
+        { name: 'twitter:title', content: `${metaTitle || title} - JSConf Iceland 2018` },
       ]}
     />
     <header className="Page-header">

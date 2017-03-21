@@ -31,7 +31,7 @@ export default () => (
         <div className="column large-8 medium-10 small-12">
           <h1>Sponsors</h1>
           <p>
-            The great companies below are supporting us in 2016 – Thank&nbsp;you!
+            The great companies below are supporting us in 2018 – Thank&nbsp;you!
           </p>
           <div className="Sponsors Sponsors--platinum">
             {filter(sponsors, ['level', 'platinum']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
@@ -42,9 +42,6 @@ export default () => (
           <div className="Sponsors Sponsors--bronze">
             {filter(sponsors, ['level', 'bronze']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
           </div>
-          <p className="text-center">
-            Travel sponsors: DigitalOcean, Hudl, Spotify, appear.in, Capital One Financial Corporation, Amazon, Originate, Mozilla – Thank you!
-          </p>
         </div>
       </div>
     </div>

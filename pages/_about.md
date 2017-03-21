@@ -1,6 +1,6 @@
-JSConf is coming to Iceland August 25<sup>th</sup> — 26<sup>th</sup>.
+JSConf is coming to Iceland March 1<sup>st</sup> — 2<sup>nd</sup>.
 
-That's a Thursday and Friday. Just after your vacation, right before you get too busy with work. Perfect for catching up on awesome talks and with friends from the JavaScript community.
+That's a Thursday and Friday. Perfect for catching up on awesome talks and with friends from the JavaScript community.
 
 Expect two awesome tracks over two days with over 30 talks in total.
 
