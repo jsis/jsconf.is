@@ -60,19 +60,19 @@ module.exports = class Template extends React.Component {
       <div>
         <Helmet
           defaultTitle={siteTitle}
-          titleTemplate="%s - JSConf Iceland 2016"
+          titleTemplate="%s - JSConf Iceland 2018"
           meta={[
             { property: 'og:title', content: siteTitle },
             { property: 'og:site_name', content: siteTitle },
-            { property: 'og:url', content: 'https://2016.jsconf.is' },
+            { property: 'og:url', content: 'https://2018.jsconf.is' },
             { property: 'og:description', content: siteDescription },
             { property: 'og:type', content: 'website' },
-            { property: 'og:image', content: 'https://2016.jsconf.is/images/og.png' },
+            { property: 'og:image', content: 'https://2018.jsconf.is/images/og.png' },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@jsconfis' },
             { name: 'twitter:title', content: siteTitle },
             { name: 'twitter:description', content: siteDescription },
-            { name: 'twitter:image', content: 'https://2016.jsconf.is/images/og.png' },
+            { name: 'twitter:image', content: 'https://2018.jsconf.is/images/og.png' },
           ]}
         />
         {this.props.children}
