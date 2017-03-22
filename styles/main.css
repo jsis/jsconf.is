@@ -313,7 +313,7 @@ footer {
         font-weight: 100;
         top: 1em; right: 0;
         background: transparent;
-        animation: form 1s 4s backwards;   
+        animation: form 1s 4s backwards;
         width: auto;
     }
     .Mood a::after {
@@ -322,7 +322,7 @@ footer {
         width: 100%; height: 1000px;
         background: #e82d6b;
         position: absolute; top: 0; left: 0;
-        transform-origin: 0 80px; 
+        transform-origin: 0 80px;
         transform: rotate(-45deg); z-index: -1
     }
     nav {
@@ -341,8 +341,8 @@ footer {
 }
 
 .FadeInLast {
-    animation: form 1s 4s backwards;   
-    animation: form 1s 4s backwards;   
+    animation: form 1s 4s backwards;
+    animation: form 1s 4s backwards;
 }
 
 .Center {
