@@ -1,185 +1,11 @@
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-img,legend {
-    border: 0
-}
-
-*,input[type=checkbox],input[type=radio] {
-    box-sizing: border-box;
-    padding: 0
-}
-
-*,legend,td,th {
-    padding: 0
-}
-
-*,body {
-    margin: 0
-}
-
-.Form-input:focus,a:active,a:hover {
-    outline: 0
-}
-
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
-}
-
-article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
-    display: block
-}
-
-audio,canvas,progress,video {
-    display: inline-block;
-    vertical-align: baseline
-}
-
-audio:not([controls]) {
-    display: none;
-    height: 0
-}
-
-[hidden],template {
-    display: none
-}
-
-a {
-    background-color: transparent
-}
-
-abbr[title] {
-    border-bottom: 1px dotted
-}
-
-b,optgroup,strong {
-    font-weight: 700
-}
-
-dfn {
-    font-style: italic
-}
-
-h1 {
-    font-size: 2em;
-    margin: .67em 0
-}
-
-mark {
-    background: #ff0;
-    color: #000
-}
-
-small {
-    font-size: 80%
-}
-
-sub,sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline
-}
-
-sup {
-    top: -.5em
-}
-
-sub {
-    bottom: -.25em
-}
-
-svg:not(:root) {
-    overflow: hidden
-}
-
-figure {
-    margin: 1em 40px
-}
-
-hr {
-    box-sizing: content-box;
-    height: 0
-}
-
-pre,textarea {
-    overflow: auto
-}
-
-code,kbd,pre,samp {
-    font-family: monospace,monospace;
-    font-size: 1em
-}
-
-button,input,optgroup,select,textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0
-}
-
-button {
-    overflow: visible
-}
-
-button,select {
-    text-transform: none
-}
-
-button,html input[type=button],input[type=reset],input[type=submit] {
-    -webkit-appearance: button;
-    cursor: pointer
-}
-
-button[disabled],html input[disabled] {
-    cursor: default
-}
-
-button::-moz-focus-inner,input::-moz-focus-inner {
-    border: 0;
-    padding: 0
-}
-
-input {
-    line-height: normal
-}
-
-input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
-    height: auto
-}
-
-input[type=search] {
-    -webkit-appearance: textfield;
-    box-sizing: content-box
-}
-
-input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration {
-    -webkit-appearance: none
-}
-
-fieldset {
-    border: 1px solid silver;
-    margin: 0 2px;
-    padding: .35em .625em .75em
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
 * {
+    -webkit-appearance: none;
+    appearance: none;
     background: 0 0;
-    border: none
-}
-
-@-webkit-keyframes bg {
-    0% {
-        background: #2e2e2c
-    }
-
-    100% {
-        background: #f3df49
-    }
+    border: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 @keyframes bg {
@@ -192,16 +18,6 @@ table {
     }
 }
 
-@-webkit-keyframes form {
-    0% {
-        opacity: 0
-    }
-
-    100% {
-        opacity: 1
-    }
-}
-
 @keyframes form {
     0% {
         opacity: 0
@@ -209,18 +25,6 @@ table {
 
     100% {
         opacity: 1
-    }
-}
-
-@-webkit-keyframes logo {
-    0% {
-        -webkit-transform: translateY(100px);
-        transform: translateY(100px)
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
     }
 }
 
@@ -241,28 +45,28 @@ body,html {
 }
 
 body {
-    -webkit-animation: bg .7s 1s backwards;
     animation: bg .7s 1s backwards;
     background: #f3df49;
-    border: 8px solid #2e2e2c;
     color: #2e2e2c;
     font-family: 'Roboto',sans-serif;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center
 }
 
 .Logo {
-    -webkit-animation: logo 1s 2s backwards;
     animation: logo 1s 2s backwards;
     background: url(/images/logo.svg);
     color: transparent;
     display: inline-block;
     font: 0/0 a;
-    height: 300px;
+    height: 200px;
     overflow: hidden;
-    margin: -68px 0 0 -10px;
+    margin: 0;
     text-shadow: none;
-    width: 300px
+    width: 200px;
 }
 
 .SaveTheDate {
@@ -274,19 +78,26 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    margin-top: 0.7em;
+}
+
 h2 {
     font-weight: 100;
     font-size: 1.2em;
-    margin: -1em 0 2em
+    margin: 0 0 1em
 }
 
 h2 sup {
     margin: 0 1px 0 -1px;
 }
 
-@keyframes type {
+@keyframes moodAppear {
+    from {
+        transform: translateY(100%);
+    }
     to {
-        width: 26em;
+        transform: none;
     }
 }
 
@@ -299,7 +110,7 @@ h2 sup {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #2e2e2c;
+    background: rgba(0, 0, 0, 0.90);
     opacity: 0;
     visibility: hidden;
     transition: opacity 300ms, visibility 0s 300ms;
@@ -308,38 +119,53 @@ h2 sup {
 .EmbedModal.isActive {
     opacity: 1;
    visibility: visible;
-   transition-duration: 0s;
+   transition-delay: 0s;
 }
 
 .EmbedModal-video {
-    padding: 3px;
-    background: #fff;
+    box-shadow: 2px 3px 12px 0 rgba(0,0,0,.4);
+    width: 90vw;
+    position: relative;
+    height: 50.625vw;
+    max-height: calc(90vh - (0px / 16 / 9));
+    max-width: calc((90vh * 16 / 9) - 0px);
+    transform: scale(0) translateZ(0);
+    transition: transform 300ms;
 }
+
+.EmbedModal.isActive .EmbedModal-video {
+    transform: none;
+}
+
+
 
 .EmbedModal iframe {
     display: block;
-}
-
-.Mood {
-    margin: -1.5em auto 2em;
-    display: block;
-    font-family: monospace;
-    width: 0em;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 0.8em;
-    animation: type 2s 4s steps(28) 1 forwards;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
 }
 
 .Mood a {
-    color: #e82d6b;
-    text-decoration: underline;
+    background-color: #e82d6b;
+    animation: moodAppear 300ms 3.8s ease 1 backwards;
+    display: block;
+    padding: 1em;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 nav {
     position: absolute;
     top: 1.7em;
-    left: 2em;
+    left: 1em;
+    text-align: center;
 }
 
 nav ul {
@@ -378,19 +204,16 @@ nav a:hover .Arrow {
 
 footer {
     position: absolute;
-    bottom: 1.7em;
-    left: 2em;
-    display: flex;
-    right: 2em;
+    top: 2em;
+    right: 1em;
     justify-content: space-between;
 }
 
 .FooterLinks {
-    display: inline-block
+    display: none;
 }
 
 .FooterLinks-link {
-    opacity: .75;
     transition: opacity .3s
 }
 
@@ -422,8 +245,10 @@ footer {
 
 
 .Form {
-    width: 400px;
     margin: 0 auto;
+    padding: 0 1em;
+    max-width: 550px;
+    width: 100%;
 }
 
 .Form-input,
@@ -434,11 +259,13 @@ footer {
 
 .Form-signup {
     display: flex;
-
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
 }
 
 .Form-input {
-    width: 300px;
+    width: 100%;
 }
 
 .Form-title {
@@ -448,7 +275,6 @@ footer {
     display: inline-block;
     font-weight: 100;
     text-transform: uppercase;
-
 }
 
 .Form-input {
@@ -461,23 +287,64 @@ footer {
 
 .Form-submit {
     animation-delay: 3.44s;
-    border: 2px solid #2e2e2e;
+    border: 1px solid #2e2e2e;
     padding: 1em;
     font-size: 16px;
+    margin-bottom: 4em;
     cursor: pointer
 }
 
-.Center {
-    display: table;
-    height: 100%;
-    width: 100%
+@media (min-width: 400px) {
+    .Form-signup {
+        flex-direction: row;
+    }
+
+    .Form-submit {
+        margin-bottom: 0;
+    }
 }
 
-.Center-content {
-    display: table-cell;
-    vertical-align: middle
+
+@media (min-width: 768px) {
+    .Mood a {
+        display: table;
+        margin: auto;
+        bottom: auto;
+        font-weight: 100;
+        top: 1em; right: 0;
+        background: transparent;
+        animation: form 1s 4s backwards;   
+        width: auto;
+    }
+    .Mood a::after {
+        content: '';
+        display: block;
+        width: 100%; height: 1000px;
+        background: #e82d6b;
+        position: absolute; top: 0; left: 0;
+        transform-origin: 0 80px; 
+        transform: rotate(-45deg); z-index: -1
+    }
+    nav {
+        left: 2em;
+    }
+    footer {
+        top: auto;
+        bottom: 2em;
+        left: 2em;
+        right: 2em;
+        display: flex
+    }
+    .FooterLinks {
+        display: inline-block;
+    }
 }
 
 .FadeInLast {
     animation: form 1s 4s backwards;   
+    animation: form 1s 4s backwards;   
+}
+
+.Center {
+
 }
