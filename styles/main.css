@@ -57,7 +57,7 @@ body {
 }
 
 .Logo {
-    animation: logo 1s 2s backwards;
+    animation: logo 1s 1s backwards;
     background: url(/images/logo.svg);
     color: transparent;
     display: inline-block;
@@ -70,7 +70,7 @@ body {
 }
 
 .SaveTheDate {
-    animation: form .8s 2.5s backwards;
+    animation: form .8s 1.5s backwards;
 }
 
 a {
