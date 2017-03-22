@@ -10,6 +10,8 @@
 
   document.body.querySelectorAll('[js-video]').forEach(function(videoLink) {
     videoLink.addEventListener('click', function(event) {
+      if (window.innerWidth < 700) 
+        return;
       event.preventDefault()
       handleVideoLink(videoLink)
     })
@@ -20,6 +22,14 @@
     setTimeout(function () {
       embedModalVideo.innerHTML = ''
     }, 300)
+  })
+
+  var ESC_KEY = 27
+
+  window.addEventListener('keyup', function(event) {
+    if (isActive && event.keyCode === ESC_KEY) {
+      toggle()
+    }
   })
 
   function toggle() {
@@ -39,4 +49,9 @@
 
     toggle()
   }
-})()
+})();
+
+(function (i, s, o, g, r, a, m) {i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {(i[r].q = i[r].q || []).push(arguments)
+}, i[r].l = 1 * new Date();a = s.createElement(o),m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');ga('create', 'UA-71097907-1', 'auto');
+ga('send', 'pageview');
