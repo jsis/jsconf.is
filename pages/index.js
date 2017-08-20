@@ -49,7 +49,7 @@ export default class Home extends React.Component {
               <Card icon="tonkvisl" link={prefixLink('/venue/')} title="Venue" />
 
               <Card icon="call" link={prefixLink('/cfp/')} title="Call For Proposal" />
-              <Card icon="podium" link={prefixLink('/speakers/')} title="Speakers" />
+              <Card onlyLarge />
               <Card onlyLarge blank />
 
               <Card onlyLarge />
