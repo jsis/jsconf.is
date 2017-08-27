@@ -3,6 +3,9 @@
 
 import speakers from './speakers'
 
+const description =
+  '<p>We are inviting the JavaScript community to submit talks for JSConf Iceland 2018.</p><p>For more information <a href="/cfp/">click here</a>.</p>'
+
 const conferenceDays = [
   {
     date: 'Thursday March 1, 2018',
@@ -24,8 +27,8 @@ const conferenceDays = [
       {
         time: '09:45 10:45',
         unified: {
-          grayed: true,
           title: 'Talks [TBA]',
+          description,
         },
       },
       {
@@ -38,8 +41,8 @@ const conferenceDays = [
       {
         time: '11:15 12:30',
         unified: {
-          grayed: true,
           title: 'Talks [TBA]',
+          description,
         },
       },
       {
@@ -52,8 +55,8 @@ const conferenceDays = [
       {
         time: '13:30 15:30',
         unified: {
-          grayed: true,
           title: 'Talks [TBA]',
+          description,
         },
       },
       {
@@ -66,8 +69,8 @@ const conferenceDays = [
       {
         time: '16:00 18:00',
         unified: {
-          grayed: true,
           title: 'Talks [TBA]',
+          description,
         },
       },
       {
@@ -92,8 +95,8 @@ const conferenceDays = [
       {
         time: '09:45 12:30',
         unified: {
-          grayed: true,
           title: 'Talks [TBA]',
+          description,
         },
       },
       {
@@ -106,8 +109,8 @@ const conferenceDays = [
       {
         time: '13:30 15:30',
         unified: {
-          grayed: true,
           title: 'Talks [TBA]',
+          description,
         },
       },
       {
@@ -120,8 +123,8 @@ const conferenceDays = [
       {
         time: '16:00 17:30',
         unified: {
-          grayed: true,
           title: 'Talks [TBA]',
+          description,
         },
       },
       {
@@ -145,10 +148,6 @@ const conferenceDays = [
 const soDays = []
 
 function trackFor(slug) {
-  const speaker = speakers.find(x => x.slug === slug)
-  if (!speaker) {
-    throw new Error(`Can\'t find speaker ${slug}`)
-  }
   return {
     ...speaker,
     name: speaker.name,
@@ -164,12 +163,13 @@ function speakerToSlot(slot) {
   )
 
   timeSlot.tracks = keys.map(type => {
+    /*
     if (typeof slot[type] === 'string') {
       const track = trackFor(slot[type])
       track.track = type
       return track
     }
-
+    */
     return slot[type]
   })
 

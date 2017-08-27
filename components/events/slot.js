@@ -12,17 +12,24 @@ class Slot extends React.Component {
     onOpenTrackDetails: React.PropTypes.func,
   }
 
-  renderBasicSlot (slot) {
+  renderBasicSlot(slot) {
     return (
       <li key={slot.title} className="Slot-track Slot-track--gray">
-        <h4 className="Slot-title" dangerouslySetInnerHTML={{ __html: slot.title }} />
+        <h4
+          className="Slot-title"
+          dangerouslySetInnerHTML={{ __html: slot.title }}
+        />
       </li>
     )
   }
 
-  renderInterActiveSlot (slot, track) {
+  renderInterActiveSlot(slot, track) {
     const { active, onOpenTrackDetails, day, index } = this.props
-    const isActive = active && active.day === day && active.slot === index && active.track === track
+    const isActive =
+      active &&
+      active.day === day &&
+      active.slot === index &&
+      active.track === track
 
     return (
       <li
@@ -30,33 +37,47 @@ class Slot extends React.Component {
         className={`Slot-track${isActive ? ' is-active' : ''}`}
         onClick={onOpenTrackDetails({ day, track, slot: index })}
       >
-        <h4 className="Slot-title">{slot.title}</h4>
-        <div className="Slot-meta">
-          <p className="Slot-name">
-            {slot.name}{slot.track !== 'unified' && (
-              <span><b> · </b>{slot.track}</span>
-            )}{slot.saved && (
-              <span>
-                &nbsp;
-                <i className="Events-heart Events-heart--gray is-filled" style={{ backgroundImage: hearts }} />
-              </span>
-            )}
-          </p>
-        </div>
+        <h4 className="Slot-title">
+          {slot.title}
+        </h4>
+        {slot.name &&
+          <div className="Slot-meta">
+            <p className="Slot-name">
+              {slot.name}
+              {slot.track !== 'unified' &&
+                <span>
+                  <b> · </b>
+                  {slot.track}
+                </span>}
+              {slot.saved &&
+                <span>
+                  &nbsp;
+                  <i
+                    className="Events-heart Events-heart--gray is-filled"
+                    style={{ backgroundImage: hearts }}
+                  />
+                </span>}
+            </p>
+          </div>}
       </li>
     )
   }
 
-  render () {
+  render() {
     const { time, tracks } = this.props
     return (
       <div className="Slot">
-        <div className="Slot-time">{time}</div>
-        <ul className="Slot-tracks">{tracks.map((slot, track) => (
-          slot.grayed
-            ? this.renderBasicSlot(slot)
-            : this.renderInterActiveSlot(slot, track)
-        ))}</ul>
+        <div className="Slot-time">
+          {time}
+        </div>
+        <ul className="Slot-tracks">
+          {tracks.map(
+            (slot, track) =>
+              slot.grayed
+                ? this.renderBasicSlot(slot)
+                : this.renderInterActiveSlot(slot, track)
+          )}
+        </ul>
       </div>
     )
   }
