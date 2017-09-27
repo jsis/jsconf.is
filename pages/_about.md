@@ -1,13 +1,15 @@
-JSConf is coming to Iceland March 1<sup>st</sup> — 2<sup>nd</sup>.
+JSConf is coming to Iceland, again! This time, the conference takes place on **March 1-2, 2018**. That's from Thursday through Friday. Perfect for catching up on  talks, and with friends from the JavaScript community.
 
-That's a Thursday and Friday. Perfect for catching up on awesome talks and with friends from the JavaScript community.
+Those two days will be jam-packed. Expect two tracks of inspiring, motivational and educational talks, from over 30 speakers from around the world.  The speaker selection will comprise curated speakers and audience volunteers. The
+curated speakers [submit proposals](/speakers/) and make it through the selection process, whereas the audience volunteer speakers are “first-come,
+first-speak“.
 
-Expect two awesome tracks over two days with over 30 talks in total.
+### JSConf is all about the community
+Connecting with people, hacking in the lounge, communal dining, partying and crawling the pubs together are all pieces that make up the essence of the JSConf experience. After the talks finish on each day, we’ll host grand parties all to enjoy.
 
-The **Hekla track** is a curated set of speakers that have [submitted proposals](/speakers/) and made it through the selection process.
+On **Saturday**, March 3, the adventure continues and we encourage attendees to explore the wonders of Iceland—the rural nature, elven wonders and aurora-clad
+horizon.
 
-The **Katla track** is 50% curated, 50% featuring people like *you*! In a unique format pioneered by JSConf US, anyone can register to speak in a first-come, first-speak format. These talks cover a huge range and are some of the most exciting talks at JSConf.
+We conclude on **Sunday**, March 4, with a lazy brunch and a trip to the famous [Blue Lagoon](http://www.bluelagoon.com/).
 
-But that's only the start. JSConf is all about the **community** - connecting with people between talks, hacking in the lounge, communal dining, partying and crawling pubs together. Extend your stay over the weekend and experience the wonders of Iceland.
-
-It's sure to be a one-of-a-kind gathering, vacation and adventure.
+Stay tuned for more info!
