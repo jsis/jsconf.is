@@ -4,7 +4,8 @@
 import speakers from './speakers'
 
 const description =
-  '<p>We are inviting the JavaScript community to submit talks for JSConf Iceland 2018.</p><p>For more information <a href="/cfp/">click here</a>.</p>'
+  '<p>We are inviting the JavaScript community to submit talks for JSConf Iceland 2018.</p><p>For more information <a target="_blank" href="http://cfp.jsconf.is/events/jsconf-iceland-2018">click' +
+  ' here</a>.</p>'
 
 const conferenceDays = [
   {

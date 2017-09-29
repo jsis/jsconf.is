@@ -1,7 +1,8 @@
 JSConf is coming to Iceland, again! This time, the conference takes place on **March 1-2, 2018**. That's from Thursday through Friday. Perfect for catching up on  talks, and with friends from the JavaScript community.
 
 Those two days will be jam-packed. Expect two tracks of inspiring, motivational and educational talks, from over 30 speakers from around the world.  The speaker selection will comprise curated speakers and audience volunteers. The
-curated speakers [submit proposals](/speakers/) and make it through the selection process, whereas the audience volunteer speakers are “first-come,
+curated speakers <a href="http://cfp.jsconf.is/events/jsconf-iceland-2018"
+target="_blank">submit proposals</a> and make it through the selection process, whereas the audience volunteer speakers are “first-come,
 first-speak“.
 
 ### JSConf is all about the community
