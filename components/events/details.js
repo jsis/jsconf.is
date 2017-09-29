@@ -1,25 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router'
-import { prefixLink } from 'gatsby-helpers'
 import './details.scss'
 
-const hearts = `url(${require('../../images/hearts.png')})`
+// const hearts = `url(${require('../../images/hearts.png')})`
 
 const Details = ({
   title,
   description,
   track,
-  saved,
   isActive,
   time,
+  /*
+  saved,
   name,
   slug,
   link,
   company,
+  onSave,
+  */
   onClose,
   onPrevious,
   onNext,
-  onSave,
 }) =>
   <div className={`Details${isActive ? ' is-active' : ''}`}>
     {!isActive

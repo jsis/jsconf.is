@@ -12,7 +12,7 @@ class Slot extends React.Component {
     onOpenTrackDetails: React.PropTypes.func,
   }
 
-  renderBasicSlot(slot) {
+  renderBasicSlot (slot) {
     return (
       <li key={slot.title} className="Slot-track Slot-track--gray">
         <h4
@@ -23,7 +23,7 @@ class Slot extends React.Component {
     )
   }
 
-  renderInterActiveSlot(slot, track) {
+  renderInterActiveSlot (slot, track) {
     const { active, onOpenTrackDetails, day, index } = this.props
     const isActive =
       active &&
@@ -63,7 +63,7 @@ class Slot extends React.Component {
     )
   }
 
-  render() {
+  render () {
     const { time, tracks } = this.props
     return (
       <div className="Slot">
