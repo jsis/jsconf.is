@@ -5,7 +5,7 @@ curated speakers [submit proposals](/speakers/) and make it through the selectio
 first-speak“.
 
 ### JSConf is all about the community
-Connecting with people, hacking in the lounge, communal dining, partying and crawling the pubs together are all pieces that make up the essence of the JSConf experience. After the talks finish on each day, we’ll host grand parties all to enjoy.
+Connecting with people, hacking in the lounge, communal dining, partying and crawling the pubs together are all pieces that make up the essence of the JSConf experience. After the talks finish on each day, we’ll host grand parties for all to enjoy.
 
 On **Saturday**, March 3, the adventure continues and we encourage attendees to explore the wonders of Iceland—the rural nature, elven wonders and aurora-clad
 horizon.
