@@ -63,11 +63,18 @@ module.exports = class Template extends React.Component {
           <div>
             <div className="top-bar-right">
               <ul className="menu">
-                <li><Link to={prefixLink('/about/')}>About</Link></li>
-                <li><Link to={prefixLink('/speakers/')}>Speakers</Link></li>
-                <li><Link to={prefixLink('/venue/')}>Venue</Link></li>
-                <li><Link to={prefixLink('/schedule/')}>Schedule</Link></li>
-                <li><Link to={prefixLink('/trips/')}>Trips</Link></li>
+                <li>
+                  <Link to={prefixLink('/about/')}>About</Link>
+                </li>
+                <li>
+                  <a target="_blank" href={'http://cfp.jsconf.is/events/jsconf-iceland-2018'}>CFP</a>
+                </li>
+                <li>
+                  <Link to={prefixLink('/venue/')}>Venue</Link>
+                </li>
+                <li>
+                  <Link to={prefixLink('/schedule/')}>Schedule</Link>
+                </li>
               </ul>
             </div>
           </div>

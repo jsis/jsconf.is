@@ -1,7 +1,7 @@
 import React from 'react'
-import BoxPage from '../components/box-page'
+import BoxPage from '../../components/box-page'
 import content from './_about.md'
-import icon from '!svg-inline!../images/logo-clipped.svg'
+import icon from '!svg-inline!../../images/logo-clipped.svg'
 
 const title = (
   <div>

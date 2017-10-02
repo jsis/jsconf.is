@@ -1,65 +1,76 @@
 import React from 'react'
-import { Link } from 'react-router'
-import { prefixLink } from 'gatsby-helpers'
 import './details.scss'
 
-const hearts = `url(${require('../../images/hearts.png')})`
+// const hearts = `url(${require('../../images/hearts.png')})`
 
 const Details = ({
   title,
   description,
   track,
-  saved,
   isActive,
   time,
+  /*
+  saved,
   name,
   slug,
   link,
   company,
+  onSave,
+  */
   onClose,
   onPrevious,
   onNext,
-  onSave,
-}) => (
+}) =>
   <div className={`Details${isActive ? ' is-active' : ''}`}>
-    {! isActive ? null : (
-      <div>
-        <div className="Details-controls">
-          <button className="Details-closeBtn" onClick={onClose}>
-            <i className="Details-close" />
-          </button>
-          <button onClick={onPrevious}>
-            <i className="Details-leftArrow" />
-          </button>
-          <button onClick={onNext}>
-            <i className="Details-rightArrow" />
-          </button>
-          <button onClick={onSave}>
-            <i
-              className={`Events-heart${saved ? ' is-filled' : ''}`}
-              style={{ backgroundImage: hearts }}
-            />
-          </button>
-        </div>
-        <h2 className="Details-title">{title}</h2>
-        <div className="Details-meta">
-          {track === 'unified' ? null : (
-            <span><span className="Details-track">{track}</span> / </span>
-          )}
-          <span className="Details-time">{time.replace(' ', ' - ')}</span>
-        </div>
-        <div className="Details-description" dangerouslySetInnerHTML={{ __html: description }} />
-        <figure className="Details-speaker">
-          <img className="Details-speakerImg" src={require(`../../images/speakers/${slug}.jpg`)} alt={name} />
-          <figcaption className="Details-speakerInfo">
-            <Link className="u-base-link" to={prefixLink(link)}>{name}</Link><br />
-            {company}
-          </figcaption>
-        </figure>
-      </div>
-    )}
+    {!isActive
+      ? null
+      : <div>
+          <div className="Details-controls">
+            <button className="Details-closeBtn" onClick={onClose}>
+              <i className="Details-close" />
+            </button>
+            <button onClick={onPrevious}>
+              <i className="Details-leftArrow" />
+            </button>
+            <button onClick={onNext}>
+              <i className="Details-rightArrow" />
+            </button>
+            {/* <button onClick={onSave}>
+              <i
+                className={`Events-heart${saved ? ' is-filled' : ''}`}
+                style={{ backgroundImage: hearts }}
+              />
+            </button> */}
+          </div>
+          <h2 className="Details-title">
+            {title}
+          </h2>
+          <div className="Details-meta">
+            {track === undefined || track === 'unified'
+              ? null
+              : <span>
+                  <span className="Details-track">{track}</span> /{' '}
+                </span>}
+            <span className="Details-time">
+              {time.replace(' ', ' - ')}
+            </span>
+          </div>
+          <div
+            className="Details-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+          {/* <figure className="Details-speaker">
+            <img className="Details-speakerImg" src={require(`../../images/speakers/${slug}.jpg`)} alt={name} />
+            <figcaption className="Details-speakerInfo">
+              <Link className="u-base-link" to={prefixLink(link)}>
+                {name}
+              </Link>
+              <br />
+              {company}
+            </figcaption>
+          </figure> */}
+        </div>}
   </div>
-)
 
 Details.propTypes = {
   title: React.PropTypes.string,

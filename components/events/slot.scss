@@ -7,6 +7,7 @@ $SlotBorder: 1px solid rgba(black, .2);
   border-bottom: $SlotBorder;
   align-items: flex-start;
   display: flex;
+  min-height: 64px;
 
   :first-child > & {
     border-top: $SlotBorder;
@@ -55,12 +56,12 @@ $SlotBorder: 1px solid rgba(black, .2);
     background-image: $gradient;
     cursor: pointer;
   }
-  
+
   &.is-active {
     background-image: $gradient;
     cursor: default !important;
   }
-  
+
   &--gray {
     opacity: .6;
   }

@@ -8,12 +8,13 @@
 
 .Events-group {
   padding: 0 15px;
+  width: 100%;
 
   @include breakpoint(large) {
     padding: 0 0 0 15px;
     transition: transform 400ms;
     width: 60%;
-    
+
     &.is-centered {
       transform: translateX(100% / 3);
     }

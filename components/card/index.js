@@ -4,6 +4,8 @@ import classnames from 'classnames'
 import { Link } from 'react-router'
 import './index.scss'
 
+const outGoingRegex = /^(https?:)?\/\//i
+
 const Card = ({ link, title, icon, blank, onlyLarge, pushLeft }) => {
   const classes = classnames({
     Card: true,
@@ -16,12 +18,11 @@ const Card = ({ link, title, icon, blank, onlyLarge, pushLeft }) => {
     icon && <InlineSvg key="icon" className="CardIcon" src={require(`!svg-inline!../../images/${icon}.svg`)} />,
     <span key="title" className="CardTitle">{title}</span>,
   ]
-  let body = null
-  if (icon) {
-    body = <Link className="Card-body" to={link}>{content}</Link>
-  } else if (!blank) {
-    body = <div className="Card-body">{content}</div>
-  }
+  const body = !blank && (icon
+    ? outGoingRegex.test(link)
+      ? <a className="Card-body" href={link}>{content}</a>
+      : <Link className="Card-body" to={link}>{content}</Link>
+    : <div className="Card-body">{content}</div>)
 
   return (
     <div className={classes}>{body}</div>
