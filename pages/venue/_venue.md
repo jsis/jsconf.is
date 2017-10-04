@@ -15,11 +15,3 @@ Iceland is a great place to experience gorgeous, incredibly varied, untouched na
 <figure><img alt="Harpa" src="harpa.jpg"></figure>
 
 The location is also great. Harpa is in the heart of the city and features stunning views of the surrounding mountains and the North Atlantic Ocean. Most of the best hotels, restaurants and pubs in Reykjavik are within walking distance.
-
-## Getting to JSConf Iceland
-
-Iceland is perfectly situated midway between the USA and Europe with only 3 hours flight from Europe and 5 hours flight from USA.
-
-The best way to get to Reykjavik from the airport is by a bus.
-
-**Icelandair Hotel Reykjavik Marina** is the official JSConf Iceland hotel. Located within walking distance from the venue, next to a historical dry-dock called Slippur, it blends the creative atmosphere of the downtown district with the country's strong fishing traditions.
