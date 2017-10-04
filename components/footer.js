@@ -31,7 +31,9 @@ export default () => (
         <div className="column large-8 medium-10 small-12">
           <h1>Sponsors</h1>
           <p>
-            The great companies below are supporting us in 2018 – Thank&nbsp;you!
+            We are currently offering sponsorship opportunities for JSConf Iceland.
+            <br />
+            <a className="BgLink" href="https://jsconfis.typeform.com/to/FN7Bla">Contact us for details</a>
           </p>
           <div className="Sponsors Sponsors--platinum">
             {filter(sponsors, ['level', 'platinum']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
