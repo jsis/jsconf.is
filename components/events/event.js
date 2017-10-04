@@ -6,11 +6,15 @@ const Event = ({ date, isActive, slots, active, onOpenTrackDetails, index }) => 
   <div className={`Event${isActive ? ' is-active' : ''}`}>
     <h3 className="Event-date">{date}</h3>
     <ul>
-      {slots.map((slot, slotIndex) => (
+      {slots.length ? slots.map((slot, slotIndex) => (
         <li key={slot.time}>
           <Slot {...slot} day={index} index={slotIndex} active={active} onOpenTrackDetails={onOpenTrackDetails} />
         </li>
-      ))}
+      )) : (
+        <li>
+          More info coming soon!
+        </li>
+      )}
     </ul>
   </div>
 )

@@ -142,6 +142,14 @@ const conferenceDays = [
       },
     ],
   },
+  {
+    date: 'Saturday March 3, 2018',
+    slots: [],
+  },
+  {
+    date: 'Sunday March 4, 2018',
+    slots: [],
+  },
 ]
 
 const soDays = []
