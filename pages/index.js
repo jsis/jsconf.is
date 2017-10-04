@@ -64,10 +64,10 @@ export default class Home extends React.Component {
         <div className="row align-center">
           <div className="large-10 column u-offsetParent">
             <Panel hidden={!this.state.panelVisible}>
-              <Waypoint onPositionChange={this.panelWaypoint} bottomOffset="25%" />
-              <p>JSConf will be held in Iceland March 1st — 2nd.</p>
-              <p>That's a Thursday and Friday. Perfect for catching up on awesome talks and with friends from the JavaScript community.</p>
-              <p>Expect two awesome tracks over two days with over 30 talks in total</p>
+              <Waypoint onPositionChange={this.panelWaypoint} bottomOffset="5%" />
+              <p>JSConf will be held in Iceland March 1-2, 2018.</p>
+              <p>That's a Thursday and Friday. Perfect for catching up on talks, and with friends from the JavaScript community.</p>
+              <p>Expect 2 awesome tracks with over 30 speakers, an adventurous Saturday and a laid back Sunday brunch.</p>
               <PanelButton href={prefixLink('/about/')}>Learn More</PanelButton>
             </Panel>
           </div>
