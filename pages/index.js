@@ -45,7 +45,7 @@ export default class Home extends React.Component {
               <Card onlyLarge blank />
 
               <Card onlyLarge blank />
-              <Card icon="ticket" link={prefixLink('/tickets/')} title="Tickets" />
+              <Card icon="ticket" link={'https://2018.jsconf.is/tickets/'} title="Tickets" />
               <Card icon="tonkvisl" link={prefixLink('/venue/')} title="Venue" />
 
               <Card icon="call" link={'http://cfp.jsconf.is/events/jsconf-iceland-2018'} title="Call For Proposal" />
