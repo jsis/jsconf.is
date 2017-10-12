@@ -6,7 +6,8 @@ import { prefixLink } from 'gatsby-helpers'
 import Waypoint from 'react-waypoint'
 
 const updates = [
-  <span>Watch the <a href="https://www.youtube.com/watch?v=jX8bMHTD5WA">mood video</a> from the last JSConf Iceland.</span>,
+  <span>Early bird tickets go on <a href="https://2018.jsconf.is/tickets/" target="_blank">sale</a> this Friday, October 13, at 18:00 UTC.</span>,
+  <span>Watch the <a href="https://www.youtube.com/watch?v=jX8bMHTD5WA" target="_blank">mood video</a> from the last JSConf Iceland.</span>,
 ]
 
 export default class Home extends React.Component {
