@@ -6,7 +6,7 @@ import { prefixLink } from 'gatsby-helpers'
 import Waypoint from 'react-waypoint'
 
 const updates = [
-  <span>Regular Coder tickets go on <a href="https://2018.jsconf.is/tickets/" target="_blank">sale</a> this Friday, October 20, at 15:00 UTC.</span>,
+  <span>Next batch of tickets go on <a href="https://2018.jsconf.is/tickets/" target="_blank">sale</a> Tuesday, October 31st, at 18:00 UTC.</span>,
   <span>Watch the <a href="https://www.youtube.com/watch?v=jX8bMHTD5WA" target="_blank">mood video</a> from the last JSConf Iceland.</span>,
 ]
 
@@ -31,6 +31,13 @@ export default class Home extends React.Component {
   render () {
     return (
       <div>
+        <Helmet
+          title="JSConf
+          meta={[
+            { property: 'og:title', content: `${metaTitle || title} - JSConf Iceland 2018` },
+            { name: 'twitter:title', content: `${metaTitle || title} - JSConf Iceland 2018` },
+          ]}
+        />
         <div className="row align-center large-unstack">
           <div className="column large-4 large-order-1 large-text-right">
             <hr className="u-separator" />
