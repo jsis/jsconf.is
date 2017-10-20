@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import Card, { CardContainer } from '../components/card'
 import UpdateSection from '../components/update-section'
 import Panel, { PanelButton } from '../components/panel'
