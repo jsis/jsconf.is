@@ -22,8 +22,14 @@ const BoxPage = ({
     <Helmet
       title={metaTitle || title}
       meta={[
-        { property: 'og:title', content: `${metaTitle || title} - JSConf Iceland 2018` },
-        { name: 'twitter:title', content: `${metaTitle || title} - JSConf Iceland 2018` },
+        {
+          property: 'og:title',
+          content: `${metaTitle || title} - JSConf Iceland 2018`,
+        },
+        {
+          name: 'twitter:title',
+          content: `${metaTitle || title} - JSConf Iceland 2018`,
+        },
       ]}
     />
     <header className="Page-header">
@@ -39,9 +45,11 @@ const BoxPage = ({
 
     <article className="Page-content">
       {subtitle && <p className="Page-subtitle">{subtitle}</p>}
-      {expanded ? children : (
+      {expanded ? (
+        children
+      ) : (
         <div className="row align-center">
-          <div className="column large-8 medium-10 small-12">
+          <div className="column xxlarge-8 xlarge-9 large-10 med-11 small-12">
             {children}
           </div>
         </div>
