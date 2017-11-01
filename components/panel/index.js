@@ -1,9 +1,9 @@
 import React from 'react'
 import './index.scss'
 
-function Panel ({ children, hidden }) {
+function Panel ({ children }) {
   return (
-    <div className={`Panel${hidden ? ' Panel--invisible' : ''}`}>
+    <div className="Panel">
       <div className="Panel-header">
         <div className="Panel-headerButton" />
         <div className="Panel-headerButton" />
@@ -18,7 +18,6 @@ function Panel ({ children, hidden }) {
 
 Panel.propTypes = {
   children: React.PropTypes.node,
-  hidden: React.PropTypes.bool,
 }
 
 export default Panel

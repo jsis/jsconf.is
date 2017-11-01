@@ -4,11 +4,22 @@ import Card, { CardContainer } from '../components/card'
 import UpdateSection from '../components/update-section'
 import Panel, { PanelButton } from '../components/panel'
 import { prefixLink } from 'gatsby-helpers'
-import Waypoint from 'react-waypoint'
 
 const updates = [
-  <span>Next batch of tickets go on <a href="https://2018.jsconf.is/tickets/" target="_blank">sale</a> Tuesday, October 31st, at 18:00 UTC.</span>,
-  <span>Watch the <a href="https://www.youtube.com/watch?v=jX8bMHTD5WA" target="_blank">mood video</a> from the last JSConf Iceland.</span>,
+  <span>
+    Next batch of tickets go on{' '}
+    <a href="https://2018.jsconf.is/tickets/" target="_blank">
+      sale
+    </a>{' '}
+    Tuesday, October 31st, at 18:00 UTC.
+  </span>,
+  <span>
+    Watch the{' '}
+    <a href="https://www.youtube.com/watch?v=jX8bMHTD5WA" target="_blank">
+      mood video
+    </a>{' '}
+    from the last JSConf Iceland.
+  </span>,
 ]
 
 export default class Home extends React.Component {
@@ -16,20 +27,7 @@ export default class Home extends React.Component {
     onToggleMenu: React.PropTypes.func,
   }
 
-  state = {
-    panelVisible: false,
-  }
-
-  panelWaypoint = ({ currentPosition }) => {
-    const { panelVisible } = this.state
-    const beyondHero = currentPosition !== Waypoint.below
-    if (this.props.onToggleMenu) {
-      this.props.onToggleMenu(beyondHero)
-    }
-    this.setState({ panelVisible: panelVisible || beyondHero })
-  }
-
-  render () {
+  render() {
     return (
       <div>
         <Helmet title="JSConf Iceland: March 1-2, 2018" />
@@ -37,21 +35,43 @@ export default class Home extends React.Component {
           <div className="column large-4 large-order-1 large-text-right">
             <hr className="u-separator" />
             <h2 className="u-title">JSConf Iceland</h2>
-            <h2 className="u-subtitle">March 1<sup>st</sup> — 2<sup>nd</sup> 2018</h2>
+            <h2 className="u-subtitle">
+              March 1<sup>st</sup> — 2<sup>nd</sup> 2018
+            </h2>
             <UpdateSection updates={updates} />
           </div>
           <div className="large-6 column">
             <h3 className="u-shoutout">Feel free to explore</h3>
             <CardContainer>
-              <Card icon="logo-clipped" link={prefixLink('/about/')} title="About" />
-              <Card icon="schedule" link={prefixLink('/schedule/')} title="Schedule" />
+              <Card
+                icon="logo-clipped"
+                link={prefixLink('/about/')}
+                title="About"
+              />
+              <Card
+                icon="schedule"
+                link={prefixLink('/schedule/')}
+                title="Schedule"
+              />
               <Card onlyLarge blank />
 
               <Card onlyLarge blank />
-              <Card icon="ticket" link={'https://2018.jsconf.is/tickets/'} title="Tickets" />
-              <Card icon="tonkvisl" link={prefixLink('/venue/')} title="Venue" />
+              <Card
+                icon="ticket"
+                link={'https://2018.jsconf.is/tickets/'}
+                title="Tickets"
+              />
+              <Card
+                icon="tonkvisl"
+                link={prefixLink('/venue/')}
+                title="Venue"
+              />
 
-              <Card icon="call" link={'http://cfp.jsconf.is/events/jsconf-iceland-2018'} title="Call For Proposal" />
+              <Card
+                icon="call"
+                link={'http://cfp.jsconf.is/events/jsconf-iceland-2018'}
+                title="Call For Proposal"
+              />
               <Card onlyLarge />
               <Card onlyLarge blank />
 
@@ -66,11 +86,16 @@ export default class Home extends React.Component {
         </div>
         <div className="row align-center">
           <div className="large-10 column u-offsetParent">
-            <Panel hidden={!this.state.panelVisible}>
-              <Waypoint onPositionChange={this.panelWaypoint} bottomOffset="5%" />
+            <Panel>
               <p>JSConf will be held in Iceland March 1-2, 2018.</p>
-              <p>That's a Thursday and Friday. Perfect for catching up on talks, and with friends from the JavaScript community.</p>
-              <p>Expect 2 awesome tracks with over 30 speakers, an adventurous Saturday and a laid back Sunday brunch.</p>
+              <p>
+                That's a Thursday and Friday. Perfect for catching up on talks,
+                and with friends from the JavaScript community.
+              </p>
+              <p>
+                Expect 2 awesome tracks with over 30 speakers, an adventurous
+                Saturday and a laid back Sunday brunch.
+              </p>
               <PanelButton href={prefixLink('/about/')}>Learn More</PanelButton>
             </Panel>
           </div>
