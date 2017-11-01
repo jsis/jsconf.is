@@ -33,18 +33,21 @@
     width: (100% / 3);
   }
 
-  &:hover &-info::before {
-    transform: translateZ(0);
-    transition: transform 250ms 100ms;
-  }
+  &:focus,
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
 
-  &:hover &-info::after {
-    transform: skewY(2deg) translate3d(0, -7px, 0);
-    transition: transform 300ms 100ms;
-  }
+    .Speaker-info::before {
+      transform: translateZ(0);
+      transition: transform 250ms 100ms;
+    }
 
-  &:hover::after {
-    opacity: 0;
+    .Speaker-info::after {
+      transform: skewY(2deg) translate3d(0, -7px, 0);
+      transition: transform 300ms 100ms;
+    }
   }
 
   &-info {
