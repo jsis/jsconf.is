@@ -59,12 +59,7 @@ export default class Template extends React.Component {
                   <Link to={prefixLink('/about/')}>About</Link>
                 </li>
                 <li>
-                  <a
-                    target="_blank"
-                    href={'http://cfp.jsconf.is/events/jsconf-iceland-2018'}
-                  >
-                    CFP
-                  </a>
+                  <Link to={prefixLink('/speakers/')}>Speakers</Link>
                 </li>
                 <li>
                   <Link to={prefixLink('/venue/')}>Venue</Link>
