@@ -1,3 +1,5 @@
+@import '../../_settings';
+
 .Speaker {
   background: no-repeat center center / cover;
   cursor: pointer;
@@ -12,7 +14,11 @@
   }
 
   &::after {
-    background: linear-gradient(45deg, rgba($color-jsconf-purple, .5), rgba($color-jsconf-yellow, .4));
+    background: linear-gradient(
+      45deg,
+      rgba($color-jsconf-purple, 0.5),
+      rgba($color-jsconf-yellow, 0.4)
+    );
     content: '';
     height: 100%;
     left: 0;
@@ -25,21 +31,6 @@
   @include breakpoint(medium) {
     min-height: (100vw / 3);
     width: (100% / 3);
-  }
-
-  @include breakpoint(1200px) {
-    min-height: (100vw / 4);
-    width: (100% / 4);
-  }
-
-  @include breakpoint(1600px) {
-    min-height: (100vw / 5);
-    width: (100% / 5);
-  }
-
-  @include breakpoint(2000px) {
-    min-height: (100vw / 6);
-    width: (100% / 6);
   }
 
   &:hover &-info::before {
@@ -58,8 +49,9 @@
 
   &-info {
     bottom: 0;
+    color: #fff;
     left: 0;
-    padding: .8em;
+    padding: 0.8em;
     position: absolute;
     right: 0;
     z-index: 1;
@@ -79,7 +71,7 @@
   }
 
   &-info::after {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &-name,
@@ -94,13 +86,14 @@
   }
 
   &-company {
-    font-size: .7em;
-    margin: .5em 0 0;
+    font-size: 0.7em;
+    margin: 0.5em 0 0;
   }
 }
 
 .SpeakerList {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
   width: 100%;
 }
