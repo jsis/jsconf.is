@@ -92,6 +92,8 @@ BoxPage.propTypes = {
   metaTitle: React.PropTypes.string,
   children: React.PropTypes.node,
   subtitle: React.PropTypes.node,
+  ogImage: React.PropTypes.string,
+  ogDecription: React.PropTypes.string,
 }
 
 export default BoxPage
