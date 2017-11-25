@@ -32,6 +32,14 @@ const BoxPage = ({
         content: ogImage,
       },
       {
+        property: 'og:image:width',
+        content: '1200',
+      },
+      {
+        property: 'og:image:height',
+        content: '630',
+      },
+      {
         name: 'twitter:image',
         content: ogImage,
       }
