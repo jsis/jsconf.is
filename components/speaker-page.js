@@ -17,10 +17,15 @@ const SpeakerPage = ({
   const profilePic = require(`../images/speakers/${slug}.jpg`)
   const boxPageProps = {
     title,
+    ogImage: `https://2018.jsconf.is/og/speakers/${slug}.jpg`,
   }
 
   if (company) {
-    boxPageProps.subtitle = companyWebsite ? <a href={companyWebsite}>{company}</a> : company
+    boxPageProps.subtitle = companyWebsite ? (
+      <a href={companyWebsite}>{company}</a>
+    ) : (
+      company
+    )
   }
 
   return (
