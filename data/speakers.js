@@ -51,7 +51,7 @@ const speakers = [
     slug: 'carolyn-stransky',
     twitter: 'carolstran',
     github: 'carolstran',
-    website: 'https://about.me/carolstan',
+    website: '',
     companyWebsite: 'https://www.contentful.com/',
     company: 'Contentful',
     title: 'Humanizing Your Documentation',
