@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import config from '../../config'
+import { config } from '../../config'
 import '../../css/styles.scss'
 
 const { siteTitle, siteDescription } = config
@@ -16,11 +16,11 @@ module.exports = class Template extends React.Component {
     router: React.PropTypes.object,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     window.addEventListener('keyup', this.onKeyUp)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('keyup', this.onKeyUp)
   }
 
@@ -32,30 +32,35 @@ module.exports = class Template extends React.Component {
     if (nexRoute) router.push(nexRoute.path)
   }
 
-  getNextRoute (keyCode) {
+  getNextRoute(keyCode) {
     switch (keyCode) {
-      case 37: return this.prevSpeaker()
-      case 39: return this.nextSpeaker()
-      default: return null
+      case 37:
+        return this.prevSpeaker()
+      case 39:
+        return this.nextSpeaker()
+      default:
+        return null
     }
   }
 
-  setCurrentSpeakerIndex () {
+  setCurrentSpeakerIndex() {
     const { location, route } = this.props
-    this.speakerIndex = route.childRoutes.findIndex(page => page.path === location.pathname)
+    this.speakerIndex = route.childRoutes.findIndex(
+      page => page.path === location.pathname
+    )
   }
 
-  nextSpeaker () {
+  nextSpeaker() {
     const { route } = this.props
     return route.childRoutes[this.speakerIndex + 1]
   }
 
-  prevSpeaker () {
+  prevSpeaker() {
     const { route } = this.props
     return route.childRoutes[this.speakerIndex - 1]
   }
 
-  render () {
+  render() {
     return (
       <div>
         <Helmet
@@ -67,12 +72,18 @@ module.exports = class Template extends React.Component {
             { property: 'og:url', content: 'https://2018.jsconf.is' },
             { property: 'og:description', content: siteDescription },
             { property: 'og:type', content: 'website' },
-            { property: 'og:image', content: 'https://2018.jsconf.is/images/og.png' },
+            {
+              property: 'og:image',
+              content: 'https://2018.jsconf.is/assets/social/og.png',
+            },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@jsconfis' },
             { name: 'twitter:title', content: siteTitle },
             { name: 'twitter:description', content: siteDescription },
-            { name: 'twitter:image', content: 'https://2018.jsconf.is/images/og.png' },
+            {
+              name: 'twitter:image',
+              content: 'https://2018.jsconf.is/assets/social/og.png',
+            },
           ]}
         />
         {this.props.children}

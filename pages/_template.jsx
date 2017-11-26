@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import config from '../config.toml'
+import { config } from '../config.toml'
 import Footer from '../components/footer'
 import '../css/styles.scss'
 import { Link } from 'react-router'
@@ -36,7 +36,7 @@ export default class Template extends React.Component {
             { property: 'og:type', content: 'website' },
             {
               property: 'og:image',
-              content: 'https://2018.jsconf.is/images/og.png',
+              content: 'https://2018.jsconf.is/assets/social/og.png',
             },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@jsconfis' },
@@ -44,7 +44,7 @@ export default class Template extends React.Component {
             { name: 'twitter:description', content: siteDescription },
             {
               name: 'twitter:image',
-              content: 'https://2018.jsconf.is/images/og.png',
+              content: 'https://2018.jsconf.is/assets/social/og.png',
             },
           ]}
         />

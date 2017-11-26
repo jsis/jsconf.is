@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import BoxPage from './box-page'
 import Profile from './profile'
 
@@ -9,15 +10,16 @@ const SpeakerPage = ({
   slug,
   talk,
   body,
+  bio,
   twitter,
   github,
   website,
+  path,
 }) => {
   // eslint-disable-next-line
   const profilePic = require(`../images/speakers/${slug}.jpg`)
   const boxPageProps = {
     title,
-    ogImage: `https://2018.jsconf.is/og/speakers/${slug}.jpg`,
   }
 
   if (company) {
@@ -30,6 +32,33 @@ const SpeakerPage = ({
 
   return (
     <BoxPage {...boxPageProps}>
+      <Helmet
+        meta={[
+          { property: 'og:url', content: `https://2018.jsconf.is${path}/` },
+          { property: 'og:description', content: bio },
+          {
+            property: 'og:image',
+            content: `https://2018.jsconf.is/assets/social/speakers/${
+              slug
+            }.jpg`,
+          },
+          {
+            property: 'og:image:width',
+            content: '1200',
+          },
+          {
+            property: 'og:image:height',
+            content: '630',
+          },
+          {
+            name: 'twitter:image',
+            content: `https://2018.jsconf.is/assets/social/speakers/${
+              slug
+            }.jpg`,
+          },
+          { name: 'twitter:description', content: bio },
+        ]}
+      />
       <Profile
         image={profilePic}
         name={title}
@@ -45,6 +74,8 @@ const SpeakerPage = ({
 
 SpeakerPage.propTypes = {
   title: React.PropTypes.string,
+  path: React.PropTypes.string,
+  bio: React.PropTypes.string,
   slug: React.PropTypes.string,
   body: React.PropTypes.string,
   company: React.PropTypes.string,

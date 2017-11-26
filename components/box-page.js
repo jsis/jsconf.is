@@ -11,8 +11,6 @@ const BoxPage = ({
   children,
   inverse,
   expanded,
-  ogImage,
-  ogDecription,
 }) => {
   const metaData = [
     {
@@ -24,34 +22,6 @@ const BoxPage = ({
       content: `${metaTitle || title} - JSConf Iceland 2018`,
     },
   ]
-
-  if (typeof ogImage !== 'undefined') {
-    metaData.push(
-      {
-        property: 'og:image',
-        content: ogImage,
-      },
-      {
-        property: 'og:image:width',
-        content: '1200',
-      },
-      {
-        property: 'og:image:height',
-        content: '630',
-      },
-      {
-        name: 'twitter:image',
-        content: ogImage,
-      }
-    )
-  }
-
-  if (typeof ogDecription !== 'undefined') {
-    metaData.push(
-      { property: 'og:description', content: ogDecription },
-      { name: 'twitter:description', content: ogDecription }
-    )
-  }
 
   return (
     <section
