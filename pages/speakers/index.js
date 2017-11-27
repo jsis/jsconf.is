@@ -10,9 +10,5 @@ export default () => (
         <Speaker key={speaker.slug} speaker={speaker} />
       ))}
     </div>
-
-    <p className="text-center">
-      More speakers will be announced later. <br /> <strong>Stay tuned!</strong>
-    </p>
   </BoxPage>
 )
