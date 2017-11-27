@@ -33,6 +33,11 @@
     width: (100% / 3);
   }
 
+  @include breakpoint(large) {
+    min-height: (100vw / 4);
+    width: (100% / 4);
+  }
+
   &:focus,
   &:hover {
     &::after {
