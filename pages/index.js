@@ -11,7 +11,7 @@ const updates = [
     <a href="https://2018.jsconf.is/tickets/" target="_blank">
       sale
     </a>{' '}
-    Tuesday, October 31st, at 18:00 UTC.
+    Tuesday, November 27th, at 15:00 UTC.
   </span>,
   <span>
     Watch the{' '}
