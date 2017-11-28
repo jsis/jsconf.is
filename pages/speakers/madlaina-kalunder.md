@@ -1,9 +1,9 @@
 ---
-title: "Kalunder Madlaina"
+title: "Madlaina Kalunder"
 talk: "Building a raytracing engine with JS"
-path: "/speakers/kalunder-madlaina"
+path: "/speakers/madlaina-kalunder"
 type: "speaker"
-slug: "kalunder-madlaina"
+slug: "madlaina-kalunder"
 twitter: "anialdam"
 github: "aadjou"
 website: "https://madlaina.li/"
