@@ -17,7 +17,7 @@
     align-items: flex-end;
     display: flex;
     position: relative;
-    transition: transform .3s;
+    transition: transform 0.3s;
 
     @include breakpoint(medium) {
       justify-content: center;
@@ -35,7 +35,7 @@
     }
 
     figure {
-      font-size: .7em;
+      font-size: 0.7em;
       text-align: right;
       margin-left: 0;
       margin-right: 0;
@@ -65,7 +65,8 @@
     height: 60vh;
     left: 15vw;
     margin: 0 $global-margin 0 -$global-margin;
-    opacity: .03;
+    opacity: 0.03;
+    pointer-events: none;
     position: absolute;
     text-align: center;
     top: 20vh;
