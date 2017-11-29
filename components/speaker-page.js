@@ -72,23 +72,29 @@ const SpeakerPage = ({
         </div>
       </header>
 
-      <div className="SpeakerPage-talk">
-        <div className="row align-center">
-          <div className="column xxlarge-8 xlarge-9 large-10 med-11 small-12">
-            <h2 className="SpeakerPage-talkTitle">{talk}</h2>
-            <div
-              className="SpeakerPage-abstract"
-              dangerouslySetInnerHTML={{ __html: body }}
-            />
+      {body && (
+        <div className="SpeakerPage-talk">
+          <div className="row align-center">
+            <div className="column xxlarge-8 xlarge-9 large-10 med-11 small-12">
+              <h2 className="SpeakerPage-talkTitle">{talk}</h2>
+              <div
+                className="SpeakerPage-abstract"
+                dangerouslySetInnerHTML={{ __html: body }}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <aside>
         <div className="row align-center">
           <div className="column xxlarge-8 xlarge-9 large-10 med-11 small-12">
-            <h3>About {name}</h3>
-            {bio && <p>{bio}</p>}
+            {bio && (
+              <div>
+                <h3>About {name}</h3>
+                {bio && <p>{bio}</p>}
+              </div>
+            )}
             {(website || twitter || github) && (
               <div>
                 <h4 className="SpeakerPage-socialTitle">
