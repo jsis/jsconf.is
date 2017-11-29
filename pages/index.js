@@ -7,6 +7,12 @@ import { prefixLink } from 'gatsby-helpers'
 
 const updates = [
   <span>
+    Apply for a{' '}
+    <a href="https://jsconfis.typeform.com/to/xuQBqD" target="_blank">
+      JSConf Iceland Scholarship
+    </a>.
+  </span>,
+  <span>
     Next batch of tickets go on{' '}
     <a href="https://2018.jsconf.is/tickets/" target="_blank">
       sale
