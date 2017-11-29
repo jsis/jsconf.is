@@ -1,0 +1,122 @@
+@import '../css/_settings';
+
+.SpeakerPage {
+  margin-top: -1em;
+}
+
+.SpeakerPage-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.SpeakerPage-info {
+  padding-bottom: 2em;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  text-align: center;
+}
+
+.SpeakerPage-name {
+  margin: 0;
+}
+
+.SpeakerPage-imageWrap {
+  order: -1;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 767px) {
+    &::after,
+    &::before {
+      background: $color-jsconf-yellow;
+      bottom: 0;
+      content: '';
+      height: 40px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    &::before {
+      transform: skewY(1deg) translateY(10px);
+    }
+
+    &::after {
+      opacity: 0.6;
+      transform: skewY(2deg);
+    }
+  }
+
+  @media (min-width: 768px) {
+    border-radius: 50%;
+    margin: 3em auto 1em;
+    max-width: 250px;
+  }
+}
+
+.SpeakerPage-talk {
+  background-color: $color-gray-75;
+  color: #fff;
+  margin-bottom: 2em;
+  overflow: hidden;
+  padding: 3em 0;
+  position: relative;
+
+  &::after,
+  &::before {
+    background: $color-jsconf-yellow;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &::before {
+    bottom: 100%;
+    transform-origin: 0 100%;
+    transform: rotateZ(2deg);
+  }
+
+  &::after {
+    top: 100%;
+    opacity: 0.75;
+    transform-origin: 0 0;
+    transform: rotateZ(-2deg);
+  }
+
+  @media (min-width: 768px) {
+    padding-bottom: 4em;
+    padding-top: 4em;
+
+    &::before {
+      transform: rotateZ(1deg);
+    }
+
+    &::after {
+      transform: rotateZ(-1deg);
+    }
+  }
+}
+
+.SpeakerPage-talkTitle {
+  font-weight: 400;
+}
+
+.SpeakerPage-abstract {
+  p {
+    margin-bottom: 0.6em;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.SpeakerPage-socialTitle {
+  font-weight: 300;
+}
+
+.SpeakerPage-links {
+  padding-bottom: 1em;
+}
