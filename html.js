@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
 import { prefixLink } from 'gatsby-helpers'
 
+const googleId = 'UA-71097907-1'
 
 export default class extends React.Component {
   static propTypes = {
@@ -11,7 +11,7 @@ export default class extends React.Component {
     body: React.PropTypes.string,
   }
 
-  render () {
+  render() {
     const head = Helmet.rewind()
 
     let cssLink
@@ -37,9 +37,25 @@ export default class extends React.Component {
           {cssLink}
         </head>
         <body>
-          <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
+          <div
+            id="react-mount"
+            dangerouslySetInnerHTML={{ __html: this.props.body }}
+          />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleId}');
+              `.trim(),
+            }}
+          />
           <script src={prefixLink('/bundle.js')} />
-          <script src="//www.google-analytics.com/analytics.js" />
         </body>
       </html>
     )
