@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { companies, sponsors } from '../data/sponsors'
 
-const SponsorBox = ({ website, name, image, imagePadding }) => (
+const SponsorBox = ({ website, name, image }) => (
   <a href={website} className="Sponsors-box" target="_blank">
     <div className={'Sponsors-inner'}>
       <img
