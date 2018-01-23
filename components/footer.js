@@ -1,12 +1,10 @@
 import React from 'react'
-import filter from 'lodash/filter'
 import classNames from 'classnames'
-import { config } from '../config'
-const { sponsors } = config
+import { companies, sponsors } from '../data/sponsors'
 
-const SponsorBox = ({ website, name, image, imagePadding }) => (
+const SponsorBox = ({ website, name, image }) => (
   <a href={website} className="Sponsors-box" target="_blank">
-    <div className={classNames('Sponsors-inner', !imagePadding && 'Sponsors-inner--no-border')}>
+    <div className={'Sponsors-inner'}>
       <img
         src={require(`../images/sponsors/${image}`)}
         alt={name}
@@ -31,19 +29,15 @@ export default () => (
         <div className="column large-8 medium-10 small-12">
           <h1>Sponsors</h1>
           <p>
-            We are currently offering sponsorship opportunities for JSConf Iceland.
-            <br />
-            <a className="BgLink" href="https://jsconfis.typeform.com/to/FN7Bla">Contact us for details</a>
+            We are currently offering sponsorship opportunities for JSConf Iceland. <a className="BgLink" href="https://jsconfis.typeform.com/to/FN7Bla">Contact us for details</a>.
           </p>
-          <div className="Sponsors Sponsors--platinum">
-            {filter(sponsors, ['level', 'platinum']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
-          </div>
-          <div className="Sponsors Sponsors--silver">
-            {filter(sponsors, ['level', 'silver']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
-          </div>
-          <div className="Sponsors Sponsors--bronze">
-            {filter(sponsors, ['level', 'bronze']).map(sponsor => <SponsorBox key={sponsor.name} {...sponsor} />)}
-          </div>
+          {sponsors.map(level => (
+            <div className={classNames('Sponsors', `Sponsors--${level.name.toLowerCase()}`)} key={level.name}>
+              {level.ids.map(id => companies[id]).map(sponsor =>
+                <SponsorBox key={sponsor.name} {...sponsor} />
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
