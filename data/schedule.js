@@ -12,7 +12,7 @@ const conferenceDays = [
       {
         time: '20:00 23:59',
         unified: {
-          title: 'Welcome party at Hard Rock',
+          title: 'Welcome Reception at Hard Rock',
           description: '<p>Come to the welcome reception, meet fellow attendees and pick-up your badge at Hard Rock. The reception is situated on the famous Lækjargata, in the heart of Reykjavik City. Hard Rock Cafe Reykjavik contains three floors, each with its own distinctive vibe.</p>' +
             '<p>We look forward to seeing you!</p>',
         },
@@ -159,7 +159,7 @@ const conferenceDays = [
     date: 'Saturday March 3, 2018',
     slots: [
       {
-        time: '10:00 18:00',
+        time: '10:00 19:00',
         unified: {
           title: 'South Shore Adventure',
           description:
