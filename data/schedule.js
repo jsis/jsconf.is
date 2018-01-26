@@ -181,12 +181,11 @@ const conferenceDays = [
       {
         time: '09:00 14:00',
         unified: {
-          grayed: true,
           title: 'Brunch at the Blue Lagoon',
           description:
           '<p>Enjoy brunch at the Blue Lagoon as a final gathering after the conference. Then relax in the lagoon as long as you like. Includes transportation from city center, brunch buffet, and access to the lagoon.</p>' +
           '<p>The buses leave at 9am, the brunch starts at 10am and access to the lagoon starts at 11am.</p>' +
-          '<p>Tickets sold separately at <a href="https://tickets.jsconf.is">tickets.jsconf.is</a>.</p>',
+          '<p>Tickets are sold separately for both attendees and SOs. Attendees will get a link to the ticket purchase page via email.</p>',
         },
       },
     ],
