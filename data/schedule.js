@@ -192,7 +192,84 @@ const conferenceDays = [
   },
 ]
 
-const soDays = []
+
+const soDays = [
+  {
+    date: 'Thursday March 1, 2018',
+    noTracks: true,
+    slots: [
+      {
+        time: '09:00 09:30',
+        unified: {
+          grayed: true,
+          title: 'Grab your bus, meal and pool tickets at Harpa.',
+        },
+      },
+      {
+        time: '09:30 12:00',
+        unified: {
+          grayed: true,
+          title: 'Tour the city.',
+        },
+      },
+      {
+        time: '12:00 13:00',
+        unified: {
+          grayed: true,
+          title: 'Grab some lunch.',
+        },
+      },
+      {
+        time: '13:00 15:00',
+        unified: {
+          grayed: true,
+          title: 'Tour the city.',
+        },
+      },
+      {
+        time: '15:00 17:00',
+        unified: {
+          grayed: true,
+          title: 'Take a dip in <a class="u-base-link" href="http://icelandictimes.com/laugardalslaug-the-most-popular-swimming-pool-in-reykjavik/">Laugardalslaug swimming pool</a>.',
+        },
+      },
+      {
+        time: '17:00 17:30',
+        unified: {
+          grayed: true,
+          title: 'Arrive back to Harpa.',
+        },
+      },
+    ],
+  },
+  {
+    date: 'Friday March 2, 2016',
+    noTracks: true,
+    slots: [
+      {
+        time: '09:30 9:45',
+        unified: {
+          grayed: true,
+          title: 'Please arrive early, bus leaves at 9:45.',
+        },
+      },
+      {
+        time: '9:45 18:00',
+        unified: {
+          grayed: true,
+          title: 'The Golden Circle day trip. See Geysir, Gullfoss and Þingvellir.',
+        },
+      },
+      {
+        time: '17:30 18:00',
+        unified: {
+          grayed: true,
+          title: 'Arrive back to Harpa.',
+        },
+      },
+    ],
+  },
+]
 
 /*
 function trackFor(slug) {
