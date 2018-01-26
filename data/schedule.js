@@ -243,7 +243,7 @@ const soDays = [
     ],
   },
   {
-    date: 'Friday March 2, 2016',
+    date: 'Friday March 2, 2018',
     noTracks: true,
     slots: [
       {
