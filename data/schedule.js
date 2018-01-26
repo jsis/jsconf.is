@@ -170,7 +170,7 @@ const conferenceDays = [
           '<p>We will also stop at Reynisfjara black sand beach, with the Reynisdrangar rock formations and columnar basalt. It is one of the most spectacular beaches in Iceland but can be dangerous, and we kindly ask our guests not to go too close to the ocean and go by guidelines.</p>' +
           '<p>Tour duration: 10:00 – 19:00</p>' +
           '<p>On this tour you will see:<br>• Sólheimajökull<br>• Vík<br>• Reynisfjara<br>• Reynisdrangar<br>• Skógafoss<br>• Seljalandsfoss</p>' +
-          '<p>Tickets are sold separately for both attendees and SOs. Attendees will get a link to the ticket purchase page via email.</p>',
+          '<p>Tickets are sold separately for both attendees and SOs. Attendees will receive a link via email to buy tickets.</p>',
         },
       },
     ],
@@ -185,7 +185,7 @@ const conferenceDays = [
           description:
           '<p>Enjoy brunch at the Blue Lagoon as a final gathering after the conference. Then relax in the lagoon as long as you like. Includes transportation from city center, brunch buffet, and access to the lagoon.</p>' +
           '<p>The buses leave at 9am, the brunch starts at 10am and access to the lagoon starts at 11am.</p>' +
-          '<p>Tickets are sold separately for both attendees and SOs. Attendees will get a link to the ticket purchase page via email.</p>',
+          '<p>Tickets are sold separately for both attendees and SOs. Attendees will receive a link via email to buy tickets.</p>',
         },
       },
     ],
