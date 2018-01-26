@@ -169,7 +169,7 @@ const conferenceDays = [
           '<p>Among the stops on this tour are at the gorgeous Seljalandsfoss and Skógafoss waterfalls. Seljalandsfoss is part of the Seljandsá river, which has its origins in Eyjafjallajökull glacier. What makes Seljalandsfoss so famous and interesting is that you can walk behind it. We recommend you bring either a raincoat or a waterproof coat along if you want to walk behind it. Skógafoss, another famous Icelandic waterfall, is the starting point of the Fimmvörðuháls walk over to Þórsmörk. The waterfall was also used in the films <em>Thor: The Dark World</em> and <em>The Secret Life of Walter Mitty</em>.</p>' +
           '<p>We will also stop at Reynisfjara black sand beach, with the Reynisdrangar rock formations and columnar basalt. It is one of the most spectacular beaches in Iceland but can be dangerous, and we kindly ask our guests not to go too close to the ocean and go by guidelines.</p>' +
           '<p>Tour duration: 10:00 – 19:00</p>' +
-          '<p>On this tour you will see:<br>• Sólheimajökull<br>• Vík<br>• Reynisfjara<br>• Reynisdrangar<br>• Skógafoss<br>• Seljalandsfoss</p>' 
+          '<p>On this tour you will see:<br>• Sólheimajökull<br>• Vík<br>• Reynisfjara<br>• Reynisdrangar<br>• Skógafoss<br>• Seljalandsfoss</p>' +
           '<p>Tickets sold separately at <a href="https://tickets.jsconf.is">tickets.jsconf.is</a>.</p>',
         },
       },
