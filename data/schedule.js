@@ -183,8 +183,8 @@ const conferenceDays = [
           grayed: true,
           title: 'Blue Lagoon',
           description: '',
-        }
-      }
+        },
+      },
     ],
   },
 ]
