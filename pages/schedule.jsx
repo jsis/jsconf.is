@@ -15,7 +15,6 @@ class Schedule extends React.Component {
 
   render () {
     const { footerPosition } = this.state
-    console.log(schedule.so)
     return (
       <BoxPage expanded>
         <Events
