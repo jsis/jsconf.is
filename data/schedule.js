@@ -7,7 +7,7 @@ const description =
 
 const conferenceDays = [
   {
-    date: 'Wednesday February 28, 2018',
+    date: new Date('Wednesday February 28, 2018'),
     slots: [
       {
         time: '20:00 23:59',
@@ -20,7 +20,7 @@ const conferenceDays = [
     ],
   },
   {
-    date: 'Thursday March 1, 2018',
+    date: new Date('Thursday March 1, 2018'),
     slots: [
       {
         time: '08:00 09:15',
@@ -95,7 +95,7 @@ const conferenceDays = [
     ],
   },
   {
-    date: 'Friday March 2, 2018',
+    date: new Date('Friday March 2, 2018'),
     slots: [
       {
         time: '08:45 09:45',
@@ -156,7 +156,7 @@ const conferenceDays = [
     ],
   },
   {
-    date: 'Saturday March 3, 2018',
+    date: new Date('Saturday March 3, 2018'),
     slots: [
       {
         time: '10:00 19:00',
@@ -176,7 +176,7 @@ const conferenceDays = [
     ],
   },
   {
-    date: 'Sunday March 4, 2018',
+    date: new Date('Sunday March 4, 2018'),
     slots: [
       {
         time: '09:00 14:00',
@@ -192,7 +192,83 @@ const conferenceDays = [
   },
 ]
 
-const soDays = []
+
+const soDays = [
+  {
+    date: new Date('Thursday March 1, 2018'),
+    slots: [
+      {
+        time: '09:00 09:30',
+        unified: {
+          grayed: true,
+          title: 'Grab your bus, meal and pool tickets at Harpa.',
+        },
+      },
+      {
+        time: '09:30 12:00',
+        unified: {
+          grayed: true,
+          title: 'Tour the city.',
+        },
+      },
+      {
+        time: '12:00 13:00',
+        unified: {
+          grayed: true,
+          title: 'Grab some lunch.',
+        },
+      },
+      {
+        time: '13:00 15:00',
+        unified: {
+          grayed: true,
+          title: 'Tour the city.',
+        },
+      },
+      {
+        time: '15:00 17:00',
+        unified: {
+          grayed: true,
+          title: 'Take a dip in <a class="u-base-link" href="http://icelandictimes.com/laugardalslaug-the-most-popular-swimming-pool-in-reykjavik/">Laugardalslaug swimming pool</a>.',
+        },
+      },
+      {
+        time: '17:00 17:30',
+        unified: {
+          grayed: true,
+          title: 'Arrive back to Harpa.',
+        },
+      },
+    ],
+  },
+  {
+    date: new Date('Friday March 2, 2018'),
+    noTracks: true,
+    slots: [
+      {
+        time: '09:30 9:45',
+        unified: {
+          grayed: true,
+          title: 'Please arrive early, bus leaves at 9:45.',
+        },
+      },
+      {
+        time: '9:45 18:00',
+        unified: {
+          grayed: true,
+          title: 'The Golden Circle day trip. See Geysir, Gullfoss and Þingvellir.',
+        },
+      },
+      {
+        time: '17:30 18:00',
+        unified: {
+          grayed: true,
+          title: 'Arrive back to Harpa.',
+        },
+      },
+    ],
+  },
+]
 
 /*
 function trackFor(slug) {

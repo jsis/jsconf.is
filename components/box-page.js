@@ -39,7 +39,7 @@ const BoxPage = ({
               <InlineSVG src={icon} />
             </div>
           )}
-          <h1 className="Page-title">{title}</h1>
+          {title && <h1 className="Page-title">{title}</h1>}
         </div>
       </header>
 
