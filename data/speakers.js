@@ -230,18 +230,6 @@ const speakers = [
     bio: `Nara Kasbergen is a senior full-stack developer in NPR (National Public Radio)’s Digital Media group. She hails from The Netherlands and lived in Munich, Houston, Pittsburgh, Tokyo, and New York City prior to settling down in Washington, DC. In her spare time, she satisfies her foodie habits by trying out all of the best restaurants in the city, collects board games, and watches too much Netflix.`,
   },
   {
-    name: 'Charlie Gerard',
-    slug: 'charlie-gerard',
-    twitter: 'devdevcharlie',
-    github: 'charliegerard',
-    website: 'https://charliegerard.github.io',
-    companyWebsite: '',
-    company: 'ThoughtWorks',
-    title: 'Look mum, no hands!',
-    description: `<p>A typical interaction with a device or interface involves touching it. Either you’re pressing buttons on a controller, swiping on a touchscreen or clicking on your laptop’s trackpad. But what if you could control things without the use of your hands? What if you could use… your thoughts?</p><p>I have been tinkering with a brain sensor for about a year and developed an open-source JavaScript framework for it to allow me (or anyone else) to control interfaces or robots using only mental commands or facial expressions.</p>`.trim(),
-    bio: ``,
-  },
-  {
     name: 'Sarrah Vesselov',
     slug: 'sarrah-vesselov',
     twitter: 'svesselov',
