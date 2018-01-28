@@ -3,44 +3,39 @@ import Event from './event'
 import Details from './details'
 import { below } from 'react-waypoint'
 import './index.scss'
+import closestTo from 'date-fns/closest_to'
+import isWithinRange from 'date-fns/is_within_range'
+import format from 'date-fns/format'
+
+function getWeekday(date) {
+  return format(date, 'dddd')
+}
+
+function getCorrectDate(days, today = (new Date()).setHours(0, 0, 0, 0)) {
+  const dates = days.map(({ date }) => date)
+  let correctDay = dates[0]
+  if (isWithinRange(today, dates[0], dates[days.length - 1])) {
+    correctDay = closestTo(today, dates)
+  }
+  return getWeekday(correctDay)
+}
 
 class Events extends React.Component {
-  static localStorageKey = 'jsconf-is-2016-schedule'
+  static localStorageKey = 'jsconf-is-2018-schedule'
 
   static propTypes = {
-    days: React.PropTypes.arrayOf(React.PropTypes.object),
-    other: React.PropTypes.string,
+    conference: React.PropTypes.arrayOf(React.PropTypes.object),
+    so: React.PropTypes.arrayOf(React.PropTypes.object),
     footerPosition: React.PropTypes.string,
   }
 
   constructor (props) {
     super(props)
-    const now = new Date()
     this.state = {
       activeDetails: null,
-      activeDate: new Date('03/01/2018').setHours(0, 0, 0, 0) === now.setHours(0, 0, 0, 0)
-        ? 'Friday'
-        : 'Thursday',
+      type: 'conference',
+      activeDate: getCorrectDate(props.conference),
     }
-  }
-
-  componentWillMount () {
-    const days = [...this.props.days]
-    let keys = {}
-
-    if (typeof window !== 'undefined') {
-      keys = JSON.parse(window.localStorage.getItem(Events.localStorageKey)) || {}
-    }
-
-    Object.keys(keys).forEach(slug => days.some(day => day.slots.some(slot => {
-      const track = slot.tracks.find(x => x.slug === slug)
-      if (track) {
-        track.saved = keys[slug]
-      }
-      return track
-    })))
-
-    this.setState({ days, keys })
   }
 
   componentDidMount () {
@@ -102,6 +97,13 @@ class Events extends React.Component {
     window.localStorage.setItem(Events.localStorageKey, JSON.stringify(keys))
   }
 
+  onChangeTracks = () => {
+    this.setState((state, props) => {
+      const type = state.type === 'conference' ? 'so' : 'conference'
+      return { type, activeDate: getCorrectDate(props[type]) }
+    })
+  }
+
   calculateNextTrack (direction, indicies) {
     const { activeDetails } = this.state
     const current = indicies || { ...activeDetails }
@@ -151,8 +153,12 @@ class Events extends React.Component {
   }
 
   render () {
-    const { other } = this.props
-    const { days, activeDate, activeDetails } = this.state
+    const { so, conference } = this.props
+    const { type, activeDate, activeDetails } = this.state
+
+    const days = type === 'conference'
+      ? conference
+      : so
 
     if (!days) {
       return null
@@ -170,34 +176,36 @@ class Events extends React.Component {
     return (
       <div className="Events" onKeyPress={this.onKeyPress}>
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>
+          <h1 className="Page-title">
+            <strong>Schedule:</strong> {type === 'conference' ? 'Conference' : 'Significant Other'}
+          </h1>
+          <p>
+            <button onClick={this.onChangeTracks}>
+              View {type === 'conference' ? 'Significant Other' : 'Conference'} tracks
+            </button>
+          </p>
           {days.map(({ date }) => {
-            const weekday = date.split(/,?\s+/)[0]
+            const weekday = getWeekday(date)
             const classes = `Events-tab${activeDate === weekday ? ' is-active' : ''}`
             return (
-              <button key={date} onClick={this.onChangeDay(weekday)} className={classes}>{weekday}</button>
+              <button key={date} onClick={this.onChangeDay(weekday)} className={classes}>
+                {weekday}
+              </button>
             )
           })}
-          <button
-            onClick={this.onChangeDay('Other')}
-            className={`Events-tab${activeDate === 'Other' ? ' is-active' : ''}`}
-          >Community / SO</button>
         </nav>
         <div className={`Events-group${!hasDetails ? ' is-centered' : ''}`}>
           {days.map((day, index) =>
             <Event
               key={day.date}
               active={activeDetails}
-              isActive={activeDate === day.date.split(/,?\s+/)[0]}
-              date={day.date}
+              isActive={activeDate === getWeekday(day.date)}
+              date={format(day.date, 'MMMM Do, YYYY')}
               slots={day.slots}
               index={index}
               onOpenTrackDetails={this.onOpenTrackDetails}
             />
           )}
-          <div
-            className={`Event${activeDate === 'Other' ? ' is-active' : ''}`}
-            dangerouslySetInnerHTML={{ __html: other }}
-          />
         </div>
         <Details
           {...detailsProps}
