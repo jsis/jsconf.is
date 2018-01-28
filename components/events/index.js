@@ -8,7 +8,15 @@ import isWithinRange from 'date-fns/is_within_range'
 import format from 'date-fns/format'
 
 function getWeekday(date) {
-  return format(date, 'dddd')
+  return format(date, 'dddd').toLowerCase()
+}
+
+function isValidDay(type) {
+  return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].includes(type)
+}
+
+function isValidType(type) {
+  return ['conference', 'so'].includes(type)
 }
 
 function getCorrectDate(days, today = (new Date()).setHours(0, 0, 0, 0)) {
@@ -18,6 +26,20 @@ function getCorrectDate(days, today = (new Date()).setHours(0, 0, 0, 0)) {
     correctDay = closestTo(today, dates)
   }
   return getWeekday(correctDay)
+}
+
+function parseHash(state, props) {
+  const hash = window.location.hash.split('/')
+  const type = hash.length > 1 && isValidType(hash[1]) ? hash[1] : state.type
+
+  return {
+    type,
+    activeDate: hash.length > 2 && isValidDay(hash[2]) ? hash[2] : getCorrectDate(props[type]),
+  }
+}
+
+function setHash(type, day) {
+  window.location.hash = `#!/${type}/${day}`
 }
 
 class Events extends React.Component {
@@ -40,11 +62,23 @@ class Events extends React.Component {
 
   componentDidMount () {
     window.addEventListener('keyup', this.onKeyUp)
+    // eslint-disable-next-line react/no-did-mount-set-state
+    this.setState(parseHash, () => {
+      const { type, activeDate } = this.state
+      setHash(type, activeDate)
+    })
   }
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.footerPosition !== below && nextProps.footerPosition !== this.props.footerPosition) {
       this.setState({ activeDetails: null })
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { type, activeDate } = this.state
+    if (prevState.activeDate !== activeDate || prevState.type !== type) {
+      setHash(type, activeDate)
     }
   }
 
