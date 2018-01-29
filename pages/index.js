@@ -3,11 +3,12 @@ import Helmet from 'react-helmet'
 import Card, { CardContainer } from '../components/card'
 import UpdateSection from '../components/update-section'
 import Panel, { PanelButton } from '../components/panel'
+import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 
 const updates = [
   <span>
-    SO and weekend trips added to <a href="/schedule">the schedule</a>.
+    SO and weekend trips added to <Link to={prefixLink('/schedule/')}>the schedule</Link>.
   </span>,
   <span>
     Tickets are <strong>SOLD OUT</strong>!
