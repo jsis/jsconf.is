@@ -8,14 +8,12 @@ const description =
 const southShore = {
   time: '10:00 19:00',
   unified: {
-    title: 'South Shore Adventure',
+    title: 'Community Trip',
     description:
     '<p><img src="/assets/south-coast.jpg" alt="The south shore adventure"/></p>'+
-    '<p>This tour is ideal for nature lovers of all kinds. We take you along the south coast of Iceland, one of the country’s most scenic regions, as far as Vík, a charming village surrounded by high beautiful bird cliffs.</p>' +
-    '<p>South Iceland is special for that it is one of the flattest regions on the island. Because of that, most of all grain farming in Iceland is done there. The high mountains to the north, shield the area from the harshest winds from the north.</p>' +
-    '<p>Among the stops on this tour are at the gorgeous Seljalandsfoss and Skógafoss waterfalls. Seljalandsfoss is part of the Seljandsá river, which has its origins in Eyjafjallajökull glacier. What makes Seljalandsfoss so famous and interesting is that you can walk behind it. We recommend you bring either a raincoat or a waterproof coat along if you want to walk behind it. Skógafoss, another famous Icelandic waterfall, is the starting point of the Fimmvörðuháls walk over to Þórsmörk. The waterfall was also used in the films <em>Thor: The Dark World</em> and <em>The Secret Life of Walter Mitty</em>.</p>' +
-    '<p>We will also stop at Reynisfjara black sand beach, with the Reynisdrangar rock formations and columnar basalt. It is one of the most spectacular beaches in Iceland but can be dangerous, and we kindly ask our guests not to go too close to the ocean and go by guidelines.</p>' +
-    '<p>Tour duration: 10:00 – 19:00</p>' +
+    '<p>South Coast Adventure. Waterfalls and black sand beaches on an amazing day.</p>' +
+    '<p>In a single day you can see the famous waterfalls Seljalandsfoss & Skógafoss, visit Reynisfjara, the dramatic black sand beach near Vík.</p>' +
+    '<p>Tour duration: 10:00 – 20:00</p>' +
     '<p>On this tour you will see:<br>• Sólheimajökull<br>• Vík<br>• Reynisfjara<br>• Reynisdrangar<br>• Skógafoss<br>• Seljalandsfoss</p>' +
     '<p>Tickets are sold separately for both attendees and SOs. Attendees will receive a link via email to buy tickets.</p>',
   },
@@ -24,7 +22,7 @@ const southShore = {
 const blueLagoon = {
   time: '09:00 14:00',
   unified: {
-    title: 'Brunch at the Blue Lagoon',
+    title: 'Blue Lagoon Farewell Brunch',
     description:
     '<p>Enjoy brunch at the Blue Lagoon as a final gathering after the conference. Then relax in the lagoon as long as you like. Includes transportation from city center, brunch buffet, and access to the lagoon.</p>' +
     '<p>The buses leave at 9am, the brunch starts at 10am and access to the lagoon starts at 11am.</p>' +
