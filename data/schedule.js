@@ -51,7 +51,7 @@ const conferenceDays = [
         time: '08:00 09:15',
         unified: {
           grayed: true,
-          title: 'Breakfast and badge pick-up',
+          title: 'Coffee and badge pick-up',
         },
       },
       {
@@ -126,7 +126,7 @@ const conferenceDays = [
         time: '08:45 09:45',
         unified: {
           grayed: true,
-          title: 'Breakfast',
+          title: 'Coffee',
         },
       },
       {
@@ -218,35 +218,14 @@ const soDays = [
         time: '09:00 09:30',
         unified: {
           grayed: true,
-          title: 'Grab your bus, meal and pool tickets at Harpa.',
+          title: 'Grab your Hop-On, Hop-Off bus tickets at Harpa.',
         },
       },
       {
-        time: '09:30 12:00',
+        time: '09:30 17:00',
         unified: {
           grayed: true,
           title: 'Tour the city.',
-        },
-      },
-      {
-        time: '12:00 13:00',
-        unified: {
-          grayed: true,
-          title: 'Grab some lunch.',
-        },
-      },
-      {
-        time: '13:00 15:00',
-        unified: {
-          grayed: true,
-          title: 'Tour the city.',
-        },
-      },
-      {
-        time: '15:00 17:00',
-        unified: {
-          grayed: true,
-          title: 'Take a dip in <a class="u-base-link" href="http://icelandictimes.com/laugardalslaug-the-most-popular-swimming-pool-in-reykjavik/">Laugardalslaug swimming pool</a>.',
         },
       },
       {
@@ -254,6 +233,13 @@ const soDays = [
         unified: {
           grayed: true,
           title: 'Arrive back to Harpa.',
+        },
+      },
+      {
+        time: '19:00 23:00',
+        unified: {
+          grayed: true,
+          title: 'Party at Ægisgarður',
         },
       },
     ],
@@ -281,6 +267,13 @@ const soDays = [
         unified: {
           grayed: true,
           title: 'Arrive back to Harpa.',
+        },
+      },
+      {
+        time: '19:00 23:00',
+        unified: {
+          grayed: true,
+          title: 'Party, details TBA',
         },
       },
     ],
