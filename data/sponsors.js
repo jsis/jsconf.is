@@ -6,6 +6,12 @@ const companies = {
     website: 'https://advania.com/',
     image: 'advania.png',
   },
+  apress: {
+    name: 'Apress',
+    description: null,
+    website: 'https://www.apress.com',
+    image: 'apress.svg',
+  },
   'kosmos-og-kaos': {
     name: 'Kosmos & Kaos',
     description: '<p>Kosmos & Kaos is a quality digital agency that' +
@@ -48,6 +54,7 @@ module.exports = {
   }, {
     name: 'Bronze',
     ids: [
+      'apress',
       'icelandair',
       'tempo',
       'wuxi-nextcode',
