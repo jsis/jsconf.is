@@ -2,15 +2,19 @@ import React from 'react'
 import classNames from 'classnames'
 import { companies, sponsors } from '../data/sponsors'
 
-const SponsorBox = ({ website, name, image }) => (
-  <a
-    href={website}
-    className="Sponsors-box"
-    target="_blank"
-    title={name}
-    style={{ backgroundImage: `url(${require(`../images/sponsors/${image}`)}` }}
-  />
-)
+const SponsorBox = ({ website, name, image }) => {
+  const logoSrc = require(`../images/sponsors/${image}`)
+
+  return (
+    <a
+      href={website}
+      className="Sponsors-box"
+      target="_blank"
+      title={name}
+      style={{ backgroundImage: `url(${logoSrc})` }}
+    />
+  )
+}
 
 SponsorBox.propTypes = {
   website: React.PropTypes.string,
