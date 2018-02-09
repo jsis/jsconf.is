@@ -62,14 +62,14 @@ module.exports = {
   sponsors: [{
     name: 'Platinum',
     ids: [
-      'advania'
+      'advania',
     ],
   }, {
     name: 'Silver',
     ids: [
       'aranja',
       'kosmos-og-kaos',
-      'mozilla'
+      'mozilla',
     ],
   }, {
     name: 'Bronze',

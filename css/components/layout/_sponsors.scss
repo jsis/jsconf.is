@@ -13,7 +13,9 @@ $sponsors-gutter: 20px;
   }
 
   &-box {
-    background: #fff;
+    background: #fff no-repeat center / contain;
+    background-origin: content-box;
+    padding: 25px 25px;
     display: inline-block;
     margin-bottom: $global-padding;
     position: relative;
@@ -38,21 +40,5 @@ $sponsors-gutter: 20px;
   &--bronze &-box {
     height: 100px;
     width: 150px;
-  }
-
-  &-inner {
-    display: flex;
-    align-items: center;
-    padding: calc(5px + 5%);
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-
-    &--no-border {
-      padding: 0;
-    }
-  }
-
-  &-image {
-    width: 100%;
   }
 }
