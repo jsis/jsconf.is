@@ -12,6 +12,12 @@ const companies = {
     website: 'https://www.apress.com',
     image: 'apress.svg',
   },
+  aranja: {
+    name: 'Aranja',
+    description: null,
+    website: 'https://aranja.com',
+    image: 'aranja.svg',
+  },
   'kosmos-og-kaos': {
     name: 'Kosmos & Kaos',
     description: '<p>Kosmos & Kaos is a quality digital agency that' +
@@ -61,6 +67,7 @@ module.exports = {
   }, {
     name: 'Silver',
     ids: [
+      'aranja',
       'kosmos-og-kaos',
       'mozilla'
     ],
