@@ -1,4 +1,11 @@
 const companies = {
+  advania: {
+    name: 'Advania',
+    description: '<p>Advania is a Nordic IT corporation, operating in 22 locations in Iceland, Sweden, Norway, and Denmark. The company focuses on helping customers to improve their performance with innovative use of best available IT platforms and services.  Advania serves thousands of corporate customers, multinational enterprises, governments and public institutions, big, small and medium-sized companies in all aspects of society.</p>' +
+    '<p>Advania traces its roots to 1939 when an Icelandic entrepreneur founded an office equipment repair workshop in Reykjavik. In the following decades, three separate branches of IT-companies evolved in three Nordic countries, <a href="https://www.advania.is/" target="_blank">Iceland</a>, <a href="https://www.advania.se/" target="_blank">Sweden</a>, and <a href="https://www.advania.no/" target="_blank">Norway</a>. In 2012 they were braided into one and Advania was formed. For further information, please visit <a href="https://www.advania.com/" target="_blank">www.advania.com</a>.</p>',
+    website: 'https://advania.com/',
+    image: 'advania.png',
+  },
   'kosmos-og-kaos': {
     name: 'Kosmos & Kaos',
     description: '<p>Kosmos & Kaos is a quality digital agency that' +
@@ -30,7 +37,9 @@ module.exports = {
   companies,
   sponsors: [{
     name: 'Platinum',
-    ids: [],
+    ids: [
+      'advania'
+    ],
   }, {
     name: 'Silver',
     ids: [

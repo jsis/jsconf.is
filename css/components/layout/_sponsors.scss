@@ -26,17 +26,12 @@ $sponsors-gutter: 20px;
   }
 
   &--platinum &-box {
-    height: 150px;
-    width: 250px;
-
-    @include breakpoint(medium) {
-      height: 175px;
-      width: calc(49% - $sponsors-gutter);
-    }
+    height: 180px;
+    width: 290px;
   }
 
   &--silver &-box {
-    height: 150px;
+    height: 130px;
     width: 210px;
   }
 
