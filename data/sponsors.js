@@ -25,6 +25,12 @@ const companies = {
     website: 'https://tempo.io/',
     image: 'tempo.png',
   },
+  mozilla: {
+    name: 'Apress',
+    description: null,
+    website: 'https://www.mozilla.org',
+    image: 'mozilla.svg',
+  },
   icelandair: {
     name: 'Icelandair',
     description: null,
@@ -50,6 +56,7 @@ module.exports = {
     name: 'Silver',
     ids: [
       'kosmos-og-kaos',
+      'mozilla'
     ],
   }, {
     name: 'Bronze',
