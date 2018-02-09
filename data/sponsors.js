@@ -31,6 +31,12 @@ const companies = {
     website: 'https://www.mozilla.org',
     image: 'mozilla.svg',
   },
+  'hard-rock': {
+    name: 'Hard Rock Cafe Reykjavik',
+    description: null,
+    website: 'http://www.hardrock.com/cafes/reykjavik/',
+    image: 'hardrock.png',
+  },
   icelandair: {
     name: 'Icelandair',
     description: null,
@@ -62,6 +68,7 @@ module.exports = {
     name: 'Bronze',
     ids: [
       'apress',
+      'hard-rock',
       'icelandair',
       'tempo',
       'wuxi-nextcode',
