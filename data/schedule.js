@@ -249,14 +249,14 @@ const soDays = [
     noTracks: true,
     slots: [
       {
-        time: '09:30 9:45',
+        time: '09:30 09:45',
         unified: {
           grayed: true,
           title: 'Please arrive early, bus leaves at 9:45.',
         },
       },
       {
-        time: '9:45 18:00',
+        time: '09:45 18:00',
         unified: {
           grayed: true,
           title: 'The Golden Circle day trip. See Geysir, Gullfoss and Þingvellir.',
