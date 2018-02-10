@@ -239,7 +239,7 @@ const soDays = [
         time: '19:00 23:00',
         unified: {
           grayed: true,
-          title: 'Party at Ægisgarður',
+          title: 'Party, details TBA',
         },
       },
     ],
