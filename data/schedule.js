@@ -232,7 +232,7 @@ const soDays = [
         time: '17:00 17:30',
         unified: {
           grayed: true,
-          title: 'Arrive back to Harpa.',
+          title: 'Arrive back at Harpa.',
         },
       },
       {
@@ -266,7 +266,7 @@ const soDays = [
         time: '17:30 18:00',
         unified: {
           grayed: true,
-          title: 'Arrive back to Harpa.',
+          title: 'Arrive back at Harpa.',
         },
       },
       {
