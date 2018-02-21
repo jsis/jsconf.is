@@ -8,7 +8,7 @@ const speakers = [
     website: '',
     companyWebsite: '',
     company: '',
-    title: '',
+    title: 'React 16 and Beyond',
     description: '',
   },
   {

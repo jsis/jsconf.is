@@ -29,7 +29,7 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="u-topSpace">
         <Helmet title="JSConf Iceland: March 1-2, 2018" />
         <div className="row align-center large-unstack">
           <div className="column large-4 large-order-1 large-text-right">

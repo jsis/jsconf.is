@@ -1,6 +1,6 @@
 ---
 title: "Dan Abramov"
-talk: ""
+talk: "React 16 and Beyond"
 path: "/speakers/dan-abramov"
 type: "speaker"
 slug: "dan-abramov"

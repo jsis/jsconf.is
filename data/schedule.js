@@ -1,9 +1,7 @@
 // eslint-disable-next-line
 'use strict'
 
-const description =
-  '<p>Check out the speaker lineup <a href="/speakers/">' +
-  ' here</a>.</p>'
+import speakers from './speakers'
 
 const southShore = {
   time: '10:00 19:00',
@@ -48,70 +46,94 @@ const conferenceDays = [
     date: new Date('Thursday March 1, 2018'),
     slots: [
       {
-        time: '08:00 09:15',
+        time: '08:00 09:00',
         unified: {
           grayed: true,
           title: 'Coffee and badge pick-up',
         },
       },
       {
-        time: '09:15 09:45',
+        time: '09:00 09:30',
         unified: {
           grayed: true,
           title: 'Opening JSConf Iceland 2018',
         },
       },
       {
-        time: '09:45 10:45',
-        unified: {
-          title: 'Talks [TBA]',
-          description,
-        },
+        time: '09:30 10:00',
+        unified: 'sarah-drasner',
       },
       {
-        time: '10:45 11:15',
+        time: '10:00 10:30',
+        unified: 'sean-larkin',
+      },
+      {
+        time: '10:30 11:10',
         unified: {
           grayed: true,
           title: 'Break',
         },
       },
       {
-        time: '11:15 12:30',
-        unified: {
-          title: 'Talks [TBA]',
-          description,
-        },
+        time: '11:10 11:40',
+        Hekla: 'michael-henretty',
+        Katla: 'david-khourshid',
       },
       {
-        time: '12:30 13:30',
+        time: '11:50 12:20',
+        Hekla: 'bryan-hughes',
+        Katla: 'will-klein',
+      },
+      {
+        time: '12:20 13:30',
         unified: {
           grayed: true,
           title: 'Lunch',
         },
       },
       {
-        time: '13:30 15:30',
-        unified: {
-          title: 'Talks [TBA]',
-          description,
+        time: '13:30 14:00',
+        Hekla: 'nicole-chung',
+        Katla: 'raisa-cuevas',
+      },
+      {
+        time: '14:10 14:40',
+        Hekla: 'carolyn-stransky',
+        Katla: {
+          grayed: true,
+          title: 'TBA',
         },
       },
       {
-        time: '15:30 16:00',
+        time: '14:50 15:20',
+        Hekla: 'kate-compton',
+        Katla: 'dominik-kundel',
+      },
+      {
+        time: '15:20 15:50',
         unified: {
           grayed: true,
           title: 'Break',
         },
       },
       {
-        time: '16:00 18:00',
-        unified: {
-          title: 'Talks [TBA]',
-          description,
+        time: '15:50 16:20',
+        Hekla: 'dan-gebhardt',
+        Katla: {
+          grayed: true,
+          title: 'Lightning talks ⚡️',
         },
       },
       {
-        time: '19:00 23:00',
+        time: '16:30 17:00',
+        Hekla: 'martin-kleppe',
+        Katla: {
+          grayed: true,
+          title: 'Lightning talks ⚡️',
+        },
+      },
+      {
+        time: '18:00 23:00',
         unified: {
           grayed: true,
           title: 'Party, details TBA',
@@ -123,18 +145,34 @@ const conferenceDays = [
     date: new Date('Friday March 2, 2018'),
     slots: [
       {
-        time: '08:45 09:45',
+        time: '09:30 10:00',
         unified: {
           grayed: true,
           title: 'Coffee',
         },
       },
       {
-        time: '09:45 12:30',
-        unified: {
-          title: 'Talks [TBA]',
-          description,
+        time: '10:00 10:30',
+        Hekla: 'sarrah-vesselov',
+        Katla: 'opher-vishnia',
+      },
+      {
+        time: '10:40 11:10',
+        Hekla: 'catherine-meade',
+        Katla: 'john-feminella',
+      },
+      {
+        time: '11:20 11:50',
+        Hekla: 'maja-wichrowska',
+        Katla: {
+          grayed: true,
+          title: 'TBA',
         },
+      },
+      {
+        time: '12:00 12:30',
+        Hekla: 'arun-michael-dsouza',
+        Katla: 'abhinav-rastogi',
       },
       {
         time: '12:30 13:30',
@@ -144,31 +182,45 @@ const conferenceDays = [
         },
       },
       {
-        time: '13:30 15:30',
-        unified: {
-          title: 'Talks [TBA]',
-          description,
-        },
+        time: '13:30 14:00',
+        Hekla: 'madlaina-kalunder',
+        Katla: 'nara-kasbergen',
       },
       {
-        time: '15:30 16:00',
+        time: '14:10 14:40',
+        Hekla: {
+          grayed: true,
+          title: 'TBA',
+        },
+        Katla: 'armagan-amcalar',
+      },
+      {
+        time: '14:40 15:20',
         unified: {
           grayed: true,
           title: 'Break',
         },
       },
       {
-        time: '16:00 17:30',
+        time: '15:20 15:50',
+        unified: 'anna-henningsen',
+      },
+      {
+        time: '15:50 16:20',
+        unified: 'dan-abramov',
+      },
+      {
+        time: '16:20 17:00',
         unified: {
-          title: 'Talks [TBA]',
-          description,
+          grayed: true,
+          title: 'TBA',
         },
       },
       {
-        time: '17:30 18:00',
+        time: '17:00 17:30',
         unified: {
           grayed: true,
-          title: 'Closing remarks',
+          title: 'Closing remarks and family photograph',
         },
       },
       {
@@ -292,8 +344,11 @@ const soDays = [
   },
 ]
 
-/*
 function trackFor(slug) {
+  const speaker = speakers.find(x => x.slug === slug)
+  if (!speaker) {
+    throw new Error(`Can\'t find speaker ${slug}`)
+  }
   return {
     ...speaker,
     name: speaker.name,
@@ -301,15 +356,22 @@ function trackFor(slug) {
     link: `/speakers/${speaker.slug}/`,
   }
 }
-*/
 
 function speakerToSlot (slot) {
   const timeSlot = slot
-  const keys = Object.keys(slot).filter(
-    x => ['unified', 'Hekla', 'Katla'].indexOf(x) !== -1
-  )
+  const keys = Object
+    .keys(slot)
+    .filter(x => ['unified', 'Hekla', 'Katla'].includes(x))
 
-  timeSlot.tracks = keys.map(type => slot[type])
+  timeSlot.tracks = keys.map(type => {
+    if (typeof slot[type] === 'string') {
+      const track = trackFor(slot[type])
+      track.track = type
+      return track
+    }
+
+    return slot[type]
+  })
 
   return timeSlot
 }
