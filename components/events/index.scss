@@ -21,6 +21,14 @@
   }
 }
 
+.Events-tmpBtn {
+  display: block;
+  background: $color-jsconf-yellow;
+  color: $dark-gray;
+  padding: .5em .7em;
+  margin: -1em auto 1em;
+}
+
 .Events-heart {
   background: no-repeat left top;
   background-size: 49px 21px;
@@ -69,9 +77,8 @@
   }
 
   &.is-active {
-    background: $color-jsconf-purple;
-    opacity: 1;
     color: $color-jsconf-yellow;
+    opacity: 1;
   }
 }
 

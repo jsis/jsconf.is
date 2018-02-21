@@ -2,10 +2,10 @@ import React from 'react'
 import Event from './event'
 import Details from './details'
 import { below } from 'react-waypoint'
-import './index.scss'
 import closestTo from 'date-fns/closest_to'
 import isWithinRange from 'date-fns/is_within_range'
 import format from 'date-fns/format'
+import './index.scss'
 
 function getWeekday(date) {
   return format(date, 'dddd').toLowerCase()
@@ -61,7 +61,7 @@ class Events extends React.Component {
   }
 
   componentDidMount () {
-    window.addEventListener('keyup', this.onKeyUp)
+    // window.addEventListener('keyup', this.onKeyUp)
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState(parseHash, () => {
       const { type, activeDate } = this.state
@@ -83,7 +83,7 @@ class Events extends React.Component {
   }
 
   componentWillUnmount () {
-    window.removeEventListener('keyup', this.onKeyUp)
+    // window.removeEventListener('keyup', this.onKeyUp)
   }
 
   onKeyUp = ({ keyCode }) => {
@@ -208,13 +208,13 @@ class Events extends React.Component {
     }
 
     return (
-      <div className="Events" onKeyPress={this.onKeyPress}>
+      <div className="Events">
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>
           <h1 className="Page-title">
             <strong>Schedule:</strong> {type === 'conference' ? 'Conference' : 'Significant Other'}
           </h1>
           <p>
-            <button onClick={this.onChangeTracks}>
+            <button className="Events-tmpBtn" onClick={this.onChangeTracks}>
               View {type === 'conference' ? 'Significant Other' : 'Conference'} tracks
             </button>
           </p>
