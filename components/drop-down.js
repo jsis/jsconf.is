@@ -14,7 +14,7 @@ const Dropdown = ({ items, titleMap, label = '', active, onChange }) => {
         getLabelProps,
         getButtonProps,
         getItemProps,
-        selectedItem
+        selectedItem,
       }) => (
         <div className={classNames('Dropdown', isOpen && 'is-open')}>
           <label className="Dropdown-label" {...getLabelProps({ htmlFor: id })}>

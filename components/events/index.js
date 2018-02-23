@@ -219,16 +219,16 @@ class Events extends React.Component {
 
     return (
       <div className="Events">
-        <div 
+        <div
           className="Events-pattern"
           style={{
-            backgroundImage: darkPattern
+            backgroundImage: darkPattern,
           }}
         />
-        <div 
+        <div
           className="Events-pattern"
           style={{
-            backgroundImage: darkPattern
+            backgroundImage: darkPattern,
           }}
         />
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>
