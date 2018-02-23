@@ -8,6 +8,8 @@ import format from 'date-fns/format'
 import Dropdown from '../drop-down'
 import './index.scss'
 
+const darkPattern = `url(${require('../../images/dark-pattern.png')})`
+
 function getWeekday(date) {
   return format(date, 'dddd').toLowerCase()
 }
@@ -217,11 +219,22 @@ class Events extends React.Component {
 
     return (
       <div className="Events">
+        <div 
+          className="Events-pattern"
+          style={{
+            backgroundImage: darkPattern
+          }}
+        />
+        <div 
+          className="Events-pattern"
+          style={{
+            backgroundImage: darkPattern
+          }}
+        />
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>
           <h2 className="Events-title">
             <strong>Schedule</strong>
           </h2>
-          <h3 className="Events-subtitle">You are currently viewing the {trackMap[type]} schedule.</h3>
           <div className="Events-filters">
             <Dropdown
               label="Schedule"
