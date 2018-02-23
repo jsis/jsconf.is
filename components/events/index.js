@@ -5,6 +5,7 @@ import { below } from 'react-waypoint'
 import closestTo from 'date-fns/closest_to'
 import isWithinRange from 'date-fns/is_within_range'
 import format from 'date-fns/format'
+import Dropdown from '../drop-down'
 import './index.scss'
 
 function getWeekday(date) {
@@ -15,8 +16,13 @@ function isValidDay(type) {
   return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].includes(type)
 }
 
+const trackMap = {
+  conference: 'Conference',
+  so: 'Significant Others',
+}
+
 function isValidType(type) {
-  return ['conference', 'so'].includes(type)
+  return Object.keys(trackMap).includes(type)
 }
 
 function getCorrectDate(days, today = (new Date()).setHours(0, 0, 0, 0)) {
@@ -99,10 +105,10 @@ class Events extends React.Component {
     }
   }
 
-  onChangeDay = day => () => {
+  onChangeDay = activeDate => {
     this.setState({
+      activeDate,
       activeDetails: null,
-      activeDate: day,
     })
   }
 
@@ -131,11 +137,11 @@ class Events extends React.Component {
     window.localStorage.setItem(Events.localStorageKey, JSON.stringify(keys))
   }
 
-  onChangeTracks = () => {
-    this.setState((state, props) => {
-      const type = state.type === 'conference' ? 'so' : 'conference'
-      return { type, activeDate: getCorrectDate(props[type]) }
-    })
+  onChangeTracks = track => {
+    this.setState((state, props) => ({
+      type: track,
+      activeDate: getCorrectDate(props[track]),
+    }))
   }
 
   calculateNextTrack (direction, indicies) {
@@ -207,26 +213,30 @@ class Events extends React.Component {
       detailsProps.time = days[day].slots[slot].time
     }
 
+    const weekdays = days.map(({ date }) => getWeekday(date))
+
     return (
       <div className="Events">
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>
           <h1 className="Page-title">
-            <strong>Schedule:</strong> {type === 'conference' ? 'Conference' : 'Significant Other'}
+            <strong>Schedule</strong>
+            <small>You are currently viewing the {trackMap[type]} schedule.</small>
           </h1>
           <p>
-            <button className="Events-tmpBtn" onClick={this.onChangeTracks}>
-              View {type === 'conference' ? 'Significant Other' : 'Conference'} tracks
-            </button>
+            <Dropdown
+              label="Schedule"
+              items={Object.keys(trackMap)}
+              active={type}
+              titleMap={trackMap}
+              onChange={this.onChangeTracks}
+            />
+            <Dropdown
+              label="Day"
+              items={weekdays}
+              active={activeDate}
+              onChange={this.onChangeDay}
+            />
           </p>
-          {days.map(({ date }) => {
-            const weekday = getWeekday(date)
-            const classes = `Events-tab${activeDate === weekday ? ' is-active' : ''}`
-            return (
-              <button key={date} onClick={this.onChangeDay(weekday)} className={classes}>
-                {weekday}
-              </button>
-            )
-          })}
         </nav>
         <div className={`Events-group${!hasDetails ? ' is-centered' : ''}`}>
           {days.map((day, index) =>

@@ -51,6 +51,8 @@
   flex-basis: 100%;
   margin: -20px 0 20px;
   text-align: center;
+  position: relative;
+  z-index: 2;
 
   @include breakpoint(large) {
     flex-basis: 60%;
