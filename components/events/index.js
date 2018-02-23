@@ -218,11 +218,11 @@ class Events extends React.Component {
     return (
       <div className="Events">
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>
-          <h1 className="Page-title">
+          <h2 className="Events-title">
             <strong>Schedule</strong>
-            <small>You are currently viewing the {trackMap[type]} schedule.</small>
-          </h1>
-          <p>
+          </h2>
+          <h3 className="Events-subtitle">You are currently viewing the {trackMap[type]} schedule.</h3>
+          <div className="Events-filters">
             <Dropdown
               label="Schedule"
               items={Object.keys(trackMap)}
@@ -236,7 +236,7 @@ class Events extends React.Component {
               active={activeDate}
               onChange={this.onChangeDay}
             />
-          </p>
+          </div>
         </nav>
         <div className={`Events-group${!hasDetails ? ' is-centered' : ''}`}>
           {days.map((day, index) =>

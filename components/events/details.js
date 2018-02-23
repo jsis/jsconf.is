@@ -47,7 +47,7 @@ const Details = ({
           <h2 className="Details-title">
             {title}
           </h2>
-          <p>- <Link className="u-base-link" to={prefixLink(link)}>{name}</Link></p>
+          {name && <p><Link className="u-base-link" to={prefixLink(link)}>{name}</Link></p>}
           <div className="Details-meta">
             {track === undefined || track === 'unified'
               ? null

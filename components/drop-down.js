@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import classNames from 'classnames'
 import Downshift from 'downshift'
 import './drop-down.scss'
 
@@ -13,8 +14,9 @@ const Dropdown = ({ items, titleMap, label = '', active, onChange }) => {
         getLabelProps,
         getButtonProps,
         getItemProps,
+        selectedItem
       }) => (
-        <div className="Dropdown">
+        <div className={classNames('Dropdown', isOpen && 'is-open')}>
           <label className="Dropdown-label" {...getLabelProps({ htmlFor: id })}>
             {label}
           </label>
@@ -28,7 +30,7 @@ const Dropdown = ({ items, titleMap, label = '', active, onChange }) => {
                   <button
                     {...getItemProps({ item })}
                     key={item}
-                    className="Dropdown-item"
+                    className={classNames('Dropdown-item', selectedItem === item && 'is-active')}
                   >
                     {titleMap ? titleMap[item] : item}
                   </button>

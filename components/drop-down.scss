@@ -1,16 +1,21 @@
 .Dropdown {
   display: inline-flex;
   position: relative;
-  z-index: 1;
+
+  &.is-open {
+     z-index: 1;
+  }
 
   + .Dropdown {
     margin-left: 10px;
+    margin-top: 10px;
   }
 }
 
 .Dropdown-btn,
 .Dropdown-label {
-  background: #7d7d7d;
+  background: #4f4f4f;
+  font-weight: 700;
   padding: .4rem .8rem;
   height: 100%;
 }
@@ -19,7 +24,21 @@
   background: #f3df49;
   color: #2e2e2e;
   font-weight: 700;
-  width: 220px;
+  position: relative;
+  width: 240px;
+
+  &::after {
+    display: block;
+    content: '';
+    border-bottom: 2px solid #2e2e2e;
+    border-left: 2px solid #2e2e2e;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: calc(50% - 9px);
+    right: 20px;
+    transform: rotate(-45deg);
+  }
 }
 
 .Dropdown-label,
@@ -36,12 +55,13 @@
 
 .Dropdown-menu {
   background: #7d7d7d;
+  box-shadow: 0 8px 32px rgba(#f3df49, .08);
   max-width: 300px;
   overflow-y: auto;
   position: absolute;
-  width: 220px;
+  width: 240px;
   top: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .Dropdown-item {
@@ -54,6 +74,16 @@
   text-align: left;
   text-transform: none;
   width: 100%;
+
+  &:hover,
+  &:focus {
+    background: rgba(white, .2);
+  }
+
+  &.is-active {
+    background: #4f4f4f;
+    cursor: default;
+  }
 
   &:not(:last-child) {
     border-bottom: 1px solid #666;

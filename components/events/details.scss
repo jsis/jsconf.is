@@ -18,6 +18,7 @@
   transition: opacity 400ms, visibility 0s 400ms, transform 400ms;
   visibility: hidden;
   transform: translateY(100%);
+  z-index: 4;
 
   @include breakpoint(large) {
     box-shadow: none;
