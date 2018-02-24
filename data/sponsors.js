@@ -61,6 +61,12 @@ const companies = {
     website: 'https://www.twilio.com/',
     image: 'twilio.png',
   },
+  'net-app': {
+    name: 'Hard Rock Cafe Reykjavik',
+    description: null,
+    website: 'https://www.netapp.com',
+    image: 'net-app.png',
+  },
   'hard-rock': {
     name: 'Hard Rock Cafe Reykjavik',
     description: null,
@@ -95,6 +101,7 @@ module.exports = {
       'kosmos-og-kaos',
       'landsbankinn',
       'mozilla',
+      'net-app',
       'twilio',
     ],
   }, {
