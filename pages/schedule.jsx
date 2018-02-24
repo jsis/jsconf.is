@@ -16,7 +16,7 @@ class Schedule extends React.Component {
   render () {
     const { footerPosition } = this.state
     return (
-      <BoxPage expanded>
+      <BoxPage expanded inverse>
         <Events
           conference={schedule.conference}
           so={schedule.so}

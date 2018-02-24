@@ -7,6 +7,7 @@
   background: white;
   bottom: 5px;
   box-shadow: 0 40px 60px rgba(black, .4);
+  color: $dark-gray;
   opacity: 0;
   overflow-y: auto;
   left: 5px;
@@ -17,6 +18,7 @@
   transition: opacity 400ms, visibility 0s 400ms, transform 400ms;
   visibility: hidden;
   transform: translateY(100%);
+  z-index: 4;
 
   @include breakpoint(large) {
     box-shadow: none;

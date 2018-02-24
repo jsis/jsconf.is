@@ -6,11 +6,8 @@
 
   &-header {
     display: flex;
-    height: 130px;
+    padding: 0;
     justify-content: flex-start;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
 
   &-headerData {
@@ -27,7 +24,6 @@
   &-content {
     box-sizing: border-box;
     min-height: 100vh;
-    margin-top: calc(130px + #{$global-margin});
     padding: $global-margin 0;
 
     a:not(.u-base-link) {
@@ -81,14 +77,20 @@
 
   &-title {
     display: inline-block;
-    font-size: rem-calc(20);
+    font-size: 1.8rem;
     left: 0;
-    margin: 0;
-    white-space: nowrap;
+    margin: 3rem auto 2rem;
+    padding: 0;
+    text-align: center;
     vertical-align: middle;
 
     @include breakpoint(medium) {
-      font-size: rem-calc(34);
+      font-size: 2.5rem;
+    }
+
+    small {
+      display: block;
+      margin-top: .8em;
     }
   }
 
@@ -121,7 +123,12 @@
     }
 
     .Page-header {
-      color: $color-jsconf-yellow;
+      color: #fff;
+
+      small a {
+        color: $color-jsconf-yellow;
+        font-weight: 900;
+      }
     }
   }
 }

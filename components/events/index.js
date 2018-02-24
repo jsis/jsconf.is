@@ -2,10 +2,13 @@ import React from 'react'
 import Event from './event'
 import Details from './details'
 import { below } from 'react-waypoint'
-import './index.scss'
 import closestTo from 'date-fns/closest_to'
 import isWithinRange from 'date-fns/is_within_range'
 import format from 'date-fns/format'
+import Dropdown from '../drop-down'
+import './index.scss'
+
+const darkPattern = `url(${require('../../images/dark-pattern.png')})`
 
 function getWeekday(date) {
   return format(date, 'dddd').toLowerCase()
@@ -15,8 +18,13 @@ function isValidDay(type) {
   return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].includes(type)
 }
 
+const trackMap = {
+  conference: 'Conference',
+  so: 'Significant Others',
+}
+
 function isValidType(type) {
-  return ['conference', 'so'].includes(type)
+  return Object.keys(trackMap).includes(type)
 }
 
 function getCorrectDate(days, today = (new Date()).setHours(0, 0, 0, 0)) {
@@ -61,7 +69,7 @@ class Events extends React.Component {
   }
 
   componentDidMount () {
-    window.addEventListener('keyup', this.onKeyUp)
+    // window.addEventListener('keyup', this.onKeyUp)
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState(parseHash, () => {
       const { type, activeDate } = this.state
@@ -83,7 +91,7 @@ class Events extends React.Component {
   }
 
   componentWillUnmount () {
-    window.removeEventListener('keyup', this.onKeyUp)
+    // window.removeEventListener('keyup', this.onKeyUp)
   }
 
   onKeyUp = ({ keyCode }) => {
@@ -99,10 +107,10 @@ class Events extends React.Component {
     }
   }
 
-  onChangeDay = day => () => {
+  onChangeDay = activeDate => {
     this.setState({
+      activeDate,
       activeDetails: null,
-      activeDate: day,
     })
   }
 
@@ -131,11 +139,11 @@ class Events extends React.Component {
     window.localStorage.setItem(Events.localStorageKey, JSON.stringify(keys))
   }
 
-  onChangeTracks = () => {
-    this.setState((state, props) => {
-      const type = state.type === 'conference' ? 'so' : 'conference'
-      return { type, activeDate: getCorrectDate(props[type]) }
-    })
+  onChangeTracks = track => {
+    this.setState((state, props) => ({
+      type: track,
+      activeDate: getCorrectDate(props[track]),
+    }))
   }
 
   calculateNextTrack (direction, indicies) {
@@ -207,26 +215,41 @@ class Events extends React.Component {
       detailsProps.time = days[day].slots[slot].time
     }
 
+    const weekdays = days.map(({ date }) => getWeekday(date))
+
     return (
-      <div className="Events" onKeyPress={this.onKeyPress}>
+      <div className="Events">
+        <div
+          className="Events-pattern"
+          style={{
+            backgroundImage: darkPattern,
+          }}
+        />
+        <div
+          className="Events-pattern"
+          style={{
+            backgroundImage: darkPattern,
+          }}
+        />
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>
-          <h1 className="Page-title">
-            <strong>Schedule:</strong> {type === 'conference' ? 'Conference' : 'Significant Other'}
-          </h1>
-          <p>
-            <button onClick={this.onChangeTracks}>
-              View {type === 'conference' ? 'Significant Other' : 'Conference'} tracks
-            </button>
-          </p>
-          {days.map(({ date }) => {
-            const weekday = getWeekday(date)
-            const classes = `Events-tab${activeDate === weekday ? ' is-active' : ''}`
-            return (
-              <button key={date} onClick={this.onChangeDay(weekday)} className={classes}>
-                {weekday}
-              </button>
-            )
-          })}
+          <h2 className="Events-title">
+            <strong>Schedule</strong>
+          </h2>
+          <div className="Events-filters">
+            <Dropdown
+              label="Schedule"
+              items={Object.keys(trackMap)}
+              active={type}
+              titleMap={trackMap}
+              onChange={this.onChangeTracks}
+            />
+            <Dropdown
+              label="Day"
+              items={weekdays}
+              active={activeDate}
+              onChange={this.onChangeDay}
+            />
+          </div>
         </nav>
         <div className={`Events-group${!hasDetails ? ' is-centered' : ''}`}>
           {days.map((day, index) =>

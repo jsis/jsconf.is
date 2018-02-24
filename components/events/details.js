@@ -1,5 +1,7 @@
 import React from 'react'
 import './details.scss'
+import { Link } from 'react-router'
+import { prefixLink } from 'gatsby-helpers'
 
 // const hearts = `url(${require('../../images/hearts.png')})`
 
@@ -8,18 +10,18 @@ const Details = ({
   description,
   track,
   isActive,
+  name,
+  link,
   time,
   /*
   saved,
-  name,
   slug,
-  link,
   company,
   onSave,
-  */
-  onClose,
   onPrevious,
   onNext,
+  */
+  onClose,
 }) =>
   <div className={`Details${isActive ? ' is-active' : ''}`}>
     {!isActive
@@ -29,13 +31,13 @@ const Details = ({
             <button className="Details-closeBtn" onClick={onClose}>
               <i className="Details-close" />
             </button>
-            <button onClick={onPrevious}>
+            {/* <button onClick={onPrevious}>
               <i className="Details-leftArrow" />
             </button>
             <button onClick={onNext}>
               <i className="Details-rightArrow" />
             </button>
-            {/* <button onClick={onSave}>
+            <button onClick={onSave}>
               <i
                 className={`Events-heart${saved ? ' is-filled' : ''}`}
                 style={{ backgroundImage: hearts }}
@@ -45,6 +47,7 @@ const Details = ({
           <h2 className="Details-title">
             {title}
           </h2>
+          {name && <p><Link className="u-base-link" to={prefixLink(link)}>{name}</Link></p>}
           <div className="Details-meta">
             {track === undefined || track === 'unified'
               ? null

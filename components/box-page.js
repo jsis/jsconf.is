@@ -32,16 +32,15 @@ const BoxPage = ({
       })}
     >
       <Helmet title={metaTitle || title} meta={metaData} />
-      <header className="Page-header">
+      {title && <header className="Page-header">
         <div className="Page-headerData column">
           {icon && (
             <div className="Page-icon">
               <InlineSVG src={icon} />
             </div>
-          )}
-          {title && <h1 className="Page-title">{title}</h1>}
+          )} <h1 className="Page-title">{title}</h1>
         </div>
-      </header>
+      </header>}
 
       <article className="Page-content">
         {subtitle && <p className="Page-subtitle">{subtitle}</p>}
