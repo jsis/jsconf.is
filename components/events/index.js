@@ -223,12 +223,14 @@ class Events extends React.Component {
           className="Events-pattern"
           style={{
             backgroundImage: darkPattern,
+            transform: `rotate(${type === 'so' ? -67 : -37}deg)`,
           }}
         />
         <div
           className="Events-pattern"
           style={{
             backgroundImage: darkPattern,
+            transform: `rotate(${type === 'so' ? 56 : 37}deg)`,
           }}
         />
         <nav className={`Events-tabs${!hasDetails ? ' is-centered' : ''}`}>

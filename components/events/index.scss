@@ -25,17 +25,16 @@
   max-width: 586px;
   position: absolute;
   width: 50vw;
+  transition: transform 3000ms;
 
   &:nth-of-type(1) {
     top: -30vh;
     right: -20vw;
-    transform: rotate(37deg);
   }
 
   &:nth-of-type(2) {
     top: 70vh;
     left: -30vw;
-    transform: rotate(-27deg);
   }
 
   &::before {
