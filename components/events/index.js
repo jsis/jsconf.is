@@ -69,7 +69,7 @@ class Events extends React.Component {
   }
 
   componentDidMount () {
-    // window.addEventListener('keyup', this.onKeyUp)
+    window.addEventListener('keyup', this.onKeyUp)
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState(parseHash, () => {
       const { type, activeDate } = this.state
@@ -91,7 +91,7 @@ class Events extends React.Component {
   }
 
   componentWillUnmount () {
-    // window.removeEventListener('keyup', this.onKeyUp)
+    window.removeEventListener('keyup', this.onKeyUp)
   }
 
   onKeyUp = ({ keyCode }) => {
@@ -149,9 +149,7 @@ class Events extends React.Component {
   calculateNextTrack (direction, indicies) {
     const { activeDetails } = this.state
     const current = indicies || { ...activeDetails }
-
-    const { days } = this.state
-
+    const days = this.getActiveSchedule()
     const slots = days[current.day].slots
     const tracks = slots[current.slot].tracks
 
