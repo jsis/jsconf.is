@@ -61,7 +61,7 @@ const conferenceDays = [
       },
       {
         time: '09:30 10:00',
-        unified: 'sarah-drasner',
+        unified: 'anna-henningsen',
       },
       {
         time: '10:00 10:30',
@@ -126,14 +126,14 @@ const conferenceDays = [
       },
       {
         time: '16:30 17:00',
-        Hekla: 'martin-kleppe',
+        Hekla: 'maja-wichrowska',
         Katla: {
           grayed: true,
           title: 'Lightning talks ⚡️',
         },
       },
       {
-        time: '18:00 23:00',
+        time: '19:00 23:00',
         unified: {
           grayed: true,
           title: 'Party, details TBA',
@@ -145,7 +145,7 @@ const conferenceDays = [
     date: new Date('Friday March 2, 2018'),
     slots: [
       {
-        time: '09:30 10:00',
+        time: '09:00 10:00',
         unified: {
           grayed: true,
           title: 'Coffee',
@@ -163,31 +163,18 @@ const conferenceDays = [
       },
       {
         time: '11:20 11:50',
-        Hekla: 'maja-wichrowska',
-        Katla: {
-          grayed: true,
-          title: 'TBA',
-        },
-      },
-      {
-        time: '12:00 12:30',
         Hekla: 'arun-michael-dsouza',
         Katla: 'abhinav-rastogi',
       },
       {
-        time: '12:30 13:30',
+        time: '11:50 13:00',
         unified: {
           grayed: true,
           title: 'Lunch',
         },
       },
       {
-        time: '13:30 14:00',
-        Hekla: 'madlaina-kalunder',
-        Katla: 'nara-kasbergen',
-      },
-      {
-        time: '14:10 14:40',
+        time: '13:00 13:30',
         Hekla: {
           grayed: true,
           title: 'TBA',
@@ -195,19 +182,28 @@ const conferenceDays = [
         Katla: 'armagan-amcalar',
       },
       {
-        time: '14:40 15:20',
+        time: '13:40 14:10',
+        Hekla: 'madlaina-kalunder',
+        Katla: 'nara-kasbergen',
+      },
+      {
+        time: '14:10 14:50',
         unified: {
           grayed: true,
           title: 'Break',
         },
       },
       {
+        time: '14:50 15:20',
+        unified: 'martin-kleppe',
+      },
+      {
         time: '15:20 15:50',
-        unified: 'anna-henningsen',
+        unified: 'dan-abramov',
       },
       {
         time: '15:50 16:20',
-        unified: 'dan-abramov',
+        unified: 'sarah-drasner',
       },
       {
         time: '16:20 17:00',
