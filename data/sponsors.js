@@ -55,6 +55,12 @@ const companies = {
     website: 'https://www.landsbankinn.com/',
     image: 'lb.jpg',
   },
+  twilio: {
+    name: 'twilio',
+    description: null,
+    website: 'https://www.twilio.com/',
+    image: 'twilio.png',
+  },
   'hard-rock': {
     name: 'Hard Rock Cafe Reykjavik',
     description: null,
@@ -89,6 +95,7 @@ module.exports = {
       'kosmos-og-kaos',
       'landsbankinn',
       'mozilla',
+      'twilio',
     ],
   }, {
     name: 'Bronze',
