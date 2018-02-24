@@ -13,13 +13,13 @@ const Details = ({
   name,
   link,
   time,
+  onNext,
+  onPrevious,
   /*
   saved,
   slug,
   company,
   onSave,
-  onPrevious,
-  onNext,
   */
   onClose,
 }) =>
@@ -31,13 +31,13 @@ const Details = ({
             <button className="Details-closeBtn" onClick={onClose}>
               <i className="Details-close" />
             </button>
-            {/* <button onClick={onPrevious}>
+            <button onClick={onPrevious}>
               <i className="Details-leftArrow" />
             </button>
             <button onClick={onNext}>
               <i className="Details-rightArrow" />
             </button>
-            <button onClick={onSave}>
+            {/* <button onClick={onSave}>
               <i
                 className={`Events-heart${saved ? ' is-filled' : ''}`}
                 style={{ backgroundImage: hearts }}
