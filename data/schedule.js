@@ -65,7 +65,7 @@ const conferenceDays = [
       },
       {
         time: '10:00 10:30',
-        unified: 'sean-larkin',
+        unified: 'dan-abramov',
       },
       {
         time: '10:30 11:10',
@@ -199,7 +199,7 @@ const conferenceDays = [
       },
       {
         time: '15:20 15:50',
-        unified: 'dan-abramov',
+        unified: 'sean-larkin',
       },
       {
         time: '15:50 16:20',
