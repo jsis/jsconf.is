@@ -37,6 +37,12 @@ const companies = {
     website: 'https://www.ccpgames.com/',
     image: 'ccp.png',
   },
+  ueno: {
+    name: 'ueno.',
+    description: null,
+    website: 'https://ueno.co/',
+    image: 'ueno.png',
+  },
   mozilla: {
     name: 'Apress',
     description: null,
@@ -84,6 +90,7 @@ module.exports = {
       'ccp',
       'hard-rock',
       'icelandair',
+      'ueno',
       'tempo',
       'wuxi-nextcode',
     ],
