@@ -8,6 +8,9 @@ import { prefixLink } from 'gatsby-helpers'
 
 const updates = [
   <span>
+    Checkout the <Link to={prefixLink('/schedule/')}>schedule</Link>, it’s live!
+  </span>,
+  <span>
     SO and weekend trips added to <Link to={prefixLink('/schedule/')}>the schedule</Link>.
   </span>,
   <span>
