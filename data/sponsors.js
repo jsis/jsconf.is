@@ -49,6 +49,12 @@ const companies = {
     website: 'https://www.mozilla.org',
     image: 'mozilla.svg',
   },
+  landsbankinn: {
+    name: 'Landsbankinn',
+    description: null,
+    website: 'https://www.landsbankinn.com/',
+    image: 'lb.jpg',
+  },
   'hard-rock': {
     name: 'Hard Rock Cafe Reykjavik',
     description: null,
@@ -81,6 +87,7 @@ module.exports = {
     ids: [
       'aranja',
       'kosmos-og-kaos',
+      'landsbankinn',
       'mozilla',
     ],
   }, {
