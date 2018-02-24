@@ -133,7 +133,7 @@ const conferenceDays = [
         },
       },
       {
-        time: '19:00 23:00',
+        time: '18:00 23:00',
         unified: {
           grayed: true,
           title: 'Party, details TBA',
@@ -220,7 +220,7 @@ const conferenceDays = [
         },
       },
       {
-        time: '19:00 23:00',
+        time: '18:00 23:00',
         unified: {
           grayed: true,
           title: 'Party, details TBA',
