@@ -36,13 +36,13 @@ function getCorrectDate(days, today = (new Date()).setHours(0, 0, 0, 0)) {
   return getWeekday(correctDay)
 }
 
-function parseHash(state, props) {
+function parseHash(state, { schedule }) {
   const hash = window.location.hash.split('/')
   const type = hash.length > 1 && isValidType(hash[1]) ? hash[1] : state.type
 
   return {
     type,
-    activeDate: hash.length > 2 && isValidDay(hash[2]) ? hash[2] : getCorrectDate(props[type]),
+    activeDate: hash.length > 2 && isValidDay(hash[2]) ? hash[2] : getCorrectDate(schedule[type] || []),
   }
 }
 
@@ -64,7 +64,7 @@ class Events extends React.Component {
     this.state = {
       activeDetails: null,
       type: 'conference',
-      activeDate: getCorrectDate(props.conference),
+      activeDate: getCorrectDate(props.schedule.conference),
     }
   }
 
@@ -142,7 +142,7 @@ class Events extends React.Component {
   onChangeTracks = track => {
     this.setState((state, props) => ({
       type: track,
-      activeDate: getCorrectDate(props[track]),
+      activeDate: getCorrectDate(this.getActiveSchedule(state, props)),
     }))
   }
 
@@ -194,28 +194,30 @@ class Events extends React.Component {
     }
   }
 
-  render () {
-    const { so, conference } = this.props
-    const { type, activeDate, activeDetails } = this.state
-
-    const days = type === 'conference'
-      ? conference
-      : so
-
-    if (!days) {
-      return null
+  getActiveSchedule(state = this.state, props = this.props) {    
+    const { type, activeDate } = state
+    const { schedule } = props
+    
+    if (!schedule.hasOwnProperty(type)) {
+      return []
     }
+
+    return schedule[type]
+  }
+
+  render () {
+    const { type, activeDate, activeDetails } = this.state
+    const schedule = this.getActiveSchedule()
+    const weekdays = schedule.map(({ date }) => getWeekday(date))
 
     const hasDetails = !! activeDetails
     let detailsProps = {}
 
     if (hasDetails) {
       const { day, slot, track } = activeDetails
-      detailsProps = days[day].slots[slot].tracks[track]
-      detailsProps.time = days[day].slots[slot].time
+      detailsProps = schedule[day].slots[slot].tracks[track]
+      detailsProps.time = schedule[day].slots[slot].time
     }
-
-    const weekdays = days.map(({ date }) => getWeekday(date))
 
     return (
       <div className="Events">
@@ -254,7 +256,7 @@ class Events extends React.Component {
           </div>
         </nav>
         <div className={`Events-group${!hasDetails ? ' is-centered' : ''}`}>
-          {days.map((day, index) =>
+          {schedule.map((day, index) =>
             <Event
               key={day.date}
               active={activeDetails}

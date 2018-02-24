@@ -32,8 +32,7 @@ class Schedule extends React.Component {
           ]}
         />
         <Events
-          conference={schedule.conference}
-          so={schedule.so}
+          schedule={schedule}
           footerPosition={footerPosition}
         />
         <Waypoint onPositionChange={this.onLeave} bottomOffset={100} />
