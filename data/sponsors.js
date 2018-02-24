@@ -31,6 +31,12 @@ const companies = {
     website: 'https://tempo.io/',
     image: 'tempo.png',
   },
+  ccp: {
+    name: 'CCP',
+    description: null,
+    website: 'https://www.ccpgames.com/',
+    image: 'ccp.png',
+  },
   mozilla: {
     name: 'Apress',
     description: null,
@@ -75,6 +81,7 @@ module.exports = {
     name: 'Bronze',
     ids: [
       'apress',
+      'ccp',
       'hard-rock',
       'icelandair',
       'tempo',
