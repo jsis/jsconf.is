@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import BoxPage from '../components/box-page'
 import * as schedule from '../data/schedule'
 import Waypoint from 'react-waypoint'
@@ -17,6 +18,19 @@ class Schedule extends React.Component {
     const { footerPosition } = this.state
     return (
       <BoxPage expanded inverse>
+        <Helmet
+          title="Schedule"
+          meta={[
+            {
+              property: 'og:title',
+              content: 'Schedule - JSConf Iceland 2018',
+            },
+            {
+              name: 'twitter:title',
+              content: 'Schedule - JSConf Iceland 2018',
+            },
+          ]}
+        />
         <Events
           conference={schedule.conference}
           so={schedule.so}
