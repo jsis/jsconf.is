@@ -32,7 +32,7 @@ const companies = {
   },
   matarkjallarinn: {
     name: 'Matarkjallarinn',
-    website: 'https://matarkjallarinn.is/',
+    website: 'http://matarkjallarinn.is/',
   },
   sjavargrillid: {
     name: 'Sjávargrillið',
@@ -40,11 +40,11 @@ const companies = {
   },
   fiskfelagid: {
     name: 'Fiskfélagið',
-    website: 'https://fiskfelagid.is/',
+    website: 'http://fiskfelagid.is/',
   },
   'xo-food': {
     name: 'XO Food',
-    website: 'https://xofood.is/',
+    website: 'http://xofood.is/',
   },
   'js-watch': {
     name: 'JS Watch',
@@ -56,11 +56,11 @@ const companies = {
   },
   handprjonasambandid: {
     name: 'Handprjónasamband Íslands',
-    website: 'https://handprjonasambandid.is/',
+    website: 'http://handprjonasambandid.is/',
   },
   lemon: {
     name: 'Lemon',
-    website: 'https://lemon.is/',
+    website: 'http://lemon.is/',
   },
   dominos: {
     name: 'Dominos',
