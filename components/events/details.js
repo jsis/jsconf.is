@@ -3,7 +3,7 @@ import './details.scss'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 
-// const hearts = `url(${require('../../images/hearts.png')})`
+const hearts = `url(${require('../../images/hearts.png')})`
 
 const Details = ({
   title,
@@ -12,57 +12,58 @@ const Details = ({
   isActive,
   name,
   link,
+  slug,
   time,
   onNext,
   onPrevious,
-  /*
-  saved,
-  slug,
-  company,
   onSave,
+  savedSlugs,
+  /*
+  company,
   */
   onClose,
-}) =>
+}) => (
   <div className={`Details${isActive ? ' is-active' : ''}`}>
-    {!isActive
-      ? null
-      : <div>
-          <div className="Details-controls">
-            <button className="Details-closeBtn" onClick={onClose}>
-              <i className="Details-close" />
-            </button>
-            <button onClick={onPrevious}>
-              <i className="Details-leftArrow" />
-            </button>
-            <button onClick={onNext}>
-              <i className="Details-rightArrow" />
-            </button>
-            {/* <button onClick={onSave}>
-              <i
-                className={`Events-heart${saved ? ' is-filled' : ''}`}
-                style={{ backgroundImage: hearts }}
-              />
-            </button> */}
-          </div>
-          <h2 className="Details-title">
-            {title}
-          </h2>
-          {name && <p><Link className="u-base-link" to={prefixLink(link)}>{name}</Link></p>}
-          <div className="Details-meta">
-            {track === undefined || track === 'unified'
-              ? null
-              : <span>
-                  <span className="Details-track">{track}</span> /{' '}
-                </span>}
-            <span className="Details-time">
-              {time.replace(' ', ' - ')}
+    {!isActive ? null : (
+      <div>
+        <div className="Details-controls">
+          <button className="Details-closeBtn" onClick={onClose}>
+            <i className="Details-close" />
+          </button>
+          <button onClick={onPrevious}>
+            <i className="Details-leftArrow" />
+          </button>
+          <button onClick={onNext}>
+            <i className="Details-rightArrow" />
+          </button>
+          <button onClick={onSave}>
+            <i
+              className={`Events-heart${savedSlugs[slug] ? ' is-filled' : ''}`}
+              style={{ backgroundImage: hearts }}
+            />
+          </button>
+        </div>
+        <h2 className="Details-title">{title}</h2>
+        {name && (
+          <p>
+            <Link className="u-base-link" to={prefixLink(link)}>
+              {name}
+            </Link>
+          </p>
+        )}
+        <div className="Details-meta">
+          {track === undefined || track === 'unified' ? null : (
+            <span>
+              <span className="Details-track">{track}</span> /{' '}
             </span>
-          </div>
-          <div
-            className="Details-description"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
-          {/* <figure className="Details-speaker">
+          )}
+          <span className="Details-time">{time.replace(' ', ' - ')}</span>
+        </div>
+        <div
+          className="Details-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+        {/* <figure className="Details-speaker">
             <img className="Details-speakerImg" src={require(`../../images/speakers/${slug}.jpg`)} alt={name} />
             <figcaption className="Details-speakerInfo">
               <Link className="u-base-link" to={prefixLink(link)}>
@@ -72,8 +73,10 @@ const Details = ({
               {company}
             </figcaption>
           </figure> */}
-        </div>}
+      </div>
+    )}
   </div>
+)
 
 Details.propTypes = {
   title: React.PropTypes.string,
