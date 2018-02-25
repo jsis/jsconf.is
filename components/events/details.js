@@ -88,7 +88,7 @@ Details.propTypes = {
   company: React.PropTypes.string,
   track: React.PropTypes.string,
   isActive: React.PropTypes.bool,
-  saved: React.PropTypes.bool,
+  savedSlugs: React.PropTypes.object,
   onClose: React.PropTypes.func,
   onNext: React.PropTypes.func,
   onPrevious: React.PropTypes.func,

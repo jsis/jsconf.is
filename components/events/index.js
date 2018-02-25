@@ -9,6 +9,7 @@ import Dropdown from '../drop-down'
 import './index.scss'
 
 const darkPattern = `url(${require('../../images/dark-pattern.png')})`
+const localStorageKey = 'jsconf-is-2018-schedule'
 
 function getWeekday(date) {
   return format(date, 'dddd').toLowerCase()
@@ -37,7 +38,7 @@ function isValidType(type) {
 
 const getFromLocalStorage = () => {
   try {
-    const existing = window.localStorage.getItem(Events.localStorageKey)
+    const existing = window.localStorage.getItem(localStorageKey)
     return JSON.parse(existing) || {}
   } catch (err) {
     return {}
@@ -46,10 +47,10 @@ const getFromLocalStorage = () => {
 
 function saveToLocalStorage(slugs) {
   try {
-    window.localStorage.setItem(Events.localStorageKey, JSON.stringify(slugs))
+    window.localStorage.setItem(localStorageKey, JSON.stringify(slugs))
   } catch (error) {
     console.error(
-      `Couldn't save the talk. If you believe some of our code is not working correctly it'd be awesome if you could file an issue at https://git.io/vAw4I`,
+      "Couldn't save the talk. If you believe some of our code is not working correctly it'd be awesome if you could file an issue at https://git.io/vAw4I",
       error
     )
   }
@@ -82,11 +83,9 @@ function setHash(type, day) {
 }
 
 class Events extends React.Component {
-  static localStorageKey = 'jsconf-is-2018-schedule'
-
   static propTypes = {
     conference: React.PropTypes.arrayOf(React.PropTypes.object),
-    so: React.PropTypes.arrayOf(React.PropTypes.object),
+    schedule: React.PropTypes.object.isRequired,
     footerPosition: React.PropTypes.string,
   }
 
@@ -183,6 +182,26 @@ class Events extends React.Component {
     }))
   }
 
+  getActiveSchedule(state = this.state, props = this.props) {
+    const { type } = state
+    const { schedule } = props
+
+    if (!schedule.hasOwnProperty(type)) {
+      return []
+    }
+
+    return schedule[type]
+  }
+
+  getActiveSlot() {
+    if (!this.state.activeDetails) {
+      return null
+    }
+    const { day, slot, track } = this.state.activeDetails
+    const schedule = this.getActiveSchedule()
+    return schedule[day].slots[slot].tracks[track]
+  }
+
   calculateNextTrack(direction, indicies) {
     const { activeDetails } = this.state
     const current = indicies || { ...activeDetails }
@@ -227,26 +246,6 @@ class Events extends React.Component {
         activeDetails: this.calculateNextTrack(direction),
       })
     }
-  }
-
-  getActiveSchedule(state = this.state, props = this.props) {
-    const { type, activeDate } = state
-    const { schedule } = props
-
-    if (!schedule.hasOwnProperty(type)) {
-      return []
-    }
-
-    return schedule[type]
-  }
-
-  getActiveSlot() {
-    if (!this.state.activeDetails) {
-      return null
-    }
-    const { day, slot, track } = this.state.activeDetails
-    const schedule = this.getActiveSchedule()
-    return schedule[day].slots[slot].tracks[track]
   }
 
   render() {
