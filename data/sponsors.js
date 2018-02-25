@@ -101,7 +101,6 @@ module.exports = {
       'kosmos-og-kaos',
       'landsbankinn',
       'mozilla',
-      'net-app',
       'twilio',
     ],
   }, {
@@ -111,6 +110,7 @@ module.exports = {
       'ccp',
       'hard-rock',
       'icelandair',
+      'net-app',
       'ueno',
       'tempo',
       'wuxi-nextcode',
