@@ -1,0 +1,42 @@
+.Discounts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1%;
+}
+
+.Discount {
+  background: #2e2e2e;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  padding: 20px;
+  margin: 1%;
+  flex: 0 1 30%;
+
+  &:hover {
+    background: #9a0078;
+    color: #fff;
+  }
+}
+
+.Discount-company,
+.Discount-description,
+.Discount-value {
+  display: block;
+}
+
+.Discount-company {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: auto;
+}
+
+.Discount-description {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.Discount-value {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}

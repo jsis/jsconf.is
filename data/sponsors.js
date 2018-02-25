@@ -20,9 +20,59 @@ const companies = {
   },
   satt: {
     name: 'Satt',
-    description: null,
-    website: 'https://aranja.com',
-    image: 'aranja.svg',
+    website: 'https://www.sattrestaurant.com',
+  },
+  austur: {
+    name: 'Austur',
+    website: 'https://www.facebook.com/austurclub/',
+  },
+  subway: {
+    name: 'Subway',
+    website: 'https://subway.is/',
+  },
+  matarkjallarinn: {
+    name: 'Matarkjallarinn',
+    website: 'https://matarkjallarinn.is/',
+  },
+  sjavargrillid: {
+    name: 'Sjávargrillið',
+    website: 'https://sjavargrillid.is/',
+  },
+  fiskfelagid: {
+    name: 'Fiskfélagið',
+    website: 'https://fiskfelagid.is/',
+  },
+  'xo-food': {
+    name: 'XO Food',
+    website: 'https://xofood.is/',
+  },
+  'js-watch': {
+    name: 'JS Watch',
+    website: 'https://www.jswatch.com/',
+  },
+  'tales-from-iceland': {
+    name: 'Tales from Iceland',
+    website: 'https://talesfromiceland.is/',
+  },
+  'handprjonasambandid': {
+    name: 'Handprjónasamband Íslands',
+    website: 'https://handprjonasambandid.is/',
+  },
+  lemon: {
+    name: 'Lemon',
+    website: 'https://lemon.is/',
+  },
+  dominos: {
+    name: 'Dominos',
+    website: 'https://dominos.is/',
+  },
+  slippbarinn: {
+    name: 'Slippbarinn',
+    website: 'https://slippbarinn.is/',
+  },
+  'zo-on': {
+    name: 'ZO-ON',
+    website: 'https://zo-on.com/',
   },
   'kosmos-og-kaos': {
     name: 'Kosmos & Kaos',
