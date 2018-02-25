@@ -12,8 +12,8 @@ export default () => (
         conference badge.
       </p>
       <div className="Discounts">
-        {discounts.map(discount => 
-          <Discount 
+        {discounts.map(discount =>
+          <Discount
             key={discount.company}
             company={companies[discount.company]}
             value={discount.discount}

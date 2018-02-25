@@ -83,12 +83,12 @@ export default discounts.sort((a, b) => {
   const companyB = b.company
 
   if (companyA < companyB) {
-    return -1;
+    return -1
   }
 
   if (companyA > companyB) {
-    return 1;
+    return 1
   }
 
-  return 0;
+  return 0
 })

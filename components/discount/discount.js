@@ -8,4 +8,10 @@ const Discount = ({ company, value, description }) => ! company ? null :
     {description && <span className="Discount-description">{description}</span>}
   </a>
 
+Discount.propTypes = {
+  company: React.PropTypes.object,
+  value: React.PropTypes.string,
+  description: React.PropTypes.string,
+}
+
 export default Discount

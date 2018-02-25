@@ -54,7 +54,7 @@ const companies = {
     name: 'Tales from Iceland',
     website: 'https://talesfromiceland.is/',
   },
-  'handprjonasambandid': {
+  handprjonasambandid: {
     name: 'Handprjónasamband Íslands',
     website: 'https://handprjonasambandid.is/',
   },
@@ -100,7 +100,7 @@ const companies = {
     image: 'ueno.png',
   },
   mozilla: {
-    name: 'Apress',
+    name: 'Mozilla',
     description: null,
     website: 'https://www.mozilla.org',
     image: 'mozilla.svg',
