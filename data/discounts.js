@@ -43,8 +43,8 @@ const discounts = [
   },
   {
     company: 'js-watch',
-    discount: '15% off ARC-TIC Iceland watches. www.arc-tic.com',
-    description: null,
+    discount: '15% off ARC-TIC',
+    description: '15% off Iceland ARC-TIC watches. See www.arc-tic.com',
   },
   {
     company: 'tales-from-iceland',
@@ -78,6 +78,17 @@ const discounts = [
   },
 ]
 
-discounts.sort((a, b) => a.company - b.company)
+export default discounts.sort((a, b) => {
+  const companyA = a.company
+  const companyB = b.company
 
-export default discounts
+  if (companyA < companyB) {
+    return -1;
+  }
+
+  if (companyA > companyB) {
+    return 1;
+  }
+
+  return 0;
+})

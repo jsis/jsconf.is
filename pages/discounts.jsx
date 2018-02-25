@@ -3,7 +3,7 @@ import BoxPage from '../components/box-page'
 import Discount from '../components/discount/discount'
 import discounts from '../data/discounts'
 import { companies } from '../data/sponsors'
-
+console.log(discounts)
 export default () => (
   <BoxPage title="Discounts">
     <div>

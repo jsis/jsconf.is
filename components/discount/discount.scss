@@ -9,9 +9,20 @@
   display: flex;
   color: #fff;
   flex-direction: column;
+  flex: 1 0 100%;
   padding: 20px;
-  margin: 1%;
-  flex: 0 1 30%;
+  margin: 1% 0;
+
+  @media (min-width: 768px) {
+    flex: 1 1 48%;
+    margin: 1%;
+    max-width: 48%;
+  }
+
+  @media (min-width: 1400px) {
+    flex-basis: 30%;
+    max-width: 30%;
+  }
 
   &:hover {
     background: #9a0078;
@@ -29,14 +40,17 @@
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: auto;
+  line-height: 1.2;
 }
 
 .Discount-description {
   font-size: 12px;
+  font-style: italic;
   margin-top: 10px;
 }
 
 .Discount-value {
   font-size: 0.9rem;
   line-height: 1.2;
+  margin-top: 10px;
 }
