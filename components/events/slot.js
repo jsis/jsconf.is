@@ -7,12 +7,13 @@ class Slot extends React.Component {
     time: React.PropTypes.string,
     tracks: React.PropTypes.array,
     active: React.PropTypes.object,
+    savedSlugs: React.PropTypes.object,
     day: React.PropTypes.number,
     index: React.PropTypes.number,
     onOpenTrackDetails: React.PropTypes.func,
   }
 
-  renderBasicSlot (slot) {
+  renderBasicSlot(slot) {
     return (
       <li key={slot.title} className="Slot-track Slot-track--gray">
         <h4
@@ -23,8 +24,8 @@ class Slot extends React.Component {
     )
   }
 
-  renderInterActiveSlot (slot, track) {
-    const { active, onOpenTrackDetails, day, index } = this.props
+  renderInterActiveSlot(slot, track) {
+    const { active, onOpenTrackDetails, day, index, savedSlugs } = this.props
     const isActive =
       active &&
       active.day === day &&
@@ -37,39 +38,38 @@ class Slot extends React.Component {
         className={`Slot-track${isActive ? ' is-active' : ''}`}
         onClick={onOpenTrackDetails({ day, track, slot: index })}
       >
-        <h4 className="Slot-title">
-          {slot.title}
-        </h4>
-        {slot.name &&
+        <h4 className="Slot-title">{slot.title}</h4>
+        {slot.name && (
           <div className="Slot-meta">
             <p className="Slot-name">
               {slot.name}
-              {slot.track !== 'unified' &&
+              {slot.track !== 'unified' && (
                 <span>
                   <b> · </b>
                   {slot.track}
-                </span>}
-              {slot.saved &&
+                </span>
+              )}
+              {savedSlugs[slot.slug] && (
                 <span>
                   &nbsp;
                   <i
                     className="Events-heart Events-heart--gray is-filled"
                     style={{ backgroundImage: hearts }}
                   />
-                </span>}
+                </span>
+              )}
             </p>
-          </div>}
+          </div>
+        )}
       </li>
     )
   }
 
-  render () {
+  render() {
     const { time, tracks } = this.props
     return (
       <div className="Slot">
-        <div className="Slot-time">
-          {time}
-        </div>
+        <div className="Slot-time">{time}</div>
         <ul className="Slot-tracks">
           {tracks.map(
             (slot, track) =>

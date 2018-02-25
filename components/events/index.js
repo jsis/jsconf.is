@@ -15,7 +15,15 @@ function getWeekday(date) {
 }
 
 function isValidDay(type) {
-  return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].includes(type)
+  return [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+  ].includes(type)
 }
 
 const trackMap = {
@@ -27,7 +35,27 @@ function isValidType(type) {
   return Object.keys(trackMap).includes(type)
 }
 
-function getCorrectDate(days, today = (new Date()).setHours(0, 0, 0, 0)) {
+const getFromLocalStorage = () => {
+  try {
+    const existing = window.localStorage.getItem(Events.localStorageKey)
+    return JSON.parse(existing) || {}
+  } catch (err) {
+    return {}
+  }
+}
+
+function saveToLocalStorage(slugs) {
+  try {
+    window.localStorage.setItem(Events.localStorageKey, JSON.stringify(slugs))
+  } catch (error) {
+    console.error(
+      `Couldn't save the talk. If you believe some of our code is not working correctly it'd be awesome if you could file an issue at https://git.io/vAw4I`,
+      error
+    )
+  }
+}
+
+function getCorrectDate(days, today = new Date().setHours(0, 0, 0, 0)) {
   const dates = days.map(({ date }) => date)
   let correctDay = dates[0]
   if (isWithinRange(today, dates[0], dates[days.length - 1])) {
@@ -42,7 +70,10 @@ function parseHash(state, { schedule }) {
 
   return {
     type,
-    activeDate: hash.length > 2 && isValidDay(hash[2]) ? hash[2] : getCorrectDate(schedule[type] || []),
+    activeDate:
+      hash.length > 2 && isValidDay(hash[2])
+        ? hash[2]
+        : getCorrectDate(schedule[type] || []),
   }
 }
 
@@ -59,16 +90,17 @@ class Events extends React.Component {
     footerPosition: React.PropTypes.string,
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
+      savedSlugs: getFromLocalStorage(),
       activeDetails: null,
       type: 'conference',
       activeDate: getCorrectDate(props.schedule.conference),
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     window.addEventListener('keyup', this.onKeyUp)
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState(parseHash, () => {
@@ -77,8 +109,11 @@ class Events extends React.Component {
     })
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.footerPosition !== below && nextProps.footerPosition !== this.props.footerPosition) {
+  componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.footerPosition !== below &&
+      nextProps.footerPosition !== this.props.footerPosition
+    ) {
       this.setState({ activeDetails: null })
     }
   }
@@ -90,7 +125,7 @@ class Events extends React.Component {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('keyup', this.onKeyUp)
   }
 
@@ -127,16 +162,18 @@ class Events extends React.Component {
   }
 
   onSave = () => {
-    const { activeDetails: { day, slot, track } } = this.state
-    const { keys, days } = this.state
-    const updatedDays = [...days]
-    const record = updatedDays[day].slots[slot].tracks[track]
+    const slot = this.getActiveSlot()
+    if (!slot) {
+      return
+    }
 
-    record.saved = ! record.saved
-    keys[record.slug] = record.saved
+    const slugs = Object.assign({}, this.state.savedSlugs, {
+      [slot.slug]: !this.state.savedSlugs[slot.slug],
+    })
 
-    this.setState({ keys, days: updatedDays })
-    window.localStorage.setItem(Events.localStorageKey, JSON.stringify(keys))
+    this.setState({ savedSlugs: slugs }, () => {
+      saveToLocalStorage(slugs)
+    })
   }
 
   onChangeTracks = track => {
@@ -146,7 +183,7 @@ class Events extends React.Component {
     }))
   }
 
-  calculateNextTrack (direction, indicies) {
+  calculateNextTrack(direction, indicies) {
     const { activeDetails } = this.state
     const current = indicies || { ...activeDetails }
     const days = this.getActiveSchedule()
@@ -184,7 +221,7 @@ class Events extends React.Component {
     return current
   }
 
-  navigate (direction) {
+  navigate(direction) {
     if (this.state.activeDetails) {
       this.setState({
         activeDetails: this.calculateNextTrack(direction),
@@ -192,10 +229,10 @@ class Events extends React.Component {
     }
   }
 
-  getActiveSchedule(state = this.state, props = this.props) {    
+  getActiveSchedule(state = this.state, props = this.props) {
     const { type, activeDate } = state
     const { schedule } = props
-    
+
     if (!schedule.hasOwnProperty(type)) {
       return []
     }
@@ -203,18 +240,27 @@ class Events extends React.Component {
     return schedule[type]
   }
 
-  render () {
-    const { type, activeDate, activeDetails } = this.state
+  getActiveSlot() {
+    if (!this.state.activeDetails) {
+      return null
+    }
+    const { day, slot, track } = this.state.activeDetails
+    const schedule = this.getActiveSchedule()
+    return schedule[day].slots[slot].tracks[track]
+  }
+
+  render() {
+    const { type, activeDate, activeDetails, savedSlugs } = this.state
     const schedule = this.getActiveSchedule()
     const weekdays = schedule.map(({ date }) => getWeekday(date))
 
-    const hasDetails = !! activeDetails
-    let detailsProps = {}
+    const hasDetails = !!activeDetails
+    let talk = {}
 
     if (hasDetails) {
       const { day, slot, track } = activeDetails
-      detailsProps = schedule[day].slots[slot].tracks[track]
-      detailsProps.time = schedule[day].slots[slot].time
+      talk = schedule[day].slots[slot].tracks[track]
+      talk.time = schedule[day].slots[slot].time
     }
 
     return (
@@ -254,7 +300,7 @@ class Events extends React.Component {
           </div>
         </nav>
         <div className={`Events-group${!hasDetails ? ' is-centered' : ''}`}>
-          {schedule.map((day, index) =>
+          {schedule.map((day, index) => (
             <Event
               key={day.date}
               active={activeDetails}
@@ -262,17 +308,19 @@ class Events extends React.Component {
               date={format(day.date, 'MMMM Do, YYYY')}
               slots={day.slots}
               index={index}
+              savedSlugs={savedSlugs}
               onOpenTrackDetails={this.onOpenTrackDetails}
             />
-          )}
+          ))}
         </div>
         <Details
-          {...detailsProps}
+          {...talk}
           onNext={this.onNext}
           onPrevious={this.onPrevious}
           onSave={this.onSave}
           onClose={this.onOpenTrackDetails(null)}
           isActive={hasDetails}
+          savedSlugs={savedSlugs}
         />
       </div>
     )
