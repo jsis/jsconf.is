@@ -18,6 +18,12 @@ const companies = {
     website: 'https://aranja.com',
     image: 'aranja.svg',
   },
+  satt: {
+    name: 'Satt',
+    description: null,
+    website: 'https://aranja.com',
+    image: 'aranja.svg',
+  },
   'kosmos-og-kaos': {
     name: 'Kosmos & Kaos',
     description: '<p>Kosmos & Kaos is a quality digital agency that' +
@@ -62,7 +68,7 @@ const companies = {
     image: 'twilio.png',
   },
   'net-app': {
-    name: 'Hard Rock Cafe Reykjavik',
+    name: 'NetApp',
     description: null,
     website: 'https://www.netapp.com',
     image: 'net-app.png',
