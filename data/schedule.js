@@ -175,10 +175,7 @@ const conferenceDays = [
       },
       {
         time: '13:00 13:30',
-        Hekla: {
-          grayed: true,
-          title: 'TBA',
-        },
+        Hekla: 'jean-yves-perrier',
         Katla: 'armagan-amcalar',
       },
       {
