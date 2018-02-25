@@ -41,7 +41,7 @@ class Slot extends React.Component {
         {slot.slug && (
           <img
             className="Slot-image"
-            src={require(`../../images/speakers/${slot.slug}.jpg`)}
+            src={require(`../../images/speakers/small/${slot.slug}.jpg`)}
             alt={slot.name}
           />
         )}
