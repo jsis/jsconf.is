@@ -1,7 +1,7 @@
-@import "../../css/_settings";
-@import "~foundation-sites/scss/util/util";
+@import '../../css/_settings';
+@import '~foundation-sites/scss/util/util';
 
-$SlotBorder: 1px solid rgba(white, .2);
+$SlotBorder: 1px solid rgba(white, 0.2);
 
 .Slot {
   border-top: $SlotBorder;
@@ -32,10 +32,10 @@ $SlotBorder: 1px solid rgba(white, .2);
 }
 
 .Slot-track {
-  $gradient: linear-gradient(to left, rgba(white, .1), rgba(white, 0));
+  $gradient: linear-gradient(to left, rgba(white, 0.1), rgba(white, 0));
 
   border-bottom: $SlotBorder;
-  display: block;
+  display: flex;
   padding: 15px 15px 15px 0;
   position: relative;
   width: 100%;
@@ -81,7 +81,19 @@ $SlotBorder: 1px solid rgba(white, .2);
   }
 
   &--gray {
-    opacity: .6;
+    opacity: 0.6;
+  }
+}
+
+.Slot-image {
+  display: none;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  margin-right: 20px;
+
+  @media (min-width: 768px) {
+    display: block;
   }
 }
 
