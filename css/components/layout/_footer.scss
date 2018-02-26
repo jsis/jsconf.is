@@ -5,10 +5,27 @@
   color: #fff;
   font-size: .8em;
   -webkit-font-smoothing: subpixel-antialiased;
+  text-align: center;
+  padding: 2em;
+
+  @media (min-width: 1170px) {
+    display: flex;
+    align-items: center;
+    padding: 1em 2em;
+
+    p {
+      margin: 0;
+    }
+  }
 }
 
 .FooterLinks {
   display: inline-block;
+  padding-bottom: 1em;
+  @media (min-width: 1170px) {
+    padding-left: 1em;
+    padding-bottom: 0;
+  }
 }
 
 .FooterLinks-link {
@@ -18,7 +35,7 @@
 }
 
 .SocialLinks {
-  float: right;
+  margin-left: auto;
 }
 
 .SocialLinks-link {

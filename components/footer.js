@@ -1,6 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 import { companies, sponsors } from '../data/sponsors'
+import { Link } from 'react-router'
+import { prefixLink } from 'gatsby-helpers'
 
 const SponsorBox = ({ website, name, image }) => {
   const logoSrc = require(`../images/sponsors/${image}`)
@@ -44,23 +46,19 @@ export default () => (
     </div>
 
     <footer className="Footer">
-      <div className="row">
-        <div className="column">
-          <div className="SocialLinks">
-            <a href="https://github.com/jsis/jsconf.is" className="SocialLinks-link SocialLinks-github">Github</a>
-            <a href="https://twitter.com/jsconfis" className="SocialLinks-link SocialLinks-twitter">Twitter</a>
-          </div>
-          JSConf Iceland welcomes everyone and defends you from harassment.{' '}
-          <div className="FooterLinks">
-            <a href="http://confcodeofconduct.com/" className="FooterLinks-link">Code of conduct</a>
-            {' | '}
-            <a href="http://eepurl.com/bO8F8X" className="FooterLinks-link">Mailing list</a>
-            {' | '}
-            <a href="https://jsconfis.typeform.com/to/FN7Bla" className="FooterLinks-link">Sponsor interest</a>
-            {' | '}
-            <a href="mailto:team@jsconf.is" className="FooterLinks-link">team@jsconf.is</a>
-          </div>
-        </div>
+      <p>JSConf Iceland welcomes everyone and defends you from harassment.{' '}</p>
+      <div className="FooterLinks">
+      <Link className="FooterLinks-link" to={prefixLink('/code-of-conduct/')}>Code of Conduct</Link>
+        {' | '}
+        <a href="http://eepurl.com/bO8F8X" className="FooterLinks-link">Mailing list</a>
+        {' | '}
+        <a href="https://jsconfis.typeform.com/to/FN7Bla" className="FooterLinks-link">Sponsor interest</a>
+        {' | '}
+        <a href="mailto:team@jsconf.is" className="FooterLinks-link">team@jsconf.is</a>
+      </div>
+      <div className="SocialLinks">
+        <a href="https://github.com/jsis/jsconf.is" className="SocialLinks-link SocialLinks-github">Github</a>
+        <a href="https://twitter.com/jsconfis" className="SocialLinks-link SocialLinks-twitter">Twitter</a>
       </div>
     </footer>
   </div>
