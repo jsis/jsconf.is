@@ -24,16 +24,16 @@ const Details = ({
     {!isActive ? null : (
       <div>
         <div className="Details-controls">
-          <button className="Details-closeBtn" onClick={onClose}>
+          <button aria-label="Close details view" className="Details-closeBtn" onClick={onClose}>
             <i className="Details-close" />
           </button>
-          <button onClick={onPrevious}>
+          <button aria-label="Previus talk" onClick={onPrevious}>
             <i className="Details-leftArrow" />
           </button>
-          <button onClick={onNext}>
+          <button aria-label="Next talk" onClick={onNext}>
             <i className="Details-rightArrow" />
           </button>
-          <button onClick={onSave}>
+          <button aria-label={savedSlugs[slug] ? 'Mark as favorite' : 'Unmark as favorite'} onClick={onSave}>
             <i
               className={`Events-heart${savedSlugs[slug] ? ' is-filled' : ''}`}
               style={{ backgroundImage: hearts }}
