@@ -60,9 +60,9 @@ export default class Home extends React.Component {
 
               <Card onlyLarge blank />
               <Card
-                icon="ticket"
-                link={'https://2018.jsconf.is/tickets/'}
-                title="Tickets"
+                icon="handshake"
+                link={prefixLink('/code-of-conduct/')}
+                title="Code of Conduct"
               />
               <Card
                 icon="tonkvisl"
