@@ -18,9 +18,6 @@ const Details = ({
   onPrevious,
   onSave,
   savedSlugs,
-  /*
-  company,
-  */
   onClose,
 }) => (
   <div className={`Details${isActive ? ' is-active' : ''}`}>
@@ -63,16 +60,6 @@ const Details = ({
           className="Details-description"
           dangerouslySetInnerHTML={{ __html: description }}
         />
-        {/* <figure className="Details-speaker">
-            <img className="Details-speakerImg" src={require(`../../images/speakers/${slug}.jpg`)} alt={name} />
-            <figcaption className="Details-speakerInfo">
-              <Link className="u-base-link" to={prefixLink(link)}>
-                {name}
-              </Link>
-              <br />
-              {company}
-            </figcaption>
-          </figure> */}
       </div>
     )}
   </div>
