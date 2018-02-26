@@ -33,44 +33,46 @@ class Slot extends React.Component {
       active.track === track
 
     return (
-      <li
+      <button
         key={slot.title}
-        className={`Slot-track${isActive ? ' is-active' : ''}`}
+        className="Slot-button"
         onClick={onOpenTrackDetails({ day, track, slot: index })}
       >
-        {slot.slug && (
-          <img
-            className="Slot-image"
-            src={require(`../../images/speakers/small/${slot.slug}.jpg`)}
-            alt={slot.name}
-          />
-        )}
-        <div>
-          <h4 className="Slot-title">{slot.title}</h4>
-          {slot.name && (
-            <div className="Slot-meta">
-              <p className="Slot-name">
-                {slot.name}
-                {slot.track !== 'unified' && (
-                  <span>
-                    <b> · </b>
-                    {slot.track}
-                  </span>
-                )}
-                {savedSlugs[slot.slug] && (
-                  <span>
-                    &nbsp;
-                    <i
-                      className="Events-heart Events-heart--gray is-filled"
-                      style={{ backgroundImage: hearts }}
-                    />
-                  </span>
-                )}
-              </p>
-            </div>
+        <li className={`Slot-track${isActive ? ' is-active' : ''}`}>
+          {slot.slug && (
+            <img
+              className="Slot-image"
+              src={require(`../../images/speakers/small/${slot.slug}.jpg`)}
+              alt={slot.name}
+            />
           )}
-        </div>
-      </li>
+          <div>
+            <h4 className="Slot-title">{slot.title}</h4>
+            {slot.name && (
+              <div className="Slot-meta">
+                <p className="Slot-name">
+                  {slot.name}
+                  {slot.track !== 'unified' && (
+                    <span>
+                      <b> · </b>
+                      {slot.track}
+                    </span>
+                  )}
+                  {savedSlugs[slot.slug] && (
+                    <span>
+                      &nbsp;
+                      <i
+                        className="Events-heart Events-heart--gray is-filled"
+                        style={{ backgroundImage: hearts }}
+                      />
+                    </span>
+                  )}
+                </p>
+              </div>
+            )}
+          </div>
+        </li>
+      </button>
     )
   }
 

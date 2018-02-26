@@ -26,15 +26,26 @@ $SlotBorder: 1px solid rgba(white, 0.2);
   }
 }
 
+.Slot-button,
 .Slot-tracks {
   display: block;
+  text-align: left;
+  outline: none;
   width: 100%;
+}
+
+.Slot-button:focus,
+.Slot-button:active {
+  color: $color-jsconf-yellow;
+}
+
+.Slot-button:not(:last-child) .Slot-track {
+  border-bottom: $SlotBorder;
 }
 
 .Slot-track {
   $gradient: linear-gradient(to left, rgba(white, 0.1), rgba(white, 0));
 
-  border-bottom: $SlotBorder;
   display: flex;
   padding: 15px 15px 15px 0;
   position: relative;
@@ -61,10 +72,6 @@ $SlotBorder: 1px solid rgba(white, 0.2);
     left: 0;
     opacity: 0;
     top: 0;
-  }
-
-  &:last-child {
-    border-bottom: none;
   }
 
   &.is-active::before,
