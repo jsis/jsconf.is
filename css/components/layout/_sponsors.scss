@@ -5,11 +5,16 @@ $sponsors-gutter: 20px;
   flex-direction: column;
   align-items: center;
 
+  &-heading {
+    flex: 1 0 100%;
+    margin-top: 2.5em;
+    text-transform: uppercase;
+  }
+
   @include breakpoint(medium) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-right: -$sponsors-gutter;
   }
 
   &-box {
@@ -17,7 +22,6 @@ $sponsors-gutter: 20px;
     background-origin: content-box;
     padding: 25px 25px;
     display: inline-block;
-    margin-bottom: $global-padding;
     position: relative;
     vertical-align: top;
     flex-shrink: 0;
@@ -38,6 +42,11 @@ $sponsors-gutter: 20px;
   }
 
   &--bronze &-box {
+    height: 100px;
+    width: 150px;
+  }
+
+  &--travelVenue &-box {
     height: 100px;
     width: 150px;
   }

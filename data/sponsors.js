@@ -87,6 +87,12 @@ const companies = {
     website: 'https://tempo.io/',
     image: 'tempo.png',
   },
+  origo: {
+    name: 'Origo',
+    description: null,
+    website: 'https:// origo.is/',
+    image: 'origo.svg',
+  },
   ccp: {
     name: 'CCP',
     description: null,
@@ -141,17 +147,54 @@ const companies = {
     website: 'https://www.wuxinextcode.com/',
     image: 'wuxi-nextcode.svg',
   },
+  airbnb: {
+    name: 'Airbnb',
+    website: 'https://www.airbnb.com',
+    image: 'airbnb.png',
+  },
+  archilogic: {
+    name: 'Archilogic',
+    website: 'https://archilogic.com/',
+    image: 'archilogic.svg',
+  },
+  facebook: {
+    name: 'Facebook',
+    website: 'https://facebook.com',
+    image: 'facebook.png',
+  },
+  flipkart: {
+    name: 'Flipkart',
+    website: 'https://www.flipkart.com/',
+    image: 'flipkart.svg',
+  },
+  gitlab: {
+    name: 'GitLab',
+    website: 'https://gitlab.com',
+    image: 'gitlab.svg',
+  },
+  microsoft: {
+    name: 'Microsoft',
+    website: 'https://www.microsoft.com/',
+    image: 'microsoft.png',
+  },
+  twg: {
+    name: 'TWG',
+    website: 'https://twg.io',
+    image: 'twg.svg',
+  },
 }
 
 module.exports = {
   companies,
   sponsors: [{
     name: 'Platinum',
+    slug: 'platinum',
     ids: [
       'advania',
     ],
   }, {
     name: 'Silver',
+    slug: 'silver',
     ids: [
       'aranja',
       'kosmos-og-kaos',
@@ -161,15 +204,31 @@ module.exports = {
     ],
   }, {
     name: 'Bronze',
+    slug: 'bronze',
     ids: [
       'apress',
       'ccp',
-      'hard-rock',
       'icelandair',
       'net-app',
+      'origo',
       'ueno',
       'tempo',
       'wuxi-nextcode',
+    ],
+  }, {
+    name: 'Travel & Venue',
+    slug: 'travelVenue',
+    ids: [
+      'airbnb',
+      'archilogic',
+      'facebook',
+      'flipkart',
+      'gitlab',
+      'hard-rock',
+      'microsoft',
+      'mozilla',
+      'twg',
+      'twilio',
     ],
   }],
 }

@@ -27,15 +27,16 @@ SponsorBox.propTypes = {
 
 export default () => (
   <div>
-    <div className="SponsorFooter">
+    <section className="SponsorFooter">
       <div className="row align-center text-center">
-        <div className="column large-8 medium-10 small-12">
+        <div className="column medium-10 small-12">
           <h1>Sponsors</h1>
           <p>
             We are currently offering sponsorship opportunities for JSConf Iceland. <a className="BgLink" href="https://jsconfis.typeform.com/to/FN7Bla">Contact us for details</a>.
           </p>
           {sponsors.map(level => (
-            <div className={classNames('Sponsors', `Sponsors--${level.name.toLowerCase()}`)} key={level.name}>
+            <div className={classNames('Sponsors', `Sponsors--${level.slug}`)} key={level.name}>
+              <h2 className="Sponsors-heading">{level.name}</h2>
               {level.ids.map(id => companies[id]).map(sponsor =>
                 <SponsorBox key={sponsor.name} {...sponsor} />
               )}
@@ -43,7 +44,7 @@ export default () => (
           ))}
         </div>
       </div>
-    </div>
+    </section>
 
     <footer className="Footer">
       <p>JSConf Iceland welcomes everyone and defends you from harassment.{' '}</p>
