@@ -76,6 +76,11 @@ const discounts = [
     discount: '30% off',
     description: null,
   },
+  {
+    company: 'hard-rock',
+    discount: '20% off',
+    description: null,
+  },
 ]
 
 export default discounts.sort((a, b) => {
