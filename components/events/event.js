@@ -16,7 +16,7 @@ const Event = ({
     <ul>
       {slots.length ? (
         slots.map((slot, slotIndex) => (
-          <li key={slot.time}>
+          <li key={slotIndex}>
             <Slot
               {...slot}
               day={index}

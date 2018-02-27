@@ -30,6 +30,7 @@ function isValidDay(type) {
 const trackMap = {
   conference: 'Conference',
   so: 'Significant Others',
+  lounge: 'Lounge',
 }
 
 function isValidType(type) {

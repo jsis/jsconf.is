@@ -29,7 +29,7 @@ const blueLagoon = {
 }
 
 const lightningTalks = `<ul>
-  <li><strong>Andy Mockler:</strong> Typescript</li>
+  <li><strong>Andy Mockler:</strong> A whirlwind introduction to TypeScript</li>
   <li><strong>Burke Holland:</strong> The Best UX Is No UI At All</li>
   <li><strong>Istvan Szmozsanszky:</strong> 2,560 bytes ought to be enough for anyone!</li>
   <li><strong>Laurens Aarnoudse:</strong> Hacking the future</li>
@@ -245,7 +245,6 @@ const conferenceDays = [
   },
 ]
 
-
 const soDays = [
   {
     date: new Date('Wednesday February 28, 2018'),
@@ -342,6 +341,73 @@ const soDays = [
     ],
   },
 ]
+const loungeDays = [
+  {
+    date: new Date('Thursday March 1, 2018'),
+    slots: [
+      {
+        time: '09:00 18:30',
+        unified: {
+          grayed: true,
+          title: 'Björtuloft lounge is open for JSConf guests',
+        },
+      },
+      {
+        time: '09:00 18:30',
+        unified: {
+          grayed: true,
+          title: 'ZO-ON Swag Booth',
+        },
+      },
+      {
+        time: '09:00 12:20',
+        unified: {
+          grayed: true,
+          title: 'Kóder workshop',
+        },
+      },
+      {
+        time: '12:50 13:30',
+        unified: {
+          title: 'Diversity & Inclusion Panel Discussion hosted by Mozilla',
+          description: `<p>Mozilla will host the Inclusion Lounge at JSConf on 1 March from 12:50-13:30 at Harpa. The Inclusion Lounge is free and open to the public.</p>
+<p>The Inclusion Lounge will include a Diversity & Inclusion panel discussion focused on both the bright spots and challenges.The panel will feature:</p>
+<ul>
+<li>Ali Spivak, Head of Developer Ecosystem, Mozilla</li>
+<li>Hafliði Ásgeirsson, Project Manager, Frumbjörg</li>
+<li>Gabrielle Motola, Author, An Equal Difference</li>
+<li>Nara Kasbergen, Full-stack Web Developer, NPR</li>
+<li>Jessie VanderVeen - VP Marketing & Comms, Controlant</li>
+<li>Bryan Hughes, Technical Evangelist, Microsoft</li> 
+</ul>
+<p>Attendees will be able to test their website for accessibility, learn how to start meaningful 
+conversations about diversity and inclusion as well as gain skills for battling imposter syndrome through writing exercises.</p>
+<p>This event will be held on the 6th floor, Björtuloft at Harpa.</p>`.trim(),
+        },
+      },
+    ],
+  },
+  {
+    date: new Date('Friday March 2, 2018'),
+    noTracks: true,
+    slots: [
+      {
+        time: '09:00 18:30',
+        unified: {
+          grayed: true,
+          title: 'Björtuloft lounge is open for JSConf guests',
+        },
+      },
+      {
+        time: '09:00 18:30',
+        unified: {
+          grayed: true,
+          title: 'Drop-in Accessibility and Inclusion discussions with Mozilla',
+        },
+      },
+    ],
+  },
+]
 
 function trackFor(slug) {
   const speaker = speakers.find(x => x.slug === slug)
@@ -385,3 +451,4 @@ function mapDays (days) {
 
 export const conference = mapDays(conferenceDays)
 export const so = mapDays(soDays)
+export const lounge = mapDays(loungeDays)
