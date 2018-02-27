@@ -31,9 +31,6 @@ export default () => (
       <div className="row align-center text-center">
         <div className="column medium-10 small-12">
           <h1>Sponsors</h1>
-          <p>
-            We are currently offering sponsorship opportunities for JSConf Iceland. <a className="BgLink" href="https://jsconfis.typeform.com/to/FN7Bla">Contact us for details</a>.
-          </p>
           {sponsors.map(level => (
             <div className={classNames('Sponsors', `Sponsors--${level.slug}`)} key={level.name}>
               <h2 className="Sponsors-heading">{level.name}</h2>
