@@ -90,7 +90,7 @@ const companies = {
   origo: {
     name: 'Origo',
     description: null,
-    website: 'https:// origo.is/',
+    website: 'https://origo.is/',
     image: 'origo.svg',
   },
   ccp: {
