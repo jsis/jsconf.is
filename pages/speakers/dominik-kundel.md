@@ -8,6 +8,7 @@ twitter: "dkundel"
 github: "dkundel"
 website: "https://moin.world"
 company: "Twilio"
+sponsor: "twilio"
 bio: "Dominik is a Developer Evangelist for Twilio in Berlin. He has a passion for JavaScript, hackathons, teaching and good whiskey. You will usually find him speaking at meetups and conferences, mentoring at hackathons and CoderDojos or work on open source projects."
 ---
 

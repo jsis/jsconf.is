@@ -9,6 +9,7 @@ gitlab: "SarrahVesselov"
 website: "http://sarrahvesselov.com/"
 companyWebsite: "https://gitlab.com"
 company: "GitLab"
+sponsor: "gitlab"
 bio: "Sarrah Vesselov is a UI/UX Developer with over 10 years of experience in web design and development. She currently works for GitLab as UX Lead, setting the overall direction of UX from both a design and application experience view. Prior to that, she was Senior UI Developer at Nitro Solutions and UI / UX Lead at Mad Mobile. She also serves as the Director for the Women Who Code and Girl Develop It Tampa chapters."
 ---
 

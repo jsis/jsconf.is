@@ -8,6 +8,7 @@ twitter: "dan_abramov"
 github: "gaearon"
 companyWebsite: "https://www.facebook.com/"
 company: "Facebook"
+sponsor: "facebook"
 bio: "Dan Abramov is a software developer who is trying to empower others by building tools. He co-authored a few popular JavaScript projects, including Redux, and is currently working on the React team at Facebook."
 ---
 

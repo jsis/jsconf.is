@@ -9,6 +9,7 @@ github: "nebrius"
 website: "https://nebri.us"
 companyWebsite: "https://microsoft.com"
 company: "Microsoft"
+sponsor: "microsoft"
 bio: "Bryan Hughes is a technical evangelist at Microsoft and long-time member of the Node.js and NodeBots communities. Bryan is the creator of Raspi IO which provides Raspberry Pi support for the Johnny-Five JavaScript robotics library. Bryan also created Raver Lights, a distributed wireless wearable lighting system designed for festivals. Outside of tech, Bryan is an amateur photographer, occasional writer, a once upon a time pianist, and a wine aficionado."
 ---
 

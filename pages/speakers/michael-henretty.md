@@ -8,6 +8,7 @@ twitter: "mikehenrty"
 github: "mikehenrty"
 website: "http://voice.mozilla.org/"
 company: "Mozilla"
+sponsor: "mozilla"
 bio: "I am a front-end engineer at Mozilla working on Common Voice, a project to crowdsource a large database of voices to be used in open-source speech engines."
 ---
 

@@ -8,6 +8,7 @@ twitter: "_abhinavrastogi"
 github: "abhinavrastogi"
 companyWebsite: "https://flipkart.com"
 company: "Flipkart"
+sponsor: "flipkart"
 bio: "I lead frontend development at Flipkart.com. Also interested in game dev, music and space stuff!"
 ---
 

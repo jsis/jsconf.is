@@ -8,6 +8,7 @@ twitter: "majapw"
 github: "majapw"
 companyWebsite: "https://www.airbnb.com/"
 company: "Airbnb"
+sponsor: "airbnb"
 bio: "Maja is a frontend software engineer at Airbnb. Her focus is on shared UI systems and writing sustainable code, and she maintains Airbnb's react-dates library and contributes to many other open-source repos as well."
 ---
 

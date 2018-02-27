@@ -9,6 +9,7 @@ github: "nicolechung"
 website: "https://twg.io"
 companyWebsite: "https://twg.io/"
 company: "TWG"
+sponsor: "twg"
 bio: "As a Software Engineer at Toronto-based product studio TWG, Nicole Chung works with Node, React, and Redux to build fast and efficient user interfaces. She is also an occasional lead instructor at Canada Learning Code, a non-profit dedicated to building technical skills for all Canadians, and has mentored at HackerYou for their part-time JavaScript courses."
 ---
 

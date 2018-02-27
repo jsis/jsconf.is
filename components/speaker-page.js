@@ -92,7 +92,7 @@ const SpeakerPage = ({
             {bio && (
               <div>
                 <h3>About {name}</h3>
-                {bio && <p>{bio}</p>}
+                {bio && <div dangerouslySetInnerHTML={{ __html: bio }} />}
               </div>
             )}
             {(website || twitter || github) && (

@@ -9,6 +9,7 @@ github: "sdras"
 website: "https://sarahdrasnerdesign.com"
 companyWebsite: "https://www.microsoft.com"
 company: "Microsoft"
+sponsor: "microsoft"
 bio: "Sarah is an award-winning Speaker, Sr Cloud Developer Advocate at Microsoft, and Staff Writer at CSS-Tricks. Sarah is also the co-founder of Web Animation Workshops, with Val Head. She’s the author of SVG Animations from O’Reilly and has given Frontend Masters workshops on Vue.js and Advanced SVG Animations."
 ---
 

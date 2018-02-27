@@ -8,6 +8,7 @@ twitter: "thelarkinn"
 github: "thelarkinn"
 companyWebsite: "https://www.microsoft.com"
 company: "Microsoft"
+sponsor: "microsoft"
 bio: "Sean Larkin is a Program Manager at Microsoft working on Edge DevTools, expert on Web Performance, and maintainer of webpack. Outside of work, he works with Fortune 500 companies helping them change their culture for Web Performance practices, Open Source, and embracing emerging technologies. In his free time he loves spending time with his family, hiking, woodworking, cooking, gardening, Orchid cultivating, playing video games, hacking on IoT, and Streaming his open source work!"
 ---
 

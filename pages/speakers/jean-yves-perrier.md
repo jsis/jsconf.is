@@ -7,6 +7,7 @@ slug: "jean-yves-perrier"
 twitter: "Teoli2003"
 companyWebsite: "https://mozilla.org/"
 company: "Mozilla"
+sponsor: "mozilla"
 bio: "Initially a C++ developer, Jean-Yves got interest in the Web since the early 90s and finally joined Mozilla in 2011 as a technical writer, than the content lead, of MDN Web docs. Today he is a member of the Developer Outreach team at Mozilla."
 ---
 

@@ -99,10 +99,7 @@ const conferenceDays = [
       {
         time: '14:10 14:40',
         Hekla: 'carolyn-stransky',
-        Katla: {
-          grayed: true,
-          title: 'TBA',
-        },
+        Katla: 'halldor-and-thordur',
       },
       {
         time: '14:50 15:20',
