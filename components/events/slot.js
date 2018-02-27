@@ -33,12 +33,12 @@ class Slot extends React.Component {
       active.track === track
 
     return (
-      <button
-        key={slot.title}
-        className="Slot-button"
-        onClick={onOpenTrackDetails({ day, track, slot: index })}
-      >
-        <li className={`Slot-track${isActive ? ' is-active' : ''}`}>
+      <li className={`Slot-trackWrap${isActive ? ' is-active' : ''}`}>
+        <button
+          key={slot.title}
+          className="Slot-track"
+          onClick={onOpenTrackDetails({ day, track, slot: index })}
+        >
           {slot.slug && (
             <img
               className="Slot-image"
@@ -71,8 +71,8 @@ class Slot extends React.Component {
               </div>
             )}
           </div>
-        </li>
-      </button>
+        </button>
+      </li>
     )
   }
 

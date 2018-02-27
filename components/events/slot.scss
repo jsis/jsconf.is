@@ -26,7 +26,7 @@ $SlotBorder: 1px solid rgba(white, 0.2);
   }
 }
 
-.Slot-button,
+.Slot-track,
 .Slot-tracks {
   display: block;
   text-align: left;
@@ -34,12 +34,12 @@ $SlotBorder: 1px solid rgba(white, 0.2);
   width: 100%;
 }
 
-.Slot-button:focus,
-.Slot-button:active {
+.Slot-track:focus,
+.Slot-track:active {
   color: $color-jsconf-yellow;
 }
 
-.Slot-button:not(:last-child) .Slot-track {
+.Slot-trackWrap:not(:last-child) .Slot-track {
   border-bottom: $SlotBorder;
 }
 
@@ -74,22 +74,17 @@ $SlotBorder: 1px solid rgba(white, 0.2);
     top: 0;
   }
 
-  &.is-active::before,
-  &:not(&--gray):hover::before {
-    opacity: 1;
-  }
-
-  &:not(&--gray):not(.is-active) {
-    cursor: pointer;
-  }
-
-  &.is-active::before {
-    opacity: 1;
-  }
-
   &--gray {
     opacity: 0.6;
   }
+}
+
+.Slot-trackWrap.is-active button::before {
+  opacity: 1;
+}
+
+.Slot-trackWrap.is-active button::before {
+  opacity: 1;
 }
 
 .Slot-image {
