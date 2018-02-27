@@ -28,6 +28,15 @@ const blueLagoon = {
   },
 }
 
+const lightningTalks = `<ul>
+  <li><strong>Andy Mockler:</strong> Typescript</li>
+  <li><strong>Burke Holland:</strong> The Best UX Is No UI At All</li>
+  <li><strong>Istvan Szmozsanszky:</strong> 2,560 bytes ought to be enough for anyone!</li>
+  <li><strong>Laurens Aarnoudse:</strong> Hacking the future</li>
+  <li><strong>Martin Jurča:</strong> Accessible select with customizable UI? Harder than you (probably) thought.</li>
+  <li><strong>Kristján Oddsson:</strong> Wouldn’t it be cool if GitHub could…</li>
+</ul>`
+
 const conferenceDays = [
   {
     date: new Date('Wednesday February 28, 2018'),
@@ -117,16 +126,16 @@ const conferenceDays = [
         time: '15:50 16:20',
         Hekla: 'dan-gebhardt',
         Katla: {
-          grayed: true,
           title: 'Lightning talks ⚡️',
+          description: lightningTalks.trim(),
         },
       },
       {
         time: '16:30 17:00',
         Hekla: 'maja-wichrowska',
         Katla: {
-          grayed: true,
           title: 'Lightning talks ⚡️',
+          description: lightningTalks.trim(),
         },
       },
       {
