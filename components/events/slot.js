@@ -1,4 +1,6 @@
 import React from 'react'
+import classNames from 'classnames'
+import isWithinRange from 'date-fns/is_within_range'
 import './slot.scss'
 const hearts = `url(${require('../../images/hearts.png')})`
 
@@ -11,6 +13,9 @@ class Slot extends React.Component {
     day: React.PropTypes.number,
     index: React.PropTypes.number,
     onOpenTrackDetails: React.PropTypes.func,
+    now: React.PropTypes.object,
+    to: React.PropTypes.object,
+    from: React.PropTypes.object,
   }
 
   renderBasicSlot(slot) {
@@ -33,7 +38,7 @@ class Slot extends React.Component {
       active.track === track
 
     return (
-      <li className={`Slot-trackWrap${isActive ? ' is-active' : ''}`}>
+      <li className={`Slot-trackWrap${isActive ? ' is-active' : ''}`} key={slot.title + day}>
         <button
           key={slot.title}
           className="Slot-track"
@@ -77,10 +82,10 @@ class Slot extends React.Component {
   }
 
   render() {
-    const { time, tracks } = this.props
+    const { time, now, from, to, tracks } = this.props
     return (
       <div className="Slot">
-        <div className="Slot-time">{time}</div>
+        <div className={classNames('Slot-time', isWithinRange(now, from, to) && 'is-active')}>{time}</div>
         <ul className="Slot-tracks">
           {tracks.map(
             (slot, track) =>

@@ -96,6 +96,7 @@ class Events extends React.Component {
       savedSlugs: getFromLocalStorage(),
       activeDetails: null,
       type: 'conference',
+      now: new Date(),
       activeDate: getCorrectDate(props.schedule.conference),
     }
   }
@@ -107,6 +108,7 @@ class Events extends React.Component {
       const { type, activeDate } = this.state
       setHash(type, activeDate)
     })
+    this.intervalTimer = setInterval(this.updateDate, 15 * 60000)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -127,6 +129,7 @@ class Events extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('keyup', this.onKeyUp)
+    clearInterval(this.intervalTimer)
   }
 
   onKeyUp = ({ keyCode }) => {
@@ -201,6 +204,12 @@ class Events extends React.Component {
     const { day, slot, track } = this.state.activeDetails
     const schedule = this.getActiveSchedule()
     return schedule[day].slots[slot].tracks[track]
+  }
+
+  updateDate = () => {
+    this.setState({
+      now: new Date(),
+    })
   }
 
   calculateNextTrack(direction, indicies) {
@@ -309,6 +318,7 @@ class Events extends React.Component {
               slots={day.slots}
               index={index}
               savedSlugs={savedSlugs}
+              now={this.state.now}
               onOpenTrackDetails={this.onOpenTrackDetails}
             />
           ))}

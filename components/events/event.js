@@ -10,6 +10,7 @@ const Event = ({
   active,
   onOpenTrackDetails,
   index,
+  now,
 }) => (
   <div className={`Event${isActive ? ' is-active' : ''}`}>
     <h3 className="Event-date">{date}</h3>
@@ -19,6 +20,7 @@ const Event = ({
           <li key={slotIndex}>
             <Slot
               {...slot}
+              now={now}
               day={index}
               savedSlugs={savedSlugs}
               index={slotIndex}
@@ -41,6 +43,7 @@ Event.propTypes = {
   active: React.PropTypes.object,
   savedSlugs: React.PropTypes.object,
   index: React.PropTypes.number,
+  now: React.PropTypes.object,
   onOpenTrackDetails: React.PropTypes.func,
 }
 

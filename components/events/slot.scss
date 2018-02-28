@@ -20,9 +20,28 @@ $SlotBorder: 1px solid rgba(white, 0.2);
   margin-bottom: -1px;
   width: 35px;
   padding: 10px;
+  position: relative;
 
   @include breakpoint(large) {
     margin-right: 40px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    background-color: #B3008B;
+    box-shadow: 0 0 20px 0 #B3008B;
+    transform: translate(-50%, -50%);
+  }
+
+  &:not(.is-active)::after {
+    opacity: 0;
   }
 }
 

@@ -442,13 +442,21 @@ function speakerToSlot (slot) {
   return timeSlot
 }
 
-function mapDays (days) {
-  return days.map(day_ => {
-    const day = day_
-    day.slots = day.slots.map(speakerToSlot)
-    return day
+const mapDays = days => days.map(day_ => {
+  const day = day_
+  const [year, month, date] = [day.date.getFullYear(), day.date.getMonth(), day.date.getDate()]
+  day.slots = day.slots.map(slot_ => {
+    const slot = slot_
+    const [from, to] = slot.time.split(' ').map(time => {
+      const [hours, minutes] = time.split(':')
+      return { hours: ~~hours, minutes: ~~minutes }
+    })
+    slot.from = new Date(year, month, date, from.hours, from.minutes)
+    slot.to = new Date(year, month, date, to.hours, to.minutes)
+    return speakerToSlot(slot)
   })
-}
+  return day
+})
 
 export const conference = mapDays(conferenceDays)
 export const so = mapDays(soDays)
