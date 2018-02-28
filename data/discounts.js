@@ -13,7 +13,7 @@ const discounts = [
   },
   {
     company: 'islenski-barinn',
-    discount: '15% off food and a large beer for 800kr.',
+    discount: '15% off food, large Viking lager for 800kr.',
     description: '15% off menu - doesn’t apply to other offers.',
   },
   {
