@@ -28,6 +28,22 @@ const blueLagoon = {
   },
 }
 
+const thursdayParty = {
+  time: '18:00 23:00',
+  unified: {
+    title: 'Party at Ægisgarður',
+    description: '<p>We are celebrating the Icelandic national "Beer Day" at a fantastic venue located at the old harbor Grandi, called Ægisgarður.</p><p>The venue is named after Ægir (pronounced eye-ear), the king of the sea in Norse mythology. Ægir along with his wife Rán (pronounced rown) and nine daughters rule the oceans. Although feared by the people of Midgard, Ægir was known by the Norse gods and goddesses as a fantastic brewer and would often host great feasts where all of Asgard would attend. Ægisgarður reflects this image of Ægir, as it boasts an impressive working brewery as well as a unique venue consisting of four bars.</p><p>We hope that you can join us on this fantastic evening where we celebrate a part of Icelandic history and have a great time.</p><p><em>Note: Even though we are celebrating the Icelandic beer day, we will of course serve other beverages, and no one is forced or pressured into drink beer!</em></p>',
+  },
+}
+
+const fridayParty = {
+  time: '19:00 23:00',
+  unified: {
+    title: 'Party at Bazaar',
+    description: '<p>After a fantastic conference it’s time to light the party fuse and party with us at Bazaar restaurant.</p><p>Bazaar is Italian restaurant, café, bar, bistro and fine dining with karaoke 🎤 room. With a world-class design from all over the world, it packs a truly magnificent atmosphere. Join us for drinks, food and more to close the conference with style.</p>',
+  },
+}
+
 const lightningTalks = `<ul>
   <li><strong>Andy Mockler:</strong> A whirlwind introduction to TypeScript</li>
   <li><strong>Burke Holland:</strong> The Best UX Is No UI At All</li>
@@ -139,13 +155,7 @@ const conferenceDays = [
           description: lightningTalks.trim(),
         },
       },
-      {
-        time: '18:00 23:00',
-        unified: {
-          grayed: true,
-          title: 'Party, details TBA',
-        },
-      },
+      thursdayParty,
     ],
   },
   {
@@ -223,13 +233,7 @@ const conferenceDays = [
           title: 'Closing remarks and family photograph',
         },
       },
-      {
-        time: '18:00 23:00',
-        unified: {
-          grayed: true,
-          title: 'Party, details TBA',
-        },
-      },
+      fridayParty,
     ],
   },
   {
@@ -286,13 +290,7 @@ const soDays = [
           title: 'Arrive back at Harpa.',
         },
       },
-      {
-        time: '19:00 23:00',
-        unified: {
-          grayed: true,
-          title: 'Party, details TBA',
-        },
-      },
+      thursdayParty,
     ],
   },
   {
@@ -320,13 +318,7 @@ const soDays = [
           title: 'Arrive back at Harpa.',
         },
       },
-      {
-        time: '19:00 23:00',
-        unified: {
-          grayed: true,
-          title: 'Party, details TBA',
-        },
-      },
+      fridayParty,
     ],
   },
   {
