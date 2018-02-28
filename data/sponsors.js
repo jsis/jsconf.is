@@ -26,6 +26,10 @@ const companies = {
     name: 'Austur',
     website: 'https://www.facebook.com/austurclub/',
   },
+  'islenski-barinn': {
+    name: 'Íslenski Barinn',
+    website: 'http://islenskibarinn.is/net/',
+  },
   subway: {
     name: 'Subway',
     website: 'https://subway.is/',
