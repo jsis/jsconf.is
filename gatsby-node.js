@@ -1,4 +1,4 @@
-exports.modifyWebpackConfig = function (config) {
+exports.modifyWebpackConfig = function(config) {
   config.merge({
     output: {
       publicPath: '/',
@@ -7,6 +7,11 @@ exports.modifyWebpackConfig = function (config) {
 
   config.loader('jpg', {
     test: /\.jpg$/,
+    loader: 'url?limit=10000',
+  })
+
+  config.loader('json', {
+    test: /\.webmanifest$/,
     loader: 'url?limit=10000',
   })
 
