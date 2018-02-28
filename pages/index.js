@@ -70,9 +70,9 @@ export default class Home extends React.Component {
                 title="Venue"
               />
               <Card
-                icon="call"
-                link={'http://cfp.jsconf.is/events/jsconf-iceland-2018'}
-                title="Call For Proposal"
+                icon="play"
+                link={prefixLink('/live/')}
+                title="Live Stream"
               />
               <Card
                 icon="podium"
