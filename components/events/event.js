@@ -43,7 +43,7 @@ Event.propTypes = {
   active: React.PropTypes.object,
   savedSlugs: React.PropTypes.object,
   index: React.PropTypes.number,
-  now: React.PropTypes.object,
+  now: React.PropTypes.string,
   onOpenTrackDetails: React.PropTypes.func,
 }
 

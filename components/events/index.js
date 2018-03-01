@@ -6,6 +6,7 @@ import closestTo from 'date-fns/closest_to'
 import isWithinRange from 'date-fns/is_within_range'
 import format from 'date-fns/format'
 import Dropdown from '../drop-down'
+import moment from 'moment-timezone'
 import './index.scss'
 
 const darkPattern = `url(${require('../../images/dark-pattern.png')})`
@@ -92,11 +93,12 @@ class Events extends React.Component {
 
   constructor(props) {
     super(props)
+    const now = moment.tz('Atlantic/Reykjavik').format('ddd MMM DD YYYY HH:mm:ss (z)')
     this.state = {
       savedSlugs: getFromLocalStorage(),
       activeDetails: null,
       type: 'conference',
-      now: new Date(),
+      now,
       activeDate: getCorrectDate(props.schedule.conference),
     }
   }
