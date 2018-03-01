@@ -8,6 +8,9 @@ import { prefixLink } from 'gatsby-helpers'
 
 const updates = [
   <span>
+    Attendees get <Link to={prefixLink('/discounts/')}>amazing discounts</Link> from awesome local stores, restaurants and bars!
+  </span>,
+  <span>
     Checkout the <Link to={prefixLink('/schedule/')}>schedule</Link>, it’s live!
   </span>,
   <span>

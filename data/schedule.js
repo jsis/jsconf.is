@@ -51,7 +51,6 @@ const lightningTalks = `<ul>
   <li><strong>Laurens Aarnoudse:</strong> Hacking the future</li>
   <li><strong>Martin Jurča:</strong> Accessible select with customizable UI? Harder than you (probably) thought.</li>
   <li><strong>Kristján Oddsson:</strong> Wouldn’t it be cool if GitHub could…</li>
-  <li><strong>Ragnar & Ægir:</strong> Take control of your content with React</li>
 </ul>`
 
 const conferenceDays = [
