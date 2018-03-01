@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 
 const ready = true
-const heklaId = 'AsyZdJR86-k'
+const heklaId = '_c7ajDXb4qw'
 const katlaId = 'D-h3bhzauKo'
 
 export default () =>
