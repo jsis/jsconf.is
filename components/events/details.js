@@ -1,9 +1,10 @@
-import React from 'react'
-import './details.scss'
-import { Link } from 'react-router'
-import { prefixLink } from 'gatsby-helpers'
+import React from "react";
+import "./details.scss";
+import { Link } from "react-router";
+import { prefixLink } from "gatsby-helpers";
 
-const hearts = `url(${require('../../images/hearts.png')})`
+const hearts = `url(${require("../../images/hearts.png")})`;
+const calendar = `url(${require("../../images/calendar.png")})`;
 
 const Details = ({
   title,
@@ -19,12 +20,17 @@ const Details = ({
   onSave,
   savedSlugs,
   onClose,
+  onCalendar
 }) => (
-  <div className={`Details${isActive ? ' is-active' : ''}`}>
+  <div className={`Details${isActive ? " is-active" : ""}`}>
     {!isActive ? null : (
       <div>
         <div className="Details-controls">
-          <button aria-label="Close details view" className="Details-closeBtn" onClick={onClose}>
+          <button
+            aria-label="Close details view"
+            className="Details-closeBtn"
+            onClick={onClose}
+          >
             <i className="Details-close" />
           </button>
           <button aria-label="Previus talk" onClick={onPrevious}>
@@ -33,10 +39,21 @@ const Details = ({
           <button aria-label="Next talk" onClick={onNext}>
             <i className="Details-rightArrow" />
           </button>
-          <button aria-label={savedSlugs[slug] ? 'Mark as favorite' : 'Unmark as favorite'} onClick={onSave}>
+          <button
+            aria-label={
+              savedSlugs[slug] ? "Mark as favorite" : "Unmark as favorite"
+            }
+            onClick={onSave}
+          >
             <i
-              className={`Events-heart${savedSlugs[slug] ? ' is-filled' : ''}`}
+              className={`Events-heart${savedSlugs[slug] ? " is-filled" : ""}`}
               style={{ backgroundImage: hearts }}
+            />
+          </button>
+          <button aria-label="Add to calendar" onClick={onCalendar}>
+            <i
+              className={"Events-calendar"}
+              style={{ backgroundImage: calendar }}
             />
           </button>
         </div>
@@ -49,12 +66,12 @@ const Details = ({
           </p>
         )}
         <div className="Details-meta">
-          {track === undefined || track === 'unified' ? null : (
+          {track === undefined || track === "unified" ? null : (
             <span>
-              <span className="Details-track">{track}</span> /{' '}
+              <span className="Details-track">{track}</span> /{" "}
             </span>
           )}
-          <span className="Details-time">{time.replace(' ', ' - ')}</span>
+          <span className="Details-time">{time.replace(" ", " - ")}</span>
         </div>
         <div
           className="Details-description"
@@ -63,7 +80,7 @@ const Details = ({
       </div>
     )}
   </div>
-)
+);
 
 Details.propTypes = {
   title: React.PropTypes.string,
@@ -80,6 +97,7 @@ Details.propTypes = {
   onNext: React.PropTypes.func,
   onPrevious: React.PropTypes.func,
   onSave: React.PropTypes.func,
-}
+  onCalendar: React.PropTypes.func
+};
 
-export default Details
+export default Details;
