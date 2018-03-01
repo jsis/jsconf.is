@@ -38,7 +38,7 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     padding-bottom: 115.53%;
     width: 100%;
@@ -95,6 +95,15 @@
   &.is-filled {
     background-position-x: -25px;
   }
+}
+
+.Events-calendar {
+  background: no-repeat left center;
+  background-size: 25px 21px;
+  height: 21px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
 }
 
 .Events-tabs {
