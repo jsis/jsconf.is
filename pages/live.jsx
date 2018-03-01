@@ -4,9 +4,9 @@ import icon from '!svg-inline!../images/play.svg'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 
-const ready = false
-const heklaId = null // example: 'Iak7dspvrZ8'
-const katlaId = null // example: 'Iak7dspvrZ8'
+const ready = true
+const heklaId = 'AsyZdJR86-k'
+const katlaId = 'D-h3bhzauKo'
 
 export default () =>
   <BoxPage icon={icon} title="Live stream" inverse>
