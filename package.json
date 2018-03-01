@@ -25,6 +25,7 @@
     "markdown-it-deflist": "^2.0.1",
     "markdown-it-footnote": "^2.0.0",
     "markdown-it-sub": "^1.0.0",
+    "moment-timezone": "^0.5.14",
     "object-assign": "^4.0.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",

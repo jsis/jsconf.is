@@ -13,7 +13,7 @@ class Slot extends React.Component {
     day: React.PropTypes.number,
     index: React.PropTypes.number,
     onOpenTrackDetails: React.PropTypes.func,
-    now: React.PropTypes.object,
+    now: React.PropTypes.string,
     to: React.PropTypes.object,
     from: React.PropTypes.object,
   }
