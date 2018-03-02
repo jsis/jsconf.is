@@ -5,8 +5,8 @@ import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 
 const ready = true
-const heklaId = '4P_kJGmJGyw'
-const katlaId = '3Nv9muOkb6k'
+const heklaId = '3Nv9muOkb6k'
+const katlaId = '4P_kJGmJGyw'
 
 export default () =>
   <BoxPage icon={icon} title="Live stream" inverse>
