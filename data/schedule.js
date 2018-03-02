@@ -4,14 +4,14 @@
 import speakers from './speakers'
 
 const southShore = {
-  time: '10:00 19:00',
+  time: '10:00 20:30',
   unified: {
     title: 'Community Trip',
     description:
     '<p><img src="/assets/south-coast.jpg" alt="The south shore adventure"/></p>'+
     '<p>South Coast Adventure. Waterfalls and black sand beaches on an amazing day.</p>' +
     '<p>In a single day you can see the famous waterfalls Seljalandsfoss & Skógafoss, visit Reynisfjara, the dramatic black sand beach near Vík.</p>' +
-    '<p>Tour duration: 10:00 – 20:00</p>' +
+    '<p>Tour duration: 10:00 – 20:30</p>' +
     '<p>On this tour you will see:<br>• Sólheimajökull<br>• Vík<br>• Reynisfjara<br>• Reynisdrangar<br>• Skógafoss<br>• Seljalandsfoss</p>' +
     '<p>Tickets are sold separately for both attendees and SOs. Attendees will receive a link via email to buy tickets.</p>',
   },
