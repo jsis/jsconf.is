@@ -37,7 +37,7 @@ const thursdayParty = {
 }
 
 const fridayParty = {
-  time: '19:00 23:00',
+  time: '18:00 23:00',
   unified: {
     title: 'Party at Bazaar',
     description: '<p>After a fantastic conference it’s time to light the party fuse and party with us at Bazaar restaurant.</p><p>Bazaar is Italian restaurant, café, bar, bistro and fine dining with karaoke 🎤 room. With a world-class design from all over the world, it packs a truly magnificent atmosphere. Join us for drinks, food and more to close the conference with style.</p>',
