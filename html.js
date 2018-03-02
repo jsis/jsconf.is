@@ -1,10 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { prefixLink } from 'gatsby-helpers'
-import manifest from './site.webmanifest'
-import appleIcon from './images/meta/apple-touch-icon.png'
-import favIconLg from './images/meta/favicon-32x32.png'
-import favIconSm from './images/meta/favicon-16x16.png'
 
 const googleId = 'UA-71097907-1'
 
@@ -33,27 +29,10 @@ export default class extends React.Component {
             content="width=device-width, initial-scale=1.0 maximum-scale=1.0"
           />
           <meta name="theme-color" content="#f3df49" />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href={appleIcon}
-          />
-          <link
-            rel="shortcut icon"
-            type="image/png"
-            sizes="32x32"
-            href={favIconLg}
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href={favIconSm}
-          />
-          <link rel="manifest" href={manifest} />
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {head.link.toComponent()}
+          <link rel="shortcut icon" href={this.props.favicon} />
 
           {cssLink}
         </head>
