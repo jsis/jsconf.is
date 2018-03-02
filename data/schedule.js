@@ -221,8 +221,15 @@ const conferenceDays = [
       {
         time: '16:20 17:00',
         unified: {
-          grayed: true,
-          title: 'TBA',
+          title: 'Panel discussions',
+          description: '<p>Get your <a href="https://app2.sli.do/event/knrmjv2y/ask"' +
+          ' target="_blank">questions</a> answered by our panelists:</p>' +
+          '<ul>' +
+            '<li><a href="/speakers/anna-henningsen/">Anna Henningsen</a></li>' +
+            '<li><a href="/speakers/dan-abramov/">Dan Abramov</a></li>' +
+            '<li><a href="/speakers/sarah-drasner/">Sarah Drasner</a></li>' +
+            '<li><a href="/speakers/sean-larkin/">Sean Larkin</a></li>' +
+          '</ul>',
         },
       },
       {

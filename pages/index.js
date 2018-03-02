@@ -8,6 +8,9 @@ import { prefixLink } from 'gatsby-helpers'
 
 const updates = [
   <span>
+    Anna Henningsen, Dan Abramov, Sarah Drasner and Sean Larkin will be answering questions at the <Link to={prefixLink('/schedule/')}>Panel discussions</Link> at 16:20.
+  </span>,
+  <span>
     Attendees get <Link to={prefixLink('/discounts/')}>amazing discounts</Link> from awesome local stores, restaurants and bars!
   </span>,
   <span>
@@ -15,9 +18,6 @@ const updates = [
   </span>,
   <span>
     SO and weekend trips added to <Link to={prefixLink('/schedule/')}>the schedule</Link>.
-  </span>,
-  <span>
-    Tickets are <strong>SOLD OUT</strong>!
   </span>,
   <span>
     Watch the{' '}
