@@ -14,6 +14,7 @@ const Details = ({
   link,
   slug,
   time,
+  slides,
   onNext,
   onPrevious,
   onSave,
@@ -56,10 +57,11 @@ const Details = ({
           )}
           <span className="Details-time">{time.replace(' ', ' - ')}</span>
         </div>
-        <div
-          className="Details-description"
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
+        <div className="Details-description">
+          {slides &&
+            <p><a href={slides} className="BgLink" target="_blank">View slides</a></p>}
+          <div dangerouslySetInnerHTML={{ __html: description }} />
+        </div>
       </div>
     )}
   </div>
@@ -73,6 +75,7 @@ Details.propTypes = {
   link: React.PropTypes.string,
   time: React.PropTypes.string,
   company: React.PropTypes.string,
+  slides: React.PropTypes.string,
   track: React.PropTypes.string,
   isActive: React.PropTypes.bool,
   savedSlugs: React.PropTypes.object,

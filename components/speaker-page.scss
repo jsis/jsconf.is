@@ -20,6 +20,21 @@
   margin: 0;
 }
 
+.SpeakerPage-slides {
+  font-size: 13px;
+  color: $color-jsconf-yellow;
+  text-transform: uppercase;
+  display: inline-block;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-jsconf-yellow;
+    background: linear-gradient(0deg, $color-jsconf-yellow, $color-jsconf-yellow) no-repeat 0 calc(1em + 3px);
+    background-size: 100% 1px;
+  }
+}
+
 .SpeakerPage-imageWrap {
   order: -1;
   overflow: hidden;
@@ -114,6 +129,7 @@
 
 .SpeakerPage-socialTitle {
   font-weight: 300;
+  margin-top: 1em;
 }
 
 .SpeakerPage-links {

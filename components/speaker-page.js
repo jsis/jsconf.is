@@ -10,6 +10,7 @@ const SpeakerPage = ({
   talk,
   body,
   bio,
+  slides,
   twitter,
   github,
   website,
@@ -77,6 +78,8 @@ const SpeakerPage = ({
           <div className="row align-center">
             <div className="column xxlarge-8 xlarge-9 large-10 med-11 small-12">
               <h2 className="SpeakerPage-talkTitle">{talk}</h2>
+              {slides &&
+                <p><a href={slides} className="SpeakerPage-slides" target="_blank">View slides</a></p>}
               <div
                 className="SpeakerPage-abstract"
                 dangerouslySetInnerHTML={{ __html: body }}
@@ -142,6 +145,7 @@ SpeakerPage.propTypes = {
   companyWebsite: React.PropTypes.string,
   twitter: React.PropTypes.string,
   github: React.PropTypes.string,
+  slides: React.PropTypes.string,
   website: React.PropTypes.string,
   talk: React.PropTypes.node,
 }

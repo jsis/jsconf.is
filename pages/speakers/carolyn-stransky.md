@@ -8,6 +8,7 @@ twitter: "carolstran"
 github: "carolstran"
 companyWebsite: "https://www.contentful.com/"
 company: "Contentful"
+slides: "https://speakerdeck.com/carolstran/humanizing-your-documentation-full-talk"
 bio: "Carolyn is an American journalist and JavaScript developer based in Berlin, Germany. There, she works as a technical writer for Contentful and teaches front end development in the evenings at ReDI School of Digital Integration. Her interests revolve around accessibility and technology—with a focus on online abuse, human-computer and self-care."
 ---
 
