@@ -1,6 +1,6 @@
 ---
 title: "Bryan Hughes"
-talk: "\"Works for Me\""
+talk: "“Works for Me”"
 path: "/speakers/bryan-hughes"
 type: "speaker"
 slug: "bryan-hughes"
