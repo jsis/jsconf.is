@@ -1,46 +1,50 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Card, { CardContainer } from '../components/card'
-import UpdateSection from '../components/update-section'
-import Panel, { PanelButton } from '../components/panel'
-import { Link } from 'react-router'
-import { prefixLink } from 'gatsby-helpers'
+import React from "react";
+import Helmet from "react-helmet";
+import Card, { CardContainer } from "../components/card";
+import UpdateSection from "../components/update-section";
+import Panel, { PanelButton } from "../components/panel";
+import { Link } from "react-router";
+import { prefixLink } from "gatsby-helpers";
 
 const updates = [
   <span>
-    Anna Henningsen, Dan Abramov, Sarah Drasner and Sean Larkin will be answering questions at the <Link to={prefixLink('/schedule/')}>Panel discussions</Link> at 16:20.
+    Anna Henningsen, Dan Abramov, Sarah Drasner and Sean Larkin will be
+    answering questions at the{" "}
+    <Link to={prefixLink("/schedule/")}>Panel discussions</Link> at 16:20.
   </span>,
   <span>
-    Attendees get <Link to={prefixLink('/discounts/')}>amazing discounts</Link> from awesome local stores, restaurants and bars!
+    Attendees get <Link to={prefixLink("/discounts/")}>amazing discounts</Link>{" "}
+    from awesome local stores, restaurants and bars!
   </span>,
   <span>
-    Checkout the <Link to={prefixLink('/schedule/')}>schedule</Link>, it’s live!
+    Checkout the <Link to={prefixLink("/schedule/")}>schedule</Link>, it’s live!
   </span>,
   <span>
-    SO and weekend trips added to <Link to={prefixLink('/schedule/')}>the schedule</Link>.
+    SO and weekend trips added to{" "}
+    <Link to={prefixLink("/schedule/")}>the schedule</Link>.
   </span>,
   <span>
-    Watch the{' '}
+    Watch the{" "}
     <a href="https://www.youtube.com/watch?v=jX8bMHTD5WA" target="_blank">
       mood video
-    </a>{' '}
-    from the last JSConf Iceland.
-  </span>,
-]
+    </a>{" "}
+    from the last JSConf Indonesia.
+  </span>
+];
 
 export default class Home extends React.Component {
   static propTypes = {
-    onToggleMenu: React.PropTypes.func,
-  }
+    onToggleMenu: React.PropTypes.func
+  };
 
   render() {
     return (
       <div className="u-topSpace">
-        <Helmet title="JSConf Iceland: March 1-2, 2018" />
+        <Helmet title="JSConf Indonesia: March 1-2, 2018" />
         <div className="row align-center large-unstack">
           <div className="column large-4 large-order-1 large-text-right">
             <hr className="u-separator" />
-            <h2 className="u-title">JSConf Iceland</h2>
+            <h2 className="u-title">JSConf Indonesia</h2>
             <h2 className="u-subtitle">
               March 1<sup>st</sup> — 2<sup>nd</sup> 2018
             </h2>
@@ -51,12 +55,12 @@ export default class Home extends React.Component {
             <CardContainer>
               <Card
                 icon="logo-clipped"
-                link={prefixLink('/about/')}
+                link={prefixLink("/about/")}
                 title="About"
               />
               <Card
                 icon="schedule"
-                link={prefixLink('/schedule/')}
+                link={prefixLink("/schedule/")}
                 title="Schedule"
               />
               <Card onlyLarge blank />
@@ -64,22 +68,22 @@ export default class Home extends React.Component {
               <Card onlyLarge blank />
               <Card
                 icon="handshake"
-                link={prefixLink('/code-of-conduct/')}
+                link={prefixLink("/code-of-conduct/")}
                 title="Code of Conduct"
               />
               <Card
                 icon="tonkvisl"
-                link={prefixLink('/venue/')}
+                link={prefixLink("/venue/")}
                 title="Venue"
               />
               <Card
                 icon="play"
-                link={prefixLink('/live/')}
+                link={prefixLink("/live/")}
                 title="Live Stream"
               />
               <Card
                 icon="podium"
-                link={prefixLink('/speakers/')}
+                link={prefixLink("/speakers/")}
                 title="Speakers"
               />
 
@@ -97,7 +101,7 @@ export default class Home extends React.Component {
         <div className="row align-center">
           <div className="large-10 column u-offsetParent">
             <Panel>
-              <p>JSConf will be held in Iceland March 1-2, 2018.</p>
+              <p>JSConf will be held in Jakarta March 1-2, 2018.</p>
               <p>
                 That's a Thursday and Friday. Perfect for catching up on talks,
                 and with friends from the JavaScript community.
@@ -106,7 +110,7 @@ export default class Home extends React.Component {
                 Expect 2 awesome tracks with over 30 speakers, an adventurous
                 Saturday and a laid back Sunday brunch.
               </p>
-              <PanelButton href={prefixLink('/about/')}>Learn More</PanelButton>
+              <PanelButton href={prefixLink("/about/")}>Learn More</PanelButton>
             </Panel>
           </div>
         </div>
@@ -121,6 +125,6 @@ export default class Home extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

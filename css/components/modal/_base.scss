@@ -1,7 +1,7 @@
 .Modal {
   $t: 300ms;
 
-  background: $color-jsconf-yellow;
+  background: $color-jsconf-red;
   height: 100%;
   left: 0;
   opacity: 0;
@@ -38,7 +38,7 @@
   }
 
   &-gradient {
-    background: linear-gradient(rgba($color-jsconf-yellow, 0), rgba($color-jsconf-yellow, .8) 40%, $color-jsconf-yellow);
+    background: linear-gradient(rgba($color-jsconf-red, 0), rgba($color-jsconf-red, .8) 40%, $color-jsconf-red);
     bottom: 0;
     height: 200px;
     left: 0;

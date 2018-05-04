@@ -8,7 +8,7 @@
   
   &:hover, &:focus {
     .PanelButton-link {
-      background: $color-jsconf-yellow;
+      background: $color-jsconf-red;
       color: $color-gray-75;
     }
   }
@@ -35,7 +35,7 @@
 
 .PanelButton-link,
 .PanelButton-shadow {
-  border: 2px solid $color-jsconf-yellow;
+  border: 2px solid $color-jsconf-red;
   border-radius: 2px;
   display: inline-block;
 }

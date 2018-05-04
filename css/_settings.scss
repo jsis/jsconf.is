@@ -57,6 +57,7 @@ $white: #fefefe;
 // JSCONF colors
 $color-jsconf-yellow: #f3df49;
 $color-jsconf-purple: #B3008B;
+$color-jsconf-red: #EB5558;
 
 // JSCONF fonts
 $font-roboto: 'Roboto';
@@ -68,7 +69,7 @@ $global-font-size: 100%;
 $global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 
-$primary-color: $color-jsconf-yellow;
+$primary-color: $color-jsconf-red;
 $secondary-color: $color-gray-5;
 
 $success-color: #3adb76;
@@ -81,7 +82,7 @@ $dark-gray: $color-gray-75;
 $black: $black;
 $white: $white;
 
-$body-background: $color-jsconf-yellow;
+$body-background: $color-jsconf-red;
 $body-font-color: $dark-gray;
 $body-font-family: $font-roboto, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -570,6 +571,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $color-jsconf-yellow;
+$topbar-background: $color-jsconf-red;
 $topbar-link-color: $primary-color;
 $topbar-input-width: 200px;
