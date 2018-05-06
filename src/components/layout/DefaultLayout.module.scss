@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  opacity: 1;
+  transition: opacity 0.3s;
+}

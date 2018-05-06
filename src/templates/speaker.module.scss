@@ -1,0 +1,20 @@
+@import '../styles/variables';
+
+.divider {
+  border: none;
+  border-top: 4px solid $color-gray-5;
+  max-width: 12em;
+  margin: 3rem auto;
+}
+
+.socials {
+  a {
+    color: $color-jsconf-green !important;
+    border-bottom: none !important;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

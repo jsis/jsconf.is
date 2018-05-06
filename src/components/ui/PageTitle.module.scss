@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.root {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.inner {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  margin: 1rem;
+  color: $color-gray-5;
+  border: 4px solid $color-gray-5;
+  box-shadow: -0.5rem 0.5rem $color-gray-5;
+
+  @media (min-width: $breakpoint-md) {
+    box-shadow: -0.75rem 0.75rem $color-gray-5;
+  }
+
+  .title {
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .subtitle {
+    margin: 0;
+    margin-top: 0.5;
+    font-weight: 300;
+    font-size: $font-size-h3;
+  }
+}

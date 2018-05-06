@@ -1,0 +1,86 @@
+@import '../../styles/variables';
+
+.root {
+  flex: 1 1 auto;
+  padding-top: $height-header;
+  background: $color-gray-75;
+  color: $color-gray-5;
+
+  .inner {
+    padding: 1.5rem;
+  }
+
+  a {
+    color: $color-gray-5;
+  }
+
+  b,
+  strong {
+    color: $color-gray-5;
+  }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  background: $color-jsconf-red;
+
+  .inner {
+    flex: 1 1 auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  a {
+    border-bottom: 2px solid $color-gray-5;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.about,
+.page,
+.speaker {
+  background-color: $color-gray-75;
+
+  .inner {
+    max-width: $max-width-md;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    line-height: 1.75;
+    font-weight: 300;
+    color: $color-gray-10;
+
+    @media (min-width: $breakpoint-lg) {
+      max-width: $max-width-lg;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      font-size: 20px;
+    }
+  }
+}
+
+.page {
+  background-color: $color-gray-75;
+}
+
+.speaker {
+  background-color: $color-gray-75;
+
+  .inner {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color-gray-5;
+      font-weight: 300;
+    }
+  }
+}

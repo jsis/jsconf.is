@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.root {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  .title {
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .subtitle {
+    margin: 0;
+    margin-top: 0.5;
+    font-weight: 300;
+    font-size: $font-size-h3;
+  }
+}
+
+.image {
+  margin: 1.5rem auto;
+  max-width: 250px;
+  border-radius: 250px;
+  overflow: hidden;
+}

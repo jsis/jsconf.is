@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.root {
+  font-size: 18px;
+
+  h1,
+  p {
+    margin: 0;
+    font-weight: 300;
+    color: #fefefe;
+  }
+
+  p {
+    font-size: 1.25em;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 24px;
+  }
+}

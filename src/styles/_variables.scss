@@ -1,0 +1,46 @@
+// colors
+$black: #000000;
+$color-gray-75: #2e2e2c;
+$color-gray-60: #666666;
+$color-gray-50: #7f7f7f;
+$color-gray-40: #999999;
+$color-gray-30: #b2b2b2;
+$color-gray-20: #cccccc;
+$color-gray-10: #e5e5e5;
+$color-gray-5: #ebebea;
+$white: #fefefe;
+
+$color-jsconf-yellow: #f3df49;
+$color-jsconf-red: #eb5558;
+$color-jsconf-green: #9ee79a;
+
+// fonts
+$font-family-sans-serif: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace,
+  monospace;
+
+// font sizes
+$font-size-h1: 2.441em;
+$font-size-h2: 1.953em;
+$font-size-h3: 1.563em;
+$font-size-h4: 1.25em;
+
+// grid breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// widths
+$max-width-md: 720px;
+$max-width-lg: 960px;
+$max-width-xl: 1140px;
+
+// dimensions
+$container-padding: 1.5rem;
+
+// heights
+$height-header: 70px;

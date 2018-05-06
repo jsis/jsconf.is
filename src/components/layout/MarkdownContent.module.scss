@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.root {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-gray-5;
+    font-weight: 300;
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  a {
+    position: relative;
+    white-space: nowrap;
+    text-decoration: none;
+    color: $color-gray-5;
+    font-weight: 400;
+    border-bottom: 4px solid $color-jsconf-green;
+  }
+
+  figcaption {
+    a {
+      border-bottom: none;
+      color: $color-jsconf-green;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
