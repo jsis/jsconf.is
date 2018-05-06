@@ -1,7 +1,0 @@
-
-@mixin text-overflow() {
-  // Requires inline-block or block for proper styling
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
